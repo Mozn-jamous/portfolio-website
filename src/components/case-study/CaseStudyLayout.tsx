@@ -57,7 +57,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             </p>
           </div>
 
-          <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-[var(--ink)] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.025em] text-[var(--ink)] sm:text-5xl lg:text-6xl">
             {meta.title}
           </h1>
 
@@ -134,7 +134,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             <div className="glass grid grid-cols-2 gap-x-6 gap-y-10 rounded-2xl p-8 shadow-soft md:grid-cols-4">
               {metrics.map((m) => (
                 <div key={m.label}>
-                  <div className="text-3xl font-light tracking-tight text-[var(--accent-deep)] md:text-4xl">
+                  <div className="font-display text-4xl font-semibold tracking-[-0.02em] text-[var(--accent-deep)] md:text-5xl">
                     {m.value}
                   </div>
                   <div className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--ink-muted)]">
@@ -156,7 +156,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
                 § {s.kicker}
               </p>
             )}
-            <h2 className="mb-7 text-3xl font-light leading-tight tracking-tight text-[var(--ink)] sm:text-4xl">
+            <h2 className="mb-7 font-display text-3xl font-medium leading-[1.1] tracking-tight text-[var(--ink)] sm:text-[2.5rem]">
               {s.heading}
             </h2>
             <div className="space-y-5 text-[1.0625rem] leading-[1.75] text-[var(--ink-muted)]">
@@ -178,7 +178,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
                   Next case study
                 </p>
-                <p className="mt-2 text-2xl font-light tracking-tight text-[var(--ink)] transition group-hover:text-[var(--accent-deep)] sm:text-3xl">
+                <p className="mt-2 font-display text-2xl font-medium tracking-tight text-[var(--ink)] transition group-hover:text-[var(--accent-deep)] sm:text-3xl">
                   {nextProject.label}
                 </p>
               </div>
@@ -200,7 +200,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
 
 export function Lead({ children }: { children: ReactNode }) {
   return (
-    <p className="text-xl font-light leading-snug text-[var(--ink)]">
+    <p className="text-xl font-normal leading-[1.6] text-[var(--ink)]">
       {children}
     </p>
   );
@@ -220,7 +220,7 @@ export function Callout({
           {kicker}
         </p>
       )}
-      <div className="text-lg font-light leading-snug text-[var(--ink)]">
+      <div className="text-lg font-normal leading-[1.6] text-[var(--ink)]">
         {children}
       </div>
     </aside>
@@ -245,6 +245,49 @@ export function FactGrid({
         </div>
       ))}
     </dl>
+  );
+}
+
+/* Captioned visual slot + lightbox — client component, see ./Figure. */
+export { Figure, ScreensPlaceholder } from "./Figure";
+
+/* UX-focused design decision card */
+export function DesignDecision({
+  number,
+  title,
+  challenge,
+  decision,
+  outcome,
+}: {
+  number: number;
+  title: string;
+  challenge: ReactNode;
+  decision: ReactNode;
+  outcome: ReactNode;
+}) {
+  return (
+    <article className="glass my-10 rounded-2xl p-6 shadow-soft">
+      <header className="flex items-baseline gap-3 border-b border-[var(--border)] pb-4">
+        <span className="font-mono text-[0.7rem] tracking-[0.18em] text-[var(--accent)]">
+          {String(number).padStart(2, "0")}
+        </span>
+        <h3 className="text-xl font-medium tracking-tight text-[var(--ink)]">{title}</h3>
+      </header>
+      <div className="mt-5 grid gap-4 text-[0.95rem] leading-relaxed text-[var(--ink-muted)] sm:grid-cols-[120px_1fr]">
+        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+          Challenge
+        </p>
+        <div>{challenge}</div>
+        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--accent)]">
+          Decision
+        </p>
+        <div className="text-[var(--ink)]">{decision}</div>
+        <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+          Outcome
+        </p>
+        <div>{outcome}</div>
+      </div>
+    </article>
   );
 }
 

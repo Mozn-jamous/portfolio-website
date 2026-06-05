@@ -9,7 +9,7 @@
  */
 
 // deterministic placement (avoids hydration mismatch)
-const STARS = Array.from({ length: 56 }, (_, i) => ({
+const STARS = Array.from({ length: 34 }, (_, i) => ({
   x: (i * 97) % 100,
   y: (i * 59) % 100,
   size: 1 + ((i * 7) % 3),
@@ -17,23 +17,21 @@ const STARS = Array.from({ length: 56 }, (_, i) => ({
   delay: (i % 9) * 0.5,
 }));
 
+// two soft accent glows, kept low so they read as ambience, not decoration
 const BOKEH = [
-  { x: "12%", y: "20%", s: 320, c: "rgba(168,195,212,0.40)", d: 22 },
-  { x: "82%", y: "12%", s: 300, c: "rgba(255,214,178,0.40)", d: 26 },
-  { x: "72%", y: "78%", s: 360, c: "rgba(219,136,164,0.34)", d: 30 },
-  { x: "18%", y: "72%", s: 280, c: "rgba(204,142,177,0.30)", d: 24 },
+  { x: "82%", y: "12%", s: 280, c: "rgba(255,214,178,0.20)", d: 26 },
+  { x: "16%", y: "74%", s: 300, c: "rgba(204,142,177,0.16)", d: 24 },
 ];
 
 const CLOUDS = [
-  { top: "14%", w: 300, h: 96, o: 0.55, dur: 90, delay: 0 },
-  { top: "30%", w: 220, h: 72, o: 0.4, dur: 120, delay: 18 },
-  { top: "58%", w: 360, h: 110, o: 0.35, dur: 105, delay: 40 },
-  { top: "78%", w: 240, h: 80, o: 0.45, dur: 135, delay: 8 },
+  { top: "14%", w: 300, h: 96, o: 0.32, dur: 90, delay: 0 },
+  { top: "30%", w: 220, h: 72, o: 0.24, dur: 120, delay: 18 },
+  { top: "58%", w: 360, h: 110, o: 0.2, dur: 105, delay: 40 },
+  { top: "78%", w: 240, h: 80, o: 0.26, dur: 135, delay: 8 },
 ];
 
 const SHOOTERS = [
-  { top: "12%", left: "8%", dur: 11, delay: 4 },
-  { top: "22%", left: "62%", dur: 14, delay: 9 },
+  { top: "16%", left: "60%", dur: 16, delay: 7 },
 ];
 
 // fine film grain (warms the flat gradient, kills the "cold digital" feel)
@@ -52,10 +50,10 @@ export function SceneAtmosphere() {
         style={{
           right: "-6%",
           top: "-10%",
-          width: 460,
-          height: 460,
+          width: 380,
+          height: 380,
           background:
-            "radial-gradient(circle, rgba(255,233,205,0.75) 0%, rgba(255,214,178,0.35) 38%, transparent 68%)",
+            "radial-gradient(circle, rgba(255,233,205,0.42) 0%, rgba(255,214,178,0.18) 38%, transparent 68%)",
           filter: "blur(6px)",
         }}
       />
@@ -140,7 +138,7 @@ export function SceneAtmosphere() {
         style={{
           backgroundImage: `url("${GRAIN}")`,
           backgroundSize: "160px 160px",
-          opacity: 0.045,
+          opacity: 0.03,
           mixBlendMode: "soft-light",
         }}
       />

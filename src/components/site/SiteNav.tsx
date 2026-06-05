@@ -2,64 +2,126 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { heroContent } from "@/lib/scenes-content";
+import { ThemeToggle } from "@/components/site/ThemeToggle";
+import { MobileNav } from "@/components/site/MobileNav";
+import { OPEN_COMMAND_PALETTE } from "@/components/site/CommandPalette";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
+// Top-nav scrolls within the unified home page (sections), not to the
+// standalone pages. The standalone /projects, /about, /contact, /odoo pages
+// remain reachable as deep-dives via each section's CTA.
 const items = [
-  { href: "/#work", label: "Work" },
-  { href: "/#about", label: "About" },
-  { href: "/cv", label: "CV" },
+  { href: "/#work", id: "work", label: "Projects" },
+  { href: "/#process", id: "process", label: "Process" },
+  { href: "/#systems", id: "systems", label: "Systems" },
+  { href: "/#about", id: "about", label: "About" },
+  { href: "/#contact", id: "contact", label: "Contact" },
 ];
 
 export function SiteNav() {
   const pathname = usePathname();
+  const reduced = useReducedMotion();
+  const [activeId, setActiveId] = useState<string | null>(null);
+
+  // Scroll-spy — highlight the nav item for the section in the centre band.
+  // Home page only (that's where these sections live).
+  useEffect(() => {
+    if (pathname !== "/") {
+      setActiveId(null);
+      return;
+    }
+    const els = items
+      .map((i) => document.getElementById(i.id))
+      .filter((el): el is HTMLElement => !!el);
+    if (!els.length) return;
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) setActiveId(e.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--glass-border)] bg-white/45 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-8 px-5 py-4 lg:px-8">
-        <Link
-          href="/"
-          className="group inline-flex items-center gap-2 text-sm font-semibold tracking-tight text-[var(--ink)]"
-        >
+    <header className="sticky top-0 z-40 border-b border-[var(--glass-border)] bg-[var(--glass)] backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 lg:px-8">
+        {/* wordmark — monogram + name + role */}
+        <Link href="/" className="group inline-flex items-center gap-2.5">
           <span
             aria-hidden
-            className="orb relative inline-block h-6 w-6 align-middle"
+            className="font-display grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-[var(--c-mauve)] to-[var(--accent)] text-lg font-semibold text-white shadow-soft"
           >
-            <span className="orb-glow" style={{ inset: "-30%" }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img className="orb-img" src="/demo/character.png" alt="" />
+            M
           </span>
-          Mozn Jamous
+          <span className="flex flex-col leading-none">
+            <span className="text-sm font-semibold tracking-tight text-[var(--ink)]">
+              {heroContent.name}
+            </span>
+            <span className="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
+              {heroContent.subtitle}
+            </span>
+          </span>
         </Link>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 md:flex">
+        {/* primary nav */}
+        <nav aria-label="Primary" className="hidden items-center gap-7 md:flex">
           {items.map((item) => {
-            const active =
-              item.href !== "/" && pathname.startsWith(item.href.replace("/#work", "/").replace("/#about", "/"));
+            const active = pathname === "/" && activeId === item.id;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                aria-current={active ? "page" : undefined}
-                className="text-[0.85rem] text-[var(--ink-muted)] transition hover:text-[var(--ink)]"
+                aria-current={active ? "true" : undefined}
+                className={`relative text-[0.85rem] transition hover:text-[var(--ink)] ${
+                  active ? "text-[var(--ink)]" : "text-[var(--ink-muted)]"
+                }`}
               >
                 {item.label}
+                {active &&
+                  (reduced ? (
+                    <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-[var(--accent)]" />
+                  ) : (
+                    <motion.span
+                      layoutId="nav-active-underline"
+                      className="absolute -bottom-1.5 left-0 right-0 h-px rounded-full bg-[var(--accent)]"
+                      transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                    />
+                  ))}
               </Link>
             );
           })}
-          <a
-            href="mailto:moznjamous9@gmail.com"
-            className="link-underline text-[0.85rem] text-[var(--ink)]"
-          >
-            moznjamous9@gmail.com
-          </a>
         </nav>
 
-        {/* Mobile email shortcut */}
-        <a
-          href="mailto:moznjamous9@gmail.com"
-          className="text-[0.8rem] text-[var(--accent)] md:hidden"
-        >
-          Email →
-        </a>
+        {/* actions */}
+        <div className="flex items-center gap-2.5">
+          {/* ⌘K command palette hint (desktop) */}
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event(OPEN_COMMAND_PALETTE))}
+            aria-label="Open command menu"
+            className="hidden items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-3 py-2 text-[0.78rem] text-[var(--ink-muted)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--ink)] md:inline-flex"
+          >
+            <span>Search</span>
+            <kbd className="font-mono text-[0.62rem] text-[var(--ink-faint)]">⌘K</kbd>
+          </button>
+          <Link
+            href={heroContent.contactHref}
+            className="hidden items-center gap-1.5 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-4 py-2 text-[0.8rem] font-semibold text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)] sm:inline-flex"
+          >
+            Let&apos;s Talk
+            <span aria-hidden>→</span>
+          </Link>
+          <ThemeToggle />
+          <MobileNav items={items} contactHref={heroContent.contactHref} />
+        </div>
       </div>
     </header>
   );

@@ -12,6 +12,7 @@
 
   /* ── Semantic tokens — DARK twilight (Nesh-style, pastel glow) ── */
   --paper: #16122e;          /* deep twilight base             */
+  --paper-rgb: 22, 18, 46;   /* ^ as channels, for veil rgba() */
   --surface: #1e1940;        /* dark card surface              */
   --surface-2: #272150;      /* subtle fills                   */
   --ink: #f2edfb;            /* near-white primary text        */
@@ -32,12 +33,38 @@
   --glass: rgba(38, 32, 70, 0.55);
   --glass-2: rgba(38, 32, 70, 0.40);
   --glass-border: rgba(255, 255, 255, 0.14);
+  --panel-bg: rgba(34, 28, 64, 0.62);
+  --panel-border: rgba(255, 255, 255, 0.12);
   --glow-rose: rgba(232, 155, 182, 0.50);
   --glow-blue: rgba(150, 175, 220, 0.45);
   --glow-mauve: rgba(204, 142, 177, 0.45);
 
   --background: var(--paper);
   --foreground: var(--ink);
+}
+
+/* ── LIGHT theme override — the original Salmverse light palette.
+   Toggled by setting data-theme="light" on <html>. Every token below
+   flips; because veils/scrims/panels are token-driven, the whole site
+   (scenes, washes, cards) adapts with no per-component work. ───────── */
+:root[data-theme="light"] {
+  --paper: #f1ecf7;
+  --paper-rgb: 241, 236, 247;
+  --surface: #ffffff;
+  --surface-2: #efe9f5;
+  --ink: #3f3a5a;
+  --ink-muted: #6a6488;
+  --ink-faint: #9a93b5;
+  --border: rgba(63, 58, 90, 0.12);
+  --border-strong: rgba(63, 58, 90, 0.20);
+  --accent: #cf7a99;
+  --accent-deep: #b4628a;
+  --accent-soft: rgba(207, 122, 153, 0.14);
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-2: rgba(255, 255, 255, 0.40);
+  --glass-border: rgba(63, 58, 90, 0.12);
+  --panel-bg: rgba(255, 255, 255, 0.74);
+  --panel-border: rgba(63, 58, 90, 0.08);
 }
 
 @theme inline {
@@ -77,22 +104,33 @@ body {
   overflow-x: hidden;
   background-color: #110d24;
   background-image:
-    radial-gradient(46% 40% at 82% 4%,  rgba(232, 155, 182, 0.22), transparent 60%), /* rose glow  */
-    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.24), transparent 62%), /* periwinkle */
-    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.18), transparent 64%), /* mauve      */
-    radial-gradient(52% 52% at 4% 86%,  rgba(150, 130, 205, 0.16), transparent 62%), /* violet     */
+    radial-gradient(46% 40% at 82% 4%,  rgba(232, 155, 182, 0.12), transparent 60%), /* rose glow  */
+    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.13), transparent 62%), /* periwinkle */
+    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.10), transparent 64%), /* mauve      */
+    radial-gradient(52% 52% at 4% 86%,  rgba(150, 130, 205, 0.09), transparent 62%), /* violet     */
     linear-gradient(180deg, #14112c 0%, #181336 48%, #1f1740 100%);                  /* twilight   */
   background-attachment: fixed;
+}
+
+/* LIGHT theme base — soft lavender-white aurora with faint pastel glows */
+:root[data-theme="light"] body {
+  background-color: #ece5f3;
+  background-image:
+    radial-gradient(46% 40% at 82% 4%,  rgba(207, 122, 153, 0.12), transparent 60%),
+    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.12), transparent 62%),
+    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.10), transparent 64%),
+    linear-gradient(180deg, #f4eff9 0%, #ece5f3 100%);
 }
 
 .font-mono {
   font-family: var(--font-jetbrains), 'Courier New', monospace;
 }
 
-/* Geometric display sans — playful, techy headings (Nesh-style) */
+/* Display — Clash Display. Refined, premium; never heavier than 600.
+   Tight default tracking; large hero/metrics tighten further inline. */
 .font-display {
   font-family: var(--font-display), system-ui, sans-serif;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
 
 /* ── Editorial scrims — integrate text INTO a scene (no box) ───── */
@@ -109,9 +147,9 @@ body {
 .scrim-l::before {
   background: linear-gradient(
     100deg,
-    rgba(255, 255, 255, 0.92) 0%,
-    rgba(255, 255, 255, 0.72) 34%,
-    rgba(255, 255, 255, 0.28) 58%,
+    rgba(var(--paper-rgb), 0.92) 0%,
+    rgba(var(--paper-rgb), 0.72) 34%,
+    rgba(var(--paper-rgb), 0.28) 58%,
     transparent 80%
   );
 }
@@ -119,8 +157,38 @@ body {
   background: linear-gradient(
     180deg,
     transparent 30%,
-    rgba(255, 255, 255, 0.55) 70%,
-    rgba(255, 255, 255, 0.85) 100%
+    rgba(var(--paper-rgb), 0.55) 70%,
+    rgba(var(--paper-rgb), 0.85) 100%
+  );
+}
+
+/* ── Scene veils — dark twilight wash over an illustrated scene, so
+   light text stays readable while the scene still shows through.
+   Centralised here so components never hardcode the base colour.
+   Drop the matching class on an absolutely-positioned -z-10 div.   */
+.veil-l {
+  background: linear-gradient(
+    100deg,
+    rgba(var(--paper-rgb), 0.94) 0%,
+    rgba(var(--paper-rgb), 0.78) 40%,
+    rgba(var(--paper-rgb), 0.32) 72%,
+    transparent 88%
+  );
+}
+.veil-bl {
+  background: linear-gradient(
+    25deg,
+    rgba(var(--paper-rgb), 0.94) 0%,
+    rgba(var(--paper-rgb), 0.62) 42%,
+    transparent 74%
+  );
+}
+.veil-v {
+  background: linear-gradient(
+    180deg,
+    rgba(var(--paper-rgb), 0.90) 0%,
+    rgba(var(--paper-rgb), 0.64) 45%,
+    rgba(var(--paper-rgb), 0.88) 100%
   );
 }
 /* hairline rule with an accent fade */
@@ -134,8 +202,8 @@ body {
 /* translucent glass surface */
 .glass {
   background: var(--glass);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
 }
 .glass-2 {
@@ -147,10 +215,10 @@ body {
 
 /* dark glass content panel — readable card floating on a dim scene */
 .panel {
-  background: rgba(34, 28, 64, 0.62);
-  backdrop-filter: blur(18px) saturate(1.2);
-  -webkit-backdrop-filter: blur(18px) saturate(1.2);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--panel-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--panel-border);
   box-shadow: 0 28px 70px -30px rgba(0, 0, 0, 0.7);
 }
 
@@ -281,6 +349,25 @@ body {
 }
 .link-underline:hover {
   background-size: 100% 1px;
+}
+
+/* ── Focus visibility (keyboard only) ─────────────────────────── */
+/* :where() keeps specificity 0 so components can still override.
+   Covers nav links, project cards, contact rows, footer links, etc.
+   without touching each element. focus-visible = keyboard, not mouse. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+/* Opt-in ring for custom controls (images, palette rows) that set
+   outline-none — use class="focus-ring". */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid var(--accent-deep);
+  outline-offset: 2px;
 }
 
 @media (prefers-reduced-motion: reduce) {

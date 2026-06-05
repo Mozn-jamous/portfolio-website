@@ -18,7 +18,7 @@ There is no test runner; verification is `tsc --noEmit` + `next build`.
 
 ## High-Level Architecture
 
-This is a **single-page hiring portfolio** for Mozn Jamous, designed in a Pitch/Notion aesthetic — white paper, dark ink, one warm accent. The site is intentionally calm and skimmable; everything serves the hiring read.
+This is a **single-page hiring portfolio** for Mozn Jamous, designed in an immersive dark-twilight aesthetic — deep periwinkle ground, light text, one warm rose accent that glows. The site is intentionally calm and skimmable; everything serves the hiring read.
 
 ### Content is one file: `src/lib/scenes-content.ts`
 
@@ -28,26 +28,30 @@ Exports:
 
 | Export | Renders into | Contains |
 |---|---|---|
-| `heroContent` | `Hero.tsx` | Name, tagline, current role, socials, CTAs |
+| `heroContent` | `Hero.tsx` | Name, tagline (Product & Systems Engineer), current role, socials, CTAs |
 | `aboutContent` | `About.tsx` + CV "Open to" | Bio paragraphs + open-to list |
 | `statsContent` | `Stats.tsx` | "By the numbers" credibility stats (value + label) |
-| `scenes` | `SelectedWork.tsx` | Project cards. Each has `track: "mobile" \| "odoo"` — the grid renders two labeled groups (Mobile · Flutter & AI / ERP · Odoo) |
-| `stackChapter` | `Stack.tsx` | Stack layers (Mobile / Backend / ERP / AI / Design) |
-| `journeyChapter` | `Trajectory.tsx` | Timeline milestones + credentials |
+| `capabilitiesContent` | `Capabilities.tsx` | "What I can do for you" — per-audience pitches (numbered 01–03) |
+| `scenes` | `SelectedWork.tsx` | Product project cards (Flutter/AI). `track` is a legacy field — all are `"mobile"`; one group renders. ERP work is NOT here (see `/odoo`). |
+| `businessSystemsContent` | `BusinessSystems.tsx` | ERP/Odoo gateway section — heading, systems chips, result stats, CTA to `/odoo` |
+| `stackChapter` | `Stack.tsx` | Stack layers (Design / Mobile / Backend / AI / ERP) |
+| `journeyChapter` | `Trajectory.tsx` | Timeline milestones + credentials (ERP milestones `href` to `/odoo`) |
 | `outroContent` | `Contact.tsx` | Contact heading + contact links |
 
 ### Page composition (`src/app/page.tsx`)
 
 ```
-Hero → About → Stats → SelectedWork → Stack → Trajectory → Contact
+Hero → About → Stats → Capabilities → SelectedWork → BusinessSystems → Stack → Trajectory → Contact
 ```
 
-That sequence is the deliberate hiring read: who, why-they're-good, the proof in numbers, the work, tools, timeline, how-to-reach. **Selected Work is split into two tracks** — Mobile/Flutter and Odoo/ERP — driven by each scene's `track` field.
+That sequence is the deliberate hiring read: who, why-they're-good, the proof in numbers, what-I-do-for-you, the product work, the systems work, tools, timeline, how-to-reach.
+
+**Identity:** the site presents Mozn as a **Product & Systems Engineer** — design + mobile + AI + ERP, range as the differentiator. `SelectedWork` is the product/design work (Flutter/AI apps); the ERP/Odoo competence lives in its own focused **`BusinessSystems`** gateway section that links to the dedicated `/odoo` hub page (see below). The `scenes` `track` field is a legacy holdover — every current scene is `"mobile"`, and `SelectedWork` renders a single group. Do **not** re-add an Odoo track to the home grid; ERP work belongs on `/odoo`.
 
 ### Scenes & motion (immersive theme)
 
 Each home section is a "place" in one pastel world:
-- **`SceneBackground`** (`components/site/`) — a vivid full-bleed illustrated scene (`public/scenes/*.png`) per section, masked to fade into its neighbours, with a light white scrim. Uses `next/image` (optimised + lazy). Keep `opacity` high and `scrim` low (~0.1–0.16); content readability comes from solid `.panel` cards, **not** from washing out the scene.
+- **`SceneBackground`** (`components/site/`) — a vivid full-bleed illustrated scene (`public/scenes/*.png`) per section, masked to fade into its neighbours, with a twilight (darkening) scrim. Uses `next/image` (optimised + lazy). Keep `opacity` high and `scrim` low (~0.1–0.16); readability over text-heavy sections comes from a `.veil-*` div or solid `.panel` cards, **not** from washing out the scene.
 - **`.panel`** — the solid translucent card content sits in so it stays readable over a vivid scene. Prefer it over bare `.glass` for text-heavy blocks.
 - **`Reveal`** (`components/site/`) — scroll-in motion. **Animates `y` only; opacity stays 1** (so content is never hidden if the observer doesn't fire — the bfcache rule). Wrap inner content, never whole sections.
 - **`Hero.tsx` is a client component** with mouse parallax: scene, foreground clouds, planet, and orb translate at different depths on pointer move.
@@ -59,31 +63,36 @@ Three deep-dive pages — BloomBelly, CareConnect, Smart Expense. They share one
 
 Adding a new deep-dive: create `src/app/projects/<slug>/page.tsx` using `CaseStudyLayout`, then set `cta: { label: "Read case study", href: "/projects/<slug>" }` on the corresponding scene in `scenes-content.ts`.
 
+### ERP/Odoo hub (`src/app/odoo/page.tsx`)
+
+`/odoo` is a **hub case study** (not a single-project deep-dive) that presents the whole ERP/Odoo competence — *What I've built · Capabilities · Results · Selected systems* — and absorbs the former Techno Solution + Smart Expense home cards. It reuses `CaseStudyLayout` and is reached from the `BusinessSystems` home section, the **Systems** nav item, and the two ERP `journeyChapter` milestones (which `href` to `/odoo`). This separation is deliberate: it keeps the home grid focused on product/design work while giving ERP a full, focused page to send to ERP-specific roles. It can be promoted to a standalone site later (same code).
+
 ### CV (`src/app/cv/page.tsx`)
 
 Print-optimized via the `@media print` rules in `globals.css`. Uses the same palette tokens as the rest of the site. The "Open to" list reads from `aboutContent.openTo` so it stays in sync with the home page.
 
-### One visual system — Salmverse pastel (immersive)
+### One visual system — Salmverse twilight (immersive, DARK)
 
-The site is an **immersive pastel "scene"**: a fixed aurora gradient on `<body>` (defined in `globals.css`) with twinkling stars + drifting bokeh from `SceneAtmosphere`, and every section floats over it as a **glass** panel. The palette is Salmverse — soft periwinkle → lavender → rose. All surfaces (home, case studies, CV) use the same tokens via CSS custom properties in `globals.css`:
+The site is an **immersive dark "scene"**: a fixed twilight aurora gradient on `<body>` (defined in `globals.css`) — deep periwinkle/violet base with soft pastel nebulae glowing through — and every section floats over it. Text is light, accents glow. The pastel hues (periwinkle → lavender → rose) survive as the *glows and accents* over a dark ground, not as the surfaces. All surfaces (home, case studies, CV) use the same tokens via CSS custom properties in `globals.css`:
 
 | Token | Value | Purpose |
 |---|---|---|
-| `--paper` | `#F1ECF7` | base lavender-white (fallback; body uses a gradient) |
-| `--surface` | `#FFFFFF` | solid card (rarely used — prefer `.glass`) |
-| `--surface-2` | `#EFE9F5` | tag chips / subtle fills |
-| `--ink` | `#3F3A5A` | primary text (deep plum) |
-| `--ink-muted` | `#6A6488` | secondary text |
-| `--ink-faint` | `#9A93B5` | tertiary text / mono labels |
-| `--border` | `#E7E0F0` | dividers |
-| `--border-strong` | `#D3C9E1` | input borders |
-| `--accent` | `#CF7A99` | warm accent thread — now **rose** (was Damascus terracotta) |
-| `--accent-deep` | `#B4628A` | hover/active accent |
-| `--accent-soft` | `#F7E4EA` | accent backgrounds (callouts, highlight chips) |
+| `--paper` | `#16122E` | deep twilight base (also the scene-veil / scrim colour) |
+| `--paper-rgb` | `22, 18, 46` | `--paper` as channels, for `rgba(var(--paper-rgb), α)` veils |
+| `--surface` | `#1E1940` | dark card surface |
+| `--surface-2` | `#272150` | tag chips / subtle fills |
+| `--ink` | `#F2EDFB` | primary text (near-white) |
+| `--ink-muted` | `#B9B1D8` | secondary text (muted lavender) |
+| `--ink-faint` | `#837BAB` | tertiary text / mono labels |
+| `--border` | `rgba(255,255,255,0.12)` | dividers |
+| `--border-strong` | `rgba(255,255,255,0.22)` | stronger dividers / chip borders |
+| `--accent` | `#E89BB6` | warm rose accent thread (brightened to pop on dark) |
+| `--accent-deep` | `#F4BBCD` | hover/active accent (lighter on dark) |
+| `--accent-soft` | `rgba(232,155,182,0.16)` | translucent accent fills (callouts, highlight chips) |
 
-Raw palette also exposed as `--c-blue #738FBD`, `--c-blue-2 #A8C3D4`, `--c-lav #DBD6DF`, `--c-pink #EEC6C7`, `--c-rose #DB88A4`, `--c-mauve #CC8EB1`.
+Raw pastel palette also exposed as `--c-blue #738FBD`, `--c-blue-2 #A8C3D4`, `--c-lav #DBD6DF`, `--c-pink #EEC6C7`, `--c-rose #DB88A4`, `--c-mauve #CC8EB1` — used for glows, gradient rules, and the orb glow.
 
-Never hardcode hex values inside components — always go through these tokens.
+**Never hardcode hex values inside components — always go through these tokens.** In particular, the dark base belongs to the theme layer, not components: to dim an illustrated `SceneBackground` so light text reads over it, drop a `.veil-l` / `.veil-bl` / `.veil-v` div (`absolute inset-0 -z-10`) — these are token-driven twilight washes defined in `globals.css`. Do **not** reintroduce inline `rgba(248,244,250,…)` light washes; those were a stale light-theme leftover that rendered near-white text on a near-white wash (invisible) and have been removed. `SceneBackground`'s `scrim` prop is now a twilight (darkening) overlay, not white.
 
 **Theme utilities (globals.css):** `.glass` / `.glass-2` (translucent blur surfaces — the default section/card background), `.shadow-soft` / `.shadow-soft-lg` (pastel-tuned elevation), `.text-gradient` (plum→rose→blue heading fill), and the `.orb*` classes (see below). Motion keyframes are theme-scoped: `t-float`, `t-pulse`, `t-twinkle`, `t-drift`, `t-bob`.
 

@@ -1,23 +1,25 @@
 import { Hero } from "@/components/home/Hero";
-import { About } from "@/components/home/About";
-import { Stats } from "@/components/home/Stats";
-import { Capabilities } from "@/components/home/Capabilities";
-import { SelectedWork } from "@/components/home/SelectedWork";
-import { Stack } from "@/components/home/Stack";
-import { Trajectory } from "@/components/home/Trajectory";
-import { Contact } from "@/components/home/Contact";
+import { ProjectsDirectory } from "@/components/projects/ProjectsDirectory";
+import { ProductProcess } from "@/components/home/ProductProcess";
+import { SystemArchitecture } from "@/components/home/SystemArchitecture";
+import { DecisionLog } from "@/components/home/DecisionLog";
+import { BusinessSystems } from "@/components/home/BusinessSystems";
+import { Testimonials } from "@/components/home/Testimonials";
+import { AboutFull } from "@/components/about/AboutFull";
+import { ContactFull } from "@/components/contact/ContactFull";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <About />
-      <Stats />
-      <Capabilities />
-      <SelectedWork />
-      <Stack />
-      <Trajectory />
-      <Contact />
+      <ProjectsDirectory />
+      <ProductProcess />
+      <SystemArchitecture />
+      <DecisionLog />
+      <BusinessSystems />
+      <Testimonials />
+      <AboutFull />
+      <ContactFull />
     </>
   );
 }

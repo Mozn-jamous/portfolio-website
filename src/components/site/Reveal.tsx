@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -23,6 +24,12 @@ export function Reveal({
   delay?: number;
   y?: number;
 }) {
+  const reduced = useReducedMotion();
+
+  // Reduced motion → render in place, no rise. (CSS keyframes are already
+  // neutralised globally; this covers the JS-driven Reveal too.)
+  if (reduced) return <div className={className}>{children}</div>;
+
   return (
     <motion.div
       className={className}

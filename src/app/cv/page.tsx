@@ -6,7 +6,7 @@ import { Orb } from "@/components/site/Orb";
 export const metadata: Metadata = {
   title: "CV — Mozn Jamous",
   description:
-    "Mozn Jamous — Flutter, Odoo, and AI engineer based in Damascus. Curriculum vitae.",
+    "Mozn Jamous — End-to-End Product Builder based in Damascus. Designs products, builds Flutter apps, and engineers the Odoo/ERP systems behind them. Curriculum vitae.",
 };
 
 type Role = {
@@ -19,24 +19,24 @@ type Role = {
 
 const experience: Role[] = [
   {
-    title: "Flutter Developer · Lead",
+    title: "UI/UX Designer & Flutter Lead",
     org: "Santa Media — Mademoiselle (MDMZL)",
     period: "Mar 2026 — Present",
     location: "Damascus",
     bullets: [
-      "Sole Flutter developer rebuilding Mademoiselle from a FlutterFlow prototype to native Flutter, end-to-end.",
-      "Revived a dormant production-track app: full architecture rewrite, UI rebuild, and AI module integration coordinated with a parallel engineer.",
-      "Shipped a production Design System: 17 text variants, 9 button variants, multi-theme, full RTL support.",
+      "Leading UI/UX design and native Flutter rebuild of Mademoiselle — from FlutterFlow prototype to production-grade app.",
+      "Designed and shipped a complete Design System: multi-theme, full RTL, 17 typography variants, 9 button variants.",
+      "Owned the full product design lifecycle: wireframes, design system, implementation, QA, and AI module integration.",
     ],
   },
   {
-    title: "Freelance Flutter Developer",
+    title: "Freelance UI/UX Designer & Flutter Developer",
     org: "Independent",
     period: "Oct 2025 — Mar 2026",
     location: "Damascus",
     bullets: [
-      "Paired with a senior engineer on a client mobile project across UI/UX design and quality assurance.",
-      "Full responsibility for QA across the application surface.",
+      "Designed interfaces and collaborated on a client mobile project with a senior engineer.",
+      "Owned QA across the full application surface — screens, flows, and edge cases.",
     ],
   },
   {
@@ -72,21 +72,21 @@ const featuredProjects = [
     title: "BloomBelly",
     org: "Pregnancy & Childcare Platform · 2025",
     bullets: [
-      "Designed and developed a healthcare mobile platform: pregnancy tracking, child growth, nutrition, fetal movement.",
-      "Integrated three AI components — Gemini for medical imaging, LoRA-tuned transformer for Arabic Q&A, Random Forest for nutrition.",
-      "Documented to IEEE 830 standards. Built as the graduation thesis at ASPU.",
+      "Designed the full product from scratch — user flows, wireframes, and Figma screens for a bilingual Arabic/English healthcare app.",
+      "Integrated three AI models: Gemini for medical imaging, a LoRA-tuned Arabic transformer for Q&A, Random Forest for nutrition.",
+      "Documented to IEEE 830 standards; built end-to-end as the graduation thesis at ASPU.",
     ],
-    stack: "Flutter · Dart · Flask · Supabase · Gemini · LoRA",
+    stack: "Figma · Flutter · Dart · Flask · Supabase · Gemini · LoRA",
   },
   {
     title: "CareConnect",
-    org: "Babysitter Booking & Session Management · 2025",
+    org: "Babysitter Booking & Session Management · 2024",
     bullets: [
-      "Built a cross-platform booking marketplace as three Flutter apps (Mother, Babysitter, Admin) on one Supabase backend.",
-      "Owned the full product lifecycle end-to-end: architecture, state management, screens, and the Supabase integration layer.",
-      "IEEE 830 SRS authored before UI work; Supabase RLS enforces role boundaries at the database layer.",
+      "Designed and built a cross-platform booking platform as three Flutter apps (Mother, Babysitter, Admin) on one Supabase backend.",
+      "Owned the full product lifecycle: UX flows, wireframes, Figma screens, implementation, and Supabase integration.",
+      "IEEE 830 SRS authored before any UI work; Supabase RLS enforces role boundaries at the database layer.",
     ],
-    stack: "Flutter · Dart · Supabase · PostgreSQL · RLS · REST",
+    stack: "Figma · Flutter · Dart · Supabase · PostgreSQL · RLS",
   },
 ];
 
@@ -113,7 +113,8 @@ const certifications = [
 ];
 
 const skills = {
-  mobile: ["Flutter", "Dart", "Design Systems", "RTL"],
+  design: ["Figma", "Design Systems", "Wireframing", "Prototyping", "User Flows", "RTL / Arabic UX", "Accessibility", "Bilingual interfaces"],
+  mobile: ["Flutter", "Dart", "iOS + Android"],
   backend: ["Python", "Flask", "PostgreSQL", "MySQL", "Supabase", "REST APIs"],
   erp: ["Odoo 17–19", "Odoo Studio", "Python/XML", "ORM", "QWeb", "OWL", "POS"],
   modules: [
@@ -126,7 +127,6 @@ const skills = {
     "Manufacturing",
     "Purchase",
   ],
-  frontend: ["Vue.js", "Figma", "OOP"],
   tools: ["Git", "GitHub", "Jira", "Trello", "Postman", "Linux", "Docker", "Agile"],
 };
 
@@ -137,7 +137,23 @@ const languages = [
 
 export default function CVPage() {
   return (
-    <div className="text-[var(--ink)] print:bg-white">
+    <div
+      className="text-[var(--ink)] print:bg-white"
+      /* The CV is a paper document: scope light-on-white token values
+         here so every var(--ink)/--border class below reads as dark ink
+         on the white sheet, on screen and in print alike. */
+      style={
+        {
+          "--ink": "#3F3A5A",
+          "--ink-muted": "#6A6488",
+          "--ink-faint": "#9A93B5",
+          "--border": "#E7E0F0",
+          "--border-strong": "#D3C9E1",
+          "--accent": "#CF7A99",
+          "--accent-deep": "#B4628A",
+        } as React.CSSProperties
+      }
+    >
       {/* Action bar (hidden in print) */}
       <div className="border-b border-[var(--glass-border)] bg-white/45 backdrop-blur-xl print:hidden">
         <div className="mx-auto flex max-w-4xl items-center justify-between px-5 py-4 lg:px-8">
@@ -148,7 +164,7 @@ export default function CVPage() {
         </div>
       </div>
 
-      <article className="mx-auto my-10 max-w-4xl rounded-2xl bg-white/70 px-6 py-12 shadow-soft backdrop-blur-md print:my-0 print:max-w-none print:rounded-none print:bg-white print:px-0 print:py-0 print:shadow-none lg:px-12">
+      <article className="mx-auto my-10 max-w-4xl rounded-2xl bg-white px-6 py-12 shadow-soft-lg print:my-0 print:max-w-none print:rounded-none print:bg-white print:px-0 print:py-0 print:shadow-none lg:px-12">
         {/* CV header */}
         <header className="border-b border-[var(--border)] pb-10">
           <div className="flex items-center gap-2.5">
@@ -157,12 +173,13 @@ export default function CVPage() {
               Curriculum Vitae · 2026
             </p>
           </div>
-          <h1 className="mt-4 text-5xl font-light leading-tight tracking-tight text-[var(--ink)] sm:text-6xl">
+          <h1 className="font-display mt-4 text-5xl font-semibold leading-tight tracking-[-0.02em] text-[var(--ink)] sm:text-6xl">
             Mozn Jamous
           </h1>
           <p className="mt-3 max-w-2xl text-balance text-lg leading-relaxed text-[var(--ink-muted)]">
-            Software engineer — Flutter, Odoo, and AI. Turning research-grade
-            ideas into production systems for problems that matter.
+            End-to-End Product Builder — I design products, build the mobile
+            apps, and engineer the systems behind them. Arabic-first by default,
+            from research and Figma through to production.
           </p>
           <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs sm:grid-cols-4">
             <Field label="Email">
@@ -316,11 +333,11 @@ export default function CVPage() {
           {/* Side column */}
           <aside className="space-y-10">
             <SideSection title="Skills">
+              <SkillGroup label="Design" items={skills.design} />
               <SkillGroup label="Mobile" items={skills.mobile} />
               <SkillGroup label="Backend" items={skills.backend} />
               <SkillGroup label="ERP — Odoo" items={skills.erp} />
               <SkillGroup label="Odoo modules" items={skills.modules} />
-              <SkillGroup label="Frontend" items={skills.frontend} />
               <SkillGroup label="Tools" items={skills.tools} />
             </SideSection>
 
