@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Manual-only: the repo is private (Pages needs a public repo on the free
+# plan), and the site is deployed via Vercel. If the repo is ever made
+# public, run this from the Actions tab to publish to GitHub Pages — all the
+# static-export wiring (basePath, withBase, force-static) is already in place.
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.
