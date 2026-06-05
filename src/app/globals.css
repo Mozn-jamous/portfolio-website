@@ -1,0 +1,307 @@
+@import "tailwindcss";
+
+:root {
+  /* ── Salmverse pastel — immersive theme ─────────────────────────
+     Soft periwinkle → lavender → rose. Calm, dreamy, elegant.       */
+  --c-blue:   #738fbd;
+  --c-blue-2: #a8c3d4;
+  --c-lav:    #dbd6df;
+  --c-pink:   #eec6c7;
+  --c-rose:   #db88a4;
+  --c-mauve:  #cc8eb1;
+
+  /* ── Semantic tokens — DARK twilight (Nesh-style, pastel glow) ── */
+  --paper: #16122e;          /* deep twilight base             */
+  --surface: #1e1940;        /* dark card surface              */
+  --surface-2: #272150;      /* subtle fills                   */
+  --ink: #f2edfb;            /* near-white primary text        */
+  --ink-muted: #b9b1d8;      /* muted lavender text            */
+  --ink-faint: #837bab;      /* faint labels                   */
+  --border: rgba(255,255,255,0.12);
+  --border-strong: rgba(255,255,255,0.22);
+
+  /* rose accent — brightened so it pops on dark */
+  --accent: #e89bb6;
+  --accent-deep: #f4bbcd;    /* hover = lighter on dark        */
+  --accent-soft: rgba(232,155,182,0.16);
+
+  --success: #6fc2a8;
+  --danger: #f0879c;
+
+  /* glass + glow helpers */
+  --glass: rgba(38, 32, 70, 0.55);
+  --glass-2: rgba(38, 32, 70, 0.40);
+  --glass-border: rgba(255, 255, 255, 0.14);
+  --glow-rose: rgba(232, 155, 182, 0.50);
+  --glow-blue: rgba(150, 175, 220, 0.45);
+  --glow-mauve: rgba(204, 142, 177, 0.45);
+
+  --background: var(--paper);
+  --foreground: var(--ink);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-soft: var(--accent-soft);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-blue: var(--c-blue);
+  --color-rose: var(--c-rose);
+  --color-mauve: var(--c-mauve);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
+  --font-display: var(--font-display);
+}
+
+html, body {
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Immersive DARK cosmic base — deep twilight with soft pastel nebulae,
+   fixed so sections float over it. Light text, glowing accents. */
+body {
+  overflow-x: hidden;
+  background-color: #110d24;
+  background-image:
+    radial-gradient(46% 40% at 82% 4%,  rgba(232, 155, 182, 0.22), transparent 60%), /* rose glow  */
+    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.24), transparent 62%), /* periwinkle */
+    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.18), transparent 64%), /* mauve      */
+    radial-gradient(52% 52% at 4% 86%,  rgba(150, 130, 205, 0.16), transparent 62%), /* violet     */
+    linear-gradient(180deg, #14112c 0%, #181336 48%, #1f1740 100%);                  /* twilight   */
+  background-attachment: fixed;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains), 'Courier New', monospace;
+}
+
+/* Geometric display sans — playful, techy headings (Nesh-style) */
+.font-display {
+  font-family: var(--font-display), system-ui, sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* ── Editorial scrims — integrate text INTO a scene (no box) ───── */
+/* light wash anchored to one edge so dark ink stays readable while
+   the illustration still shows through the rest of the section.    */
+.scrim-l::before,
+.scrim-b::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+.scrim-l::before {
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0.92) 0%,
+    rgba(255, 255, 255, 0.72) 34%,
+    rgba(255, 255, 255, 0.28) 58%,
+    transparent 80%
+  );
+}
+.scrim-b::before {
+  background: linear-gradient(
+    180deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.55) 70%,
+    rgba(255, 255, 255, 0.85) 100%
+  );
+}
+/* hairline rule with an accent fade */
+.rule-accent {
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+/* ── Theme utilities ──────────────────────────────────────────── */
+
+/* translucent glass surface */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+.glass-2 {
+  background: var(--glass-2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+}
+
+/* dark glass content panel — readable card floating on a dim scene */
+.panel {
+  background: rgba(34, 28, 64, 0.62);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 28px 70px -30px rgba(0, 0, 0, 0.7);
+}
+
+/* soft elevated shadow tuned for pastel */
+.shadow-soft   { box-shadow: 0 18px 50px -22px rgba(115, 143, 189, 0.55); }
+.shadow-soft-lg{ box-shadow: 0 30px 70px -28px rgba(115, 143, 189, 0.60); }
+
+/* gradient ink for headings */
+.text-gradient {
+  background: linear-gradient(100deg, var(--ink) 0%, var(--accent-deep) 55%, var(--c-blue) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ── Motion keyframes (theme-scoped: t-*) ─────────────────────── */
+@keyframes t-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-16px); }
+}
+@keyframes t-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50%      { opacity: 1;   transform: scale(1.07); }
+}
+@keyframes t-twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50%      { opacity: 0.85; transform: scale(1.12); }
+}
+@keyframes t-drift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  12%  { opacity: 0.55; }
+  88%  { opacity: 0.55; }
+  100% { transform: translateY(-130px) translateX(24px); opacity: 0; }
+}
+@keyframes t-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(7px); }
+}
+/* slow horizontal cloud drift across the viewport */
+@keyframes t-cloud {
+  from { transform: translateX(-22vw); }
+  to   { transform: translateX(122vw); }
+}
+/* occasional shooting star — streaks then waits */
+@keyframes t-shoot {
+  0%        { transform: translate(0, 0) rotate(28deg); opacity: 0; }
+  3%        { opacity: 1; }
+  16%       { transform: translate(280px, 150px) rotate(28deg); opacity: 0; }
+  100%      { transform: translate(280px, 150px) rotate(28deg); opacity: 0; }
+}
+/* slow twinkle for constellation nodes */
+@keyframes t-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.t-float { animation: t-float 7s ease-in-out infinite; }
+.t-pulse { animation: t-pulse 5s ease-in-out infinite; }
+
+/* moving sheen across a card on hover */
+.card-sheen { position: relative; overflow: hidden; }
+.card-sheen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.45) 48%, transparent 66%);
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+  pointer-events: none;
+}
+.card-sheen:hover::before { transform: translateX(120%); }
+
+/* soft conic glow ring behind a featured element */
+.glow-ring {
+  position: relative;
+}
+.glow-ring::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  padding: 1px;
+  background: conic-gradient(from 180deg, var(--c-rose), var(--c-blue), var(--c-mauve), var(--c-pink), var(--c-rose));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Orb (recurring guide character) ──────────────────────────── */
+.orb {
+  position: relative;
+  display: inline-block;
+}
+.orb-glow {
+  position: absolute;
+  inset: -42%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    var(--glow-rose) 0%,
+    var(--glow-mauve) 36%,
+    var(--glow-blue) 60%,
+    transparent 72%
+  );
+  filter: blur(8px);
+  animation: t-pulse 5s ease-in-out infinite;
+  pointer-events: none;
+}
+.orb-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-mask-image: radial-gradient(circle at 50% 47%, #000 56%, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 47%, #000 56%, transparent 70%);
+}
+
+/* Subtle underline draw on hover, used in nav + links */
+.link-underline {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  transition: background-size 0.4s ease;
+}
+.link-underline:hover {
+  background-size: 100% 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 14mm 12mm;
+  }
+  html, body {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #1f1c30 !important;
+  }
+  a { color: inherit !important; text-decoration: none !important; }
+  article, section { break-inside: avoid; page-break-inside: avoid; }
+}

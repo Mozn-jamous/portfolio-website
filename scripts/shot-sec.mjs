@@ -1,0 +1,16 @@
+import puppeteer from "puppeteer-core";
+const CHROME = "C:/Program Files/Google/Chrome/Application/chrome.exe";
+const url = process.argv[2];
+const sel = process.argv[3];
+const out = process.argv[4];
+const browser = await puppeteer.launch({ executablePath: CHROME, headless: "new", args: ["--no-sandbox", "--hide-scrollbars"] });
+const page = await browser.newPage();
+await page.setViewport({ width: 1440, height: 980, deviceScaleFactor: 1 });
+await page.goto(url, { waitUntil: "networkidle2", timeout: 60000 });
+await page.evaluate(async () => { await new Promise((r)=>{let y=0;const t=setInterval(()=>{window.scrollBy(0,400);y+=400;if(y>=document.body.scrollHeight+800){clearInterval(t);r();}},60);}); });
+await new Promise((r) => setTimeout(r, 800));
+await page.evaluate((s) => document.querySelector(s)?.scrollIntoView({ block: "start" }), sel);
+await new Promise((r) => setTimeout(r, 900));
+await page.screenshot({ path: out });
+await browser.close();
+console.log("shot", out);

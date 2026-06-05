@@ -1,0 +1,468 @@
+/* ============================================================
+ *  /demo — immersive pastel scene (Nesh-style, calm palette)
+ *  Palette: Salmverse (soft periwinkle → lavender → rose)
+ *  Scoped under .demo-root so it never leaks into the site.
+ * ============================================================ */
+
+.demo-root {
+  /* Salmverse palette */
+  --d-blue: #738fbd;
+  --d-blue-2: #a8c3d4;
+  --d-lav: #dbd6df;
+  --d-pink: #eec6c7;
+  --d-rose: #db88a4;
+  --d-mauve: #cc8eb1;
+
+  /* derived */
+  --d-ink: #43405e;        /* soft plum — headings on pastel */
+  --d-ink-soft: #6c6889;   /* muted body text */
+  --d-ink-faint: #9b97b3;  /* labels / eyebrows */
+  --d-white: #fdfbff;
+
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: var(--d-ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  background:
+    linear-gradient(
+      180deg,
+      #8fa6c9 0%,
+      var(--d-blue-2) 26%,
+      var(--d-lav) 52%,
+      var(--d-pink) 78%,
+      #f6dfe2 100%
+    );
+}
+
+.demo-mono {
+  font-family: var(--font-jetbrains), "Courier New", monospace;
+}
+
+/* ---------- shared atmosphere ---------- */
+
+.demo-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.demo-star {
+  position: absolute;
+  border-radius: 9999px;
+  background: var(--d-white);
+  animation: d-twinkle var(--dur, 4s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@keyframes d-twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50%      { opacity: 0.9;  transform: scale(1.15); }
+}
+
+/* soft drifting dust particles */
+.demo-dust {
+  position: absolute;
+  border-radius: 9999px;
+  background: var(--d-white);
+  filter: blur(0.5px);
+  opacity: 0.5;
+  animation: d-drift var(--dur, 18s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+@keyframes d-drift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 0.6; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(-120px) translateX(20px); opacity: 0; }
+}
+
+/* ============================================================
+ *  HERO
+ * ============================================================ */
+
+.demo-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1.5rem;
+  overflow: hidden;
+}
+
+/* layered scenery sits at the bottom of the hero */
+.demo-scene {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.demo-scene svg { display: block; width: 100%; height: 100%; }
+
+/* illustrated background image */
+.demo-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.demo-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+/* gentle scrims: darken top (nav) + bottom (copy) for legibility */
+.demo-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(67, 64, 94, 0.22) 0%,
+    transparent 20%,
+    transparent 48%,
+    rgba(67, 64, 94, 0.10) 78%,
+    rgba(67, 64, 94, 0.22) 100%
+  );
+}
+/* soft halo behind the hero copy so white text stays readable */
+.demo-scrim {
+  position: absolute;
+  left: 50%;
+  bottom: 14%;
+  transform: translateX(-50%);
+  width: min(90vw, 46rem);
+  height: 38vh;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(67, 64, 94, 0.28),
+    transparent 68%
+  );
+  filter: blur(6px);
+}
+
+/* ---------- perspective grid floor ---------- */
+
+.demo-grid {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 220%;
+  height: 42vh;
+  transform: translateX(-50%) perspective(420px) rotateX(74deg);
+  transform-origin: bottom center;
+  background-image:
+    linear-gradient(to right, rgba(253,251,255,0.45) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(253,251,255,0.45) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: linear-gradient(to top, #000 8%, transparent 78%);
+  mask-image: linear-gradient(to top, #000 8%, transparent 78%);
+  animation: d-grid-move 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+@keyframes d-grid-move {
+  from { background-position: 0 0; }
+  to   { background-position: 0 56px; }
+}
+
+/* ---------- the orb character ---------- */
+
+.demo-orb-wrap {
+  position: relative;
+  z-index: 3;
+  width: clamp(150px, 24vw, 230px);
+  height: clamp(150px, 24vw, 230px);
+  margin-bottom: 2.5rem;
+  animation: d-float 7s ease-in-out infinite;
+}
+@keyframes d-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-18px); }
+}
+
+/* outer halo glow */
+.demo-orb-glow {
+  position: absolute;
+  inset: -45%;
+  border-radius: 9999px;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(219, 136, 164, 0.55) 0%,
+    rgba(204, 142, 177, 0.35) 35%,
+    rgba(115, 143, 189, 0.12) 60%,
+    transparent 72%
+  );
+  filter: blur(8px);
+  animation: d-pulse 5s ease-in-out infinite;
+}
+@keyframes d-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.08); }
+}
+
+/* the bubble body */
+/* the character image (orb) — radial mask fades any square corners */
+.demo-orb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  -webkit-mask-image: radial-gradient(circle at 50% 47%, #000 56%, transparent 70%);
+  mask-image: radial-gradient(circle at 50% 47%, #000 56%, transparent 70%);
+}
+
+/* eyes (legacy CSS fallback — image now carries the eyes) */
+.demo-eyes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(14px, 3vw, 26px);
+  z-index: 2;
+}
+.demo-eye {
+  width: clamp(13px, 2.4vw, 20px);
+  height: clamp(30px, 5.6vw, 46px);
+  border-radius: 9999px;
+  background: var(--d-white);
+  box-shadow:
+    0 0 12px rgba(255, 255, 255, 0.95),
+    0 0 26px rgba(238, 198, 199, 0.8);
+  animation: d-blink 6.5s ease-in-out infinite;
+}
+.demo-eye:nth-child(2) { animation-delay: 0.12s; }
+@keyframes d-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95%           { transform: scaleY(0.12); }
+}
+
+/* ---------- hero copy ---------- */
+
+.demo-hero-copy {
+  position: relative;
+  z-index: 3;
+  max-width: 40rem;
+}
+.demo-title {
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+  color: var(--d-white);
+  text-shadow: 0 4px 30px rgba(67, 64, 94, 0.35);
+}
+.demo-title .accent {
+  background: linear-gradient(100deg, #fff 0%, var(--d-pink) 60%, var(--d-rose) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.demo-sub {
+  margin-top: 1rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(253, 251, 255, 0.82);
+}
+.demo-underline {
+  width: 64px;
+  height: 2px;
+  margin: 1.4rem auto 0;
+  border-radius: 2px;
+  background: linear-gradient(90deg, transparent, var(--d-white), transparent);
+}
+
+/* scroll chevron */
+.demo-scroll {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  border: 1px solid rgba(253, 251, 255, 0.5);
+  color: rgba(253, 251, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
+  animation: d-bob 2.2s ease-in-out infinite;
+}
+@keyframes d-bob {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(7px); }
+}
+
+/* ============================================================
+ *  SECTION 2 — "why" with orbiting devices
+ * ============================================================ */
+
+.demo-section {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 6rem 2rem;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 30% 40%, rgba(204,142,177,0.30), transparent 70%),
+    linear-gradient(180deg, #f6dfe2 0%, var(--d-lav) 45%, var(--d-blue-2) 100%);
+}
+@media (min-width: 880px) {
+  .demo-section { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+/* orbit visual */
+.demo-orbit {
+  position: relative;
+  aspect-ratio: 1;
+  width: min(92vw, 440px);
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+}
+.demo-orbit-ring {
+  position: absolute;
+  border-radius: 9999px;
+  border: 1px solid rgba(115, 143, 189, 0.35);
+}
+.demo-orbit-ring.r1 { inset: 6%; }
+.demo-orbit-ring.r2 { inset: 22%; border-style: dashed; opacity: 0.6; }
+
+.demo-mini-orb {
+  position: relative;
+  z-index: 2;
+  width: 40%;
+  height: 40%;
+}
+.demo-mini-orb .demo-orb-glow { inset: -32%; }
+
+/* floating device chips around the orb (image-based) */
+.demo-chip {
+  position: absolute;
+  width: clamp(60px, 16%, 86px);
+  height: clamp(60px, 16%, 86px);
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fdfbff;
+  border: 1px solid rgba(255,255,255,0.85);
+  box-shadow: 0 12px 26px rgba(115,143,189,0.30);
+  animation: d-float 6s ease-in-out infinite;
+}
+.demo-chip img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.demo-chip.c1 { top: 4%;  left: 8%;  animation-delay: 0s;   }
+.demo-chip.c2 { top: 4%;  right: 8%; animation-delay: 0.8s; }
+.demo-chip.c3 { bottom: 6%; left: 14%; animation-delay: 1.6s; }
+.demo-chip.c4 { bottom: 6%; right: 14%; animation-delay: 2.4s; }
+
+/* copy block */
+.demo-eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--d-rose);
+  margin-bottom: 1rem;
+}
+.demo-h2 {
+  font-size: clamp(1.8rem, 4vw, 2.9rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  color: var(--d-ink);
+}
+.demo-body {
+  margin-top: 1.2rem;
+  max-width: 32rem;
+  font-size: clamp(0.98rem, 1.4vw, 1.1rem);
+  line-height: 1.7;
+  color: var(--d-ink-soft);
+}
+.demo-dots {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  align-items: center;
+}
+.demo-dot {
+  width: 34px; height: 34px;
+  display: grid; place-items: center;
+  border-radius: 9999px;
+  font-size: 0.78rem;
+  border: 1px solid rgba(115,143,189,0.4);
+  color: var(--d-ink-faint);
+}
+.demo-dot.active {
+  color: var(--d-white);
+  background: var(--d-rose);
+  border-color: var(--d-rose);
+  box-shadow: 0 6px 16px rgba(219,136,164,0.5);
+}
+
+/* ---------- top nav (minimal, themed) ---------- */
+.demo-nav {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem clamp(1.5rem, 5vw, 3rem);
+}
+.demo-brand {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--d-white);
+  font-size: 1.15rem;
+}
+.demo-nav-links {
+  display: none;
+  gap: 2rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(253,251,255,0.85);
+}
+@media (min-width: 760px) { .demo-nav-links { display: flex; } }
+.demo-nav-cta {
+  padding: 0.5rem 1.2rem;
+  border-radius: 9999px;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--d-ink);
+  background: var(--d-white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(67,64,94,0.18);
+}
+
+/* exit link back to the real site */
+.demo-exit {
+  position: fixed;
+  bottom: 1.1rem; right: 1.1rem;
+  z-index: 20;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--d-ink-soft);
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(6px);
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.8);
+  text-decoration: none;
+}
+.demo-exit:hover { color: var(--d-rose); }
