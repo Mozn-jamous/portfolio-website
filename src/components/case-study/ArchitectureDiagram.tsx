@@ -1,4 +1,38 @@
-import type { ReactNode } from "react";
+"use client";
+
+import type { ReactNode, SVGProps } from "react";
+import { motion } from "framer-motion";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
+
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+/**
+ * FlowLine — a connector that "draws itself" (pathLength 0 → 1) when the
+ * diagram scrolls into view, so the system appears to wire itself up. The
+ * boxes and text around it are plain SVG and always visible, so a missed
+ * observer only means an undrawn line, never hidden content. Reduced motion
+ * renders a plain, fully-drawn line.
+ *
+ * Only for SOLID lines — animating pathLength drives strokeDasharray
+ * internally, which would clobber a manual dashed style, so keep dashed
+ * connectors as plain <line>.
+ */
+type FlowLineProps = SVGProps<SVGLineElement> & {
+  reduced: boolean;
+  delay?: number;
+};
+function FlowLine({ reduced, delay = 0, ...props }: FlowLineProps) {
+  if (reduced) return <line {...props} />;
+  return (
+    <motion.line
+      {...(props as React.ComponentProps<typeof motion.line>)}
+      initial={{ pathLength: 0, opacity: 0.5 }}
+      whileInView={{ pathLength: 1, opacity: 1 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.9, delay, ease: EASE }}
+    />
+  );
+}
 
 type Props = {
   title: string;
@@ -46,6 +80,7 @@ const FONT_MONO = "JetBrains Mono, monospace";
 /* --- Project-specific diagrams --- */
 
 export function BloomBellyDiagram() {
+  const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
       title="BloomBelly system topology"
@@ -110,11 +145,11 @@ export function BloomBellyDiagram() {
           <text x="325" y="282" textAnchor="middle" fontFamily={FONT_SANS} fontSize="14" fontWeight="500" fill={colors.primary}>Supabase · Postgres</text>
         </g>
 
-        {/* Arrows */}
-        <line x1="160" y1="160" x2="240" y2="160" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
-        <line x1="410" y1="140" x2="490" y2="50" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
-        <line x1="410" y1="160" x2="490" y2="160" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
-        <line x1="410" y1="180" x2="490" y2="260" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
+        {/* Arrows — solid connectors draw themselves; dashed (async) stay static */}
+        <FlowLine reduced={reduced} delay={0.1} x1="160" y1="160" x2="240" y2="160" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
+        <FlowLine reduced={reduced} delay={0.3} x1="410" y1="140" x2="490" y2="50" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
+        <FlowLine reduced={reduced} delay={0.42} x1="410" y1="160" x2="490" y2="160" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
+        <FlowLine reduced={reduced} delay={0.54} x1="410" y1="180" x2="490" y2="260" stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-b)" />
         <line x1="325" y1="200" x2="325" y2="240" stroke={colors.faint} strokeWidth="1.2" strokeDasharray="3 3" markerEnd="url(#arrow-b)" />
         <line x1="90" y1="200" x2="240" y2="260" stroke={colors.faint} strokeWidth="1.2" strokeDasharray="3 3" markerEnd="url(#arrow-b)" />
       </svg>
@@ -123,6 +158,7 @@ export function BloomBellyDiagram() {
 }
 
 export function CareConnectDiagram() {
+  const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
       title="CareConnect — three apps, one backend"
@@ -139,13 +175,13 @@ export function CareConnectDiagram() {
           { x: 40, label: "MOTHER APP", desc: "Discover · Book · Pay" },
           { x: 270, label: "BABYSITTER APP", desc: "Profile · Schedule" },
           { x: 500, label: "ADMIN APP", desc: "Moderate · Audit" },
-        ].map((app) => (
+        ].map((app, i) => (
           <g key={app.label}>
             <rect x={app.x} y={30} width={180} height={90} rx={6} fill={colors.surface} stroke={colors.accent} strokeWidth={1.5} />
             <text x={app.x + 90} y={56} textAnchor="middle" fontFamily={FONT_MONO} fontSize="10" fill={colors.accent}>{app.label}</text>
             <text x={app.x + 90} y={80} textAnchor="middle" fontFamily={FONT_SANS} fontSize="15" fontWeight="500" fill={colors.primary}>Flutter App</text>
             <text x={app.x + 90} y={100} textAnchor="middle" fontFamily={FONT_MONO} fontSize="9" fill={colors.secondary}>{app.desc}</text>
-            <line x1={app.x + 90} y1={120} x2={app.x + 90} y2={170} stroke={colors.secondary} strokeWidth="1.2" markerEnd={`url(#arrow-c)`} />
+            <FlowLine reduced={reduced} delay={0.2 + i * 0.15} x1={app.x + 90} y1={120} x2={app.x + 90} y2={170} stroke={colors.secondary} strokeWidth="1.2" markerEnd={`url(#arrow-c)`} />
           </g>
         ))}
 
@@ -160,6 +196,7 @@ export function CareConnectDiagram() {
 }
 
 export function SmartExpenseDiagram() {
+  const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
       title="Smart Expense Manager — approval flow"
@@ -186,7 +223,7 @@ export function SmartExpenseDiagram() {
 
             {i < arr.length - 1 && (
               <>
-                <line x1={step.x + 155} y1={120} x2={arr[i + 1].x} y2={120} stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-s)" />
+                <FlowLine reduced={reduced} delay={0.2 + i * 0.18} x1={step.x + 155} y1={120} x2={arr[i + 1].x} y2={120} stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-s)" />
                 <text x={step.x + 165} y={111} fontFamily={FONT_MONO} fontSize="8" fill={colors.primary}>
                   {i === 0 ? "hr.employee" : i === 1 ? "token-secured" : "post"}
                 </text>

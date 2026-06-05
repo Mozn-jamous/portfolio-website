@@ -1,5 +1,5 @@
 import { projectsIndex } from "@/lib/scenes-content";
-import { DirectoryCard } from "@/components/projects/DirectoryCard";
+import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { SceneBackground } from "@/components/site/SceneBackground";
 import { Reveal } from "@/components/site/Reveal";
 
@@ -29,15 +29,7 @@ export function ProjectsDirectory() {
           </p>
         </Reveal>
 
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {projectsIndex.map((p, i) => (
-            <li key={p.href}>
-              <Reveal delay={(i % 3) * 0.08} className="h-full">
-                <DirectoryCard project={p} />
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+        <ProjectsGrid projects={projectsIndex} />
 
         <Reveal>
           <div className="panel mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl p-6 lg:p-8">
