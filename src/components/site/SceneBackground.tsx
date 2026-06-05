@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBase } from "@/lib/base-path";
 
 /**
  * SceneBackground — a faint, full-bleed illustrated scene behind a section.
@@ -30,7 +31,7 @@ export function SceneBackground({
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden" aria-hidden>
       <Image
-        src={src}
+        src={withBase(src)}
         alt=""
         fill
         priority={priority}

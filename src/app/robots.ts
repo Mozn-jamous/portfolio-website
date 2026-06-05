@@ -1,5 +1,8 @@
 import type { MetadataRoute } from "next";
 
+// Required so the route can be emitted by `output: export` (GitHub Pages build).
+export const dynamic = "force-static";
+
 const BASE = "https://moznjamous.com";
 
 export default function robots(): MetadataRoute.Robots {

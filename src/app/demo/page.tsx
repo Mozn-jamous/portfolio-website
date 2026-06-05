@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { withBase } from "@/lib/base-path";
 import "./demo.css";
 
 export const metadata = {
@@ -79,7 +80,7 @@ export default function DemoPage() {
         {/* illustrated background */}
         <div className="demo-bg" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/demo/scene-bg.png" alt="" />
+          <img src={withBase("/demo/scene-bg.png")} alt="" />
         </div>
 
         {/* soft halo behind copy */}
@@ -89,7 +90,7 @@ export default function DemoPage() {
         <div className="demo-orb-wrap">
           <div className="demo-orb-glow" aria-hidden />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="demo-orb-img" src="/demo/character.png" alt="Aurora, a glowing orb mascot" />
+          <img className="demo-orb-img" src={withBase("/demo/character.png")} alt="Aurora, a glowing orb mascot" />
         </div>
 
         {/* copy */}
@@ -117,21 +118,21 @@ export default function DemoPage() {
 
           {/* eslint-disable @next/next/no-img-element */}
           <span className="demo-chip c1">
-            <img src="/demo/chips/monitor.png" alt="" />
+            <img src={withBase("/demo/chips/monitor.png")} alt="" />
           </span>
           <span className="demo-chip c2">
-            <img src="/demo/chips/graph.png" alt="" />
+            <img src={withBase("/demo/chips/graph.png")} alt="" />
           </span>
           <span className="demo-chip c3">
-            <img src="/demo/chips/clock.png" alt="" />
+            <img src={withBase("/demo/chips/clock.png")} alt="" />
           </span>
           <span className="demo-chip c4">
-            <img src="/demo/chips/spark.png" alt="" />
+            <img src={withBase("/demo/chips/spark.png")} alt="" />
           </span>
 
           <div className="demo-mini-orb">
             <div className="demo-orb-glow" aria-hidden />
-            <img className="demo-orb-img" src="/demo/character.png" alt="" />
+            <img className="demo-orb-img" src={withBase("/demo/character.png")} alt="" />
           </div>
           {/* eslint-enable @next/next/no-img-element */}
         </div>

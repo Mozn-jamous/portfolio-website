@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { ProjectIndexEntry } from "@/lib/scenes-content";
+import { withBase } from "@/lib/base-path";
 
 /**
  * DirectoryCard — a project tile for the /projects directory.
@@ -20,7 +21,7 @@ export function DirectoryCard({ project }: { project: ProjectIndexEntry }) {
       <div className="relative aspect-[16/10] w-full overflow-hidden">
         {project.cover ? (
           <Image
-            src={project.cover}
+            src={withBase(project.cover)}
             alt={`${project.name} cover`}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"

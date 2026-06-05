@@ -8,6 +8,7 @@ import { heroContent } from "@/lib/scenes-content";
 import { Orb } from "@/components/site/Orb";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { CountUp } from "@/components/site/CountUp";
+import { withBase } from "@/lib/base-path";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -114,7 +115,7 @@ export function Hero() {
         aria-hidden
       >
         <Image
-          src="/demo/scene-bg.png"
+          src={withBase("/demo/scene-bg.png")}
           alt=""
           fill
           priority

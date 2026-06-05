@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { projectsIndex } from "@/lib/scenes-content";
 import { ProjectsGrid } from "@/components/projects/ProjectsGrid";
 import { SceneBackground } from "@/components/site/SceneBackground";
@@ -41,7 +42,7 @@ export function ProjectsDirectory() {
                 The full systems-engineering competence — its own focused hub.
               </p>
             </div>
-            <a
+            <Link
               href="/odoo"
               className="group inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-white shadow-soft transition hover:bg-[var(--accent-deep)]"
             >
@@ -49,7 +50,7 @@ export function ProjectsDirectory() {
               <span aria-hidden className="transition group-hover:translate-x-0.5">
                 →
               </span>
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

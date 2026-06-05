@@ -6,6 +6,8 @@
  * glow + float are added here. Decorative by default (aria-hidden).
  */
 
+import { withBase } from "@/lib/base-path";
+
 type OrbProps = {
   /** Rendered box size in px. */
   size?: number;
@@ -34,7 +36,7 @@ export function Orb({
     >
       <span className="orb-glow" />
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img className="orb-img" src={src} alt={alt ?? ""} />
+      <img className="orb-img" src={withBase(src)} alt={alt ?? ""} />
     </div>
   );
 }

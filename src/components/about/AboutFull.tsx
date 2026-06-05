@@ -145,9 +145,9 @@ export function AboutFull() {
                     <div>
                       <h4 className="font-display text-lg font-medium leading-snug text-[var(--ink)] lg:text-xl">
                         {m.href ? (
-                          <a href={m.href} className="link-underline transition hover:text-[var(--accent-deep)]">
+                          <Link href={m.href} className="link-underline transition hover:text-[var(--accent-deep)]">
                             {m.title}
-                          </a>
+                          </Link>
                         ) : (
                           m.title
                         )}

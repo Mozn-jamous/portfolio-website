@@ -3,6 +3,7 @@
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import { Modal } from "@/components/site/Modal";
+import { withBase } from "@/lib/base-path";
 
 /**
  * Figure — a captioned visual slot.
@@ -41,7 +42,7 @@ export function Figure({
           style={{ aspectRatio: aspect }}
         >
           <Image
-            src={src}
+            src={withBase(src)}
             alt={altText}
             fill
             sizes="(max-width: 768px) 100vw, 768px"
@@ -82,7 +83,7 @@ export function Figure({
           panelClassName="relative h-[82vh] w-[92vw] max-w-6xl"
         >
           <Image
-            src={src}
+            src={withBase(src)}
             alt={altText}
             fill
             sizes="92vw"
