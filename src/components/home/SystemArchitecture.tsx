@@ -103,13 +103,18 @@ export function SystemArchitecture() {
                       </div>
                     </div>
 
-                    {/* connector — data flows into the next layer */}
+                    {/* connector — a glow travels down it, like data flowing */}
                     {i < layers.length - 1 && (
                       <div
                         aria-hidden
                         className="flex h-7 items-center justify-center text-[var(--ink-faint)] lg:h-8"
                       >
-                        <span className="text-sm leading-none">↓</span>
+                        <span
+                          className="t-flow text-sm leading-none"
+                          style={{ animationDelay: `${i * 0.45}s` }}
+                        >
+                          ↓
+                        </span>
                       </div>
                     )}
                   </li>

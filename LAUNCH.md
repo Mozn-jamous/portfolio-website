@@ -1,127 +1,127 @@
-# كل ما يحتاجه الموقع — Launch & Completion Checklist
+# كل ما يحتاجه الموقع — قائمة الإكمال والإطلاق
 
-> الموقع **مبنيّ بالكامل ويُبنى بنجاح** (`npm run build` → 19/19 صفحة). هذه القائمة هي ما تبقّى لإنهائه وإطلاقه — مقسّمة حسب الأولوية. ابدئي بقسم 🔴.
+> الموقع **مبنيّ بالكامل ويُبنى بنجاح** (`npm run build` → 19/19 صفحة). هذه القائمة هي ما تبقّى لإنهائه وإطلاقه، مرتّبة حسب الأولوية. ابدئي بقسم 🔴.
 >
-> The site is fully built and compiles clean. This is everything left to finish and launch it, ordered by priority.
+> ملاحظة: المسارات والأوامر وأسماء الملفات مكتوبة بالإنجليزية لأنها يجب أن تبقى حرفية كما هي في الكود.
 
 ---
 
-## 🔴 1. Required to launch — مطلوب للإطلاق
+## 🔴 أولًا — مطلوب للإطلاق
 
-These are the things that block "a real, live, shareable site."
+هذه الأمور هي ما يلزم للحصول على "موقع حيّ حقيقي قابل للمشاركة".
 
-### 1.1 Deploy the site — انشري الموقع
-The site is a static Next.js app (no backend needed yet). Recommended host: **Vercel** (free, made for Next.js).
-- [ ] Push the repo to GitHub (it's already a git repo on branch `master`).
-- [ ] Go to **vercel.com** → "Add New Project" → import the GitHub repo.
-- [ ] Framework preset = **Next.js**, build command `next build` (auto-detected). No env vars needed.
-- [ ] Deploy → you get a live `*.vercel.app` URL immediately.
+### 1.1 انشري الموقع على Vercel
+الموقع تطبيق Next.js ثابت لا يحتاج خادمًا. اخترنا **Vercel** (ينشر المستودعات الخاصة مجّانًا، وجودة صور أعلى). المستودع جاهز 100% للنشر بلا أي إعداد.
+- [ ] افتحي **vercel.com** → **Continue with GitHub** (حساب Mozn-jamous).
+- [ ] سيطلب تثبيت تطبيق Vercel ومنحه صلاحية الوصول — اختاري المستودع **portfolio-website** (لأنه خاص) ووافقي.
+- [ ] **Add New → Project** → اختاري **portfolio-website** → **Import**.
+- [ ] الإطار **Next.js** يُكتشف تلقائيًّا، **لا تضيفي أي متغيّرات بيئة** → **Deploy**.
+- [ ] خلال ~دقيقة يظهر رابط حيّ مثل `portfolio-website-xxxx.vercel.app`. وأي دفعة لاحقة على `master` تُنشَر تلقائيًّا.
 
-### 1.2 Custom domain — النطاق
-Right now the site assumes **`https://moznjamous.com`** (set in `src/app/layout.tsx` as `metadataBase`).
-- [ ] Decide the real domain. If it's **not** `moznjamous.com`, update it in these files (find & replace the string `moznjamous.com`):
-  - `src/app/layout.tsx` (`metadataBase`)
-  - `src/app/sitemap.ts`, `src/app/robots.ts`
+> إن أردتِ أن أنشر أنا نيابةً عنك: أنشئي توكن من **vercel.com/account/tokens** والصقيه لي، فأشغّل النشر وأعطيك الرابط (ويمكنك حذف التوكن بعدها فورًا).
+
+### 1.2 الدومين (اسم النطاق)
+الموقع حاليًا يفترض النطاق **`https://moznjamous.com`** (مضبوط في `src/app/layout.tsx` ضمن `metadataBase`).
+- [ ] قرّري النطاق النهائي. إن لم يكن `moznjamous.com`، استبدلي النص `moznjamous.com` في هذه الملفات:
+  - `src/app/layout.tsx` (الـ `metadataBase`)
+  - `src/app/sitemap.ts` و `src/app/robots.ts`
   - `src/components/site/StructuredData.tsx`
-  - per-page OG URLs: `src/app/about/page.tsx`, `contact/page.tsx`, `projects/page.tsx`, `odoo/page.tsx`, and the 4 `projects/<slug>/page.tsx`
-- [ ] Buy the domain, then add it in Vercel → Settings → Domains, and point DNS as Vercel instructs.
+  - روابط OG في كل صفحة: `src/app/about/page.tsx` و `contact/page.tsx` و `projects/page.tsx` و `odoo/page.tsx`، والصفحات الأربع `projects/<slug>/page.tsx`
+- [ ] اشتري النطاق، ثم أضيفيه في Vercel ← Settings ← Domains، ووجّهي الـ DNS كما يرشدك Vercel.
 
-### 1.3 Verify your contact links are correct & live — تأكّدي من الروابط
-Used across the site (in `src/lib/scenes-content.ts`). Open each and confirm it's right:
-- [ ] Email: `moznjamous9@gmail.com`
+### 1.3 تأكّدي من صحّة روابط التواصل وعملها
+موجودة في `src/lib/scenes-content.ts`. افتحي كلًّا منها وتأكّدي أنه صحيح:
+- [ ] البريد: `moznjamous9@gmail.com`
 - [ ] LinkedIn: `linkedin.com/in/mozn-jamous`
 - [ ] GitHub: `github.com/Mozn-jamous`
-- [ ] "Trusted by / collaborated with" list — Santa Media, Techno Solution, ASPU, Odoo, Supabase — make sure you're comfortable listing each publicly.
-- [ ] Location & role: "Damascus, Syria" and "Santa Media" (in `heroContent`).
+- [ ] قائمة "Trusted by / collaborated with" — Santa Media · Techno Solution · ASPU · Odoo · Supabase — تأكّدي أنكِ مرتاحة لذكر كلٍّ منها علنًا.
+- [ ] الموقع والدور: "Damascus, Syria" و "Santa Media" (في `heroContent`).
 
-### 1.4 Résumé PDF — السيرة الذاتية كملف
-Today the **"Download résumé / CV"** button points to `/cv`, which is a **print-optimized web page** (not a file). Two options:
-- [ ] **Easiest:** keep it. On `/cv` the visitor clicks "Print / Save PDF" → saves a PDF. (Works now.)
-- [ ] **Better:** export a real PDF, save it as `public/resume.pdf`, and change the résumé links to `/resume.pdf` (in `scenes-content.ts` → `contactPageContent.resume.href` and the hero `ctas.secondary.href`).
+### 1.4 ملف السيرة الذاتية PDF
+حاليًا زرّ **"Download résumé / CV"** يفتح صفحة `/cv` المهيّأة للطباعة (وليست ملفًّا). خياران:
+- [ ] **الأسهل:** أبقيه كما هو. في صفحة `/cv` يضغط الزائر "Print / Save PDF" فيحفظ PDF. (يعمل الآن.)
+- [ ] **الأفضل:** صدّري PDF حقيقيًّا واحفظيه باسم `public/resume.pdf`، ثم غيّري روابط السيرة إلى `/resume.pdf` (في `scenes-content.ts` ← `contactPageContent.resume.href` وزر البطل `ctas.secondary.href`).
 
-### 1.5 Project cover images — صور أغلفة المشاريع (4)
-The 4 cards on the Projects grid currently show **branded gradient placeholders** (intentional, but real mockups are far stronger). None have a `cover` set.
-- [ ] Export one hero mockup per project (a clean phone/UI shot). Spec: **16:10 ratio**, ~1600×1000px, `.webp` or `.png`.
-- [ ] Save to `public/projects/` (e.g. `public/projects/bloombelly.webp`).
-- [ ] In `src/lib/scenes-content.ts`, add `cover: "/projects/bloombelly.webp"` to each `projectsIndex` entry. The card swaps from gradient → image automatically.
-- [ ] Projects needing a cover: **Mademoiselle, BloomBelly, CareConnect, Smart Expense Manager**.
+### 1.5 صور أغلفة المشاريع (٤ صور)
+البطاقات الأربع في شبكة المشاريع تعرض حاليًا **تدرّجًا لونيًّا بديلًا** (مقصود، لكن صور Mockup حقيقية أقوى بكثير). لا يوجد `cover` لأيٍّ منها.
+- [ ] صدّري صورة واجهة واحدة لكل مشروع (لقطة نظيفة لشاشة هاتف/واجهة). المواصفات: **نسبة 16:10**، حوالي 1600×1000 بكسل، صيغة `.webp` أو `.png`.
+- [ ] احفظيها في `public/projects/` (مثال: `public/projects/bloombelly.webp`).
+- [ ] في `src/lib/scenes-content.ts` أضيفي `cover: "/projects/bloombelly.webp"` لكل عنصر في `projectsIndex`. تتبدّل البطاقة تلقائيًّا من التدرّج إلى الصورة.
+- [ ] المشاريع التي تحتاج غلافًا: **Mademoiselle · BloomBelly · CareConnect · Smart Expense Manager**.
 
 ---
 
-## 🟡 2. Strongly recommended — يرفع الجودة كثيرًا (غير حاجز)
+## 🟡 ثانيًا — مُستحسَن بشدّة (يرفع الجودة كثيرًا، وغير حاجز)
 
-### 2.1 Case-study screenshots — لقطات دراسات الحالة
-Each case study has image slots marked **"add export"** that currently show a placeholder. Filling them turns the case studies from text into proof. Export from Figma and set the `src` on the matching `<Figure>` in the page file:
+### 2.1 لقطات شاشة دراسات الحالة
+كل دراسة حالة فيها خانات صور معلّمة بـ **"add export"** تعرض الآن عنصرًا بديلًا. ملؤها يحوّل دراسات الحالة من نصّ إلى دليل بصري. صدّري من Figma وضعي `src` على عنصر `<Figure>` المطابق:
 
-| Case study | What's needed | File |
+| دراسة الحالة | المطلوب | الملف |
 |---|---|---|
-| BloomBelly | 4 user-journey maps; key screens (chatbot, imaging, nutrition — RTL) | `src/app/projects/bloombelly/page.tsx` |
-| CareConnect | Mother · Babysitter · Admin screens | `src/app/projects/careconnect/page.tsx` |
-| Mademoiselle | Key screens across Light/Dark/Brand themes; the buttons component sheet | `src/app/projects/mademoiselle/page.tsx` |
-| Smart Expense | The one-click Approve/Reject email screenshot | `src/app/projects/smart-expense/page.tsx` |
+| BloomBelly | ٤ خرائط رحلة مستخدم؛ شاشات رئيسية (المحادثة، التصوير، التغذية — RTL) | `src/app/projects/bloombelly/page.tsx` |
+| CareConnect | شاشات تطبيقات الأم · جليسة الأطفال · المشرف | `src/app/projects/careconnect/page.tsx` |
+| Mademoiselle | شاشات عبر السمات Light/Dark/Brand؛ ورقة مكوّنات الأزرار | `src/app/projects/mademoiselle/page.tsx` |
+| Smart Expense | لقطة بريد الموافقة/الرفض بنقرة واحدة | `src/app/projects/smart-expense/page.tsx` |
 
-- [ ] Save images to `public/projects/<slug>/…`, then pass `src="/projects/<slug>/…"` to each `<Figure>` (it shows a lightbox on click).
+- [ ] احفظي الصور في `public/projects/<slug>/…` ثم مرّري `src="/projects/<slug>/…"` لكل `<Figure>` (يفتح عرضًا مكبّرًا عند النقر).
 
-### 2.2 Real numbers — الأرقام الحقيقية (when you have them)
-You said your metrics are still few — that's fine, everything on the site is honest today. When you have real, defensible numbers (users, time saved, downloads), add them in `scenes-content.ts`:
-- [ ] `heroContent.stats` (the credibility row)
-- [ ] `businessSystemsContent.results` (the ERP result stats)
-- Keep the no-vanity-metrics rule: only add what you can defend in an interview.
+### 2.2 الأرقام الحقيقية (حين تتوفّر)
+قلتِ إن أرقامك ما زالت قليلة — لا بأس، كل ما في الموقع صادق الآن. حين تتوفّر أرقام حقيقية يمكن الدفاع عنها (مستخدمون، وقت موفَّر، تنزيلات)، أضيفيها في `scenes-content.ts`:
+- [ ] `heroContent.stats` (صفّ المصداقية)
+- [ ] `businessSystemsContent.results` (نتائج أنظمة ERP)
+- التزمي بقاعدة "لا أرقام تجميلية": أضيفي فقط ما تستطيعين الدفاع عنه في مقابلة.
 
-### 2.3 Proofread — مراجعة لغوية
-- [ ] Read every section once on the live site. Almost all copy lives in `src/lib/scenes-content.ts`; case-study prose is in each `projects/<slug>/page.tsx`.
-
----
-
-## 🟢 3. Optional / future — اختياري ولاحقًا
-
-- [ ] **Testimonials — التوصيات:** the section is built but hidden until you add real quotes. Add entries (with permission) to `testimonialsContent` in `scenes-content.ts` and it appears automatically. Never invent quotes.
-- [ ] **Portrait photo — صورة شخصية:** the About section now uses an "At a glance" facts card instead of a photo, so a photo is optional. If you want one later, we can add it back.
-- [ ] **Deferred interactive features** (we discussed these):
-  - AI "Ask me" assistant — only as a *scripted, grounded* version (no backend, can't hallucinate). Skip the live-LLM version on a static site.
-  - Recruiter Mode toggle (strips effects → résumé/projects/results).
-  - Case-study walkthrough & Time-Travel viewer — build once the screenshots in 2.1 exist.
-- [ ] **Analytics — التحليلات:** intentionally skipped. If you change your mind, use a privacy-friendly option (Vercel Analytics or Plausible) — not a fake "live metrics" dashboard.
+### 2.3 مراجعة لغوية
+- [ ] اقرئي كل قسم مرّة على الموقع الحيّ. معظم النصوص في `src/lib/scenes-content.ts`، ونصوص دراسات الحالة في كل ملف `projects/<slug>/page.tsx`.
 
 ---
 
-## ✅ 4. Pre-launch QA — فحص قبل الإطلاق
+## 🟢 ثالثًا — اختياري ولاحقًا
 
-Run locally before the final deploy:
-- [ ] `npx tsc --noEmit` — clean
-- [ ] `npm run build` — clean (currently passes, 19/19)
-- [ ] `npm run lint` — fix anything new
-- [ ] Click every nav item, the ⌘K palette, mobile menu, theme toggle, and every external link.
-- [ ] Open on a **real phone** (iOS + Android) — check the Hero, Projects grid, Architecture viewer, Decision log, and Contact.
-- [ ] Test the new interactive sections: **#architecture** (click each layer) and **#decisions** (open/close each).
-- [ ] Check `prefers-reduced-motion` (enable "reduce motion" in OS) — animations should calm down.
-- [ ] Lighthouse (Chrome DevTools): aim for green on Performance / Accessibility / Best Practices / SEO.
+- [ ] **التوصيات:** القسم مبنيّ ومخفيّ حتى تضيفي اقتباسات حقيقية. أضيفي عناصر (بإذن أصحابها) إلى `testimonialsContent` في `scenes-content.ts` فيظهر القسم تلقائيًّا. لا تختلقي اقتباسات أبدًا.
+- [ ] **صورة شخصية:** قسم "About" يستخدم الآن بطاقة "At a glance" بدل الصورة، فالصورة اختيارية. إن أردتِها لاحقًا نضيفها.
+- [ ] **ميزات تفاعلية مؤجَّلة** (ناقشناها): مساعد "Ask me" بنسخة scripted آمنة بلا باك-إند؛ زرّ Recruiter Mode؛ عارض Case-study walkthrough و Time-Travel — تُبنى بعد توفّر لقطات الشاشة في 2.1.
+- [ ] **التحليلات:** متجاهَلة عمدًا. إن غيّرتِ رأيك، استخدمي خيارًا محترمًا للخصوصية (Vercel Analytics أو Plausible) لا لوحة "أرقام حيّة" وهمية.
 
 ---
 
-## 🔎 5. SEO & social sharing — الظهور والمشاركة
+## ✅ رابعًا — فحص ما قبل الإطلاق (QA)
 
-- [ ] Confirm the domain is correct everywhere (see 1.2) — OG tags, sitemap, and JSON-LD all use it.
-- [ ] Test the share preview (the OG card) with the **LinkedIn Post Inspector** and **opengraph.xyz** — paste your URL, confirm the image/title/description look right. Assets already exist: `src/app/opengraph-image.png`, `icon.png`, `apple-icon.png` (replace via those same paths if you redesign them).
-- [ ] Validate structured data with Google's **Rich Results Test**.
-- [ ] After launch: add the site to **Google Search Console** and submit `/sitemap.xml`.
-
----
-
-## 🛠️ 6. How to edit the site later — كيف تعدّلين لاحقًا (quick reference)
-
-- **All copy** (projects, about, contact, process, architecture, decisions, stats) → one file: `src/lib/scenes-content.ts`.
-- **Add a new project:** add an entry to `projectsIndex`, then create `src/app/projects/<slug>/page.tsx` using `CaseStudyLayout`.
-- **New section data** (architecture layers / decision entries) → `architectureStack` / `decisionLog` in `scenes-content.ts`.
-- **Always verify after edits:** `npx tsc --noEmit` then `npm run build`. For a visual check: `node scripts/shot.mjs <url> <out.png>`.
+شغّلي محلّيًّا قبل النشر النهائي:
+- [ ] `npx tsc --noEmit` — نظيف
+- [ ] `npm run build` — نظيف (يمرّ حاليًّا، 19/19)
+- [ ] `npm run lint` — أصلحي أي جديد
+- [ ] انقري كل عنصر في الشريط، ولوحة ⌘K، وقائمة الجوال، ومبدّل السمة، وكل رابط خارجي.
+- [ ] افتحي الموقع على **هاتف حقيقي** (iOS و Android) — تفحّصي البطل، شبكة المشاريع، عارض المعمارية، سجلّ القرارات، التواصل.
+- [ ] جرّبي الأقسام التفاعلية: **#architecture** (انقري كل طبقة) و **#decisions** (افتحي/أغلقي كلًّا).
+- [ ] فعّلي "تقليل الحركة" في النظام — يجب أن تهدأ كل التحريكات.
+- [ ] Lighthouse (في أدوات Chrome): استهدفي اللون الأخضر في Performance / Accessibility / Best Practices / SEO.
 
 ---
 
-### TL;DR — أول 5 خطوات لإطلاقه اليوم
-1. Push to GitHub → import to **Vercel** → deploy.
-2. Verify email / LinkedIn / GitHub links are correct.
-3. Add the **4 project cover images**.
-4. Decide the **domain** (update the string if not `moznjamous.com`) and connect it in Vercel.
-5. Run the QA checklist (section 4) and share the link.
+## 🔎 خامسًا — SEO والظهور والمشاركة
 
-Everything else (screenshots, metrics, testimonials, extra features) makes it *better* — but after step 5 you have a real, live, defensible portfolio.
+- [ ] تأكّدي أن النطاق صحيح في كل مكان (انظري 1.2) — وسوم OG وخريطة الموقع وبيانات JSON-LD كلها تستخدمه.
+- [ ] اختبري معاينة المشاركة (بطاقة OG) عبر **LinkedIn Post Inspector** و **opengraph.xyz** — الصقي رابطك وتأكّدي من الصورة والعنوان والوصف. الأصول موجودة: `src/app/opengraph-image.png` و `icon.png` و `apple-icon.png` (استبدليها عبر المسارات نفسها إن أعدتِ تصميمها).
+- [ ] تحقّقي من البيانات المنظّمة عبر **Rich Results Test** من Google.
+- [ ] بعد الإطلاق: أضيفي الموقع إلى **Google Search Console** وأرسلي `/sitemap.xml`.
+
+---
+
+## 🛠️ سادسًا — كيف تعدّلين الموقع لاحقًا (مرجع سريع)
+
+- **كل النصوص** (المشاريع، About، التواصل، Process، المعمارية، القرارات، الأرقام) في ملف واحد: `src/lib/scenes-content.ts`.
+- **إضافة مشروع جديد:** أضيفي عنصرًا إلى `projectsIndex`، ثم أنشئي `src/app/projects/<slug>/page.tsx` باستخدام `CaseStudyLayout`.
+- **بيانات أقسام جديدة** (طبقات المعمارية / عناصر القرارات) في `architectureStack` / `decisionLog` ضمن `scenes-content.ts`.
+- **تحقّقي دائمًا بعد التعديل:** `npx tsc --noEmit` ثم `npm run build`. وللفحص البصري: `node scripts/shot.mjs <url> <out.png>`.
+
+---
+
+### باختصار — أول ٥ خطوات لإطلاقه اليوم
+1. انشري على **Vercel** (سجّلي بـ GitHub → استوردي المستودع → Deploy).
+2. تأكّدي أن روابط البريد و LinkedIn و GitHub صحيحة.
+3. أضيفي **صور الأغلفة الأربع** للمشاريع.
+4. قرّري **النطاق** (وحدّثي النص إن لم يكن `moznjamous.com`) واربطيه في Vercel.
+5. شغّلي فحص الجودة (القسم الرابع) وشاركي الرابط.
+
+كل ما تبقّى (لقطات، أرقام، توصيات، ميزات إضافية) يجعله **أفضل** — لكن بعد الخطوة ٥ يصبح لديكِ بورتفوليو حيّ حقيقي قابل للعرض.

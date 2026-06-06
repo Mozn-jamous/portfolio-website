@@ -247,6 +247,19 @@ body {
   50%      { background-position: 100% center; }
 }
 
+/* data-flow pulse: architecture connectors brighten in sequence, so a glow
+   appears to travel down through the stack (Frontend → … → Systems). */
+@keyframes t-flow {
+  0%, 100% { opacity: 0.3; transform: translateY(-1px); }
+  50% {
+    opacity: 1;
+    transform: translateY(2px);
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent);
+  }
+}
+.t-flow { animation: t-flow 2.2s ease-in-out infinite; }
+
 /* ── Motion keyframes (theme-scoped: t-*) ─────────────────────── */
 @keyframes t-float {
   0%, 100% { transform: translateY(0); }

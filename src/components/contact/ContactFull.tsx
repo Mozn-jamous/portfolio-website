@@ -2,7 +2,6 @@ import Link from "next/link";
 import { contactPageContent } from "@/lib/scenes-content";
 import { SceneBackground } from "@/components/site/SceneBackground";
 import { Reveal } from "@/components/site/Reveal";
-import { Orb } from "@/components/site/Orb";
 import { Magnetic } from "@/components/site/Magnetic";
 
 /**
@@ -21,10 +20,7 @@ export function ContactFull() {
 
       <div className="mx-auto max-w-3xl px-5 pb-32 pt-24 text-center lg:px-8 lg:pb-40 lg:pt-28">
         <Reveal>
-          <div className="flex justify-center">
-            <Orb src="/orb/wave.png" size={72} />
-          </div>
-          <span className="mt-6 block font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
+          <span className="block font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             {eyebrow}
           </span>
           <h2 className="font-display mx-auto mt-4 max-w-2xl text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.025em] text-[var(--ink)] sm:text-[3.5rem] lg:text-[4rem]">
