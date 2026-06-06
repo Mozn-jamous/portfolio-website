@@ -9,6 +9,7 @@ import { Orb } from "@/components/site/Orb";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { CountUp } from "@/components/site/CountUp";
 import { withBase } from "@/lib/base-path";
+import { Magnetic } from "@/components/site/Magnetic";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -231,13 +232,15 @@ export function Hero() {
 
             {/* CTAs */}
             <motion.div {...itemProps} className="mt-10 flex flex-wrap items-center gap-3">
-              <Link
-                href={ctas.primary.href}
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--c-mauve)] to-[var(--accent)] px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 focus:ring-offset-transparent"
-              >
-                {ctas.primary.label}
-                <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
-              </Link>
+              <Magnetic>
+                <Link
+                  href={ctas.primary.href}
+                  className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--c-mauve)] to-[var(--accent)] px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 focus:ring-offset-transparent"
+                >
+                  {ctas.primary.label}
+                  <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
+                </Link>
+              </Magnetic>
               <Link
                 href={ctas.secondary.href}
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-6 py-3 text-sm font-semibold text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]"

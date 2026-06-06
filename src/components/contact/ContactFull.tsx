@@ -3,6 +3,7 @@ import { contactPageContent } from "@/lib/scenes-content";
 import { SceneBackground } from "@/components/site/SceneBackground";
 import { Reveal } from "@/components/site/Reveal";
 import { Orb } from "@/components/site/Orb";
+import { Magnetic } from "@/components/site/Magnetic";
 
 /**
  * Full contact finale — availability, response time, contact cards, résumé.
@@ -75,13 +76,15 @@ export function ContactFull() {
               </a>
             ))}
 
-            <Link
-              href={resume.href}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[var(--c-mauve)] to-[var(--accent)] px-5 py-4 text-sm font-semibold text-white shadow-soft transition hover:opacity-90"
-            >
-              {resume.label}
-              <span aria-hidden>↓</span>
-            </Link>
+            <Magnetic className="mt-2 w-full" strength={0.25}>
+              <Link
+                href={resume.href}
+                className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[var(--c-mauve)] to-[var(--accent)] px-5 py-4 text-sm font-semibold text-white shadow-soft transition hover:opacity-90"
+              >
+                {resume.label}
+                <span aria-hidden>↓</span>
+              </Link>
+            </Magnetic>
           </div>
         </Reveal>
       </div>
