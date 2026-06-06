@@ -619,16 +619,9 @@ export const projectsIndex: ProjectIndexEntry[] = [
     summary:
       "A childcare marketplace built as three native apps over a single Supabase backend, access enforced in the database.",
   },
-  {
-    name: "Smart Expense Manager",
-    href: "/projects/smart-expense",
-    year: "2026",
-    role: "UX + Sole Developer",
-    industry: "Operations · Odoo",
-    impact: "Multi-day approvals → one click; open source",
-    summary:
-      "An Odoo 19 module that turns paper expense loops into token-secured, one-click email approvals. Live under LGPL-3.0.",
-  },
+  // NOTE: Smart Expense Manager is ERP/Odoo work — it belongs on the /odoo hub
+  // (which links to its case study at /projects/smart-expense), NOT in this
+  // product/design grid. Do not re-add it here.
 ];
 
 /* ------------------------------------------------------------ */
