@@ -44,7 +44,13 @@ export function ProjectsDirectory({
           </p>
         </Reveal>
 
-        <ProjectsGrid projects={projectsIndex} />
+        <ProjectsGrid
+          projects={
+            variant === "home"
+              ? projectsIndex.filter((p) => !p.clientSite)
+              : projectsIndex
+          }
+        />
 
         {variant === "home" && (
           <Reveal>

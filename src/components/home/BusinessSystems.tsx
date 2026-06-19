@@ -54,7 +54,7 @@ export function BusinessSystems() {
                 {systems.map((s) => (
                   <li
                     key={s}
-                    className="lang-en rounded-full border border-[var(--border-strong)] bg-white/10 px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur"
+                    className="lang-en rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur"
                   >
                     {s}
                   </li>
@@ -62,7 +62,7 @@ export function BusinessSystems() {
                 {systemsAr.map((s) => (
                   <li
                     key={s}
-                    className="lang-ar rounded-full border border-[var(--border-strong)] bg-white/10 px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur"
+                    className="lang-ar rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur"
                   >
                     {s}
                   </li>

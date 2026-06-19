@@ -35,6 +35,7 @@
   --glass-border: rgba(255, 255, 255, 0.14);
   --panel-bg: rgba(34, 28, 64, 0.62);
   --panel-border: rgba(255, 255, 255, 0.12);
+  --chip: rgba(255, 255, 255, 0.10);   /* translucent tag/chip fill */
   --glow-rose: rgba(232, 155, 182, 0.50);
   --glow-blue: rgba(150, 175, 220, 0.45);
   --glow-mauve: rgba(204, 142, 177, 0.45);
@@ -48,26 +49,29 @@
    flips; because veils/scrims/panels are token-driven, the whole site
    (scenes, washes, cards) adapts with no per-component work. ───────── */
 :root[data-theme="light"] {
-  --paper: #e7e0f3;          /* deeper soft lavender — more hue, less white */
-  --paper-rgb: 231, 224, 243;
-  --surface: #f8f4fd;        /* lavender-tinted card, never pure #fff       */
-  --surface-2: #ece5f6;
-  --ink: #353050;            /* deep plum-slate — strong contrast on light  */
-  --ink-muted: #635c80;
-  --ink-faint: #938cae;
-  --border: rgba(55, 48, 80, 0.13);
-  --border-strong: rgba(55, 48, 80, 0.22);
-  --accent: #c96f91;         /* slightly deeper rose — reads on a light bg  */
-  --accent-deep: #ab5a82;
-  --accent-soft: rgba(201, 111, 145, 0.15);
-  --glass: rgba(249, 246, 254, 0.62);   /* lavender-tinted glass, not white */
-  --glass-2: rgba(249, 246, 254, 0.42);
-  --glass-border: rgba(55, 48, 80, 0.12);
-  --panel-bg: rgba(248, 244, 253, 0.80); /* tinted frosted panel            */
-  --panel-border: rgba(55, 48, 80, 0.09);
-  --glow-rose: rgba(201, 111, 145, 0.30);
-  --glow-blue: rgba(120, 150, 215, 0.26);
-  --glow-mauve: rgba(204, 142, 177, 0.26);
+  /* Bright "morning" light theme — clean white cards on a soft lavender ground
+     with a warm dawn glow, tuned for real contrast + card separation. */
+  --paper: #e6dff3;          /* soft lavender ground (white cards pop on it) */
+  --paper-rgb: 230, 223, 243;
+  --surface: #ffffff;        /* clean white card — clear separation         */
+  --surface-2: #f1ebfa;      /* faint lavender fill for chips / rows         */
+  --ink: #2a2540;            /* deep plum-slate — strong contrast            */
+  --ink-muted: #534b6e;      /* darker muted — legible body text             */
+  --ink-faint: #756c92;      /* darker faint — legible mono labels           */
+  --border: rgba(48, 42, 74, 0.12);
+  --border-strong: rgba(48, 42, 74, 0.20);
+  --accent: #c2587f;         /* deeper rose — pops + white text reads on it  */
+  --accent-deep: #a4456c;
+  --accent-soft: rgba(194, 88, 127, 0.14);
+  --glass: rgba(255, 255, 255, 0.74);    /* clean frosted glass             */
+  --glass-2: rgba(255, 255, 255, 0.58);
+  --glass-border: rgba(48, 42, 74, 0.12);
+  --panel-bg: rgba(255, 255, 255, 0.86); /* near-opaque white panel         */
+  --panel-border: rgba(48, 42, 74, 0.10);
+  --chip: rgba(255, 255, 255, 0.66);     /* clean white chip on lavender    */
+  --glow-rose: rgba(201, 111, 145, 0.28);
+  --glow-blue: rgba(120, 150, 215, 0.24);
+  --glow-mauve: rgba(204, 142, 177, 0.24);
 }
 
 @theme inline {
@@ -117,13 +121,14 @@ body {
 
 /* LIGHT theme base — soft lavender-white aurora with faint pastel glows */
 :root[data-theme="light"] body {
-  background-color: #e2dbf0;
+  background-color: #e7e0f4;
   background-image:
-    radial-gradient(46% 40% at 82% 4%,  rgba(201, 111, 145, 0.18), transparent 60%), /* rose      */
-    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.18), transparent 62%), /* periwinkle*/
-    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.16), transparent 64%), /* mauve     */
-    radial-gradient(52% 52% at 4% 86%,  rgba(150, 130, 205, 0.13), transparent 62%), /* violet    */
-    linear-gradient(180deg, #ece6f7 0%, #e0d8ef 52%, #ddd4ee 100%);                  /* lavender  */
+    radial-gradient(52% 44% at 76% -2%, rgba(255, 200, 170, 0.32), transparent 60%), /* warm dawn */
+    radial-gradient(46% 40% at 88% 8%,  rgba(201, 111, 145, 0.15), transparent 60%), /* rose      */
+    radial-gradient(56% 46% at 6% 12%,  rgba(120, 150, 215, 0.17), transparent 62%), /* periwinkle*/
+    radial-gradient(60% 55% at 92% 92%, rgba(204, 142, 177, 0.15), transparent 64%), /* mauve     */
+    radial-gradient(52% 52% at 2% 84%,  rgba(150, 130, 205, 0.12), transparent 62%), /* violet    */
+    linear-gradient(180deg, #f3edfb 0%, #e8e1f4 52%, #e4ddf2 100%);                  /* lavender  */
 }
 
 .font-mono {
@@ -266,16 +271,20 @@ html[lang="ar"] .arch-diagram svg text {
    on a light ground. Retune to a soft lavender lift so cards gain real depth
    (separating them from the pale base) without a heavy grey halo. */
 :root[data-theme="light"] .panel {
-  box-shadow: 0 22px 55px -30px rgba(74, 62, 120, 0.34);
+  border-color: rgba(48, 42, 74, 0.10);
+  box-shadow:
+    0 24px 56px -30px rgba(60, 50, 110, 0.40),
+    0 2px 6px -2px rgba(60, 50, 110, 0.10);
 }
+:root[data-theme="light"] .glass,
 :root[data-theme="light"] .glass-2 {
   border-color: var(--glass-border);
 }
 :root[data-theme="light"] .shadow-soft {
-  box-shadow: 0 16px 44px -24px rgba(74, 62, 120, 0.30);
+  box-shadow: 0 16px 40px -22px rgba(60, 50, 110, 0.34);
 }
 :root[data-theme="light"] .shadow-soft-lg {
-  box-shadow: 0 28px 64px -30px rgba(74, 62, 120, 0.36);
+  box-shadow: 0 28px 62px -28px rgba(60, 50, 110, 0.40);
 }
 
 /* gradient ink for headings */

@@ -41,12 +41,13 @@ Exports:
 ### Page composition (`src/app/page.tsx`)
 
 ```
-Hero → About → Stats → Capabilities → SelectedWork → BusinessSystems → Stack → Trajectory → Contact
+Hero → ProjectsDirectory ("Selected work") → ProductProcess → SystemArchitecture
+     → DecisionLog → BusinessSystems → Testimonials → AboutFull → ContactFull
 ```
 
-That sequence is the deliberate hiring read: who, why-they're-good, the proof in numbers, what-I-do-for-you, the product work, the systems work, tools, timeline, how-to-reach.
+That sequence is the deliberate hiring read: who → the product/design work → how she works (process · full-stack architecture · decision log) → the ERP/systems gateway → social proof → the person → how to reach. (The client/brand sites — Pharmacology, Noodlna — are **not** a separate home section anymore; they live in the `/projects` gallery via `projectsIndex` with the `clientSite` flag, which also keeps them off the home "Selected work" preview.)
 
-**Identity:** the site presents Mozn as a **Product & Systems Engineer** — design + mobile + AI + ERP, range as the differentiator. `SelectedWork` is the product/design work (Flutter/AI apps); the ERP/Odoo competence lives in its own focused **`BusinessSystems`** gateway section that links to the dedicated `/odoo` hub page (see below). The `scenes` `track` field is a legacy holdover — every current scene is `"mobile"`, and `SelectedWork` renders a single group. Do **not** re-add an Odoo track to the home grid; ERP work belongs on `/odoo`.
+**Identity:** the site presents Mozn as a **Product & Systems Engineer** — design + mobile + AI + ERP, range as the differentiator. The product/design work (Flutter/AI apps + the brand sites) is the **`ProjectsDirectory`** grid, driven by the `projectsIndex` array in `scenes-content.ts`; the ERP/Odoo competence lives in its own focused **`BusinessSystems`** gateway section that links to the dedicated `/odoo` hub page (see below). Do **not** add ERP entries to the home grid; ERP work belongs on `/odoo`. (Legacy note: the old `scenes` export + `SelectedWork.tsx` are no longer used by the home grid.)
 
 ### Scenes & motion (immersive theme)
 
@@ -92,6 +93,8 @@ The site is an **immersive dark "scene"**: a fixed twilight aurora gradient on `
 
 Raw pastel palette also exposed as `--c-blue #738FBD`, `--c-blue-2 #A8C3D4`, `--c-lav #DBD6DF`, `--c-pink #EEC6C7`, `--c-rose #DB88A4`, `--c-mauve #CC8EB1` — used for glows, gradient rules, and the orb glow.
 
+**Light ("morning") theme.** A full light theme lives under `:root[data-theme="light"]` in `globals.css`; `ThemeToggle` (in the nav) flips `data-theme` on `<html>` and persists it, and an inline script in `layout.tsx` applies the saved choice before paint (no flash). Because the veils, scrims, and panels are all token-driven (`--paper-rgb`, `--panel-bg`, …), the whole site — scenes, washes, cards — adapts with no per-component work. The light palette is **clean white cards (`--surface: #fff`) on a soft lavender ground with a warm dawn glow**, tuned for real contrast and card separation. Fix light-mode issues by editing **only** the `[data-theme="light"]` block — never the dark `:root`. Translucent tag chips use the theme-aware `--chip` token; do **not** hardcode `bg-white/10` (it disappears on the light ground).
+
 **Never hardcode hex values inside components — always go through these tokens.** In particular, the dark base belongs to the theme layer, not components: to dim an illustrated `SceneBackground` so light text reads over it, drop a `.veil-l` / `.veil-bl` / `.veil-v` div (`absolute inset-0 -z-10`) — these are token-driven twilight washes defined in `globals.css`. Do **not** reintroduce inline `rgba(248,244,250,…)` light washes; those were a stale light-theme leftover that rendered near-white text on a near-white wash (invisible) and have been removed. `SceneBackground`'s `scrim` prop is now a twilight (darkening) overlay, not white.
 
 **Theme utilities (globals.css):** `.glass` / `.glass-2` (translucent blur surfaces — the default section/card background), `.shadow-soft` / `.shadow-soft-lg` (pastel-tuned elevation), `.text-gradient` (plum→rose→blue heading fill), and the `.orb*` classes (see below). Motion keyframes are theme-scoped: `t-float`, `t-pulse`, `t-twinkle`, `t-drift`, `t-bob`.
@@ -116,7 +119,7 @@ The pastel mascot (a glowing pearlescent orb with eyes) is the site's recurring 
 
 ### Hero scene (`components/home/Hero.tsx`)
 
-The Hero is a full immersive scene: `public/demo/scene-bg.webp` (pastel retro-futuristic landscape) as a cover background with legibility scrims that **melt into the page** at the bottom, the guide Orb floating above the name, white text with soft shadows, and a scroll cue. The old 3D `ArabesqueAccent.tsx` is **no longer used** (the Orb replaced it) — safe to delete along with `three` / `@react-three/fiber` when convenient.
+The Hero is a full immersive scene: `public/demo/scene-bg.webp` (pastel retro-futuristic landscape) as a cover background with legibility scrims that **melt into the page** at the bottom, the guide Orb floating above the name, white text with soft shadows, and a scroll cue.
 
 ### `/demo` reference page (`src/app/demo/`)
 
@@ -132,6 +135,8 @@ The site uses Next.js's App Router file-based asset conventions for icons and OG
 
 Each appears as its own route at build time (`/icon.png`, `/apple-icon.png`, `/opengraph-image.png`) — that's expected. The current assets are the user's own monogram + OG card designs and should be replaced through the same paths if she updates them.
 
+**All raster assets are WebP.** Everything under `public/` (scenes, screenshots, orb, demo, work shots) was converted from PNG/JPG to WebP for size (`public/` went ≈63MB → ~2MB). To add an image: drop the source under `public/<dir>/` and run `node scripts/to-webp.cjs` (caps oversized exports, preserves alpha, deletes the original), then reference it as `.webp`. The `src/app/` route-convention icons above intentionally stay PNG.
+
 ### Smooth scroll & anchors
 
 `src/hooks/useLenis.ts` initializes Lenis smooth scroll AND intercepts in-page anchor clicks (`<a href="#...">`) to do a controlled `lenis.scrollTo()`. Without that interception, native anchor jumps would feel abrupt.
@@ -144,4 +149,4 @@ All theme motion is **pure CSS** (the `t-*` keyframes) and is globally neutraliz
 
 ### Dependencies note
 
-The 3D stack is now **unused**: `three`, `@react-three/fiber`, `@react-three/drei`, and `@react-three/postprocessing` were only needed by `ArabesqueAccent.tsx`, which the Orb replaced. Safe to uninstall all four (and delete `ArabesqueAccent.tsx`). `gsap` is also listed but unused; `lenis` is used by `src/hooks/useLenis.ts`.
+Dependencies are intentionally lean: `framer-motion` (used sparingly), `lenis` (`src/hooks/useLenis.ts`), `next`, and `react`/`react-dom`. The old 3D stack (`three`, `@react-three/fiber`/`drei`/`postprocessing`), `gsap`, and `ArabesqueAccent.tsx` have all been **removed** (the Orb replaced the 3D accent).

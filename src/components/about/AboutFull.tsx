@@ -59,7 +59,7 @@ export function AboutFull() {
                 {openTo.map((item) => (
                   <li
                     key={item}
-                    className="lang-en rounded-full border border-[var(--border-strong)] bg-white/10 px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur"
+                    className="lang-en rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur"
                   >
                     {item}
                   </li>
@@ -67,7 +67,7 @@ export function AboutFull() {
                 {openToAr.map((item) => (
                   <li
                     key={item}
-                    className="lang-ar rounded-full border border-[var(--border-strong)] bg-white/10 px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur"
+                    className="lang-ar rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur"
                   >
                     {item}
                   </li>
@@ -173,7 +173,7 @@ export function AboutFull() {
                     {group.items.map((t, ti) => (
                       <li
                         key={t}
-                        className="rounded-full border border-[var(--border-strong)] bg-white/10 px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur"
+                        className="rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur"
                       >
                         <T en={t} ar={group.itemsAr?.[ti] ?? t} />
                       </li>

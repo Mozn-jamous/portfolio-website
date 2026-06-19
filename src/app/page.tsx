@@ -4,7 +4,6 @@ import { ProductProcess } from "@/components/home/ProductProcess";
 import { SystemArchitecture } from "@/components/home/SystemArchitecture";
 import { DecisionLog } from "@/components/home/DecisionLog";
 import { BusinessSystems } from "@/components/home/BusinessSystems";
-import { ClientSites } from "@/components/home/ClientSites";
 import { Testimonials } from "@/components/home/Testimonials";
 import { AboutFull } from "@/components/about/AboutFull";
 import { ContactFull } from "@/components/contact/ContactFull";
@@ -18,7 +17,6 @@ export default function Home() {
       <SystemArchitecture />
       <DecisionLog />
       <BusinessSystems />
-      <ClientSites />
       <Testimonials />
       <AboutFull />
       <ContactFull />

@@ -247,83 +247,6 @@ export const businessSystemsContent = {
 };
 
 /* ------------------------------------------------------------ */
-/*  Client & brand websites — a third facet of range.            */
-/*  Vanilla HTML/CSS/JS brand sites designed & built for real     */
-/*  clients (NOT the Flutter/AI product grid, NOT ERP). Each      */
-/*  links to its own case study under /projects/<slug>.           */
-/*  Honesty note: for client sites, credit is design + front-end  */
-/*  build only — never claim a client's own credentials/metrics.  */
-/* ------------------------------------------------------------ */
-
-export type ClientSite = {
-  name: string;
-  nameAr?: string;
-  /** Small eyebrow — discipline · domain. */
-  eyebrow: string;
-  eyebrowAr: string;
-  /** One-line description of the site + my role. */
-  body: string;
-  bodyAr: string;
-  role: string;
-  roleAr: string;
-  year: string;
-  tags: string[];
-  /** Screenshot used as the card cover (in /public). */
-  image: string;
-  /** Case-study link. */
-  href: string;
-};
-
-export const clientSitesContent: {
-  eyebrow: string;
-  eyebrowAr: string;
-  heading: string;
-  headingAr: string;
-  intro: string;
-  introAr: string;
-  sites: ClientSite[];
-} = {
-  eyebrow: "Client & brand websites",
-  eyebrowAr: "مواقع العلامات والعملاء",
-  heading: "I design and build the brand sites, too.",
-  headingAr: "أصمّم وأبني مواقع العلامات أيضاً.",
-  intro:
-    "Beyond apps and systems, I take brands online — designed and built from scratch in vanilla HTML/CSS/JS, Arabic-first and fast. Two recent client sites:",
-  introAr:
-    "إلى جانب التطبيقات والأنظمة، آخذ العلامات إلى الإنترنت — مُصمَّمة ومبنيّة من الصفر بـHTML/CSS/JS صِرف، عربيّة أولاً وسريعة. موقعان حديثان لعميلين:",
-  sites: [
-    {
-      name: "Pharmacology",
-      eyebrow: "Web · Design System · Bilingual",
-      eyebrowAr: "ويب · نظام تصميم · ثنائي اللغة",
-      body: "A complete redesign and from-scratch rebuild of a clinical-nutrition brand — 25 bilingual (Arabic-first, RTL) pages on one locked design-token system, with Supabase-wired forms.",
-      bodyAr:
-        "إعادة تصميمٍ كاملة وبناءٍ من الصفر لعلامة تغذيةٍ سريرية — 25 صفحة ثنائية اللغة (عربيّ أولاً، RTL) على نظام رموز تصميمٍ واحد محكم، بنماذج موصولة بـSupabase.",
-      role: "Designer + Front-end Developer",
-      roleAr: "مصمّمة + مطوّرة واجهة",
-      year: "2026",
-      tags: ["HTML/CSS/JS", "Design tokens", "Bilingual RTL", "Supabase"],
-      image: "/work/pharmacology/home.webp",
-      href: "/projects/pharmacology",
-    },
-    {
-      name: "Noodlna",
-      eyebrow: "Web · Brand · B2B",
-      eyebrowAr: "ويب · علامة · B2B",
-      body: "A food brand's storefront for Syria Macarna — an Arabic-first consumer site plus a separate B2B wholesale/export funnel, built in vanilla HTML/CSS/JS and deployed on Vercel.",
-      bodyAr:
-        "واجهة متجرٍ لعلامة سيريا ماكارنا الغذائية — موقع مستهلكٍ عربيّ أولاً وقُمع B2B منفصل للجملة والتصدير، مبنيّ بـHTML/CSS/JS صِرف ومنشور على Vercel.",
-      role: "Designer + Front-end Developer",
-      roleAr: "مصمّمة + مطوّرة واجهة",
-      year: "2026",
-      tags: ["HTML/CSS/JS", "Arabic RTL", "B2B funnel", "Vercel"],
-      image: "/work/noodlna/home.webp",
-      href: "/projects/noodlna",
-    },
-  ],
-};
-
-/* ------------------------------------------------------------ */
 /*  System architecture — the interactive full-stack viewer.     */
 /*  Every layer + example is drawn from real shipped work        */
 /*  (see the case-study diagrams in ArchitectureDiagram.tsx).    */
@@ -841,6 +764,10 @@ export type ProjectIndexEntry = {
   summaryAr?: string;
   /** Optional mockup image path (else a labelled Figure slot renders). */
   cover?: string;
+  /** Client/brand website (vanilla HTML/CSS/JS). Shown in the full /projects
+   *  gallery, but filtered OUT of the home "Selected work" grid so the home
+   *  preview stays focused on the core product apps. */
+  clientSite?: boolean;
 };
 
 export const projectsIndex: ProjectIndexEntry[] = [
@@ -903,6 +830,38 @@ export const projectsIndex: ProjectIndexEntry[] = [
       "A multi-tenant clinics platform — three Flutter apps over a NestJS backend. Designed the screens and tested it, including data isolation between clinics.",
     summaryAr:
       "منصّة عيادات متعدّدة المستأجرين — ثلاثة تطبيقات Flutter على خلفية NestJS. صمّمتُ الشاشات واختبرتُها، بما في ذلك عزل البيانات بين العيادات.",
+  },
+  {
+    name: "Pharmacology",
+    href: "/projects/pharmacology",
+    year: "2026",
+    role: "Designer + Front-end Developer",
+    roleAr: "مصمّمة + مطوّرة واجهة",
+    industry: "Clinical nutrition · Web",
+    industryAr: "تغذية سريرية · ويب",
+    impact: "25 bilingual RTL pages on one locked design-token system",
+    impactAr: "25 صفحة ثنائية اللغة (RTL) على نظام رموز تصميم واحد محكم",
+    summary:
+      "A complete redesign and from-scratch rebuild of a clinical-nutrition brand in vanilla HTML/CSS/JS — Arabic-first, bilingual, with Supabase-wired forms.",
+    summaryAr:
+      "إعادة تصميم كاملة وبناء من الصفر لعلامة تغذية سريرية بـHTML/CSS/JS صِرف — عربيّة أولاً، ثنائية اللغة، بنماذج موصولة بـSupabase.",
+    clientSite: true,
+  },
+  {
+    name: "Noodlna",
+    href: "/projects/noodlna",
+    year: "2026",
+    role: "Designer + Front-end Developer",
+    roleAr: "مصمّمة + مطوّرة واجهة",
+    industry: "Food & beverage · Web",
+    industryAr: "أغذية ومشروبات · ويب",
+    impact: "Consumer storefront + a separate B2B export funnel",
+    impactAr: "واجهة متجر للمستهلك + قُمع B2B منفصل للتصدير",
+    summary:
+      "A food brand's Arabic-first storefront for Syria Macarna plus a separate B2B wholesale/export funnel, built in vanilla HTML/CSS/JS.",
+    summaryAr:
+      "واجهة متجر عربيّة أولاً لعلامة سيريا ماكارنا الغذائية مع قُمع B2B منفصل للجملة والتصدير، مبنيّة بـHTML/CSS/JS صِرف.",
+    clientSite: true,
   },
   // NOTE: ERP/Odoo work (Techno Solution, Burgasm, Smart Expense, Takhrjy) is
   // kept SEPARATE from this product/design grid — it lives on the /odoo hub, NOT

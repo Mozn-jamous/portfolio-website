@@ -211,7 +211,7 @@ export function Credentials({
                       key={r.href}
                       href={r.href}
                       onClick={() => setActive(null)}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-strong)] bg-white/10 px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 text-sm text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]"
                     >
                       <T en={r.label} ar={r.labelAr ?? r.label} />
                       <span aria-hidden className="rtl:-scale-x-100">→</span>
