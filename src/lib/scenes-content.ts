@@ -8,16 +8,16 @@
  *
  *  HOW TO ADD THINGS
  *  -----------------
- *  · New project on the home grid:
- *      → push to `scenes` (give it an `id`, `name`, `eyebrow`,
- *        `body`, `tags`, and optionally `cta` if it has a case
- *        study or external link).
+ *  · New project in the work gallery (/projects + home preview):
+ *      → push to `projectsIndex` (name, href, year, role, industry,
+ *        impact, summary + Arabic siblings). Set `clientSite: true`
+ *        for a brand/client site to keep it off the home preview.
  *
  *  · New deep-dive case study:
  *      → create `src/app/projects/<slug>/page.tsx` that uses
  *        `CaseStudyLayout` from `src/components/case-study/`.
- *      → set `cta: { label: "Read case study",
- *                     href: "/projects/<slug>" }` on the scene.
+ *      → point the matching `projectsIndex` entry's `href` to
+ *        `/projects/<slug>`.
  *
  *  · New process step:
  *      → push to `processContent.steps` (step / title / body / example).
@@ -33,31 +33,6 @@
  *  · Adjust the bio or "Open to" list:
  *      → edit `aboutContent` below.
  * ============================================================ */
-
-export type SceneTag = {
-  label: string;
-  variant?: "default" | "highlight";
-};
-
-export type SceneContent = {
-  /** Used for anchor scroll target (`#<id>`). */
-  id: string;
-  /** Which track this belongs to — splits the work grid into two groups. */
-  track: "mobile" | "odoo";
-  /** Project name shown as card heading — e.g. "BloomBelly". */
-  name: string;
-  /** Year or year range — shown top-right of the card. */
-  year?: string;
-  /** Small uppercase eyebrow — e.g. "Mobile · Healthcare". */
-  eyebrow: string;
-  /** One-line tagline shown under the name. Keep it short. */
-  tagline: string;
-  /** Two-or-three-line description shown on the card. */
-  body: string;
-  tags: SceneTag[];
-  /** Optional CTA — case study link or external (GitHub etc). */
-  cta?: { label: string; href: string; external?: boolean };
-};
 
 /* ------------------------------------------------------------ */
 /*  Hero — top of the home page                                  */
@@ -562,76 +537,6 @@ export const decisionLog: {
 };
 
 /* ------------------------------------------------------------ */
-/*  Selected work — project cards                                */
-/*  Order = display order. Newest first reads as momentum.       */
-/* ------------------------------------------------------------ */
-
-export const scenes: SceneContent[] = [
-  {
-    id: "scene-flutter",
-    track: "mobile",
-    name: "Mademoiselle — Santa Media",
-    year: "2026 — Present",
-    eyebrow: "UI/UX + Flutter · Design System",
-    tagline: "A stalled FlutterFlow product, redesigned and rebuilt natively in Flutter.",
-    body: "A FlutterFlow prototype had stalled in production with no clear path forward. I started in Figma — a full UI redesign and a bilingual Design System of 26+ components across three themes and both writing directions — then rebuilt the app natively in Flutter. Now active and shipping.",
-    tags: [
-      { label: "Figma", variant: "highlight" },
-      { label: "Flutter" },
-      { label: "Design System" },
-      { label: "RTL" },
-      { label: "AI Integration" },
-    ],
-    cta: {
-      label: "Read case study",
-      href: "/projects/mademoiselle",
-    },
-  },
-  {
-    id: "scene-bloombelly",
-    track: "mobile",
-    name: "BloomBelly",
-    year: "2025",
-    eyebrow: "UI/UX + AI · Arabic-first",
-    tagline: "Arabic-first maternal health — designed in Figma, three AI models behind one app.",
-    body: "Arabic-speaking mothers had no AI health guide in their language. I mapped four user journeys in Figma, designed Arabic-first with full RTL, then integrated three AI models behind one Flutter interface — calibrated to refuse rather than hallucinate on health questions.",
-    tags: [
-      { label: "Figma", variant: "highlight" },
-      { label: "Flutter" },
-      { label: "Flask" },
-      { label: "Gemini" },
-      { label: "LoRA" },
-      { label: "RTL" },
-    ],
-    cta: {
-      label: "Read case study",
-      href: "/projects/bloombelly",
-    },
-  },
-  {
-    id: "scene-careconnect",
-    track: "mobile",
-    name: "CareConnect",
-    year: "2024",
-    eyebrow: "UI/UX + Mobile · Full-stack",
-    tagline: "Designed and built for three distinct audiences — one Supabase backend, three Flutter apps.",
-    body: "Childcare platforms fail by building one interface for three completely different users. Designed three separate Figma files — one per audience — each built around how that person actually thinks. Three focused apps, one shared Supabase backend, access enforced at the database layer.",
-    tags: [
-      { label: "Figma", variant: "highlight" },
-      { label: "Flutter" },
-      { label: "Supabase" },
-      { label: "PostgreSQL" },
-      { label: "RLS" },
-      { label: "IEEE 830" },
-    ],
-    cta: {
-      label: "Read case study",
-      href: "/projects/careconnect",
-    },
-  },
-];
-
-/* ------------------------------------------------------------ */
 /*  Education & certifications                                    */
 /*  Replaces the old growing milestone timeline. Education is     */
 /*  fixed; certifications is a bounded, naturally-short list.     */
@@ -914,9 +819,10 @@ export const aboutPageContent = {
   /** Tools grouped by area — rendered as chips, never progress bars. */
   tools: [
     { area: "Design", areaAr: "تصميم", items: ["Figma", "Design Systems", "Prototyping", "Arabic UX", "RTL", "Accessibility"], itemsAr: ["Figma", "أنظمة تصميم", "نماذج أولية", "تجربة عربية", "RTL", "إتاحة"] },
-    { area: "Mobile", areaAr: "جوال", items: ["Flutter", "Dart", "iOS + Android"], itemsAr: ["Flutter", "Dart", "iOS + Android"] },
-    { area: "Backend", areaAr: "خادم", items: ["Python", "Flask", "Supabase", "PostgreSQL", "REST APIs"], itemsAr: ["Python", "Flask", "Supabase", "PostgreSQL", "واجهات REST"] },
-    { area: "AI", areaAr: "ذكاء اصطناعي", items: ["Google Gemini", "LoRA-tuned models", "Random Forest"], itemsAr: ["Google Gemini", "نماذج مضبوطة بـLoRA", "Random Forest"] },
+    { area: "Mobile", areaAr: "جوال", items: ["Flutter", "Dart", "iOS + Android", "Capacitor"], itemsAr: ["Flutter", "Dart", "iOS + Android", "Capacitor"] },
+    { area: "Web", areaAr: "ويب", items: ["Vue 3", "HTML/CSS/JS", "Tailwind"], itemsAr: ["Vue 3", "HTML/CSS/JS", "Tailwind"] },
+    { area: "Backend", areaAr: "خادم", items: ["Python", "Flask", "Supabase", "PostgreSQL", "PL/pgSQL", "REST APIs"], itemsAr: ["Python", "Flask", "Supabase", "PostgreSQL", "PL/pgSQL", "واجهات REST"] },
+    { area: "AI", areaAr: "ذكاء اصطناعي", items: ["Google Gemini", "LoRA-tuned models", "PyTorch", "Hugging Face", "Random Forest"], itemsAr: ["Google Gemini", "نماذج مضبوطة بـLoRA", "PyTorch", "Hugging Face", "Random Forest"] },
     { area: "Systems", areaAr: "أنظمة", items: ["Odoo 19", "ORM", "QWeb", "OWL", "POS · HR · Payroll"], itemsAr: ["Odoo 19", "ORM", "QWeb", "OWL", "نقاط بيع · موارد بشرية · رواتب"] },
   ],
 };

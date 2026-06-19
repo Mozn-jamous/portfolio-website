@@ -323,14 +323,14 @@ export default function OdooPage() {
               <article className="mb-10">
                 <h3 className="text-xl font-medium tracking-tight text-[var(--ink)]">
                   <T
-                    en="Takhrjy — a non-Odoo ERP (design & verification)"
-                    ar="Takhrjy — نظام ERP بغير Odoo (تصميم وتحقّق)"
+                    en="Takhrjy — a non-Odoo ERP (design & front-end)"
+                    ar="Takhrjy — نظام ERP بغير Odoo (تصميم وواجهة)"
                   />
                 </h3>
                 <p className="mt-3">
                   <T
-                    en="Not every ERP is Odoo. Takhrjy is a Vue system a team built for a custom graduation-gifts business — a seven-role permission model, a six-stage order pipeline, retail and wholesale, and local plus international fulfillment. Here my role was design and testing: working from the team's requirements I designed the system's screens, and I was the tester who verified it worked before launch."
-                    ar="ليس كلّ نظام ERP هو Odoo. Takhrjy نظامٌ بُني بـVue من قِبل فريق لمشروع هدايا تخرّجٍ مخصّص — نموذج صلاحياتٍ بسبعة أدوار، وخطّ طلباتٍ بستّ مراحل، وبيعٌ بالتجزئة والجملة، وتنفيذٌ محلّي ودولي. هنا كان دوري التصميم والاختبار: انطلاقاً من متطلبات الفريق صمّمتُ شاشات النظام، وكنتُ المختبِرة التي تحقّقت من أنه يعمل قبل الإطلاق."
+                    en="Not every ERP is Odoo. Takhrjy is a Vue system a team built for a custom graduation-gifts business — a seven-role permission model, a six-stage order pipeline, retail and wholesale, and local plus international fulfillment. Here the front-end was mine: working from the team's requirements I designed the system's screens and built them in Vue, while a teammate handled the backend."
+                    ar="ليس كلّ نظام ERP هو Odoo. Takhrjy نظامٌ بُني بـVue من قِبل فريق لمشروع هدايا تخرّجٍ مخصّص — نموذج صلاحياتٍ بسبعة أدوار، وخطّ طلباتٍ بستّ مراحل، وبيعٌ بالتجزئة والجملة، وتنفيذٌ محلّي ودولي. هنا كانت الواجهة الأمامية من نصيبي: انطلاقاً من متطلبات الفريق صمّمتُ شاشات النظام وبنيتُها بـVue، بينما تكفّل زميلٌ بالـ backend."
                   />
                 </p>
                 <p className="mt-4 font-mono text-[0.8rem]">

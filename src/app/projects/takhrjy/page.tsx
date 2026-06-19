@@ -13,20 +13,20 @@ import {
 import { T } from "@/components/i18n/T";
 
 const DESCRIPTION =
-  "Designer and QA tester on a Vue ERP for a custom graduation-gifts business — a seven-role permission model, a six-stage order pipeline, retail + wholesale, and local + international fulfillment. Working from the team's requirements, I designed the screens and tested the system before it shipped.";
+  "Designer and front-end developer on a Vue ERP for a custom graduation-gifts business — a seven-role permission model, a six-stage order pipeline, retail + wholesale, and local + international fulfillment. Working from the team's requirements, I designed the screens and built the Vue front-end.";
 
 export const metadata: Metadata = {
-  title: "Takhrjy — graduation-gifts ERP (design & QA) — Mozn Jamous",
+  title: "Takhrjy — graduation-gifts ERP (design & front-end) — Mozn Jamous",
   description: DESCRIPTION,
   openGraph: {
-    title: "Takhrjy — a seven-role ERP, designed and tested",
+    title: "Takhrjy — a seven-role ERP, designed and built",
     description: DESCRIPTION,
     type: "article",
     url: "https://moznjamous.com/projects/takhrjy",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Takhrjy — a seven-role ERP, designed and tested",
+    title: "Takhrjy — a seven-role ERP, designed and built",
     description: DESCRIPTION,
   },
 };
@@ -39,40 +39,40 @@ export default function TakhrjyPage() {
           name: "Takhrjy — graduation-gifts ERP",
           description: DESCRIPTION,
           path: "/projects/takhrjy",
-          year: "2025",
+          year: "2026",
         })}
       />
       <CaseStudyLayout
         meta={{
-          eyebrow: <T en="ERP · Vue · Design & QA" ar="ERP · Vue · تصميم وضمان جودة" />,
+          eyebrow: <T en="ERP · Vue · Design & Build" ar="ERP · Vue · تصميم وبناء" />,
           status: <T en="Team build" ar="بناء جماعي" />,
           title: (
             <T
-              en="Takhrjy — a seven-role ERP, designed and tested."
-              ar="Takhrjy — نظام ERP بسبعة أدوار، مُصمَّم ومُختبَر."
+              en="Takhrjy — a seven-role ERP, designed and built."
+              ar="Takhrjy — نظام ERP بسبعة أدوار، مُصمَّم ومبنيّ."
             />
           ),
           lede: (
             <T
-              en="An ERP a team built for a custom graduation-gifts business — personalized boxes that have to be produced, fulfilled locally or internationally, sold retail and wholesale, and accounted for. Two roles were mine: working from the team's requirements, I designed the system's screens, and I was the tester who made sure everything worked before it shipped."
-              ar="نظام ERP بناه فريقٌ لمشروع هدايا تخرّجٍ مخصّص — صناديق مُخصّصة يجب إنتاجها، وتسليمها محليّاً أو دولياً، وبيعها بالتجزئة والجملة، وقيدها محاسبياً. كان لي دوران: انطلاقاً من متطلبات الفريق، صمّمتُ شاشات النظام، وكنتُ المختبِرة التي تأكّدت أن كل شيء يعمل قبل الإطلاق."
+              en="An ERP a team built for a custom graduation-gifts business — personalized boxes that have to be produced, fulfilled locally or internationally, sold retail and wholesale, and accounted for. The front-end was mine: working from the team's requirements, I designed the system's screens and built them in Vue, while a teammate handled the backend."
+              ar="نظام ERP بناه فريقٌ لمشروع هدايا تخرّجٍ مخصّص — صناديق مُخصّصة يجب إنتاجها، وتسليمها محليّاً أو دولياً، وبيعها بالتجزئة والجملة، وقيدها محاسبياً. كانت الواجهة الأمامية من نصيبي: انطلاقاً من متطلبات الفريق، صمّمتُ شاشات النظام وبنيتُها بـVue، بينما تكفّل زميلٌ بالـ backend."
             />
           ),
-          year: "2025",
-          role: <T en="Designer + QA tester" ar="مصمّمة + مختبِرة جودة" />,
+          year: "2026",
+          role: <T en="Designer + Front-end Developer" ar="مصمّمة + مطوّرة واجهة" />,
           stack: [
             "Vue",
             "UI design",
             "Figma",
-            "Manual QA",
-            "Test cases",
+            "Front-end architecture",
+            "Role-based UI",
           ],
         }}
         metrics={[
-          { value: "7", label: <T en="User roles — screens designed for each" ar="أدوار مستخدمين — صُمّمت شاشات لكلٍّ منها" /> },
+          { value: "7", label: <T en="User roles — screens designed & built for each" ar="أدوار مستخدمين — صُمّمت وبُنيت شاشات لكلٍّ منها" /> },
           { value: "6", label: <T en="Order-pipeline stages" ar="مراحل خطّ الطلبات" /> },
           { value: <T en="Retail + B2B" ar="تجزئة + جملة" />, label: <T en="Plus local & international fulfillment" ar="إضافةً للتنفيذ المحلّي والدولي" /> },
-          { value: <T en="Tester" ar="مختبِرة" />, label: <T en="Verified the system before launch" ar="تحقّقتُ من النظام قبل الإطلاق" /> },
+          { value: <T en="Front-end" ar="الواجهة" />, label: <T en="Designed & built in Vue" ar="صُمّمت وبُنيت بـVue" /> },
         ]}
         sections={[
           {
@@ -82,16 +82,16 @@ export default function TakhrjyPage() {
               <>
                 <Lead>
                   <T
-                    en="Takhrjy runs a business that sells personalized graduation gift boxes. Every order is a custom product — embroidery, photos, options — that has to be made, then shipped, then booked. The system models that whole operation across seven roles. I joined as the designer and the tester: I turned the team's requirements into the actual screens, and I verified the system worked."
-                    ar="يدير Takhrjy مشروعاً يبيع صناديق هدايا تخرّجٍ مُخصّصة. كلّ طلبٍ منتجٌ مُخصّص — تطريز، صور، خيارات — يجب صناعته ثم شحنه ثم قيده محاسبياً. يُنمذج النظام هذه العملية كاملةً عبر سبعة أدوار. انضممتُ كمصمّمةٍ ومختبِرة: حوّلتُ متطلبات الفريق إلى الشاشات الفعلية، وتحقّقتُ من أن النظام يعمل."
+                    en="Takhrjy runs a business that sells personalized graduation gift boxes. Every order is a custom product — embroidery, photos, options — that has to be made, then shipped, then booked. The system models that whole operation across seven roles. I joined as the designer and front-end developer: I turned the team's requirements into the actual screens and built them in Vue."
+                    ar="يدير Takhrjy مشروعاً يبيع صناديق هدايا تخرّجٍ مُخصّصة. كلّ طلبٍ منتجٌ مُخصّص — تطريز، صور، خيارات — يجب صناعته ثم شحنه ثم قيده محاسبياً. يُنمذج النظام هذه العملية كاملةً عبر سبعة أدوار. انضممتُ كمصمّمةٍ ومطوّرة واجهة: حوّلتُ متطلبات الفريق إلى الشاشات الفعلية وبنيتُها بـVue."
                   />
                 </Lead>
                 <FactGrid
                   items={[
-                    { label: <T en="My role" ar="دوري" />, value: <T en="Designer + QA tester" ar="مصمّمة + مختبِرة جودة" /> },
-                    { label: <T en="Team" ar="الفريق" />, value: <T en="Collaborative build" ar="بناء تعاوني" /> },
+                    { label: <T en="My role" ar="دوري" />, value: <T en="Designer + Front-end Developer" ar="مصمّمة + مطوّرة واجهة" /> },
+                    { label: <T en="Team" ar="الفريق" />, value: <T en="Collaborative — I owned the front-end" ar="تعاوني — الواجهة من نصيبي" /> },
                     { label: <T en="Domain" ar="المجال" />, value: <T en="Custom graduation gifts" ar="هدايا تخرّج مخصّصة" /> },
-                    { label: <T en="Frontend" ar="الواجهة" />, value: "Vue" },
+                    { label: <T en="Frontend" ar="الواجهة" />, value: <T en="Vue — designed & built by me" ar="Vue — صُمّمت وبُنيت بيدي" /> },
                     { label: <T en="Scope" ar="النطاق" />, value: <T en="7 roles · retail + wholesale" ar="7 أدوار · تجزئة + جملة" /> },
                     { label: <T en="Fulfillment" ar="التنفيذ" />, value: <T en="Local + international" ar="محلّي + دولي" /> },
                   ]}
@@ -111,8 +111,8 @@ export default function TakhrjyPage() {
               <>
                 <p>
                   <T
-                    en="Selling a personalized product isn't one transaction — it's a chain. An order comes in with custom details (embroidery text, photos, options). It has to be priced so the margin actually holds. It goes into production. Then it ships — by local delivery or international courier. And every step has to land in the books. The two product lines, retail and wholesale orders, and two fulfillment paths all run through the same system — which is exactly why it needed clear screens and careful testing."
-                    ar="بيع منتجٍ مُخصّص ليس معاملةً واحدة — بل سلسلة. يصل الطلب بتفاصيل مخصّصة (نصّ تطريز، صور، خيارات). يجب تسعيره بحيث يصمد الهامش فعلاً. ثم يدخل الإنتاج. ثم يُشحَن — بتوصيلٍ محلّي أو بريدٍ دولي. وكل خطوة يجب أن تُسجَّل في الدفاتر. خطّا المنتجات، وطلبات التجزئة والجملة، ومساري التنفيذ، كلّها تمرّ عبر النظام نفسه — وهذا بالضبط سبب حاجته إلى شاشاتٍ واضحة واختبارٍ دقيق."
+                    en="Selling a personalized product isn't one transaction — it's a chain. An order comes in with custom details (embroidery text, photos, options). It has to be priced so the margin actually holds. It goes into production. Then it ships — by local delivery or international courier. And every step has to land in the books. The two product lines, retail and wholesale orders, and two fulfillment paths all run through the same system — which is exactly why it needed clear screens and a front-end that could hold all of it together."
+                    ar="بيع منتجٍ مُخصّص ليس معاملةً واحدة — بل سلسلة. يصل الطلب بتفاصيل مخصّصة (نصّ تطريز، صور، خيارات). يجب تسعيره بحيث يصمد الهامش فعلاً. ثم يدخل الإنتاج. ثم يُشحَن — بتوصيلٍ محلّي أو بريدٍ دولي. وكل خطوة يجب أن تُسجَّل في الدفاتر. خطّا المنتجات، وطلبات التجزئة والجملة، ومساري التنفيذ، كلّها تمرّ عبر النظام نفسه — وهذا بالضبط سبب حاجته إلى شاشاتٍ واضحة وواجهةٍ تجمع ذلك كلّه."
                   />
                 </p>
               </>
@@ -125,8 +125,8 @@ export default function TakhrjyPage() {
               <>
                 <p>
                   <T
-                    en="The system is organized around who's using it — each role sees a different slice of the same operation. Working from the requirements I was given, I designed the screens for each of these roles so that every user got the view their job needed."
-                    ar="النظام منظَّمٌ حول من يستخدمه — كلّ دورٍ يرى شريحةً مختلفة من العملية نفسها. انطلاقاً من المتطلبات التي أُعطيت لي، صمّمتُ شاشات كلّ دورٍ من هذه الأدوار بحيث يحصل كلّ مستخدمٍ على العرض الذي تحتاجه وظيفته."
+                    en="The system is organized around who's using it — each role sees a different slice of the same operation. Working from the requirements I was given, I designed and built the screens for each of these roles so that every user got the view their job needed."
+                    ar="النظام منظَّمٌ حول من يستخدمه — كلّ دورٍ يرى شريحةً مختلفة من العملية نفسها. انطلاقاً من المتطلبات التي أُعطيت لي، صمّمتُ وبنيتُ شاشات كلّ دورٍ من هذه الأدوار بحيث يحصل كلّ مستخدمٍ على العرض الذي تحتاجه وظيفته."
                   />
                 </p>
                 <FactGrid
@@ -142,7 +142,7 @@ export default function TakhrjyPage() {
                 />
                 <Figure
                   label="Role screens"
-                  caption={<T en="Screens designed for the role-based views — export to add" ar="شاشات صُمّمت للعروض حسب الدور — يُضاف التصدير لاحقاً" />}
+                  caption={<T en="Screens designed & built for the role-based views — export to add" ar="شاشات صُمّمت وبُنيت للعروض حسب الدور — يُضاف التصدير لاحقاً" />}
                 />
               </>
             ),
@@ -166,26 +166,26 @@ export default function TakhrjyPage() {
             ),
           },
           {
-            kicker: <T en="Testing" ar="الاختبار" />,
-            heading: <T en="My job: make sure it all worked." ar="مهمّتي: التأكّد أن كل شيء يعمل." />,
+            kicker: <T en="Building it" ar="البناء" />,
+            heading: <T en="Turning seven role-views into a working Vue front-end." ar="تحويل عروض الأدوار السبعة إلى واجهة Vue تعمل." />,
             body: (
               <>
                 <Lead>
                   <T
-                    en="Alongside the design, I was the tester on the project — the person responsible for confirming the system actually did what it was supposed to before real users touched it."
-                    ar="إلى جانب التصميم، كنتُ مختبِرة المشروع — المسؤولة عن التأكّد من أن النظام يفعل فعلاً ما يُفترض به قبل أن يلمسه مستخدمون حقيقيون."
+                    en="Beyond the design, I built the front-end — the actual Vue screens every role uses, wired to the team's backend."
+                    ar="إلى جانب التصميم، بنيتُ الواجهة الأمامية — شاشات Vue الفعلية التي يستخدمها كلّ دور، موصولةً بـ backend الفريق."
                   />
                 </Lead>
                 <p>
                   <T
-                    en="I worked through the system to check that the everyday flows held up: that each role reached the screens and actions its job required, that orders moved through the six stages correctly, that the pricing calculator returned the right numbers, and that the wholesale cap and the read-only accountant role behaved as specified. Where something didn't match the requirements, I flagged it to be fixed."
-                    ar="عملتُ خلال النظام للتأكّد من صمود التدفّقات اليومية: أن يصل كلّ دورٍ إلى الشاشات والإجراءات التي تتطلّبها وظيفته، وأن تتحرّك الطلبات عبر المراحل الستّ بشكلٍ صحيح، وأن تُعيد حاسبة التسعير الأرقام الصحيحة، وأن يتصرّف سقف الجملة ودور المحاسب للقراءة فقط كما هو محدّد. وحيثما لم يطابق شيءٌ المتطلبات، كنتُ أُبلّغ عنه ليُصلَح."
+                    en="I implemented the role-based views, the six-stage order-pipeline UI, the pricing-calculator screen, and the retail and wholesale flows — making sure each role reached the screens and actions its job required, the calculator returned the right numbers, and the wholesale cap and read-only accountant view behaved as specified. Building it also meant verifying the everyday flows held together before real users touched it."
+                    ar="نفّذتُ العروض حسب الدور، وواجهة خطّ الطلبات بمراحله الستّ، وشاشة حاسبة التسعير، وتدفّقات التجزئة والجملة — مع التأكّد أن يصل كلّ دورٍ إلى الشاشات والإجراءات التي تتطلّبها وظيفته، وأن تُعيد الحاسبة الأرقام الصحيحة، وأن يتصرّف سقف الجملة ودور المحاسب للقراءة فقط كما هو محدّد. وبناؤه عنى أيضاً التحقّق من صمود التدفّقات اليومية قبل أن يلمسه مستخدمون حقيقيون."
                   />
                 </p>
-                <Callout kicker={<T en="Why a tester matters here" ar="لماذا يهمّ وجود مختبِرة هنا" />}>
+                <Callout kicker={<T en="Why the front-end mattered here" ar="لماذا تهمّ الواجهة هنا" />}>
                   <T
-                    en="In a system where seven roles share one order pipeline, a small break in the wrong place is the difference between a smooth handoff and an order lost between departments. Testing is what catches that before a customer does."
-                    ar="في نظامٍ تتشارك فيه سبعة أدوار خطّ طلباتٍ واحداً، عطلٌ صغير في المكان الخطأ هو الفرق بين تسليمٍ سلس وطلبٍ يضيع بين الأقسام. الاختبار هو ما يلتقط ذلك قبل أن يلتقطه العميل."
+                    en="When seven roles share one order pipeline, the interface is what keeps each handoff clear — so an order never gets lost between departments. Building screens that match each role's job is what makes a system this complex actually usable."
+                    ar="حين تتشارك سبعة أدوار خطّ طلباتٍ واحداً، الواجهة هي ما يُبقي كلّ تسليمٍ واضحاً — فلا يضيع طلبٌ بين الأقسام. بناء شاشاتٍ تطابق وظيفة كلّ دورٍ هو ما يجعل نظاماً بهذا التعقيد قابلاً للاستخدام فعلاً."
                   />
                 </Callout>
               </>
@@ -200,19 +200,19 @@ export default function TakhrjyPage() {
                   <T
                     en={
                       <>
-                        Designing the screens for seven roles and then being the one to
-                        test them taught me to read a requirement as both a designer and
-                        a skeptic: not just &ldquo;what should this screen show&rdquo;
-                        but &ldquo;how will I know it&apos;s right.&rdquo; Sitting on
-                        both sides of that line is a habit I&apos;ve kept.
+                        Designing the screens for seven roles and then building them
+                        in Vue taught me to carry an idea from a requirement all the way
+                        to a working interface — to think as both the designer deciding
+                        what a screen should show and the developer making it real.
+                        Owning both sides of that line is a habit I&apos;ve kept.
                       </>
                     }
                     ar={
                       <>
-                        تصميمُ شاشات سبعة أدوار ثم كوني من يختبرها علّمني أن أقرأ
-                        المتطلَّب كمصمّمةٍ ومتشكّكةٍ معاً: ليس فقط «ماذا ينبغي أن
-                        تعرض هذه الشاشة» بل «كيف سأعرف أنها صحيحة». والوقوف على طرفَي
-                        هذا الخطّ عادةٌ احتفظتُ بها.
+                        تصميمُ شاشات سبعة أدوار ثم بناؤها بـVue علّمني أن آخذ الفكرة
+                        من المتطلَّب حتى واجهةٍ تعمل — أن أفكّر كمصمّمةٍ تقرّر ما تعرضه
+                        الشاشة وكمطوّرةٍ تجعلها حقيقة. وامتلاكُ طرفَي هذا الخطّ عادةٌ
+                        احتفظتُ بها.
                       </>
                     }
                   />
