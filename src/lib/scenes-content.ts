@@ -612,6 +612,13 @@ export const educationChapter: {
         { label: "BloomBelly — three AI models", labelAr: "BloomBelly — ثلاثة نماذج ذكاء اصطناعي", href: "/projects/bloombelly" },
       ],
     },
+    {
+      title: "AI Fluency: Framework & Foundations",
+      titleAr: "AI Fluency: الإطار والأسس",
+      issuer: "Anthropic",
+      issuerAr: "Anthropic",
+      year: "2026",
+    },
   ],
 };
 
@@ -744,12 +751,12 @@ export const projectsIndex: ProjectIndexEntry[] = [
     roleAr: "مطوّرة Full-stack منفردة",
     industry: "SaaS · AI",
     industryAr: "SaaS · ذكاء اصطناعي",
-    impact: "Multi-tenant SaaS with a per-tenant AI assistant, built solo",
-    impactAr: "SaaS متعدّد المستأجرين بمساعد ذكاء اصطناعي لكل مستأجر، بُني منفرداً",
+    impact: "Per-shop AI bot — 15 function-call tools, five languages",
+    impactAr: "بوت ذكاء اصطناعي لكل متجر — 15 أداة استدعاء، بخمس لغات",
     summary:
-      "A solo full-stack multi-tenant SaaS — FastAPI + PostgreSQL + Vue 3 — with a per-tenant AI Telegram assistant (Groq, function-calling). Built end-to-end; not yet deployed.",
+      "A solo, full-stack multi-tenant SaaS for online shops — FastAPI + PostgreSQL + Vue 3 — with an AI Telegram bot per shop (Groq llama-3.3-70b, 15 function-call tools) serving customers in Arabic, English, Turkish, French, and German.",
     summaryAr:
-      "SaaS متعدّد المستأجرين بُني بالكامل منفرداً — FastAPI + PostgreSQL + Vue 3 — مع مساعد ذكاء اصطناعي عبر Telegram لكل مستأجر (Groq، استدعاء دوال). مبنيّ من الطرف إلى الطرف؛ لم يُنشَر بعد.",
+      "نظام SaaS متعدّد المستأجرين للمتاجر الإلكترونية، بُني بالكامل منفرداً — FastAPI + PostgreSQL + Vue 3 — مع بوت ذكاء اصطناعي عبر Telegram لكل متجر (Groq llama-3.3-70b، 15 أداة استدعاء دوال) يخدم العملاء بالعربية والإنجليزية والتركية والفرنسية والألمانية.",
   },
   {
     name: "Pharmacology",
@@ -834,10 +841,10 @@ export const aboutPageContent = {
   /** Tools grouped by area — rendered as chips, never progress bars. */
   tools: [
     { area: "Design", areaAr: "تصميم", items: ["Figma", "Design Systems", "Prototyping", "Arabic UX", "RTL", "Accessibility"], itemsAr: ["Figma", "أنظمة تصميم", "نماذج أولية", "تجربة عربية", "RTL", "إتاحة"] },
-    { area: "Mobile", areaAr: "جوال", items: ["Flutter", "Dart", "iOS + Android", "Capacitor"], itemsAr: ["Flutter", "Dart", "iOS + Android", "Capacitor"] },
+    { area: "Mobile", areaAr: "جوال", items: ["Flutter", "Dart", "iOS + Android", "FlutterFlow", "Capacitor", "PWA"], itemsAr: ["Flutter", "Dart", "iOS + Android", "FlutterFlow", "Capacitor", "PWA"] },
     { area: "Web", areaAr: "ويب", items: ["Vue 3", "HTML/CSS/JS", "Tailwind"], itemsAr: ["Vue 3", "HTML/CSS/JS", "Tailwind"] },
-    { area: "Backend", areaAr: "خادم", items: ["Python", "FastAPI", "Flask", "NestJS", "Laravel", "Supabase", "PostgreSQL", "PL/pgSQL", "REST APIs"], itemsAr: ["Python", "FastAPI", "Flask", "NestJS", "Laravel", "Supabase", "PostgreSQL", "PL/pgSQL", "واجهات REST"] },
-    { area: "AI", areaAr: "ذكاء اصطناعي", items: ["Google Gemini", "LoRA-tuned models", "PyTorch", "Hugging Face", "Random Forest"], itemsAr: ["Google Gemini", "نماذج مضبوطة بـLoRA", "PyTorch", "Hugging Face", "Random Forest"] },
+    { area: "Backend", areaAr: "خادم", items: ["Python", "FastAPI", "Flask", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "Redis", "JWT", "REST APIs"], itemsAr: ["Python", "FastAPI", "Flask", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "Redis", "JWT", "واجهات REST"] },
+    { area: "AI", areaAr: "ذكاء اصطناعي", items: ["Google Gemini", "LoRA-tuned models", "scikit-learn", "Function-calling LLMs"], itemsAr: ["Google Gemini", "نماذج مضبوطة بـLoRA", "scikit-learn", "استدعاء دوال LLM"] },
     { area: "Systems", areaAr: "أنظمة", items: ["Odoo 19", "ORM", "QWeb", "OWL", "POS · HR · Payroll"], itemsAr: ["Odoo 19", "ORM", "QWeb", "OWL", "نقاط بيع · موارد بشرية · رواتب"] },
   ],
 };
