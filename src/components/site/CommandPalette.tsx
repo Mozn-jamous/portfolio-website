@@ -31,6 +31,7 @@ const COMMANDS: Command[] = [
   { label: "BloomBelly", labelAr: "BloomBelly", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/bloombelly" },
   { label: "CareConnect", labelAr: "CareConnect", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/careconnect" },
   { label: "Eda — clinics platform", labelAr: "Eda — منصّة العيادات", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/eda" },
+  { label: "Blatos — multi-tenant SaaS + AI", labelAr: "Blatos — SaaS متعدّد المستأجرين + ذكاء اصطناعي", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/blatos" },
   { label: "Smart Expense Manager", labelAr: "Smart Expense Manager", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/smart-expense" },
   { label: "Techno Solution — Odoo ERP (company)", labelAr: "Techno Solution — نظام Odoo ERP (شركة)", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/techno-solution" },
   { label: "Burgasm — restaurant on Odoo", labelAr: "Burgasm — مطعم على Odoo", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/burgasm" },

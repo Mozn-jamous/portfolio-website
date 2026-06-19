@@ -14,6 +14,7 @@ const ROUTES = [
   { path: "/projects/bloombelly", priority: 0.9 },
   { path: "/projects/careconnect", priority: 0.9 },
   { path: "/projects/eda", priority: 0.9 },
+  { path: "/projects/blatos", priority: 0.9 },
   { path: "/projects/smart-expense", priority: 0.9 },
   { path: "/projects/techno-solution", priority: 0.9 },
   { path: "/projects/burgasm", priority: 0.9 },

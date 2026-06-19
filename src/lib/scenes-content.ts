@@ -737,6 +737,21 @@ export const projectsIndex: ProjectIndexEntry[] = [
       "منصّة عيادات متعدّدة المستأجرين — ثلاثة تطبيقات Flutter على خلفية NestJS. صمّمتُ الشاشات واختبرتُها، بما في ذلك عزل البيانات بين العيادات.",
   },
   {
+    name: "Blatos",
+    href: "/projects/blatos",
+    year: "2026",
+    role: "Solo Full-stack Developer",
+    roleAr: "مطوّرة Full-stack منفردة",
+    industry: "SaaS · AI",
+    industryAr: "SaaS · ذكاء اصطناعي",
+    impact: "Multi-tenant SaaS with a per-tenant AI assistant, built solo",
+    impactAr: "SaaS متعدّد المستأجرين بمساعد ذكاء اصطناعي لكل مستأجر، بُني منفرداً",
+    summary:
+      "A solo full-stack multi-tenant SaaS — FastAPI + PostgreSQL + Vue 3 — with a per-tenant AI Telegram assistant (Groq, function-calling). Built end-to-end; not yet deployed.",
+    summaryAr:
+      "SaaS متعدّد المستأجرين بُني بالكامل منفرداً — FastAPI + PostgreSQL + Vue 3 — مع مساعد ذكاء اصطناعي عبر Telegram لكل مستأجر (Groq، استدعاء دوال). مبنيّ من الطرف إلى الطرف؛ لم يُنشَر بعد.",
+  },
+  {
     name: "Pharmacology",
     href: "/projects/pharmacology",
     year: "2026",
@@ -821,7 +836,7 @@ export const aboutPageContent = {
     { area: "Design", areaAr: "تصميم", items: ["Figma", "Design Systems", "Prototyping", "Arabic UX", "RTL", "Accessibility"], itemsAr: ["Figma", "أنظمة تصميم", "نماذج أولية", "تجربة عربية", "RTL", "إتاحة"] },
     { area: "Mobile", areaAr: "جوال", items: ["Flutter", "Dart", "iOS + Android", "Capacitor"], itemsAr: ["Flutter", "Dart", "iOS + Android", "Capacitor"] },
     { area: "Web", areaAr: "ويب", items: ["Vue 3", "HTML/CSS/JS", "Tailwind"], itemsAr: ["Vue 3", "HTML/CSS/JS", "Tailwind"] },
-    { area: "Backend", areaAr: "خادم", items: ["Python", "Flask", "Supabase", "PostgreSQL", "PL/pgSQL", "REST APIs"], itemsAr: ["Python", "Flask", "Supabase", "PostgreSQL", "PL/pgSQL", "واجهات REST"] },
+    { area: "Backend", areaAr: "خادم", items: ["Python", "FastAPI", "Flask", "NestJS", "Laravel", "Supabase", "PostgreSQL", "PL/pgSQL", "REST APIs"], itemsAr: ["Python", "FastAPI", "Flask", "NestJS", "Laravel", "Supabase", "PostgreSQL", "PL/pgSQL", "واجهات REST"] },
     { area: "AI", areaAr: "ذكاء اصطناعي", items: ["Google Gemini", "LoRA-tuned models", "PyTorch", "Hugging Face", "Random Forest"], itemsAr: ["Google Gemini", "نماذج مضبوطة بـLoRA", "PyTorch", "Hugging Face", "Random Forest"] },
     { area: "Systems", areaAr: "أنظمة", items: ["Odoo 19", "ORM", "QWeb", "OWL", "POS · HR · Payroll"], itemsAr: ["Odoo 19", "ORM", "QWeb", "OWL", "نقاط بيع · موارد بشرية · رواتب"] },
   ],
