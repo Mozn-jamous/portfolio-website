@@ -1,48 +1,94 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { Orb } from "@/components/site/Orb";
+import { T } from "@/components/i18n/T";
 
 export type CaseStudyMeta = {
-  eyebrow: string;
-  title: string;
-  lede: string;
-  year: string;
-  role: string;
-  status?: string;
+  eyebrow: ReactNode;
+  title: ReactNode;
+  lede: ReactNode;
+  year: ReactNode;
+  role: ReactNode;
+  status?: ReactNode;
   stack: string[];
-  links?: { label: string; href: string; external?: boolean; primary?: boolean }[];
+  links?: { label: ReactNode; href: string; external?: boolean; primary?: boolean }[];
 };
 
 export type CaseStudyMetric = {
-  value: string;
-  label: string;
+  value: ReactNode;
+  label: ReactNode;
 };
 
 export type CaseStudySection = {
-  heading: string;
-  kicker?: string;
+  heading: ReactNode;
+  kicker?: ReactNode;
   body: ReactNode;
+};
+
+/**
+ * Per-case-study color identity. When set, the whole article re-tints to the
+ * real app's signature hue — accent threads (links, kickers, metrics, pills,
+ * callouts) plus a soft radial glow behind the hero — while the dark twilight
+ * ground stays. This is how each case study "feels" like the app it documents.
+ */
+export type CaseStudyTheme = {
+  /** --accent override (bright enough to read on the dark ground). */
+  accent: string;
+  /** --accent-deep override (hover / headings / big metric numbers). */
+  accentDeep: string;
+  /** --accent-soft override — an rgba() string for translucent fills. */
+  accentSoft: string;
+  /** rgba() for the radial hero glow. */
+  glow: string;
+  /** Architecture-diagram accent (the diagram is a light card, so tune these
+   *  DEEPER/more saturated than the on-dark accents above to read on white). */
+  diagramAccent?: string;
+  diagramAccentDeep?: string;
+  /** A LIGHT (near-white, app-tinted) fill for the diagram's highlight boxes. */
+  diagramAccentSoft?: string;
 };
 
 type Props = {
   meta: CaseStudyMeta;
   metrics?: CaseStudyMetric[];
   sections: CaseStudySection[];
-  nextProject?: { label: string; href: string };
+  nextProject?: { label: ReactNode; href: string };
+  theme?: CaseStudyTheme;
 };
 
-export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props) {
+export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }: Props) {
+  const themeStyle = theme
+    ? ({
+        "--accent": theme.accent,
+        "--accent-deep": theme.accentDeep,
+        "--accent-soft": theme.accentSoft,
+        ...(theme.diagramAccent && {
+          "--dgm-accent": theme.diagramAccent,
+          "--dgm-accent-deep": theme.diagramAccentDeep,
+          "--dgm-accent-soft": theme.diagramAccentSoft,
+        }),
+      } as CSSProperties)
+    : undefined;
+
   return (
-    <article className="relative text-[var(--ink)]">
+    <article className="relative text-[var(--ink)]" style={themeStyle}>
       {/* Hero */}
-      <section className="relative">
+      <section className="relative isolate">
+        {theme?.glow && (
+          <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[520px] overflow-hidden">
+            <div
+              className="absolute left-1/2 top-[-120px] h-[480px] w-[1100px] -translate-x-1/2 rounded-full blur-3xl"
+              style={{ background: `radial-gradient(closest-side, ${theme.glow}, transparent)` }}
+            />
+          </div>
+        )}
         <div className="mx-auto max-w-5xl px-5 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-24">
           <Link
             href="/#work"
             className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-muted)] transition hover:text-[var(--accent-deep)]"
           >
-            <span aria-hidden>←</span>
-            Back to work
+            <span aria-hidden className="rtl:-scale-x-100">←</span>
+            <T en="Back to work" ar="عودة إلى الأعمال" />
           </Link>
 
           <div className="mt-10 flex items-center gap-2.5">
@@ -50,7 +96,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--accent)]">
               {meta.eyebrow}
               {meta.status && (
-                <span className="ml-3 inline-flex items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-2 py-0.5 text-[0.6rem] tracking-[0.18em] text-[var(--accent-deep)]">
+                <span className="ms-3 inline-flex items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-2 py-0.5 text-[0.6rem] tracking-[0.18em] text-[var(--accent-deep)]">
                   ● {meta.status}
                 </span>
               )}
@@ -69,7 +115,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
           <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[var(--border)] pt-8 sm:grid-cols-4">
             <div>
               <dt className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-                Year
+                <T en="Year" ar="السنة" />
               </dt>
               <dd className="mt-2 text-base font-medium text-[var(--ink)]">
                 {meta.year}
@@ -77,7 +123,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             </div>
             <div>
               <dt className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-                Role
+                <T en="Role" ar="الدور" />
               </dt>
               <dd className="mt-2 text-base font-medium text-[var(--ink)]">
                 {meta.role}
@@ -85,7 +131,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             </div>
             <div className="col-span-2">
               <dt className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-                Stack
+                <T en="Stack" ar="التقنيات" />
               </dt>
               <dd className="mt-2 flex flex-wrap gap-1.5">
                 {meta.stack.map((s) => (
@@ -104,7 +150,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             <div className="mt-10 flex flex-wrap gap-3">
               {meta.links.map((l) => (
                 <a
-                  key={l.label}
+                  key={l.href}
                   href={l.href}
                   target={l.external ? "_blank" : undefined}
                   rel={l.external ? "noopener noreferrer" : undefined}
@@ -116,7 +162,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
                 >
                   {l.label}
                   {l.external && (
-                    <span aria-hidden className="text-xs">
+                    <span aria-hidden className="text-xs rtl:-scale-x-100">
                       ↗
                     </span>
                   )}
@@ -132,8 +178,8 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
         <section className="relative">
           <div className="mx-auto max-w-5xl px-5 py-12 lg:px-8 lg:py-14">
             <div className="glass grid grid-cols-2 gap-x-6 gap-y-10 rounded-2xl p-8 shadow-soft md:grid-cols-4">
-              {metrics.map((m) => (
-                <div key={m.label}>
+              {metrics.map((m, i) => (
+                <div key={i}>
                   <div className="font-display text-4xl font-semibold tracking-[-0.02em] text-[var(--accent-deep)] md:text-5xl">
                     {m.value}
                   </div>
@@ -176,7 +222,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
             >
               <div>
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-                  Next case study
+                  <T en="Next case study" ar="دراسة الحالة التالية" />
                 </p>
                 <p className="mt-2 font-display text-2xl font-medium tracking-tight text-[var(--ink)] transition group-hover:text-[var(--accent-deep)] sm:text-3xl">
                   {nextProject.label}
@@ -184,7 +230,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject }: Props)
               </div>
               <span
                 aria-hidden
-                className="text-2xl text-[var(--accent)] transition group-hover:translate-x-2"
+                className="text-2xl text-[var(--accent)] transition group-hover:translate-x-2 rtl:-scale-x-100"
               >
                 →
               </span>
@@ -210,11 +256,11 @@ export function Callout({
   kicker,
   children,
 }: {
-  kicker?: string;
+  kicker?: ReactNode;
   children: ReactNode;
 }) {
   return (
-    <aside className="my-8 border-l-2 border-[var(--accent)] bg-[var(--accent-soft)]/40 py-5 pl-6 pr-4">
+    <aside className="my-8 border-s-2 border-[var(--accent)] bg-[var(--accent-soft)]/40 py-5 pe-4 ps-6">
       {kicker && (
         <p className="mb-2 font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--accent-deep)]">
           {kicker}
@@ -230,12 +276,12 @@ export function Callout({
 export function FactGrid({
   items,
 }: {
-  items: { label: string; value: string }[];
+  items: { label: ReactNode; value: ReactNode }[];
 }) {
   return (
     <dl className="my-8 grid grid-cols-2 gap-x-6 gap-y-6 border-y border-[var(--border)] py-8 sm:grid-cols-3">
-      {items.map((item) => (
-        <div key={item.label}>
+      {items.map((item, i) => (
+        <div key={i}>
           <dt className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--ink-faint)]">
             {item.label}
           </dt>
@@ -250,6 +296,7 @@ export function FactGrid({
 
 /* Captioned visual slot + lightbox — client component, see ./Figure. */
 export { Figure, ScreensPlaceholder } from "./Figure";
+export { PhoneDemo } from "./PhoneDemo";
 
 /* UX-focused design decision card */
 export function DesignDecision({
@@ -260,7 +307,7 @@ export function DesignDecision({
   outcome,
 }: {
   number: number;
-  title: string;
+  title: ReactNode;
   challenge: ReactNode;
   decision: ReactNode;
   outcome: ReactNode;
@@ -275,15 +322,15 @@ export function DesignDecision({
       </header>
       <div className="mt-5 grid gap-4 text-[0.95rem] leading-relaxed text-[var(--ink-muted)] sm:grid-cols-[120px_1fr]">
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
-          Challenge
+          <T en="Challenge" ar="التحدّي" />
         </p>
         <div>{challenge}</div>
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--accent)]">
-          Decision
+          <T en="Decision" ar="القرار" />
         </p>
         <div className="text-[var(--ink)]">{decision}</div>
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
-          Outcome
+          <T en="Outcome" ar="النتيجة" />
         </p>
         <div>{outcome}</div>
       </div>
@@ -300,7 +347,7 @@ export function ADR({
   consequences,
 }: {
   number: number;
-  title: string;
+  title: ReactNode;
   context: ReactNode;
   decision: ReactNode;
   consequences: ReactNode;
@@ -317,17 +364,17 @@ export function ADR({
       </header>
       <div className="mt-5 grid gap-4 text-[0.95rem] leading-relaxed text-[var(--ink-muted)] sm:grid-cols-[120px_1fr]">
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
-          Context
+          <T en="Context" ar="السياق" />
         </p>
         <div>{context}</div>
 
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--accent)]">
-          Decision
+          <T en="Decision" ar="القرار" />
         </p>
         <div className="text-[var(--ink)]">{decision}</div>
 
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
-          Consequences
+          <T en="Consequences" ar="النتائج" />
         </p>
         <div>{consequences}</div>
       </div>

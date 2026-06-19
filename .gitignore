@@ -42,8 +42,8 @@ dev.log
 *.tsbuildinfo
 next-env.d.ts
 
-# nested build artifacts
-public/bg/.next/
+# claude code local config
+.claude/settings.local.json
 
 # local pages preview
 .preview/

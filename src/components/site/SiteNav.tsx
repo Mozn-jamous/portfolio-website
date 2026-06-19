@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { heroContent } from "@/lib/scenes-content";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
+import { LanguageToggle } from "@/components/site/LanguageToggle";
+import { T } from "@/components/i18n/T";
 import { MobileNav } from "@/components/site/MobileNav";
 import { OPEN_COMMAND_PALETTE } from "@/components/site/CommandPalette";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
@@ -14,11 +16,11 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 // standalone pages. The standalone /projects, /about, /contact, /odoo pages
 // remain reachable as deep-dives via each section's CTA.
 const items = [
-  { href: "/#work", id: "work", label: "Projects" },
-  { href: "/#process", id: "process", label: "Process" },
-  { href: "/#systems", id: "systems", label: "Systems" },
-  { href: "/#about", id: "about", label: "About" },
-  { href: "/#contact", id: "contact", label: "Contact" },
+  { href: "/#work", id: "work", label: "Projects", labelAr: "المشاريع" },
+  { href: "/#process", id: "process", label: "Process", labelAr: "المنهجية" },
+  { href: "/#systems", id: "systems", label: "Systems", labelAr: "الأنظمة" },
+  { href: "/#about", id: "about", label: "About", labelAr: "عنّي" },
+  { href: "/#contact", id: "contact", label: "Contact", labelAr: "تواصل" },
 ];
 
 export function SiteNav() {
@@ -63,10 +65,10 @@ export function SiteNav() {
           </span>
           <span className="flex flex-col leading-none">
             <span className="text-sm font-semibold tracking-tight text-[var(--ink)]">
-              {heroContent.name}
+              <T en={heroContent.name} ar={heroContent.nameAr} />
             </span>
             <span className="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
-              {heroContent.subtitle}
+              <T en={heroContent.subtitle} ar={heroContent.subtitleAr} />
             </span>
           </span>
         </Link>
@@ -84,7 +86,7 @@ export function SiteNav() {
                   active ? "text-[var(--ink)]" : "text-[var(--ink-muted)]"
                 }`}
               >
-                {item.label}
+                <T en={item.label} ar={item.labelAr} />
                 {active &&
                   (reduced ? (
                     <span className="absolute -bottom-1.5 left-0 right-0 h-px bg-[var(--accent)]" />
@@ -109,16 +111,17 @@ export function SiteNav() {
             aria-label="Open command menu"
             className="hidden items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-3 py-2 text-[0.78rem] text-[var(--ink-muted)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--ink)] md:inline-flex"
           >
-            <span>Search</span>
+            <span><T en="Search" ar="بحث" /></span>
             <kbd className="font-mono text-[0.62rem] text-[var(--ink-faint)]">⌘K</kbd>
           </button>
           <Link
             href={heroContent.contactHref}
             className="hidden items-center gap-1.5 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-4 py-2 text-[0.8rem] font-semibold text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)] sm:inline-flex"
           >
-            Let&apos;s Talk
-            <span aria-hidden>→</span>
+            <T en="Let's Talk" ar="لنتحدّث" />
+            <span aria-hidden className="rtl:-scale-x-100">→</span>
           </Link>
+          <LanguageToggle />
           <ThemeToggle />
           <MobileNav items={items} contactHref={heroContent.contactHref} />
         </div>

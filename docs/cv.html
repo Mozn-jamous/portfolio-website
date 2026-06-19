@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mozn Jamous — CV</title>
+<style>
+  @page { size: A4; margin: 13mm 13mm 12mm 13mm; }
+
+  :root {
+    --ink: #1c1a2e;
+    --muted: #45435c;
+    --faint: #7c7994;
+    --accent: #b0476a;
+    --line: #e3e1ea;
+    --line-strong: #c9c6d6;
+    --chip: #f4f2f8;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0; background: #fff; color: var(--ink);
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    font-size: 9.5pt; line-height: 1.42;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; }
+  a { color: var(--accent); text-decoration: none; }
+  .mono { font-family: "JetBrains Mono", "Consolas", monospace; }
+
+  /* header */
+  header { border-bottom: 2px solid var(--ink); padding-bottom: 11px; }
+  header h1 { font-size: 27pt; line-height: 1; margin: 0 0 3px; letter-spacing: -0.01em; }
+  header .title {
+    font-family: "JetBrains Mono", monospace; font-size: 8.6pt; letter-spacing: 0.04em;
+    color: var(--accent); margin: 0 0 9px;
+  }
+  header .summary { color: var(--muted); font-size: 9.6pt; max-width: 100%; margin: 0; }
+  .contactbar {
+    display: flex; flex-wrap: wrap; gap: 3px 16px; margin-top: 9px;
+    font-family: "JetBrains Mono", monospace; font-size: 7.9pt; color: var(--muted);
+  }
+  .contactbar b { color: var(--ink); font-weight: 600; }
+
+  /* layout */
+  .grid { display: grid; grid-template-columns: 1fr 200px; gap: 0 26px; margin-top: 15px; }
+
+  section { margin-bottom: 14px; break-inside: avoid; }
+  h2.sec {
+    font-family: "JetBrains Mono", monospace; font-size: 7.8pt; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 8px;
+    border-bottom: 1px solid var(--line-strong); padding-bottom: 4px;
+  }
+
+  .entry { margin-bottom: 11px; break-inside: avoid; }
+  .entry .row { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .entry h3 { font-size: 11pt; margin: 0; }
+  .entry h3 .org { font-family: Georgia, serif; font-weight: 400; color: var(--muted); }
+  .entry .when { font-family: "JetBrains Mono", monospace; font-size: 7.5pt; color: var(--faint); white-space: nowrap; }
+  ul.b { list-style: none; margin: 5px 0 0; padding: 0; }
+  ul.b li { position: relative; padding: 1.5px 0 1.5px 13px; color: var(--muted); font-size: 9.3pt; }
+  ul.b li::before { content: "–"; position: absolute; left: 0; color: var(--accent); }
+  ul.b li b { color: var(--ink); font-weight: 600; }
+  .stack { font-family: "JetBrains Mono", monospace; font-size: 7.6pt; color: var(--faint); margin-top: 3px; }
+
+  /* projects compact */
+  .proj { margin-bottom: 9px; break-inside: avoid; }
+  .proj .h { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .proj h3 { font-size: 10pt; margin: 0; }
+  .proj .tag { font-family: "JetBrains Mono", monospace; font-size: 7.2pt; color: var(--accent); white-space: nowrap; }
+  .proj p { margin: 2px 0 0; color: var(--muted); font-size: 9.1pt; }
+
+  /* sidebar */
+  aside section { margin-bottom: 13px; }
+  .skill { margin-bottom: 7px; }
+  .skill .k { font-family: "JetBrains Mono", monospace; font-size: 7pt; letter-spacing: 0.12em; text-transform: uppercase; color: var(--faint); }
+  .skill .v { font-size: 8.8pt; color: var(--ink); margin-top: 1.5px; line-height: 1.4; }
+  ul.list { list-style: none; margin: 0; padding: 0; }
+  ul.list li { font-size: 8.8pt; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; padding: 1.5px 0; }
+  ul.list li .lvl { font-family: "JetBrains Mono", monospace; font-size: 7pt; color: var(--faint); text-transform: uppercase; letter-spacing: 0.06em; }
+  ul.openvto { list-style: none; margin: 0; padding: 0; }
+  ul.openvto li { font-size: 8.8pt; color: var(--muted); padding: 1.5px 0 1.5px 11px; position: relative; }
+  ul.openvto li::before { content: "·"; position: absolute; left: 2px; color: var(--accent); }
+
+  footer { margin-top: 6px; border-top: 1px solid var(--line); padding-top: 6px; text-align: center;
+    font-family: "JetBrains Mono", monospace; font-size: 6.8pt; letter-spacing: 0.16em; text-transform: uppercase; color: var(--faint); }
+</style>
+</head>
+<body>
+
+  <header>
+    <h1 class="serif">Mozn Jamous</h1>
+    <p class="title">Product Designer &amp; Developer — design → build</p>
+    <p class="summary">Information Technology Engineering graduate who designs and builds products end to end — from research and Figma through Flutter and the web, to the Odoo/ERP systems behind them. Arabic-first and bilingual by default. Most useful to a small team that needs one person to research a problem, design the solution, and build it.</p>
+    <div class="contactbar">
+      <span><b>Email</b> moznjamous9@gmail.com</span>
+      <span><b>Phone</b> +963 956 959 722</span>
+      <span><b>LinkedIn</b> /in/mozn-jamous</span>
+      <span><b>GitHub</b> @Mozn-jamous</span>
+      <span><b>Location</b> Damascus, Syria · open to remote</span>
+    </div>
+  </header>
+
+  <div class="grid">
+    <!-- MAIN COLUMN -->
+    <main>
+      <section>
+        <h2 class="sec">Experience</h2>
+
+        <div class="entry">
+          <div class="row">
+            <h3 class="serif">UI/UX Designer &amp; Flutter Developer <span class="org">— Santa Media</span></h3>
+            <span class="when">Mar 2026 — Present · Damascus</span>
+          </div>
+          <ul class="b">
+            <li>Redesigned and rebuilt <b>Mademoiselle</b>, a beauty-commerce app, from a stalled FlutterFlow prototype into a native Flutter app (collaborative build; live and active).</li>
+            <li>Designed a bilingual, multi-theme <b>design system</b> — 26+ components across three themes and both writing directions — used across the app.</li>
+            <li>Contributed UI/UX, Flutter implementation, and Supabase backend logic.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="row">
+            <h3 class="serif">Designer &amp; Front-end Developer <span class="org">— Freelance</span></h3>
+            <span class="when">2025 — Present · Remote</span>
+          </div>
+          <ul class="b">
+            <li>Design and build client brand websites in vanilla HTML/CSS/JS — Arabic-first, RTL-native, fast, no build step.</li>
+            <li><b>Pharmacology</b> (clinical-nutrition brand): complete redesign and from-scratch rebuild — 25 bilingual pages on one locked design-token system, with Supabase-wired forms.</li>
+            <li><b>Noodlna</b> (food brand, Syria Macarna): an Arabic consumer storefront plus a separate B2B wholesale/export funnel; deployed on Vercel.</li>
+            <li>Design and QA on team-built systems — a Vue graduation-gifts ERP (<b>Takhrjy</b>, 7 roles) and a multi-tenant clinics platform (<b>Eda</b>), where I designed the screens and tested the system.</li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="row">
+            <h3 class="serif">Odoo / ERP Developer <span class="org">— Techno Solution</span></h3>
+            <span class="when">Feb 2025 — Sep 2025 · Damascus</span>
+          </div>
+          <ul class="b">
+            <li>Implemented Odoo 19 end to end for a <b>3-division company</b> (import, warehousing, solar) — HR, payroll, attendance, purchasing, inventory, accounting — replacing a scattered Excel operation. <b>18 employees · 6,514 hours · 140 purchase orders.</b></li>
+            <li>Set up a restaurant fully on Odoo (<b>Burgasm</b>): live POS, kitchen display, ingredient-level inventory, and proper books. <b>68 accounts · 500+ POS orders · 10,000+ stock moves.</b></li>
+            <li>Built workflow automations with Odoo Studio and custom Python/XML; configured a custom chart of accounts linked across modules.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="sec">Selected projects</h2>
+
+        <div class="proj">
+          <div class="h"><h3 class="serif">BloomBelly</h3><span class="tag">Graduation thesis · 2025</span></div>
+          <p>Arabic-first maternal-health app — designed in Figma and built end to end in Flutter, with three AI models behind one interface (Gemini for vision, a LoRA-tuned Arabic transformer for Q&amp;A, Random Forest for nutrition). Documented to IEEE 830.</p>
+        </div>
+
+        <div class="proj">
+          <div class="h"><h3 class="serif">CareConnect</h3><span class="tag">Mobile · 2024</span></div>
+          <p>A childcare marketplace built as three Flutter apps over a single Supabase backend, with row-level security enforcing role boundaries at the database layer. IEEE 830 SRS written before any UI.</p>
+        </div>
+
+        <div class="proj">
+          <div class="h"><h3 class="serif">Smart Expense Manager</h3><span class="tag">Open source · LGPL-3.0 · 2026</span></div>
+          <p>A custom Odoo 19 module: token-secured one-click email approvals (no login), journal entries auto-generated on finance sign-off, monthly PDF reports by cron, three-tier access at the record-rule layer, full EN/AR.</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside>
+      <section>
+        <h2 class="sec">Skills</h2>
+        <div class="skill"><div class="k">Design</div><div class="v">Figma · Design systems · Prototyping · User flows · Arabic / RTL UX · Accessibility</div></div>
+        <div class="skill"><div class="k">Mobile</div><div class="v">Flutter · Dart · iOS + Android</div></div>
+        <div class="skill"><div class="k">Web</div><div class="v">HTML · CSS · JavaScript · Vanilla brand sites · Bilingual RTL</div></div>
+        <div class="skill"><div class="k">Backend</div><div class="v">Python · Flask · Supabase · PostgreSQL · REST APIs</div></div>
+        <div class="skill"><div class="k">AI</div><div class="v">Google Gemini · LoRA-tuned models · Random Forest</div></div>
+        <div class="skill"><div class="k">ERP — Odoo</div><div class="v">Odoo 17–19 · Studio · Python/XML · ORM · QWeb · OWL · POS · HR · Payroll · Accounting</div></div>
+        <div class="skill"><div class="k">Tools</div><div class="v">Git · GitHub · Postman · Linux · Agile</div></div>
+      </section>
+
+      <section>
+        <h2 class="sec">Education</h2>
+        <div class="skill">
+          <div class="v" style="font-weight:600">B.Sc. Information Technology Engineering</div>
+          <div class="k" style="margin-top:2px">Al-Sham Private University (ASPU) · Damascus · 2025</div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="sec">Certifications</h2>
+        <ul class="list">
+          <li><span>Odoo Functional Certification</span><span class="lvl">Odoo · 2025</span></li>
+          <li><span>1 Million Prompters (AI)</span><span class="lvl">DFF · 2025</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="sec">Languages</h2>
+        <ul class="list">
+          <li><span>Arabic</span><span class="lvl">Native</span></li>
+          <li><span>English</span><span class="lvl">Working · B2</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="sec">Open to</h2>
+        <ul class="openvto">
+          <li>Product engineer / product designer — remote</li>
+          <li>Mobile product design &amp; Flutter development</li>
+          <li>Early-stage product teams</li>
+          <li>ERP / Odoo &amp; business systems</li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+
+  <footer>References available on request · Last updated 2026</footer>
+
+</body>
+</html>

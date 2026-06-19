@@ -48,23 +48,26 @@
    flips; because veils/scrims/panels are token-driven, the whole site
    (scenes, washes, cards) adapts with no per-component work. ───────── */
 :root[data-theme="light"] {
-  --paper: #f1ecf7;
-  --paper-rgb: 241, 236, 247;
-  --surface: #ffffff;
-  --surface-2: #efe9f5;
-  --ink: #3f3a5a;
-  --ink-muted: #6a6488;
-  --ink-faint: #9a93b5;
-  --border: rgba(63, 58, 90, 0.12);
-  --border-strong: rgba(63, 58, 90, 0.20);
-  --accent: #cf7a99;
-  --accent-deep: #b4628a;
-  --accent-soft: rgba(207, 122, 153, 0.14);
-  --glass: rgba(255, 255, 255, 0.55);
-  --glass-2: rgba(255, 255, 255, 0.40);
-  --glass-border: rgba(63, 58, 90, 0.12);
-  --panel-bg: rgba(255, 255, 255, 0.74);
-  --panel-border: rgba(63, 58, 90, 0.08);
+  --paper: #e7e0f3;          /* deeper soft lavender — more hue, less white */
+  --paper-rgb: 231, 224, 243;
+  --surface: #f8f4fd;        /* lavender-tinted card, never pure #fff       */
+  --surface-2: #ece5f6;
+  --ink: #353050;            /* deep plum-slate — strong contrast on light  */
+  --ink-muted: #635c80;
+  --ink-faint: #938cae;
+  --border: rgba(55, 48, 80, 0.13);
+  --border-strong: rgba(55, 48, 80, 0.22);
+  --accent: #c96f91;         /* slightly deeper rose — reads on a light bg  */
+  --accent-deep: #ab5a82;
+  --accent-soft: rgba(201, 111, 145, 0.15);
+  --glass: rgba(249, 246, 254, 0.62);   /* lavender-tinted glass, not white */
+  --glass-2: rgba(249, 246, 254, 0.42);
+  --glass-border: rgba(55, 48, 80, 0.12);
+  --panel-bg: rgba(248, 244, 253, 0.80); /* tinted frosted panel            */
+  --panel-border: rgba(55, 48, 80, 0.09);
+  --glow-rose: rgba(201, 111, 145, 0.30);
+  --glow-blue: rgba(120, 150, 215, 0.26);
+  --glow-mauve: rgba(204, 142, 177, 0.26);
 }
 
 @theme inline {
@@ -114,12 +117,13 @@ body {
 
 /* LIGHT theme base — soft lavender-white aurora with faint pastel glows */
 :root[data-theme="light"] body {
-  background-color: #ece5f3;
+  background-color: #e2dbf0;
   background-image:
-    radial-gradient(46% 40% at 82% 4%,  rgba(207, 122, 153, 0.12), transparent 60%),
-    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.12), transparent 62%),
-    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.10), transparent 64%),
-    linear-gradient(180deg, #f4eff9 0%, #ece5f3 100%);
+    radial-gradient(46% 40% at 82% 4%,  rgba(201, 111, 145, 0.18), transparent 60%), /* rose      */
+    radial-gradient(56% 46% at 10% 10%, rgba(120, 150, 215, 0.18), transparent 62%), /* periwinkle*/
+    radial-gradient(60% 55% at 90% 92%, rgba(204, 142, 177, 0.16), transparent 64%), /* mauve     */
+    radial-gradient(52% 52% at 4% 86%,  rgba(150, 130, 205, 0.13), transparent 62%), /* violet    */
+    linear-gradient(180deg, #ece6f7 0%, #e0d8ef 52%, #ddd4ee 100%);                  /* lavender  */
 }
 
 .font-mono {
@@ -131,6 +135,38 @@ body {
 .font-display {
   font-family: var(--font-display), system-ui, sans-serif;
   letter-spacing: -0.02em;
+}
+
+/* ── Bilingual EN/AR ── <T> renders both languages; show only the active one.
+   Toggled by <html lang> (+ dir), set pre-paint by the script in layout.tsx
+   and flipped by <LanguageToggle>. Untranslated text stays as-is in both. */
+.lang-ar { display: none; }
+html[lang="ar"] .lang-ar { display: inline; }
+html[lang="ar"] .lang-en { display: none; }
+
+/* Arabic typography — use the Arabic webfont, and never apply Latin letter-
+   spacing or uppercasing (both break Arabic letter shaping/ligatures). */
+html[lang="ar"] body,
+html[lang="ar"] .font-display,
+html[lang="ar"] .font-mono {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+}
+html[lang="ar"] .font-display { letter-spacing: 0; }
+html[lang="ar"] * { letter-spacing: normal !important; }
+html[lang="ar"] .uppercase { text-transform: none; }
+
+/* Architecture diagrams show a left→right data flow; in Arabic the flow must
+   run right→left. Mirror the whole SVG, then counter-mirror each <text> around
+   its own box so labels stay readable while boxes + arrows flow RTL. The labels
+   are all English technical terms, so force LTR bidi too — otherwise mixed
+   number+word strings ("1-click · email") get reordered in the RTL document. */
+html[lang="ar"] .arch-diagram svg { transform: scaleX(-1); }
+html[lang="ar"] .arch-diagram svg text {
+  transform: scaleX(-1);
+  transform-box: fill-box;
+  transform-origin: center;
+  direction: ltr;
+  unicode-bidi: isolate;
 }
 
 /* ── Editorial scrims — integrate text INTO a scene (no box) ───── */
@@ -226,6 +262,22 @@ body {
 .shadow-soft   { box-shadow: 0 18px 50px -22px rgba(115, 143, 189, 0.55); }
 .shadow-soft-lg{ box-shadow: 0 30px 70px -28px rgba(115, 143, 189, 0.60); }
 
+/* Light theme: the dark-tuned panel shadow + glass-2's white border read muddy
+   on a light ground. Retune to a soft lavender lift so cards gain real depth
+   (separating them from the pale base) without a heavy grey halo. */
+:root[data-theme="light"] .panel {
+  box-shadow: 0 22px 55px -30px rgba(74, 62, 120, 0.34);
+}
+:root[data-theme="light"] .glass-2 {
+  border-color: var(--glass-border);
+}
+:root[data-theme="light"] .shadow-soft {
+  box-shadow: 0 16px 44px -24px rgba(74, 62, 120, 0.30);
+}
+:root[data-theme="light"] .shadow-soft-lg {
+  box-shadow: 0 28px 64px -30px rgba(74, 62, 120, 0.36);
+}
+
 /* gradient ink for headings */
 .text-gradient {
   background: linear-gradient(
@@ -299,6 +351,11 @@ body {
 @keyframes t-spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+/* per-screen copy swap in the PhoneDemo (ends visible → reduced-motion safe) */
+@keyframes cs-fade {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: none; }
 }
 
 .t-float { animation: t-float 7s ease-in-out infinite; }

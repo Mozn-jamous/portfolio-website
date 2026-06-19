@@ -17,7 +17,7 @@ type OrbProps = {
   className?: string;
   /** Provide alt text to expose the orb to assistive tech. */
   alt?: string;
-  /** Pose image — defaults to the neutral guide. e.g. "/orb/reading.png". */
+  /** Pose image — defaults to the neutral guide. e.g. "/orb/reading.webp". */
   src?: string;
 };
 
@@ -26,7 +26,7 @@ export function Orb({
   float = true,
   className = "",
   alt,
-  src = "/demo/character.png",
+  src = "/demo/character.webp",
 }: OrbProps) {
   return (
     <div

@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { ProjectIndexEntry } from "@/lib/scenes-content";
 import { withBase } from "@/lib/base-path";
+import { T } from "@/components/i18n/T";
 
 /**
  * DirectoryCard — a project tile for the /projects directory.
@@ -53,7 +54,7 @@ export function DirectoryCard({ project }: { project: ProjectIndexEntry }) {
       {/* meta */}
       <div className="flex flex-1 flex-col p-5">
         <div className="flex items-center justify-between font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
-          <span>{project.industry}</span>
+          <span><T en={project.industry} ar={project.industryAr ?? project.industry} /></span>
           <span className="text-[var(--accent)]">{project.year}</span>
         </div>
 
@@ -61,20 +62,20 @@ export function DirectoryCard({ project }: { project: ProjectIndexEntry }) {
           {project.name}
         </h3>
         <p className="mt-1 text-[0.8rem] font-medium text-[var(--ink-muted)]">
-          {project.role}
+          <T en={project.role} ar={project.roleAr ?? project.role} />
         </p>
 
         <p className="mt-2.5 line-clamp-2 text-[0.82rem] leading-relaxed text-[var(--ink-muted)]">
-          {project.summary}
+          <T en={project.summary} ar={project.summaryAr ?? project.summary} />
         </p>
 
-        <p className="mt-3 border-l-2 border-[var(--accent)]/35 pl-3 text-[0.78rem] leading-snug text-[var(--ink)]">
-          {project.impact}
+        <p className="mt-3 border-s-2 border-[var(--accent)]/35 ps-3 text-[0.78rem] leading-snug text-[var(--ink)]">
+          <T en={project.impact} ar={project.impactAr ?? project.impact} />
         </p>
 
         <span className="mt-4 inline-flex items-center gap-1 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--accent-deep)]">
-          Read case study
-          <span aria-hidden className="transition group-hover:translate-x-1">
+          <T en="Read case study" ar="اقرأ دراسة الحالة" />
+          <span aria-hidden className="transition group-hover:translate-x-1 rtl:-scale-x-100">
             →
           </span>
         </span>

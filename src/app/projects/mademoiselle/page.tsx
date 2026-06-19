@@ -11,6 +11,7 @@ import {
   StructuredData,
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
+import { T } from "@/components/i18n/T";
 
 const DESCRIPTION =
   "Full product design and Flutter rebuild of Mademoiselle at Santa Media. Production Design System — multi-theme, full RTL, 17 text variants, 9 button variants.";
@@ -44,12 +45,17 @@ export default function MademoisellePage() {
       />
       <CaseStudyLayout
       meta={{
-        eyebrow: "UI/UX · Flutter · Design System",
-        status: "Active — 2026",
-        title: "Mademoiselle — redesigned from the ground up.",
-        lede: "A dormant FlutterFlow prototype brought back to production as a fully native Flutter app — with a complete UI redesign, a bilingual Design System (multi-theme, full RTL), and an AI module integration. Full design and development ownership.",
-        year: "2026 — Present",
-        role: "UI/UX Designer + Lead Flutter Developer",
+        eyebrow: <T en="UI/UX · Flutter · Design System" ar="UI/UX · Flutter · نظام تصميم" />,
+        status: <T en="Active — 2026" ar="نشط — 2026" />,
+        title: <T en="Mademoiselle — redesigned from the ground up." ar="Mademoiselle — أُعيد تصميمه من الأساس." />,
+        lede: (
+          <T
+            en="A dormant FlutterFlow prototype brought back to production as a fully native Flutter app — with a complete UI redesign, a bilingual Design System (multi-theme, full RTL), and an AI module integration. Full design and development ownership."
+            ar="نموذج FlutterFlow خامل أُعيد إلى الإنتاج كتطبيق Flutter أصلي بالكامل — مع إعادة تصميمٍ كاملة للواجهة، ونظام تصميمٍ ثنائي اللغة (متعدّد السمات، دعمٌ كامل لليمين-لليسار)، ودمج وحدة ذكاء اصطناعي. ملكيةٌ كاملة للتصميم والتطوير."
+          />
+        ),
+        year: <T en="2026 — Present" ar="2026 — حتى الآن" />,
+        role: <T en="UI/UX Designer + Lead Flutter Developer" ar="مصمّمة UI/UX + مطوّرة Flutter رئيسية" />,
         stack: [
           "Figma",
           "Flutter",
@@ -61,268 +67,271 @@ export default function MademoisellePage() {
         ],
       }}
       metrics={[
-        { value: "Stalled → live", label: "FlutterFlow prototype → native Flutter, now shipping" },
-        { value: "26+", label: "Design System components — reused across every screen" },
-        { value: "RTL-first", label: "Arabic-native, not an LTR mirror" },
-        { value: "Multi-theme", label: "Light · Dark · Brand from one semantic token set" },
+        { value: <T en="Stalled → live" ar="متعثّر ← حيّ" />, label: <T en="FlutterFlow prototype → native Flutter, now shipping" ar="نموذج FlutterFlow ← Flutter أصلي، يُطلق الآن" /> },
+        { value: "26+", label: <T en="Design System components — reused across every screen" ar="مكوّن نظام تصميم — يُعاد استخدامها في كل شاشة" /> },
+        { value: <T en="RTL-first" ar="اليمين-لليسار أولاً" />, label: <T en="Arabic-native, not an LTR mirror" ar="عربيّ أصيل، لا مرآةٌ لليسار-لليمين" /> },
+        { value: <T en="Multi-theme" ar="متعدّد السمات" />, label: <T en="Light · Dark · Brand from one semantic token set" ar="فاتح · داكن · العلامة من مجموعة رموزٍ دلالية واحدة" /> },
       ]}
       sections={[
         {
-          kicker: "Overview",
-          heading: "What it is, and what I owned.",
+          kicker: <T en="Overview" ar="نظرة عامة" />,
+          heading: <T en="What it is, and what I owned." ar="ما هو، وما الذي تولّيته." />,
           body: (
             <>
               <Lead>
-                Mademoiselle is a commercial mobile product at Santa Media. It
-                had stalled as a FlutterFlow prototype; I was brought in to take
-                it to production — and chose to redesign it before rebuilding it.
+                <T
+                  en="Mademoiselle is a commercial mobile product at Santa Media. It had stalled as a FlutterFlow prototype; I was brought in to take it to production — and chose to redesign it before rebuilding it."
+                  ar="Mademoiselle منتجٌ تجاري للجوال في Santa Media. كان متعثّراً كنموذج FlutterFlow؛ استُقدمتُ لأخذه إلى الإنتاج — واخترتُ إعادة تصميمه قبل إعادة بنائه."
+                />
               </Lead>
               <FactGrid
                 items={[
-                  { label: "Role", value: "Designer + lead Flutter dev" },
-                  { label: "Timeline", value: "2026 — present" },
-                  { label: "Platform", value: "Flutter · iOS + Android" },
-                  { label: "Audience", value: "Arabic-speaking, bilingual" },
-                  { label: "Team", value: "Me + one AI-module engineer" },
-                  { label: "Scope", value: "Redesign → DS → native rebuild" },
+                  { label: <T en="Role" ar="الدور" />, value: <T en="Designer + lead Flutter dev" ar="مصمّمة + مطوّرة Flutter رئيسية" /> },
+                  { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="2026 — present" ar="2026 — حتى الآن" /> },
+                  { label: <T en="Platform" ar="المنصّة" />, value: "Flutter · iOS + Android" },
+                  { label: <T en="Audience" ar="الجمهور" />, value: <T en="Arabic-speaking, bilingual" ar="ناطق بالعربية، ثنائي اللغة" /> },
+                  { label: <T en="Team" ar="الفريق" />, value: <T en="Me + one AI-module engineer" ar="أنا + مهندس وحدة ذكاء اصطناعي" /> },
+                  { label: <T en="Scope" ar="النطاق" />, value: <T en="Redesign → DS → native rebuild" ar="إعادة تصميم ← نظام تصميم ← إعادة بناء أصلية" /> },
                 ]}
               />
             </>
           ),
         },
         {
-          kicker: "Problem",
-          heading: "A dormant product, and a prototype that couldn't grow.",
+          kicker: <T en="Problem" ar="المشكلة" />,
+          heading: (
+            <T
+              en="A dormant product, and a prototype that couldn't grow."
+              ar="منتجٌ خامل، ونموذجٌ عاجزٌ عن النمو."
+            />
+          ),
           body: (
             <>
               <p>
-                Mademoiselle had stalled in production with no clear path
-                forward. FlutterFlow output is hard to extend and impossible to
-                maintain at scale — and, more importantly, the original UI had
-                never been designed for the app&apos;s actual Arabic-speaking
-                audience.
+                <T
+                  en="Mademoiselle had stalled in production with no clear path forward. FlutterFlow output is hard to extend and impossible to maintain at scale — and, more importantly, the original UI had never been designed for the app's actual Arabic-speaking audience."
+                  ar="كان Mademoiselle متعثّراً في الإنتاج دون مسارٍ واضح للأمام. مُخرَجات FlutterFlow صعبة التوسعة ويستحيل صيانتها على نطاقٍ واسع — والأهمّ أن الواجهة الأصلية لم تُصمَّم قطّ لجمهور التطبيق الفعلي الناطق بالعربية."
+                />
               </p>
               <p>
-                The team needed someone who could make the call on what to keep,
-                what to rebuild, and how to set the product up so the next
-                feature wouldn&apos;t require starting over again.
+                <T
+                  en="The team needed someone who could make the call on what to keep, what to rebuild, and how to set the product up so the next feature wouldn't require starting over again."
+                  ar="احتاج الفريق شخصاً يستطيع اتخاذ القرار حول ما يُبقي، وما يُعيد بناءه، وكيف يُهيّئ المنتج بحيث لا تتطلّب الميزة التالية البدء من جديد."
+                />
               </p>
             </>
           ),
         },
         {
-          kicker: "Research",
-          heading: "Why a rewrite was the right call, not the easy one.",
+          kicker: <T en="Research" ar="البحث" />,
+          heading: <T en="Why a rewrite was the right call, not the easy one." ar="لماذا كانت إعادة الكتابة القرار الصحيح، لا السهل." />,
           body: (
             <>
               <p>
-                I audited the existing prototype against where the product needed
-                to go: more screens, an AI module, ongoing iteration, and a
-                first-class Arabic experience. The FlutterFlow base failed on all
-                four — every new screen compounded the maintenance cost, and RTL
-                had been treated as an afterthought.
+                <T
+                  en="I audited the existing prototype against where the product needed to go: more screens, an AI module, ongoing iteration, and a first-class Arabic experience. The FlutterFlow base failed on all four — every new screen compounded the maintenance cost, and RTL had been treated as an afterthought."
+                  ar="دقّقتُ النموذج القائم مقابل وجهة المنتج المطلوبة: شاشاتٌ أكثر، ووحدة ذكاء اصطناعي، وتكرارٌ مستمرّ، وتجربةٌ عربية من الدرجة الأولى. فشلت قاعدة FlutterFlow في الأربعة جميعاً — كلّ شاشةٍ جديدة كانت تُراكم كلفة الصيانة، وعُومل اليمين-لليسار كفكرةٍ لاحقة."
+                />
               </p>
-              <Callout kicker="Decision">
-                Rebuild natively — but design the system first. Opening Figma
-                before the codebase was the difference between a rewrite that
-                pays down debt and one that just moves it.
+              <Callout kicker={<T en="Decision" ar="القرار" />}>
+                <T
+                  en="Rebuild natively — but design the system first. Opening Figma before the codebase was the difference between a rewrite that pays down debt and one that just moves it."
+                  ar="أعِد البناء أصلياً — لكن صمّم النظام أولاً. فتحُ Figma قبل قاعدة الكود كان الفرق بين إعادة كتابةٍ تسدّد الدَّيْن وأخرى تنقله فقط."
+                />
               </Callout>
             </>
           ),
         },
         {
-          kicker: "Design strategy",
-          heading: "Build the grammar before the sentences.",
+          kicker: <T en="Design strategy" ar="استراتيجية التصميم" />,
+          heading: <T en="Build the grammar before the sentences." ar="ابنِ القواعد قبل الجُمل." />,
           body: (
             <>
               <Lead>
-                The strategic call was to treat the rebuild as a chance to set the
-                product up to grow — a system first, so every later screen and the
-                parallel AI module would inherit it for free.
+                <T
+                  en="The strategic call was to treat the rebuild as a chance to set the product up to grow — a system first, so every later screen and the parallel AI module would inherit it for free."
+                  ar="كان القرار الاستراتيجي معاملة إعادة البناء كفرصةٍ لتهيئة المنتج للنمو — نظامٌ أولاً، كي ترث كلّ شاشةٍ لاحقة ووحدة الذكاء الاصطناعي الموازية ذلك مجاناً."
+                />
               </Lead>
               <FactGrid
                 items={[
-                  { label: "Goal", value: "A maintainable, Arabic-first product that can keep growing" },
-                  { label: "Hypothesis", value: "A system-first rebuild beats patching FlutterFlow" },
-                  { label: "Priority", value: "Token grammar before screens" },
-                  { label: "Tradeoff", value: "Slower start in exchange for zero design debt" },
+                  { label: <T en="Goal" ar="الهدف" />, value: <T en="A maintainable, Arabic-first product that can keep growing" ar="منتجٌ قابل للصيانة، عربيٌّ أولاً، يستطيع الاستمرار في النمو" /> },
+                  { label: <T en="Hypothesis" ar="الفرضية" />, value: <T en="A system-first rebuild beats patching FlutterFlow" ar="إعادة بناءٍ بالنظام-أولاً تتفوّق على ترقيع FlutterFlow" /> },
+                  { label: <T en="Priority" ar="الأولوية" />, value: <T en="Token grammar before screens" ar="قواعد الرموز قبل الشاشات" /> },
+                  { label: <T en="Tradeoff" ar="المفاضلة" />, value: <T en="Slower start in exchange for zero design debt" ar="بدايةٌ أبطأ مقابل صفر دَيْن تصميمي" /> },
                 ]}
               />
             </>
           ),
         },
         {
-          kicker: "Design process",
-          heading: "Design System first. Screens second.",
+          kicker: <T en="Design process" ar="عملية التصميم" />,
+          heading: <T en="Design System first. Screens second." ar="نظام التصميم أولاً. الشاشات ثانياً." />,
           body: (
             <>
               <p>
-                Building the Design System before building screens was a
-                deliberate sequence. A system built after the screens are done is
-                a retrofit — it never quite fits. Built first, it becomes the
-                grammar everything else is written in.
+                <T
+                  en="Building the Design System before building screens was a deliberate sequence. A system built after the screens are done is a retrofit — it never quite fits. Built first, it becomes the grammar everything else is written in."
+                  ar="بناء نظام التصميم قبل بناء الشاشات كان تسلسلاً مقصوداً. نظامٌ يُبنى بعد إنجاز الشاشات تحديثٌ لاحق — لا يلائم تماماً أبداً. أما المبنيّ أولاً فيصير القواعد التي يُكتَب بها كل شيءٍ آخر."
+                />
               </p>
 
               <DesignDecision
                 number={1}
-                title="Multi-theme from day one — not added later."
+                title={<T en="Multi-theme from day one — not added later." ar="متعدّد السمات من اليوم الأول — لا يُضاف لاحقاً." />}
                 challenge={
-                  <>
-                    Most apps start with one theme and bolt on dark mode when
-                    users complain. Adding theming after the fact means hardcoded
-                    colours buried in every component.
-                  </>
+                  <T
+                    en="Most apps start with one theme and bolt on dark mode when users complain. Adding theming after the fact means hardcoded colours buried in every component."
+                    ar="معظم التطبيقات تبدأ بسمةٍ واحدة وتُلصق الوضع الداكن حين يشتكي المستخدمون. وإضافة السمات لاحقاً تعني ألواناً مُضمَّنة مدفونةً في كل مكوّن."
+                  />
                 }
                 decision={
-                  <>
-                    Every token in the Design System is{" "}
-                    <strong>semantic, not literal</strong> — <code>surface</code>,{" "}
-                    <code>on-surface</code>, <code>primary</code>,{" "}
-                    <code>on-primary</code> — never a raw hex value. Themes swap
-                    by switching the token layer.
-                  </>
+                  <T
+                    en={<>Every token in the Design System is{" "}<strong>semantic, not literal</strong> — <code>surface</code>,{" "}<code>on-surface</code>, <code>primary</code>,{" "}<code>on-primary</code> — never a raw hex value. Themes swap by switching the token layer.</>}
+                    ar={<>كلّ رمزٍ في نظام التصميم{" "}<strong>دلاليّ، لا حرفيّ</strong> — <code>surface</code>،{" "}<code>on-surface</code>، <code>primary</code>،{" "}<code>on-primary</code> — لا قيمة hex خام أبداً. تتبدّل السمات بتبديل طبقة الرموز.</>}
+                  />
                 }
                 outcome={
-                  <>
-                    Light, Dark, and Brand themes coexist with zero component
-                    changes. A new theme is a token file, not a refactor.
-                  </>
+                  <T
+                    en="Light, Dark, and Brand themes coexist with zero component changes. A new theme is a token file, not a refactor."
+                    ar="تتعايش سمات الفاتح والداكن والعلامة دون أي تغييرٍ في المكوّنات. السمة الجديدة ملفّ رموز، لا إعادة هيكلة."
+                  />
                 }
               />
 
               <DesignDecision
                 number={2}
-                title="RTL-native, not RTL-mirrored."
+                title={<T en="RTL-native, not RTL-mirrored." ar="عربيٌّ أصيل، لا منعكسٌ عن اليسار-لليمين." />}
                 challenge={
-                  <>
-                    RTL support is commonly implemented as a visual mirror of an
-                    LTR layout — flip the direction, swap some icons, call it
-                    done. The result always feels foreign to Arabic readers.
-                  </>
+                  <T
+                    en="RTL support is commonly implemented as a visual mirror of an LTR layout — flip the direction, swap some icons, call it done. The result always feels foreign to Arabic readers."
+                    ar="عادةً يُنفَّذ دعم اليمين-لليسار كمرآةٍ بصرية لتخطيط اليسار-لليمين — اقلب الاتجاه، بدّل بعض الأيقونات، اعتبره منتهياً. والنتيجة تبقى غريبةً دائماً على القارئ العربي."
+                  />
                 }
                 decision={
-                  <>
-                    The Figma file and every Flutter screen was{" "}
-                    <strong>designed in Arabic first</strong>. Reading direction,
-                    typographic hierarchy, spacing, and icon choices were all made
-                    in RTL context — then adapted for LTR.
-                  </>
+                  <T
+                    en={<>The Figma file and every Flutter screen was{" "}<strong>designed in Arabic first</strong>. Reading direction, typographic hierarchy, spacing, and icon choices were all made in RTL context — then adapted for LTR.</>}
+                    ar={<>صُمّم ملف Figma وكلّ شاشة Flutter{" "}<strong>بالعربية أولاً</strong>. اتجاه القراءة، والتسلسل الطباعي، والتباعد، واختيار الأيقونات كلّها اتُّخذت في سياق اليمين-لليسار — ثم كُيّفت لليسار-لليمين.</>}
+                  />
                 }
                 outcome={
-                  <>
-                    The Arabic interface reads as the primary version. It is. LTR
-                    is the adaptation, not the source of truth.
-                  </>
+                  <T
+                    en="The Arabic interface reads as the primary version. It is. LTR is the adaptation, not the source of truth."
+                    ar="تُقرأ الواجهة العربية كالنسخة الأساسية. وهي كذلك فعلاً. اليسار-لليمين هو التكييف، لا مصدر الحقيقة."
+                  />
                 }
               />
 
-              <Callout kicker="Typography system">
-                17 text-style variants covering display, headline, title, body,
-                label, and caption — each with size, weight, line-height, and
-                letter-spacing tokens calibrated for both Arabic and Latin
-                scripts. Arabic type needs tighter leading; Latin needs wider
-                letter-spacing. One token set handles both.
+              <Callout kicker={<T en="Typography system" ar="نظام الطباعة" />}>
+                <T
+                  en="17 text-style variants covering display, headline, title, body, label, and caption — each with size, weight, line-height, and letter-spacing tokens calibrated for both Arabic and Latin scripts. Arabic type needs tighter leading; Latin needs wider letter-spacing. One token set handles both."
+                  ar="17 خياراً لأنماط النصّ تغطّي العرض والعنوان الكبير والعنوان والمتن والتسمية والتعليق — لكلٍّ رموزٌ للحجم والوزن وارتفاع السطر وتباعد الأحرف مُعايرة للخطّين العربي واللاتيني. الخطّ العربي يحتاج تباعد أسطرٍ أضيق؛ واللاتيني يحتاج تباعد أحرفٍ أوسع. ومجموعة رموزٍ واحدة تتولّى الاثنين."
+                />
               </Callout>
 
               <Figure
                 label="Mademoiselle UI"
-                caption="Key screens across Light / Dark / Brand themes — add export"
+                caption={<T en="Key screens across Light / Dark / Brand themes — add export" ar="شاشات أساسية عبر سمات الفاتح / الداكن / العلامة — يُضاف التصدير" />}
               />
             </>
           ),
         },
         {
-          kicker: "Design system",
-          heading: "26+ components. Two scripts. Three themes.",
+          kicker: <T en="Design system" ar="نظام التصميم" />,
+          heading: <T en="26+ components. Two scripts. Three themes." ar="26+ مكوّناً. خطّان. ثلاث سمات." />,
           body: (
             <>
               <FactGrid
                 items={[
-                  { label: "Text variants", value: "17" },
-                  { label: "Button variants", value: "9 — all states" },
-                  { label: "Themes", value: "Light · Dark · Brand" },
-                  { label: "Direction", value: "RTL + LTR" },
-                  { label: "Scripts", value: "Arabic · Latin" },
-                  { label: "Tokens", value: "Semantic — never raw hex" },
+                  { label: <T en="Text variants" ar="خيارات النصّ" />, value: "17" },
+                  { label: <T en="Button variants" ar="خيارات الأزرار" />, value: <T en="9 — all states" ar="9 — كل الحالات" /> },
+                  { label: <T en="Themes" ar="السمات" />, value: <T en="Light · Dark · Brand" ar="فاتح · داكن · العلامة" /> },
+                  { label: <T en="Direction" ar="الاتجاه" />, value: "RTL + LTR" },
+                  { label: <T en="Scripts" ar="الخطوط" />, value: <T en="Arabic · Latin" ar="عربي · لاتيني" /> },
+                  { label: <T en="Tokens" ar="الرموز" />, value: <T en="Semantic — never raw hex" ar="دلالية — لا hex خام أبداً" /> },
                 ]}
               />
               <p>
-                The 9 button variants cover the full interaction matrix —
-                Primary, Secondary, Ghost, Destructive, and Icon — each with
-                Default, Hover, Pressed, Disabled, and Loading states, in both
-                Arabic and Latin type, across all three themes. Every state
-                designed before any state was coded.
+                <T
+                  en="The 9 button variants cover the full interaction matrix — Primary, Secondary, Ghost, Destructive, and Icon — each with Default, Hover, Pressed, Disabled, and Loading states, in both Arabic and Latin type, across all three themes. Every state designed before any state was coded."
+                  ar="تغطّي خيارات الأزرار التسعة مصفوفة التفاعل كاملةً — أساسي، وثانوي، وشبحي، وتدميري، وأيقونة — لكلٍّ حالات افتراضية ومرور وضغط وتعطيل وتحميل، بالخطّين العربي واللاتيني، عبر السمات الثلاث جميعاً. كلّ حالةٍ صُمّمت قبل أن تُبرمَج أي حالة."
+                />
               </p>
               <Figure
                 label="Component library"
-                caption="Buttons × states × themes — Figma component sheet — add export"
+                caption={<T en="Buttons × states × themes — Figma component sheet — add export" ar="أزرار × حالات × سمات — ورقة مكوّنات Figma — يُضاف التصدير" />}
               />
             </>
           ),
         },
         {
-          kicker: "Challenges",
-          heading: "Coordinating a parallel workstream without design debt.",
+          kicker: <T en="Challenges" ar="التحدّيات" />,
+          heading: (
+            <T
+              en="Coordinating a parallel workstream without design debt."
+              ar="تنسيق مسار عملٍ موازٍ دون دَيْنٍ تصميمي."
+            />
+          ),
           body: (
             <>
               <p>
-                The AI module was built in parallel by a second engineer while I
-                drove the redesign and rebuild. The risk in any parallel
-                workstream is divergence — two people inventing two visual
-                languages that have to be reconciled later.
+                <T
+                  en="The AI module was built in parallel by a second engineer while I drove the redesign and rebuild. The risk in any parallel workstream is divergence — two people inventing two visual languages that have to be reconciled later."
+                  ar="بُنيت وحدة الذكاء الاصطناعي بالتوازي على يد مهندسٍ ثانٍ بينما قُدتُ إعادة التصميم والبناء. والخطر في أي مسار عملٍ موازٍ هو التباعد — شخصان يخترعان لغتين بصريّتين يجب التوفيق بينهما لاحقاً."
+                />
               </p>
               <p>
-                The Design System absorbed that risk. Because the token grammar
-                existed first, the AI-specific screens were built as instances of
-                the same system rather than a separate look — so there was nothing
-                to reconcile at the merge.
+                <T
+                  en="The Design System absorbed that risk. Because the token grammar existed first, the AI-specific screens were built as instances of the same system rather than a separate look — so there was nothing to reconcile at the merge."
+                  ar="امتصّ نظام التصميم ذلك الخطر. ولأن قواعد الرموز وُجدت أولاً، بُنيت الشاشات الخاصة بالذكاء الاصطناعي كنُسخٍ من النظام نفسه لا كمظهرٍ منفصل — فلم يكن هناك ما يُوفَّق عند الدمج."
+                />
               </p>
             </>
           ),
         },
         {
-          kicker: "Outcomes",
-          heading: "The system is the product.",
+          kicker: <T en="Outcomes" ar="النتائج" />,
+          heading: <T en="The system is the product." ar="النظام هو المنتج." />,
           body: (
             <>
               <p>
-                Mademoiselle is active and shipping as a native Flutter app on a
-                bilingual, multi-theme Design System — a stalled prototype turned
-                into a maintainable product. Every screen is an instance of the
-                system, not a one-off, so inconsistencies surface in the system
-                before they reach production.
+                <T
+                  en="Mademoiselle is active and shipping as a native Flutter app on a bilingual, multi-theme Design System — a stalled prototype turned into a maintainable product. Every screen is an instance of the system, not a one-off, so inconsistencies surface in the system before they reach production."
+                  ar="Mademoiselle نشطٌ ويُطلق كتطبيق Flutter أصلي على نظام تصميمٍ ثنائي اللغة متعدّد السمات — نموذجٌ متعثّر تحوّل إلى منتجٍ قابل للصيانة. كلّ شاشةٍ نسخةٌ من النظام، لا حالةً فردية، فتظهر التناقضات في النظام قبل أن تصل الإنتاج."
+                />
               </p>
               <p>
-                Building the system first inverts the usual order, where a Design
-                System is documentation written at the end. Here it was the
-                foundation — and it&apos;s why a second engineer&apos;s parallel
-                work landed without accumulating design debt.
+                <T
+                  en="Building the system first inverts the usual order, where a Design System is documentation written at the end. Here it was the foundation — and it's why a second engineer's parallel work landed without accumulating design debt."
+                  ar="بناء النظام أولاً يقلب الترتيب المعتاد، حيث يكون نظام التصميم توثيقاً يُكتَب في النهاية. هنا كان الأساس — وهو سبب نزول عمل المهندس الثاني الموازي دون تراكم دَيْنٍ تصميمي."
+                />
               </p>
             </>
           ),
         },
         {
-          kicker: "Reflection",
-          heading: "What I'd carry forward.",
+          kicker: <T en="Reflection" ar="تأمّل" />,
+          heading: <T en="What I'd carry forward." ar="ما سأحمله معي." />,
           body: (
             <>
               <p>
-                Inheriting a stalled codebase made the case for design-system-first
-                undeniable: the system was what let one person redesign and rebuild
-                in parallel with a second engineer without the work drifting. I
-                now treat the system as the first deliverable, not the last.
+                <T
+                  en="Inheriting a stalled codebase made the case for design-system-first undeniable: the system was what let one person redesign and rebuild in parallel with a second engineer without the work drifting. I now treat the system as the first deliverable, not the last."
+                  ar="وراثة قاعدة كودٍ متعثّرة جعلت الحجّة لنظام-التصميم-أولاً لا تُنكَر: النظام هو ما أتاح لشخصٍ واحد إعادة التصميم والبناء بالتوازي مع مهندسٍ ثانٍ دون أن ينحرف العمل. وصرتُ الآن أعامل النظام كأول مُسلَّم، لا آخره."
+                />
               </p>
               <p>
-                With more time I&apos;d document the system as a living reference
-                with usage examples, so future contributors extend it instead of
-                quietly working around it.
+                <T
+                  en="With more time I'd document the system as a living reference with usage examples, so future contributors extend it instead of quietly working around it."
+                  ar="بمزيدٍ من الوقت سأوثّق النظام كمرجعٍ حيّ مع أمثلة استخدام، كي يوسّعه المساهمون مستقبلاً بدل الالتفاف حوله بصمت."
+                />
               </p>
             </>
           ),
         },
       ]}
       nextProject={{
-        label: "BloomBelly — Arabic-first AI healthcare →",
+        label: <T en="BloomBelly — Arabic-first AI healthcare →" ar="BloomBelly — رعاية صحية بالذكاء الاصطناعي عربية أولاً →" />,
         href: "/projects/bloombelly",
       }}
       />

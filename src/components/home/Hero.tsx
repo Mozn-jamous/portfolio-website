@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { heroContent } from "@/lib/scenes-content";
+import { T } from "@/components/i18n/T";
 import { Orb } from "@/components/site/Orb";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { CountUp } from "@/components/site/CountUp";
@@ -116,7 +117,7 @@ export function Hero() {
         aria-hidden
       >
         <Image
-          src={withBase("/demo/scene-bg.png")}
+          src={withBase("/demo/scene-bg.webp")}
           alt=""
           fill
           priority
@@ -164,7 +165,7 @@ export function Hero() {
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[var(--success)] opacity-70" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[var(--success)]" />
               </span>
-              {status}
+              <T en={status} ar={heroContent.statusAr} />
             </motion.span>
 
             {/* eyebrow */}
@@ -172,7 +173,7 @@ export function Hero() {
               {...itemProps}
               className="mt-7 font-mono text-[0.72rem] uppercase tracking-[0.28em] text-[var(--accent)]"
             >
-              {eyebrow}
+              <T en={eyebrow} ar={heroContent.eyebrowAr} />
             </motion.p>
 
             {/* headline — Clash Display 600, tight */}
@@ -180,8 +181,10 @@ export function Hero() {
               {...itemProps}
               className="font-display mt-3 text-[2.5rem] font-semibold leading-[1.0] tracking-[-0.025em] text-[var(--ink)] sm:text-[3.5rem] lg:text-[5.25rem]"
             >
-              {headlineLead}{" "}
-              <span className="text-gradient">{headlineAccent}</span>
+              <T en={headlineLead} ar={heroContent.headlineLeadAr} />{" "}
+              <span className="text-gradient">
+                <T en={headlineAccent} ar={heroContent.headlineAccentAr} />
+              </span>
             </motion.h1>
 
             {/* subheading — Inter 400, 24/160% */}
@@ -189,7 +192,7 @@ export function Hero() {
               {...itemProps}
               className="mt-6 max-w-[650px] text-xl font-normal leading-[1.6] text-[var(--ink)] sm:text-2xl"
             >
-              {subheading}
+              <T en={subheading} ar={heroContent.subheadingAr} />
             </motion.p>
 
             {/* intro */}
@@ -197,7 +200,7 @@ export function Hero() {
               {...itemProps}
               className="mt-4 max-w-[650px] text-base leading-[1.7] text-[var(--ink-muted)]"
             >
-              {intro}
+              <T en={intro} ar={heroContent.introAr} />
             </motion.p>
 
             {/* stats */}
@@ -220,10 +223,13 @@ export function Hero() {
                   </svg>
                   <div>
                     <dt className="font-display text-2xl font-semibold leading-none text-[var(--ink)]">
-                      <CountUp value={s.value} />
+                      <T
+                        en={<CountUp value={s.value} />}
+                        ar={<CountUp value={s.valueAr} />}
+                      />
                     </dt>
                     <dd className="mt-1 text-[0.72rem] leading-tight text-[var(--ink-muted)]">
-                      {s.label}
+                      <T en={s.label} ar={s.labelAr} />
                     </dd>
                   </div>
                 </div>
@@ -237,15 +243,15 @@ export function Hero() {
                   href={ctas.primary.href}
                   className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[var(--c-mauve)] to-[var(--accent)] px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 focus:ring-offset-transparent"
                 >
-                  {ctas.primary.label}
-                  <span aria-hidden className="transition group-hover:translate-x-0.5">→</span>
+                  <T en={ctas.primary.label} ar={ctas.primary.labelAr} />
+                  <span aria-hidden className="transition group-hover:translate-x-0.5 rtl:-scale-x-100">→</span>
                 </Link>
               </Magnetic>
               <Link
                 href={ctas.secondary.href}
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-6 py-3 text-sm font-semibold text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]"
               >
-                {ctas.secondary.label}
+                <T en={ctas.secondary.label} ar={ctas.secondary.labelAr} />
                 <span aria-hidden>↓</span>
               </Link>
             </motion.div>
@@ -273,7 +279,7 @@ export function Hero() {
                     >
                       {socialIcons[s.icon]}
                     </svg>
-                    {s.label}
+                    <T en={s.label} ar={s.labelAr} />
                   </a>
                 </li>
               ))}
@@ -286,7 +292,7 @@ export function Hero() {
       <div className="mx-auto w-full max-w-6xl px-5 pb-10 lg:px-8">
         <div className="panel flex flex-wrap items-center gap-x-8 gap-y-3 rounded-2xl px-6 py-4">
           <span className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-            {trustedBy.label}
+            <T en={trustedBy.label} ar={trustedBy.labelAr} />
           </span>
           <ul className="flex flex-wrap items-center gap-x-7 gap-y-2">
             {trustedBy.items.map((item) => (
@@ -299,7 +305,7 @@ export function Hero() {
             ))}
           </ul>
           <span className="ml-auto font-mono text-[0.62rem] text-[var(--ink-faint)]">
-            {location}
+            <T en={location} ar={heroContent.locationAr} />
           </span>
         </div>
       </div>

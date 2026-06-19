@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Cairo } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import { SiteNav } from "@/components/site/SiteNav";
@@ -19,6 +19,14 @@ const inter = Inter({
 const jetbrains = JetBrains_Mono({
   variable: "--font-jetbrains",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Arabic — used site-wide when <html lang="ar"> (see globals.css). Cairo is a
+// clean, modern Arabic family that pairs with the Latin type.
+const cairo = Cairo({
+  variable: "--font-arabic",
+  subsets: ["arabic", "latin"],
   display: "swap",
 });
 
@@ -61,9 +69,10 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      dir="ltr"
       data-theme="dark"
       suppressHydrationWarning
-      className={`${inter.variable} ${jetbrains.variable} ${clashDisplay.variable}`}
+      className={`${inter.variable} ${jetbrains.variable} ${clashDisplay.variable} ${cairo.variable}`}
     >
       <body className="min-h-screen text-[var(--ink)]">
         {/* Set the saved theme before paint to avoid a flash of the wrong one */}
@@ -71,6 +80,13 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html:
               "(function(){try{var t=localStorage.getItem('theme');document.documentElement.dataset.theme=(t==='light'||t==='dark')?t:'dark';}catch(e){}})();",
+          }}
+        />
+        {/* Set the saved language + direction before paint (no flash). */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){try{var l=localStorage.getItem('lang');var lang=(l==='ar')?'ar':'en';document.documentElement.lang=lang;document.documentElement.dir=(lang==='ar')?'rtl':'ltr';}catch(e){}})();",
           }}
         />
         <a

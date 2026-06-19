@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mozn Jamous — Detailed Work Record</title>
+<style>
+  @page { size: A4; margin: 15mm 14mm 14mm 14mm; }
+  :root{
+    --ink:#1c1a2e; --muted:#45435c; --faint:#7c7994; --accent:#b0476a;
+    --accent-soft:#fbeef2; --line:#e3e1ea; --line-strong:#c9c6d6; --chip:#f4f2f8; --warn:#8a5a00; --warn-bg:#fff6e6;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:#fff;color:var(--ink);
+    font-family:"Helvetica Neue",Arial,"Segoe UI",sans-serif;font-size:9.7pt;line-height:1.46;
+    -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  h1,h2,h3,h4{font-family:Georgia,"Times New Roman",serif;font-weight:600;}
+  a{color:var(--accent);text-decoration:none;}
+  .mono{font-family:"JetBrains Mono","Consolas",monospace;}
+
+  .cover{border-bottom:2px solid var(--ink);padding-bottom:14px;margin-bottom:16px;}
+  .cover .eyebrow{font-family:"JetBrains Mono",monospace;font-size:7.6pt;letter-spacing:0.16em;text-transform:uppercase;color:var(--accent);margin:0 0 5px;}
+  .cover h1{font-size:28pt;line-height:1;margin:0 0 4px;letter-spacing:-0.01em;}
+  .cover .title{font-family:"JetBrains Mono",monospace;font-size:8.6pt;color:var(--accent);margin:0 0 10px;}
+  .cover .sum{color:var(--muted);font-size:9.6pt;max-width:96%;margin:0;}
+  .contactbar{display:flex;flex-wrap:wrap;gap:3px 16px;margin-top:10px;font-family:"JetBrains Mono",monospace;font-size:7.9pt;color:var(--muted);}
+  .contactbar b{color:var(--ink);font-weight:600;}
+
+  .note-howto{background:var(--accent-soft);border:1px solid #f0c9d6;border-radius:8px;padding:9px 12px;margin:12px 0 0;font-size:8.9pt;color:var(--ink);}
+  .note-howto b{color:var(--accent);}
+
+  h2.sec{font-size:14pt;margin:22px 0 4px;border-bottom:1px solid var(--line-strong);padding-bottom:6px;}
+  h2.sec:first-of-type{margin-top:18px;}
+  .seclead{color:var(--muted);font-size:9pt;margin:6px 0 12px;}
+  h3.grp{font-family:"JetBrains Mono",monospace;font-size:8pt;letter-spacing:0.14em;text-transform:uppercase;color:var(--accent);margin:16px 0 9px;}
+
+  .entry{margin-bottom:12px;break-inside:avoid;}
+  .entry .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}
+  .entry h3{font-size:11.5pt;margin:0;}
+  .entry h3 .org{font-family:Georgia,serif;font-weight:400;color:var(--muted);}
+  .entry .when{font-family:"JetBrains Mono",monospace;font-size:7.6pt;color:var(--faint);white-space:nowrap;}
+  ul.b{list-style:none;margin:5px 0 0;padding:0;}
+  ul.b li{position:relative;padding:1.5px 0 1.5px 13px;color:var(--muted);font-size:9.3pt;}
+  ul.b li::before{content:"–";position:absolute;left:0;color:var(--accent);}
+  ul.b li b{color:var(--ink);font-weight:600;}
+
+  /* project block */
+  .p{margin-bottom:12px;break-inside:avoid;border-left:2px solid var(--line-strong);padding-left:11px;}
+  .p .h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;}
+  .p h4{font-size:11pt;margin:0;}
+  .p .meta{font-family:"JetBrains Mono",monospace;font-size:7.4pt;color:var(--accent);margin:2px 0 0;}
+  .p .badges{margin:0;}
+  .badge{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:6.7pt;letter-spacing:0.04em;text-transform:uppercase;
+    padding:1.5px 6px;border-radius:10px;background:var(--chip);border:1px solid var(--line);color:var(--muted);margin-inline-start:4px;}
+  .badge.live{background:#e9f6ef;border-color:#bfe3cf;color:#2f7d5b;}
+  .badge.confirm{background:var(--warn-bg);border-color:#f0dca8;color:var(--warn);}
+  .p p{margin:4px 0 0;color:var(--muted);font-size:9.2pt;}
+  .p .stack{font-family:"JetBrains Mono",monospace;font-size:7.4pt;color:var(--faint);margin-top:3px;}
+  .p .flag{font-size:8.4pt;color:var(--warn);margin-top:3px;}
+
+  .twocol{column-count:2;column-gap:22px;}
+  .skillrow{margin-bottom:6px;break-inside:avoid;}
+  .skillrow .k{font-family:"JetBrains Mono",monospace;font-size:7pt;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);}
+  .skillrow .v{font-size:9pt;color:var(--ink);}
+
+  .confirm-box{background:var(--warn-bg);border:1px solid #f0dca8;border-radius:8px;padding:11px 14px;margin-top:8px;}
+  .confirm-box h4{margin:0 0 6px;font-size:10.5pt;color:var(--warn);}
+  .confirm-box ul{margin:0;padding-inline-start:16px;font-size:9pt;color:var(--ink);}
+  .confirm-box li{margin:2.5px 0;}
+
+  .pagebreak{page-break-before:always;}
+  footer{margin-top:22px;border-top:2px solid var(--ink);padding-top:8px;text-align:center;
+    font-family:"JetBrains Mono",monospace;font-size:6.8pt;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint);}
+</style>
+</head>
+<body>
+
+  <div class="cover">
+    <p class="eyebrow">Detailed work record · internal reference for writing/tailoring a CV</p>
+    <h1 class="serif">Mozn Jamous</h1>
+    <p class="title">Product Designer &amp; Developer — design · mobile · AI · web · ERP</p>
+    <p class="sum">A complete, honest inventory of the work — every project I have on record, with my real role, the stack, the status, and what I actually did. Items where the role or authorship needs confirming are tagged <span class="mono" style="color:var(--warn)">CONFIRM</span>. Pull from here to write a CV targeted at any specific role.</p>
+    <div class="contactbar">
+      <span><b>Email</b> moznjamous9@gmail.com</span>
+      <span><b>Phone</b> +963 956 959 722</span>
+      <span><b>LinkedIn</b> /in/mozn-jamous</span>
+      <span><b>GitHub</b> @Mozn-jamous</span>
+      <span><b>Location</b> Damascus, Syria · remote</span>
+    </div>
+  </div>
+
+  <p class="note-howto"><b>Status legend:</b> <span class="mono">Production</span> = live, in daily use · <span class="mono">Live</span> = shipped/deployed · <span class="mono">Built</span> = complete, not publicly released · <span class="mono">Thesis</span> = academic · <span class="mono">Personal</span> = my own product · <span class="mono">Prototype/MVP</span> = working but unfinished · <span class="mono">Client front-end</span> = built on a client's existing system · <span class="mono">CONFIRM</span> = verify role/authorship before using.</p>
+
+  <!-- ============ EXPERIENCE ============ -->
+  <h2 class="sec serif">Professional experience</h2>
+
+  <div class="entry">
+    <div class="row">
+      <h3 class="serif">UI/UX Designer &amp; Flutter Developer <span class="org">— Santa Media</span></h3>
+      <span class="when">Mar 2026 — Present · Damascus</span>
+    </div>
+    <ul class="b">
+      <li>Design and build product for Mademoiselle, a beauty-commerce app — UI/UX, native Flutter implementation, and Supabase backend logic (collaborative team build; the app is live and active).</li>
+      <li>Designed a bilingual, multi-theme <b>design system</b> — 26+ components across three themes and both writing directions.</li>
+      <li>Also produced Mademoiselle's separate web landing site (<span class="mono">mademoizelle.co</span>).</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3 class="serif">Designer &amp; Developer <span class="org">— Freelance / independent</span></h3>
+      <span class="when">2024 — Present · Remote</span>
+    </div>
+    <ul class="b">
+      <li>Designed and built brand &amp; product websites and apps for clients and as my own products — Arabic-first / bilingual, in both vanilla HTML/CSS/JS and Vue, plus Flutter apps and full-stack systems. (Itemised under “Projects” below.)</li>
+      <li>Work spans clinical-nutrition, food &amp; beverage, legal, logistics, hospitality, retail SaaS, and personal-development products.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="row">
+      <h3 class="serif">Odoo / ERP Developer <span class="org">— Techno Solution</span></h3>
+      <span class="when">Feb 2025 — Sep 2025 · Damascus</span>
+    </div>
+    <ul class="b">
+      <li>Implemented Odoo 19 end to end for a <b>3-division company</b> (import, warehousing, solar): HR, payroll, attendance, purchasing, inventory, accounting — replacing a scattered Excel operation. <b>18 employees · 6,514 hours · 140 purchase orders.</b></li>
+      <li>Set up a restaurant fully on Odoo (Burgasm): live POS, kitchen display, ingredient-level inventory, proper books. <b>68 accounts · 500+ POS orders · 10,000+ stock moves · 30+ modules.</b></li>
+      <li>Built automations with Odoo Studio + custom Python/XML; custom chart of accounts across modules.</li>
+    </ul>
+  </div>
+
+  <!-- ============ PROJECTS ============ -->
+  <h2 class="sec serif">Projects — in detail</h2>
+  <p class="seclead">Grouped by type. A project can belong to more than one group; it's listed under its primary discipline.</p>
+
+  <!-- MOBILE / FLUTTER -->
+  <h3 class="grp">Mobile &amp; product apps (Flutter)</h3>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Mademoiselle</h4><span class="badges"><span class="badge live">Live</span><span class="badge">Collaboration</span></span></div>
+    <p class="meta">Santa Media · Beauty commerce · 2026 — Present · Role: UI/UX + Flutter + design system</p>
+    <p>Redesigned and rebuilt a stalled FlutterFlow prototype into a production beauty-commerce app. Owned UI/UX and a bilingual, multi-theme design system (26+ components, 3 themes, RTL + LTR); contributed Flutter implementation and Supabase backend logic. Separate web landing site (mademoizelle.co) also delivered.</p>
+    <p class="stack">Figma · Flutter · Dart · FlutterFlow · Supabase · Design system · RTL · AI try-on</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">BloomBelly</h4><span class="badges"><span class="badge">Thesis</span><span class="badge">Built</span></span></div>
+    <p class="meta">Maternal &amp; child health · 2025 · Role: product design + build (graduation thesis, ASPU)</p>
+    <p>Arabic-first maternal-health app, designed in Figma and built end to end in Flutter, with three AI models behind one interface (Gemini for vision, a LoRA-tuned Arabic transformer for Q&amp;A, Random Forest for nutrition). Documented to IEEE 830. Includes a <b>FlutterFlow + Supabase admin/back-office panel</b> (user management, wallet, transactions) and the Flask-served LoRA chatbot model (see AI section).</p>
+    <p class="stack">Figma · Flutter · Flask · Supabase · Gemini · LoRA · Random Forest · IEEE 830</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">CareConnect</h4><span class="badges"><span class="badge">Built</span></span></div>
+    <p class="meta">Childcare marketplace · 2024 · Role: product design + build</p>
+    <p>A childcare marketplace built as three separate Flutter apps (Mother · Babysitter · Admin) over one Supabase backend, with row-level security enforcing role boundaries at the database layer. IEEE 830 SRS written before any UI. The babysitter-provider side was co-developed with a collaborator (@shaha123s).</p>
+    <p class="stack">Figma · Flutter · Supabase · PostgreSQL · RLS · IEEE 830</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">FOOOOOD / IIH Lifestyle</h4><span class="badges"><span class="badge">Prototype/MVP</span><span class="badge confirm">Confirm</span></span></div>
+    <p class="meta">Medical nutrition · Arabic-first · Role: design + build (Flutter app + AI backend)</p>
+    <p>An AI medical-nutrition decision engine (food + disease rules across 20 diseases → Allowed / Limited / Forbidden) with a Flutter patient app for IIH (“نمط حياة IIH”). Self-trained PyTorch + scikit-learn models (not an external LLM), Flask API, USDA FoodData Central as source data; Flutter app wired to both Supabase and the Flask API. Working MVP, mid-refactor, not deployed.</p>
+    <p class="stack">Flutter · Flask · PyTorch · scikit-learn · Supabase · USDA FDC</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Barber — booking system (customer + admin)</h4><span class="badges"><span class="badge">~60% built</span><span class="badge confirm">Confirm</span></span></div>
+    <p class="meta">Barbershop booking · Arabic-first · Role: design + build (low-code/AI-assisted)</p>
+    <p>An Arabic appointment-booking system: a customer Flutter app (booking, loyalty, an “AI hair preview” feature) plus a companion admin app, sharing one Supabase project and a 10-table schema. FlutterFlow-generated; AI hairstyle feature stubbed (Replicate, mocked). Incomplete (~60%), beta.</p>
+    <p class="stack">Flutter · FlutterFlow · Supabase · Provider · GoRouter · (Replicate, mocked)</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Family Games (ألعاب العائلة)</h4><span class="badges"><span class="badge">Personal</span><span class="badge">Built</span></span></div>
+    <p class="meta">Offline party-games app · Arabic · Role: design + build (RN prototype → Flutter rewrite)</p>
+    <p>An offline Arabic party-games app for 2–10 players. Built first as a React Native / Expo prototype (4 games), then rewritten in Flutter (Material 3) and expanded to 15 games. A personal product.</p>
+    <p class="stack">Flutter · Material 3 · audioplayers · (React Native / Expo prototype)</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Sahlisoft Reports (Sahli app)</h4><span class="badges"><span class="badge">Client front-end</span><span class="badge confirm">Confirm</span></span></div>
+    <p class="meta">Accounting/ERP mobile client · Arabic RTL · Role: front-end + API integration (client project)</p>
+    <p>An Arabic RTL Flutter front-end over a third-party Syrian ERP (“Sahlisoft”, REST API v2.6) — reports and data views. Hand-written Flutter (not FlutterFlow). The repo/branding belong to a client/collaborator; this is integration work on their system, <b>not my own product</b>.</p>
+    <p class="stack">Flutter · Provider · http · Sahlisoft REST API</p>
+  </div>
+
+  <!-- FULL-STACK / SAAS -->
+  <h3 class="grp">Full-stack &amp; SaaS</h3>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Blatos — AI-powered store-management SaaS</h4><span class="badges"><span class="badge">Built</span><span class="badge">Solo full-stack</span></span></div>
+    <p class="meta">Multi-tenant B2B SaaS + AI Telegram bot · Arabic-first · 2026 · Role: solo full-stack (design + build)</p>
+    <p>A multi-tenant SaaS where each shop owner gets a web dashboard (products, orders, inventory, discounts, customers) plus a dedicated AI Telegram bot that serves their customers. Multi-tenant by tenant_id, two user types (platform owner / shop admin). Built solo, front to back. ~16.5k lines. Not yet deployed (“coming soon”).</p>
+    <p class="stack">FastAPI · PostgreSQL · SQLAlchemy · Alembic · JWT · Redis · Vue 3 · Vite · Tailwind · Pinia · Chart.js · python-telegram-bot · Groq LLM (llama-3.3-70b)</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Takhrjy — Graduation-gifts ERP</h4><span class="badges"><span class="badge">Built</span><span class="badge confirm">Confirm role + year</span></span></div>
+    <p class="meta">Custom-products ERP · Vue + Node · Role: see flag below</p>
+    <p>An ERP for a custom graduation-gifts business — a 7-role permission model, a 6-stage order workflow (Kanban), retail + wholesale, local + international fulfillment, QR delivery proof, internal chat. Vue 3 + TS frontend, Node/Express + PostgreSQL + socket.io backend. ~28k lines, one teammate (@xvtu2003) on backend scaffolding.</p>
+    <p class="stack">Vue 3 · TypeScript · Pinia · Tailwind · Vite · Node/Express · PostgreSQL · JWT · socket.io · Swagger</p>
+    <p class="flag">⚠ CONFIRM: the site currently frames your role as “design + QA”, but the local git history shows you authored the frontend + UX and most commits (incl. the initial commit). Also the commit dates are early 2026, not 2025. Tell me the accurate role + year.</p>
+  </div>
+
+  <!-- ERP / ODOO -->
+  <h3 class="grp">ERP — Odoo (production)</h3>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Techno Solution</h4><span class="badges"><span class="badge live">Production</span></span></div>
+    <p class="meta">3-division company (import / warehousing / solar) · 2025 · Role: Odoo developer (solo)</p>
+    <p>Full Odoo 19 implementation replacing scattered Excel: HR, payroll, attendance, purchasing, inventory, accounting, on one centralized system. Still live after handoff. <b>18 employees · 6,514 hours · 140 purchase orders · 884 inventory moves.</b></p>
+    <p class="stack">Odoo 19 · Python · XML · ORM · Studio · PostgreSQL</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Burgasm</h4><span class="badges"><span class="badge live">Production</span></span></div>
+    <p class="meta">Restaurant fully on Odoo · 2025 · Role: Odoo developer (solo)</p>
+    <p>A restaurant run end to end on Odoo: live POS, kitchen display, ingredient-level inventory, dual-currency books. <b>68 accounts (3 partners) · 500+ POS orders · 10,000+ ingredient moves · 30+ modules.</b></p>
+    <p class="stack">Odoo 19 · POS · Inventory · Accounting · Python/XML</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Smart Expense Manager</h4><span class="badges"><span class="badge live">Open source · Live</span></span></div>
+    <p class="meta">Odoo 19 module · LGPL-3.0 · 2026 · Role: Odoo developer (solo) · github.com/Mozn-jamous/smart-expense-manager</p>
+    <p>A custom Odoo module: token-secured one-click email approvals routed via the hr.employee hierarchy (no login), journal entries auto-generated on finance sign-off, monthly PDF reports by cron, three-tier access at the record-rule layer, full EN/AR. Open source on GitHub.</p>
+    <p class="stack">Odoo 19 · Python · XML · QWeb · OWL · account.move · cron</p>
+  </div>
+
+  <!-- AI / ML -->
+  <h3 class="grp">AI / ML</h3>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">BloomBelly — three-model AI stack</h4><span class="badges"><span class="badge">Built</span></span></div>
+    <p class="meta">Role: AI integration + (model) training, behind one Arabic-first interface</p>
+    <p>Google Gemini for medical-image understanding; a LoRA fine-tuned transformer for Arabic baby/child-care Q&amp;A (trained on a curated Q&amp;A set, served via a Flask API with calibrated refusals); a Random Forest for nutrition scoring. Each model has a purpose-built screen.</p>
+    <p class="stack">Gemini · PyTorch · HuggingFace Transformers · PEFT/LoRA · scikit-learn · Flask</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Blatos — AI customer-service bot</h4><span class="badges"><span class="badge">Built</span></span></div>
+    <p class="meta">Role: design + build (part of Blatos SaaS)</p>
+    <p>A per-tenant Telegram bot that answers each shop's customers using a Groq-hosted LLM (llama-3.3-70b) with 15 function-call tools wired into the store database; understands several Arabic dialects plus EN/TR/FR/DE.</p>
+    <p class="stack">python-telegram-bot · Groq · function calling · PostgreSQL</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Arabic baby-advice LoRA model</h4><span class="badges"><span class="badge">Built</span><span class="badge confirm">Confirm</span></span></div>
+    <p class="meta">Role: ML — training + serving for BloomBelly's chatbot</p>
+    <p>A LoRA fine-tune of a LLaMA/Mistral base for Arabic child-care advice, with a Flask serving API and a BLEU/ROUGE/perplexity evaluation harness (301 Q&amp;A pairs, 3 epochs, perplexity ≈ 3.05). Note: some artifacts reference a collaborator's machine (“Aziz/Abdalaziz”) — confirm whether you trained it or integrated a collaborator's adapter.</p>
+    <p class="stack">PyTorch · Transformers · PEFT/LoRA · Flask · BLEU/ROUGE</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">FOOOOOD — nutrition models</h4><span class="badges"><span class="badge">Prototype/MVP</span></span></div>
+    <p class="meta">Role: design + build (see Mobile section)</p>
+    <p>Self-trained PyTorch + scikit-learn models that map food + disease to dietary suitability across 20 diseases. (Full project under Mobile &amp; product apps.)</p>
+    <p class="stack">PyTorch · scikit-learn · Flask</p>
+  </div>
+
+  <!-- WEB / BRAND -->
+  <h3 class="grp">Web &amp; brand sites</h3>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Pharmacology</h4><span class="badges"><span class="badge">Built</span></span></div>
+    <p class="meta">Clinical-nutrition brand (client: Dr. Ahmed Elkhateeb, Pharm.D) · 2026 · Role: complete redesign + front-end build</p>
+    <p>A complete redesign and from-scratch rebuild (v3) — 25 fully bilingual (Arabic-first, RTL-native) pages on one locked design-token system and a ~30-component library, vanilla HTML/CSS/JS with no build step, Supabase-wired apply + waitlist forms, WhatsApp deeplinks. (The medical credentials/metrics on the site are the client's, not mine.)</p>
+    <p class="stack">HTML · CSS · JS · Design tokens · Bilingual i18n · Supabase · RTL</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Noodlna</h4><span class="badges"><span class="badge live">Live · Vercel</span></span></div>
+    <p class="meta">Food brand (client: Syria Macarna) · 2026 · Role: design + front-end build</p>
+    <p>An Arabic-first consumer storefront (product hero, flavor range, a 3-minute cooking ritual, recipes, reviews, heritage) plus a separate B2B wholesale/export page (commercial specs, WhatsApp + export-request funnel). Vanilla HTML/CSS/JS, deployed on Vercel.</p>
+    <p class="stack">HTML · CSS · JS · Arabic/RTL · Vercel</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Mouhamina Law (محامينا)</h4><span class="badges"><span class="badge">Built</span></span></div>
+    <p class="meta">Law-firm website, Damascus (client: Rula Bash Imam) · Role: design + front-end build</p>
+    <p>A bilingual (EN/AR, full RTL) marketing site for a law office — Vue 3 + Tailwind 4 design tokens + vue-i18n, heavy SEO (Schema.org LegalService, sitemap, OG), Cloudflare deploy target.</p>
+    <p class="stack">Vue 3 · Vite · Tailwind 4 · vue-i18n · Cloudflare</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">CupCar Movers</h4><span class="badges"><span class="badge">Built</span></span></div>
+    <p class="meta">Car-transport company, Wuppertal DE (client: Mahmoud Alrajab) · Role: design + front-end build</p>
+    <p>A bilingual <b>EN/DE</b> one-page marketing site (the non-Arabic project) for a car-shipping company. Vanilla static + Vue 3 via CDN; SEO + Google verification; plain hosting.</p>
+    <p class="stack">HTML · CSS · Vue 3 (CDN) · EN/DE</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Chef portfolio (chef-review)</h4><span class="badges"><span class="badge live">Live</span></span></div>
+    <p class="meta">Head-chef portfolio, Damascus · 2026 · Role: design + build (sole author)</p>
+    <p>A one-page <b>trilingual (EN/AR/TR, full RTL)</b> editorial site for a head chef, with live dish data pulled from a Google Sheet and a Google-Form guest-review funnel. Single vanilla HTML/CSS/JS file with CSS design tokens + a data-i18n system.</p>
+    <p class="stack">HTML · CSS · JS · data-i18n · Google Sheets (gviz) · Google Forms</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Rise Up / Mozn Rise 90</h4><span class="badges"><span class="badge live">Personal · Shipped (APK)</span></span></div>
+    <p class="meta">90-day “Life OS” PWA + Android · Arabic-first · 2026 · Role: design + build (sole owner)</p>
+    <p>My own personal-development product: a structured 90-day program (12 weeks × 8 tasks), 12 weekly “project” blueprints, habits, Pomodoro, career-prep checklists, scholarship + relocation guides, and full XP/level/streak gamification. Vanilla PWA (custom service worker) wrapped as an Android app via Capacitor; local-first state with optional Telegram-bot cloud backup. v1.1.0, signed release APK built. ~9.3k lines.</p>
+    <p class="stack">HTML · CSS · JS · PWA · Capacitor · Gradle · Telegram Bot API</p>
+  </div>
+
+  <div class="p">
+    <div class="h"><h4 class="serif">Portfolio site + earlier web pieces</h4><span class="badges"><span class="badge live">Live</span></span></div>
+    <p class="meta">Role: design + build</p>
+    <p>This bilingual portfolio (Next.js 16 + React 19 + Tailwind 4 + Framer Motion + Lenis), the public showcase/index repos (mozn-portfolio, bloombelly-showcase, careconnect-platform-showcase, riseup-showcase, profile README), an earlier hand-built portfolio (vanilla + GSAP + Three.js), and a small animated vCard for a family member.</p>
+    <p class="stack">Next.js 16 · React 19 · TypeScript · Tailwind 4 · Framer Motion · Lenis</p>
+  </div>
+
+  <!-- ============ EDU / CERTS / SKILLS ============ -->
+  <h2 class="sec serif">Education, certifications &amp; skills</h2>
+  <div class="twocol">
+    <div class="skillrow"><div class="k">Education</div><div class="v">B.Sc. Information Technology Engineering — Al-Sham Private University (ASPU), Damascus · 2025. Graduation thesis: BloomBelly.</div></div>
+    <div class="skillrow"><div class="k">Certifications</div><div class="v">Odoo Functional Certification — Odoo S.A. · 2025 &nbsp;·&nbsp; 1 Million Prompters (AI) — Dubai Future Foundation · 2025</div></div>
+    <div class="skillrow"><div class="k">Design</div><div class="v">Figma · Design systems · Prototyping · User flows · Arabic/RTL UX · Accessibility · Bilingual interfaces</div></div>
+    <div class="skillrow"><div class="k">Mobile</div><div class="v">Flutter · Dart · FlutterFlow · iOS + Android · Capacitor (PWA→Android)</div></div>
+    <div class="skillrow"><div class="k">Web</div><div class="v">HTML · CSS · JavaScript · Vue 3 · Vite · Tailwind · vanilla design-token systems · bilingual RTL i18n · Next.js/React (this site)</div></div>
+    <div class="skillrow"><div class="k">Backend</div><div class="v">Python · Flask · FastAPI · Node/Express · PostgreSQL · Supabase · SQLAlchemy/Alembic · JWT · Redis · REST · socket.io</div></div>
+    <div class="skillrow"><div class="k">AI / ML</div><div class="v">Google Gemini · Groq (LLaMA) · LoRA / PEFT fine-tuning · HuggingFace Transformers · PyTorch · scikit-learn / Random Forest · LLM function-calling</div></div>
+    <div class="skillrow"><div class="k">ERP — Odoo</div><div class="v">Odoo 17–19 · Studio · Python/XML · ORM · QWeb · OWL · POS · Inventory · HR · Payroll · Accounting · Manufacturing · Purchase</div></div>
+    <div class="skillrow"><div class="k">Tools / deploy</div><div class="v">Git · GitHub · Vercel · Cloudflare · Postman · Linux · Docker · Agile · IEEE 830</div></div>
+    <div class="skillrow"><div class="k">Languages</div><div class="v">Arabic — native · English — professional working (B2) · (one client site delivered in German)</div></div>
+  </div>
+
+  <!-- ============ CONFIRM ============ -->
+  <h2 class="sec serif">Before you publish — please confirm</h2>
+  <div class="confirm-box">
+    <h4>Items I flagged CONFIRM (so the CV stays accurate):</h4>
+    <ul>
+      <li><b>Takhrjy role &amp; year</b> — git shows you built the frontend + UX and most commits (early 2026), but it was framed as “design + QA, 2025”. Which is right?</li>
+      <li><b>Barber &amp; FOOOOOD</b> — confirm these are yours to show and how finished they are (barber ≈ 60%, FOOOOOD is an MVP).</li>
+      <li><b>Baby-advice LoRA</b> — did you train it, or integrate a collaborator's adapter? (Some files reference “Aziz/Abdalaziz”.)</li>
+      <li><b>Sahlisoft (Sahli app)</b> — this is front-end work on a client's ERP, not your own product; keep it framed that way.</li>
+      <li><b>Mademoiselle</b> — confirm your exact contribution (it's a team build; you led design + the design system).</li>
+      <li><b>Security note (not CV):</b> the Blatos repo has live secrets committed in <span class="mono">.env</span> (JWT secret, Groq key) — rotate them; several apps commit Supabase anon keys.</li>
+    </ul>
+  </div>
+
+  <footer>Mozn Jamous · detailed work record · compiled 2026 · for personal CV-writing reference</footer>
+
+</body>
+</html>

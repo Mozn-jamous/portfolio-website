@@ -15,7 +15,7 @@ export function Testimonials() {
 
   return (
     <section className="relative isolate overflow-hidden">
-      <SceneBackground src="/scenes/about.png" position="center 60%" scrim={0} />
+      <SceneBackground src="/scenes/about.webp" position="center 60%" scrim={0} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
       <div className="mx-auto max-w-6xl px-5 py-24 lg:px-8 lg:py-28">

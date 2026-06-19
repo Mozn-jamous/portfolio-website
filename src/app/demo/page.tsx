@@ -80,7 +80,7 @@ export default function DemoPage() {
         {/* illustrated background */}
         <div className="demo-bg" aria-hidden>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={withBase("/demo/scene-bg.png")} alt="" />
+          <img src={withBase("/demo/scene-bg.webp")} alt="" />
         </div>
 
         {/* soft halo behind copy */}
@@ -90,7 +90,7 @@ export default function DemoPage() {
         <div className="demo-orb-wrap">
           <div className="demo-orb-glow" aria-hidden />
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="demo-orb-img" src={withBase("/demo/character.png")} alt="Aurora, a glowing orb mascot" />
+          <img className="demo-orb-img" src={withBase("/demo/character.webp")} alt="Aurora, a glowing orb mascot" />
         </div>
 
         {/* copy */}
@@ -118,21 +118,21 @@ export default function DemoPage() {
 
           {/* eslint-disable @next/next/no-img-element */}
           <span className="demo-chip c1">
-            <img src={withBase("/demo/chips/monitor.png")} alt="" />
+            <img src={withBase("/demo/chips/monitor.webp")} alt="" />
           </span>
           <span className="demo-chip c2">
-            <img src={withBase("/demo/chips/graph.png")} alt="" />
+            <img src={withBase("/demo/chips/graph.webp")} alt="" />
           </span>
           <span className="demo-chip c3">
-            <img src={withBase("/demo/chips/clock.png")} alt="" />
+            <img src={withBase("/demo/chips/clock.webp")} alt="" />
           </span>
           <span className="demo-chip c4">
-            <img src={withBase("/demo/chips/spark.png")} alt="" />
+            <img src={withBase("/demo/chips/spark.webp")} alt="" />
           </span>
 
           <div className="demo-mini-orb">
             <div className="demo-orb-glow" aria-hidden />
-            <img className="demo-orb-img" src={withBase("/demo/character.png")} alt="" />
+            <img className="demo-orb-img" src={withBase("/demo/character.webp")} alt="" />
           </div>
           {/* eslint-enable @next/next/no-img-element */}
         </div>

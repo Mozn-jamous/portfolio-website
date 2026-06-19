@@ -3,6 +3,7 @@
 import type { ReactNode, SVGProps } from "react";
 import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
+import { T } from "@/components/i18n/T";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -35,18 +36,18 @@ function FlowLine({ reduced, delay = 0, ...props }: FlowLineProps) {
 }
 
 type Props = {
-  title: string;
-  caption?: string;
+  title: ReactNode;
+  caption?: ReactNode;
   children: ReactNode;
 };
 
 /* Pitch/Notion light-themed architecture diagram frame */
 export function ArchitectureDiagram({ title, caption, children }: Props) {
   return (
-    <figure className="my-10 overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)]">
+    <figure className="arch-diagram my-10 overflow-hidden rounded-md border border-[var(--border)] bg-[var(--surface)]">
       <header className="flex items-center justify-between border-b border-[var(--border)] bg-[var(--surface-2)] px-4 py-2.5">
         <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--accent-deep)]">
-          ▦ Architecture · {title}
+          ▦ <T en="Architecture" ar="البنية" /> · {title}
         </p>
         <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
           SVG
@@ -62,14 +63,16 @@ export function ArchitectureDiagram({ title, caption, children }: Props) {
   );
 }
 
-/* Color tokens — Salmverse pastel theme */
+/* Color tokens — Salmverse pastel theme. The accents read per-case-study CSS
+   vars (set by CaseStudyTheme.diagram*) and fall back to the default rose, so a
+   themed page's diagram matches its app while un-themed pages stay rose. */
 const colors = {
   primary: "#3f3a5a",      // ink (deep plum)
   secondary: "#6a6488",    // ink-muted
   faint: "#9a93b5",        // ink-faint
-  accent: "#cf7a99",       // accent (rose)
-  accentDeep: "#b4628a",   // accent-deep
-  accentSoft: "#f7e4ea",   // accent-soft
+  accent: "var(--dgm-accent, #cf7a99)",        // accent (rose)
+  accentDeep: "var(--dgm-accent-deep, #b4628a)", // accent-deep
+  accentSoft: "var(--dgm-accent-soft, #f7e4ea)", // accent-soft
   surface: "#ffffff",
   border: "#e7e0f0",
 };
@@ -83,8 +86,13 @@ export function BloomBellyDiagram() {
   const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
-      title="BloomBelly system topology"
-      caption="Flutter client → Flask orchestrator → 3 AI models, auth-gated by Supabase."
+      title={<T en="BloomBelly system topology" ar="نظام BloomBelly" />}
+      caption={
+        <T
+          en="Flutter client → Flask orchestrator → 3 AI models, auth-gated by Supabase."
+          ar="عميل Flutter ← مُنسّق Flask ← ٣ نماذج ذكاء اصطناعي، محميّة بمصادقة Supabase."
+        />
+      }
     >
       <svg
         viewBox="0 0 720 320"
@@ -161,8 +169,13 @@ export function CareConnectDiagram() {
   const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
-      title="CareConnect — three apps, one backend"
-      caption="Single Postgres + Supabase RLS enforces role boundaries. Apps cannot drift."
+      title={<T en="CareConnect — three apps, one backend" ar="CareConnect — ثلاثة تطبيقات، خلفية واحدة" />}
+      caption={
+        <T
+          en="Single Postgres + Supabase RLS enforces role boundaries. Apps cannot drift."
+          ar="قاعدة Postgres واحدة + سياسات RLS في Supabase تفرض حدود الأدوار، فلا تنحرف التطبيقات."
+        />
+      }
     >
       <svg viewBox="0 0 720 320" className="mx-auto h-auto w-full max-w-[680px]" xmlns="http://www.w3.org/2000/svg" aria-label="CareConnect architecture diagram">
         <defs>
@@ -186,10 +199,10 @@ export function CareConnectDiagram() {
         ))}
 
         <rect x="20" y="180" width="680" height="120" rx="6" fill={colors.surface} stroke={colors.primary} strokeWidth="1.5" />
-        <text x="40" y="205" fontFamily={FONT_MONO} fontSize="10" fill={colors.primary}>SHARED BACKEND · POSTGRES + RLS</text>
-        <text x="40" y="232" fontFamily={FONT_SANS} fontSize="18" fontWeight="500" fill={colors.primary}>Supabase</text>
-        <text x="40" y="256" fontFamily={FONT_MONO} fontSize="11" fill={colors.secondary}>row-level security · role-based access · single source of truth</text>
-        <text x="40" y="280" fontFamily={FONT_MONO} fontSize="11" fill={colors.accentDeep}>policy: mother → only active babysitters in radius</text>
+        <text x="360" y="205" textAnchor="middle" fontFamily={FONT_MONO} fontSize="10" fill={colors.primary}>SHARED BACKEND · POSTGRES + RLS</text>
+        <text x="360" y="232" textAnchor="middle" fontFamily={FONT_SANS} fontSize="18" fontWeight="500" fill={colors.primary}>Supabase</text>
+        <text x="360" y="256" textAnchor="middle" fontFamily={FONT_MONO} fontSize="11" fill={colors.secondary}>row-level security · role-based access · single source of truth</text>
+        <text x="360" y="280" textAnchor="middle" fontFamily={FONT_MONO} fontSize="11" fill={colors.accentDeep}>policy: mother → only active babysitters in radius</text>
       </svg>
     </ArchitectureDiagram>
   );
@@ -199,8 +212,13 @@ export function SmartExpenseDiagram() {
   const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
-      title="Smart Expense Manager — approval flow"
-      caption="Token-secured email approvals · auto-journal on finance sign-off."
+      title={<T en="Smart Expense Manager — approval flow" ar="Smart Expense Manager — مسار الموافقة" />}
+      caption={
+        <T
+          en="Token-secured email approvals · auto-journal on finance sign-off."
+          ar="موافقات عبر البريد محميّة برمز · قيد محاسبي تلقائي عند اعتماد المالية."
+        />
+      }
     >
       <svg viewBox="0 0 720 280" className="mx-auto h-auto w-full max-w-[680px]" xmlns="http://www.w3.org/2000/svg" aria-label="Smart Expense Manager approval flow">
         <defs>
@@ -224,7 +242,7 @@ export function SmartExpenseDiagram() {
             {i < arr.length - 1 && (
               <>
                 <FlowLine reduced={reduced} delay={0.2 + i * 0.18} x1={step.x + 155} y1={120} x2={arr[i + 1].x} y2={120} stroke={colors.secondary} strokeWidth="1.2" markerEnd="url(#arrow-s)" />
-                <text x={step.x + 165} y={111} fontFamily={FONT_MONO} fontSize="8" fill={colors.primary}>
+                <text x={step.x + 165} y={58} textAnchor="middle" fontFamily={FONT_MONO} fontSize="8" fill={colors.secondary}>
                   {i === 0 ? "hr.employee" : i === 1 ? "token-secured" : "post"}
                 </text>
               </>

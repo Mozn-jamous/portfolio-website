@@ -4,12 +4,13 @@ import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import { Modal } from "@/components/site/Modal";
 import { withBase } from "@/lib/base-path";
+import { T } from "@/components/i18n/T";
 
 /**
  * Figure — a captioned visual slot.
  *
  * Pass `src` to render a real screenshot / Figma export (drop the file in
- * /public and reference it, e.g. src="/work/bloombelly/flows.png"). The image
+ * /public and reference it, e.g. src="/work/bloombelly/flows.webp"). The image
  * is served through next/image (AVIF/WebP, lazy) and becomes click-to-zoom in
  * an accessible lightbox. With no `src` it renders a clearly-labeled dashed
  * placeholder so the layout reads as "visual goes here" until the asset lands.
@@ -50,9 +51,9 @@ export function Figure({
           />
           <span
             aria-hidden
-            className="pointer-events-none absolute bottom-2 right-2 rounded-md bg-black/55 px-2 py-1 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-white opacity-0 backdrop-blur transition group-hover:opacity-100"
+            className="pointer-events-none absolute bottom-2 end-2 rounded-md bg-black/55 px-2 py-1 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-white opacity-0 backdrop-blur transition group-hover:opacity-100"
           >
-            Click to zoom
+            <T en="Click to zoom" ar="اضغط للتكبير" />
           </span>
         </button>
       ) : (
@@ -62,7 +63,7 @@ export function Figure({
               {label}
             </p>
             <p className="mt-1.5 text-sm text-[var(--ink-muted)]">
-              Visual placeholder · add export
+              <T en="Visual placeholder · add export" ar="صورة مؤقتة · أضف التصدير" />
             </p>
           </div>
         </div>
@@ -93,7 +94,7 @@ export function Figure({
             type="button"
             onClick={() => setZoomed(false)}
             aria-label="Close image"
-            className="focus-ring absolute -top-1 right-0 grid h-10 w-10 -translate-y-full place-items-center rounded-full border border-[var(--border-strong)] bg-[var(--glass)] text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] sm:right-0"
+            className="focus-ring absolute -top-1 end-0 grid h-10 w-10 -translate-y-full place-items-center rounded-full border border-[var(--border-strong)] bg-[var(--glass)] text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] sm:end-0"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
               <path d="M18 6L6 18M6 6l12 12" />

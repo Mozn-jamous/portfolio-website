@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Modal } from "./Modal";
+import { T } from "@/components/i18n/T";
 
-type Item = { href: string; label: string };
+type Item = { href: string; label: string; labelAr?: string };
 
 /**
  * Mobile navigation — a hamburger (visible < md) that opens an accessible
@@ -40,11 +41,11 @@ export function MobileNav({
         onClose={() => setOpen(false)}
         label="Site menu"
         placement="right"
-        panelClassName="flex h-full w-[80vw] max-w-xs flex-col gap-1 border-l border-[var(--glass-border)] bg-[var(--surface)] p-6 shadow-soft-lg"
+        panelClassName="flex h-full w-[80vw] max-w-xs flex-col gap-1 border-s border-[var(--glass-border)] bg-[var(--surface)] p-6 shadow-soft-lg"
       >
         <div className="mb-6 flex items-center justify-between">
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--ink-faint)]">
-            Menu
+            <T en="Menu" ar="القائمة" />
           </span>
           <button
             type="button"
@@ -66,7 +67,7 @@ export function MobileNav({
               onClick={() => setOpen(false)}
               className="border-b border-[var(--border)] py-3.5 text-lg text-[var(--ink)] transition hover:text-[var(--accent-deep)]"
             >
-              {item.label}
+              <T en={item.label} ar={item.labelAr ?? item.label} />
             </Link>
           ))}
         </nav>
@@ -76,8 +77,8 @@ export function MobileNav({
           onClick={() => setOpen(false)}
           className="mt-6 inline-flex items-center justify-center gap-1.5 rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[var(--accent-deep)]"
         >
-          Let&apos;s Talk
-          <span aria-hidden>→</span>
+          <T en="Let's Talk" ar="لنتحدّث" />
+          <span aria-hidden className="rtl:-scale-x-100">→</span>
         </Link>
       </Modal>
     </div>

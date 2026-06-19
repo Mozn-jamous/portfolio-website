@@ -5,6 +5,7 @@ import Link from "next/link";
 import { architectureStack, type ArchLayer } from "@/lib/scenes-content";
 import { SceneBackground } from "@/components/site/SceneBackground";
 import { Reveal } from "@/components/site/Reveal";
+import { T } from "@/components/i18n/T";
 
 /**
  * SystemArchitecture — an interactive, full-stack viewer.
@@ -16,7 +17,8 @@ import { Reveal } from "@/components/site/Reveal";
  * opacity, so nothing depends on JS/observers to be readable.
  */
 export function SystemArchitecture() {
-  const { eyebrow, heading, intro, layers } = architectureStack;
+  const { eyebrow, eyebrowAr, heading, headingAr, intro, introAr, layers } =
+    architectureStack;
   const [activeId, setActiveId] = useState(layers[0].id);
   const activeLayer = layers.find((l) => l.id === activeId) ?? layers[0];
 
@@ -25,19 +27,19 @@ export function SystemArchitecture() {
       id="architecture"
       className="relative isolate scroll-mt-16 overflow-hidden"
     >
-      <SceneBackground src="/scenes/trajectory.png" position="center 40%" scrim={0} />
+      <SceneBackground src="/scenes/trajectory.webp" position="center 40%" scrim={0} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
       <div className="mx-auto max-w-5xl px-5 py-24 lg:px-8 lg:py-28">
         <Reveal>
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
-            {eyebrow}
+            <T en={eyebrow} ar={eyebrowAr} />
           </span>
           <h2 className="font-display mt-4 max-w-3xl text-[2rem] font-medium leading-[1.1] tracking-tight text-[var(--ink)] lg:text-[2.75rem]">
-            {heading}
+            <T en={heading} ar={headingAr} />
           </h2>
           <p className="mt-5 max-w-2xl text-lg leading-[1.7] text-[var(--ink-muted)]">
-            {intro}
+            <T en={intro} ar={introAr} />
           </p>
         </Reveal>
 
@@ -54,7 +56,7 @@ export function SystemArchitecture() {
                       onClick={() => setActiveId(layer.id)}
                       aria-expanded={selected}
                       aria-controls={`layer-panel-${layer.id}`}
-                      className={`group flex w-full items-center gap-4 rounded-2xl border px-4 py-4 text-left transition lg:px-5 ${
+                      className={`group flex w-full items-center gap-4 rounded-2xl border px-4 py-4 text-start transition lg:px-5 ${
                         selected
                           ? "border-[var(--accent)] bg-[var(--accent-soft)] shadow-soft"
                           : "border-[var(--border)] bg-[var(--glass)] hover:border-[var(--border-strong)]"
@@ -70,19 +72,19 @@ export function SystemArchitecture() {
                       <span className="min-w-0 flex-1">
                         <span className="flex flex-wrap items-baseline gap-x-3">
                           <span className="font-display text-lg font-medium text-[var(--ink)]">
-                            {layer.label}
+                            <T en={layer.label} ar={layer.labelAr ?? layer.label} />
                           </span>
                           <span className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-[var(--accent-deep)]">
                             {layer.tech}
                           </span>
                         </span>
                         <span className="mt-1 block text-[0.86rem] leading-snug text-[var(--ink-muted)]">
-                          {layer.summary}
+                          <T en={layer.summary} ar={layer.summaryAr ?? layer.summary} />
                         </span>
                       </span>
                       <span
                         aria-hidden
-                        className={`shrink-0 text-[var(--accent)] transition ${
+                        className={`shrink-0 text-[var(--accent)] transition rtl:-scale-x-100 ${
                           selected ? "translate-x-0.5 opacity-100" : "opacity-40 group-hover:opacity-70"
                         }`}
                       >
@@ -148,7 +150,7 @@ function LayerDetail({
       <div className="flex items-start justify-between gap-4">
         <div>
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--ink-faint)]">
-            {layer.label}
+            <T en={layer.label} ar={layer.labelAr ?? layer.label} />
           </span>
           <h3 className="font-display mt-1 text-xl font-medium text-[var(--ink)] lg:text-2xl">
             {layer.tech}
@@ -156,19 +158,21 @@ function LayerDetail({
         </div>
         {showIndex && (
           <span className="rounded-full border border-[var(--border-strong)] px-2.5 py-1 font-mono text-[0.6rem] uppercase tracking-[0.16em] text-[var(--accent-deep)]">
-            Layer
+            <T en="Layer" ar="طبقة" />
           </span>
         )}
       </div>
 
       <ul className="mt-5 space-y-2.5">
-        {layer.items.map((item) => (
+        {layer.items.map((item, i) => (
           <li
             key={item}
             className="flex gap-3 text-[0.92rem] leading-relaxed text-[var(--ink-muted)]"
           >
             <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
-            <span>{item}</span>
+            <span>
+              <T en={item} ar={layer.itemsAr?.[i] ?? item} />
+            </span>
           </li>
         ))}
       </ul>
@@ -179,9 +183,9 @@ function LayerDetail({
       >
         <span className="flex items-center justify-between">
           <span className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-            In production
+            <T en="In production" ar="في الإنتاج" />
           </span>
-          <span aria-hidden className="text-[var(--accent)] transition group-hover:translate-x-0.5">
+          <span aria-hidden className="text-[var(--accent)] transition group-hover:translate-x-0.5 rtl:-scale-x-100">
             →
           </span>
         </span>
@@ -189,7 +193,7 @@ function LayerDetail({
           {layer.example.project}
         </span>
         <span className="mt-1 block text-[0.84rem] leading-snug text-[var(--ink-muted)]">
-          {layer.example.note}
+          <T en={layer.example.note} ar={layer.example.noteAr ?? layer.example.note} />
         </span>
       </Link>
     </div>

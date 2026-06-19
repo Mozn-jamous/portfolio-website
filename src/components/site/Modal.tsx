@@ -97,12 +97,20 @@ export function Modal({
 
   const dur = reduced ? 0 : 0.18;
   const slide = placement === "right";
+  // The slide-in sheet anchors to the inline-END edge, which flips in RTL:
+  // it enters from the right in LTR and from the left in RTL.
+  const isRtl =
+    typeof document !== "undefined" &&
+    document.documentElement.dir === "rtl";
+  const slideOffset = slide && isRtl ? "-100%" : "100%";
+  const overlayClass =
+    slide && isRtl ? "items-stretch justify-start" : overlayAlign[placement];
 
   return (
     <AnimatePresence>
       {open && (
         <motion.div
-          className={`fixed inset-0 z-50 flex ${overlayAlign[placement]} bg-black/60 backdrop-blur-sm`}
+          className={`fixed inset-0 z-50 flex ${overlayClass} bg-black/60 backdrop-blur-sm`}
           initial={{ opacity: reduced ? 1 : 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: reduced ? 1 : 0 }}
@@ -123,7 +131,7 @@ export function Modal({
               reduced
                 ? false
                 : slide
-                  ? { x: "100%" }
+                  ? { x: slideOffset }
                   : { opacity: 0, scale: 0.97, y: 8 }
             }
             animate={slide ? { x: 0 } : { opacity: 1, scale: 1, y: 0 }}
@@ -131,7 +139,7 @@ export function Modal({
               reduced
                 ? undefined
                 : slide
-                  ? { x: "100%" }
+                  ? { x: slideOffset }
                   : { opacity: 0, scale: 0.97, y: 8 }
             }
             transition={{ duration: dur, ease: "easeOut" }}

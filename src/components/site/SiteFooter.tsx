@@ -1,11 +1,12 @@
 import Link from "next/link";
+import { T } from "@/components/i18n/T";
 
 const pageLinks = [
-  { href: "/projects", label: "Projects" },
-  { href: "/odoo", label: "Systems" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-  { href: "/cv", label: "Résumé" },
+  { href: "/projects", label: "Projects", labelAr: "المشاريع" },
+  { href: "/odoo", label: "Systems", labelAr: "الأنظمة" },
+  { href: "/about", label: "About", labelAr: "عنّي" },
+  { href: "/contact", label: "Contact", labelAr: "تواصل" },
+  { href: "/cv", label: "Résumé", labelAr: "السيرة الذاتية" },
 ];
 
 export function SiteFooter() {
@@ -20,7 +21,7 @@ export function SiteFooter() {
                 href={l.href}
                 className="link-underline text-[var(--ink-muted)] hover:text-[var(--ink)]"
               >
-                {l.label}
+                <T en={l.label} ar={l.labelAr} />
               </Link>
             ))}
           </nav>
@@ -56,7 +57,8 @@ export function SiteFooter() {
           </ul>
         </div>
         <p className="mt-6 font-mono text-[0.7rem] text-[var(--ink-faint)]">
-          © {new Date().getFullYear()} Mozn Jamous · Damascus
+          © {new Date().getFullYear()}{" "}
+          <T en="Mozn Jamous · Damascus" ar="مزن جاموس · دمشق" />
         </p>
       </div>
     </footer>

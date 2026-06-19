@@ -1,0 +1,598 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mozn Jamous — Portfolio</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm 15mm; }
+
+  :root {
+    --ink: #1c1a2e;
+    --muted: #4a4860;
+    --faint: #7a7790;
+    --accent: #b0476a;
+    --accent-soft: #fbeef2;
+    --line: #e3e1ea;
+    --line-strong: #c9c6d6;
+    --bg: #ffffff;
+    --chip: #f4f2f8;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Helvetica Neue", Arial, "Segoe UI", sans-serif;
+    font-size: 10.2pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .serif { font-family: Georgia, "Times New Roman", serif; }
+  .mono  { font-family: "JetBrains Mono", "Consolas", "Courier New", monospace; }
+
+  h1, h2, h3, h4 { font-family: Georgia, "Times New Roman", serif; font-weight: 600; color: var(--ink); }
+
+  a { color: var(--accent); text-decoration: none; }
+
+  /* ---- eyebrow / labels ---- */
+  .eyebrow {
+    font-family: "JetBrains Mono", "Consolas", monospace;
+    font-size: 7.6pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 6px;
+  }
+  .muted { color: var(--muted); }
+  .faint { color: var(--faint); }
+
+  /* ---- cover ---- */
+  .cover {
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+  }
+  .cover h1 {
+    font-size: 33pt;
+    line-height: 1.02;
+    margin: 2px 0 4px;
+    letter-spacing: -0.01em;
+  }
+  .cover .role {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 9pt;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    margin: 0 0 14px;
+  }
+  .cover .lead {
+    font-family: Georgia, serif;
+    font-size: 14pt;
+    line-height: 1.32;
+    color: var(--ink);
+    margin: 12px 0 6px;
+    max-width: 92%;
+  }
+  .cover .sub { color: var(--muted); font-size: 10.4pt; max-width: 94%; margin: 6px 0 0; }
+
+  .contactbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    margin-top: 14px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 8.4pt;
+    color: var(--muted);
+  }
+  .contactbar b { color: var(--ink); font-weight: 600; }
+
+  /* ---- stat strip ---- */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin: 18px 0 4px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .stat { padding: 11px 12px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat .v { font-family: Georgia, serif; font-size: 15pt; font-weight: 600; color: var(--accent); line-height: 1.1; }
+  .stat .v.small { font-size: 10.5pt; }
+  .stat .l { font-size: 8pt; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+
+  /* ---- section ---- */
+  section { margin-top: 24px; }
+  .section-head { border-bottom: 1px solid var(--line-strong); padding-bottom: 7px; margin-bottom: 14px; }
+  .section-head h2 { font-size: 16pt; margin: 0; letter-spacing: -0.01em; }
+  .section-head .intro { color: var(--muted); margin: 6px 0 0; font-size: 10pt; max-width: 96%; }
+
+  p { margin: 0 0 9px; }
+  .body p { color: var(--muted); }
+
+  /* ---- chips ---- */
+  .chips { display: flex; flex-wrap: wrap; gap: 5px; margin: 8px 0 0; }
+  .chip {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 7.7pt;
+    padding: 2.5px 8px;
+    border-radius: 20px;
+    background: var(--chip);
+    border: 1px solid var(--line);
+    color: var(--muted);
+  }
+  .chip.hl { background: var(--accent-soft); border-color: #f0c9d6; color: var(--accent); }
+
+  /* ---- tool groups ---- */
+  .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 22px; }
+  .toolgroup .area { font-family: "JetBrains Mono", monospace; font-size: 8pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); margin-bottom: 5px; }
+
+  /* ---- open-to / list ---- */
+  ul.clean { list-style: none; margin: 0; padding: 0; }
+  ul.clean li { padding: 3px 0 3px 16px; position: relative; color: var(--muted); }
+  ul.clean li::before { content: "—"; position: absolute; left: 0; color: var(--accent); }
+
+  /* ---- process ---- */
+  .process { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+  .pstep { border: 1px solid var(--line); border-radius: 8px; padding: 11px 13px; break-inside: avoid; }
+  .pstep .n { font-family: "JetBrains Mono", monospace; font-size: 8pt; color: var(--accent); }
+  .pstep h4 { font-size: 12pt; margin: 2px 0 5px; }
+  .pstep p { font-size: 9.2pt; color: var(--muted); margin: 0 0 7px; }
+  .pstep .out { font-size: 8.6pt; color: var(--ink); border-top: 1px solid var(--line); padding-top: 6px; }
+  .pstep .out b { color: var(--accent); }
+
+  /* ---- project card ---- */
+  .project { border: 1px solid var(--line); border-radius: 9px; padding: 14px 16px; margin-bottom: 12px; break-inside: avoid; }
+  .project .top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+  .project h3 { font-size: 14pt; margin: 0; }
+  .project .yr { font-family: "JetBrains Mono", monospace; font-size: 8.2pt; color: var(--faint); white-space: nowrap; }
+  .project .meta { font-family: "JetBrains Mono", monospace; font-size: 8pt; color: var(--accent); margin: 3px 0 7px; }
+  .project .impact { font-family: Georgia, serif; font-style: italic; color: var(--ink); font-size: 10.6pt; margin: 0 0 6px; }
+  .project p { color: var(--muted); font-size: 9.6pt; margin: 0 0 7px; }
+  .project .facts { font-size: 8.8pt; color: var(--muted); }
+  .project .facts b { color: var(--ink); font-weight: 600; }
+
+  /* ---- arch layers ---- */
+  .layer { border-left: 3px solid var(--accent); padding: 4px 0 4px 12px; margin-bottom: 11px; break-inside: avoid; }
+  .layer .lh { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .layer h4 { font-size: 11.5pt; margin: 0; }
+  .layer .tech { font-family: "JetBrains Mono", monospace; font-size: 8pt; color: var(--accent); }
+  .layer .sum { color: var(--muted); font-size: 9.4pt; margin: 3px 0 5px; }
+  .layer .items { font-size: 8.8pt; color: var(--muted); }
+  .layer .ex { font-size: 8.6pt; color: var(--ink); margin-top: 4px; }
+  .layer .ex b { color: var(--accent); }
+
+  /* ---- decision ---- */
+  .decision { border: 1px solid var(--line); border-radius: 8px; padding: 11px 13px; margin-bottom: 10px; break-inside: avoid; }
+  .decision .q { font-family: Georgia, serif; font-weight: 600; font-size: 11pt; margin: 0 0 6px; }
+  .decision .tag { font-family: "JetBrains Mono", monospace; font-size: 7.4pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+  .decision .row { font-size: 9pt; margin: 3px 0; color: var(--muted); }
+  .decision .row .k { font-family: "JetBrains Mono", monospace; font-size: 7.6pt; letter-spacing: 0.05em; text-transform: uppercase; color: var(--faint); display: inline-block; min-width: 64px; }
+  .decision .src { font-family: "JetBrains Mono", monospace; font-size: 7.8pt; color: var(--faint); margin-top: 5px; }
+
+  /* ---- callout ---- */
+  .callout { background: var(--accent-soft); border: 1px solid #f0c9d6; border-radius: 8px; padding: 10px 13px; margin: 8px 0; break-inside: avoid; }
+  .callout .k { font-family: "JetBrains Mono", monospace; font-size: 7.6pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 3px; }
+  .callout p { margin: 0; color: var(--ink); font-size: 9.6pt; }
+
+  /* ---- education ---- */
+  .edu { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; break-inside: avoid; }
+  .edu h4 { font-size: 12pt; margin: 0 0 2px; }
+  .edu .org { font-family: "JetBrains Mono", monospace; font-size: 8.4pt; color: var(--accent); }
+  .edu p { font-size: 9.2pt; color: var(--muted); margin: 6px 0 0; }
+  .certgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+  .two { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: start; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
+
+  .pagebreak { page-break-before: always; }
+  .avoid { break-inside: avoid; }
+
+  footer { margin-top: 26px; border-top: 2px solid var(--ink); padding-top: 12px; }
+  footer .big { font-family: Georgia, serif; font-size: 17pt; font-weight: 600; }
+
+  .note { font-size: 8.4pt; color: var(--faint); font-family: "JetBrains Mono", monospace; }
+</style>
+</head>
+<body>
+
+  <!-- ============ COVER ============ -->
+  <div class="cover">
+    <p class="eyebrow">Product Designer + Engineer · Damascus, Syria</p>
+    <h1 class="serif">Mozn Jamous</h1>
+    <p class="role">End-to-End Product Builder — design → develop → deploy</p>
+    <p class="lead">I design products, build the mobile apps, and engineer the systems behind them.</p>
+    <p class="sub">From research and UX through Flutter development, AI integration, and business-operations systems — I take products from idea to shipped reality. Currently designing &amp; building product at Santa Media.</p>
+    <div class="contactbar">
+      <span><b>Email</b> &nbsp;moznjamous9@gmail.com</span>
+      <span><b>LinkedIn</b> &nbsp;linkedin.com/in/mozn-jamous</span>
+      <span><b>GitHub</b> &nbsp;github.com/Mozn-jamous</span>
+    </div>
+  </div>
+
+  <!-- ============ STATS ============ -->
+  <div class="stats">
+    <div class="stat"><div class="v">3</div><div class="l">Products designed &amp; built</div></div>
+    <div class="stat"><div class="v">1</div><div class="l">Production ERP implementation</div></div>
+    <div class="stat"><div class="v">3</div><div class="l">AI-powered product experiences</div></div>
+    <div class="stat"><div class="v small">Design → Dev → Deploy</div><div class="l">Owned end-to-end</div></div>
+  </div>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="avoid">
+    <div class="section-head"><h2 class="serif">About</h2></div>
+    <div class="two">
+      <div class="body">
+        <p>I'm a product builder with an Information Technology Engineering degree and a design-first way of working. I started by building a healthcare app for my graduation thesis — designed in Figma, built end-to-end in Flutter, with three AI models behind an Arabic-first interface.</p>
+        <p>Since then I've worked across the full line of a product: the interface, the Flutter app, the backend, the AI integration, and the business systems products run on — a bilingual Design System, a mobile rebuild, and a production Odoo ERP, all within the last year.</p>
+        <p>I'm most useful to small teams that need one person who can research a problem, design the solution, and ship it — especially for Arabic-first or bilingual products.</p>
+      </div>
+      <div>
+        <p class="eyebrow">Open to</p>
+        <ul class="clean">
+          <li>Product engineer / product designer — remote</li>
+          <li>Mobile product design &amp; Flutter development</li>
+          <li>Early-stage product teams</li>
+          <li>ERP / Odoo &amp; business systems</li>
+        </ul>
+        <p class="eyebrow" style="margin-top:12px">Collaborated with</p>
+        <div class="chips">
+          <span class="chip">Santa Media</span>
+          <span class="chip">Techno Solution</span>
+          <span class="chip">ASPU</span>
+          <span class="chip">Odoo</span>
+          <span class="chip">Supabase</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS ============ -->
+  <section class="avoid">
+    <div class="section-head"><h2 class="serif">Skills &amp; tools</h2></div>
+    <div class="tools">
+      <div class="toolgroup">
+        <div class="area">Design</div>
+        <div class="chips"><span class="chip">Figma</span><span class="chip">Design Systems</span><span class="chip">Prototyping</span><span class="chip">Arabic UX</span><span class="chip">RTL</span><span class="chip">Accessibility</span></div>
+      </div>
+      <div class="toolgroup">
+        <div class="area">Mobile</div>
+        <div class="chips"><span class="chip">Flutter</span><span class="chip">Dart</span><span class="chip">iOS + Android</span></div>
+      </div>
+      <div class="toolgroup">
+        <div class="area">Backend</div>
+        <div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">REST APIs</span></div>
+      </div>
+      <div class="toolgroup">
+        <div class="area">AI</div>
+        <div class="chips"><span class="chip">Google Gemini</span><span class="chip">LoRA-tuned models</span><span class="chip">Random Forest</span></div>
+      </div>
+      <div class="toolgroup">
+        <div class="area">Systems</div>
+        <div class="chips"><span class="chip">Odoo 19</span><span class="chip">ORM</span><span class="chip">QWeb</span><span class="chip">OWL</span><span class="chip">POS · HR · Payroll</span></div>
+      </div>
+      <div class="toolgroup">
+        <div class="area">Web &amp; also</div>
+        <div class="chips"><span class="chip">HTML/CSS/JS</span><span class="chip">Brand sites</span><span class="chip">Vue</span><span class="chip">NestJS · TypeScript</span><span class="chip">Manual QA</span><span class="chip">IEEE 830</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROCESS ============ -->
+  <section>
+    <div class="section-head">
+      <h2 class="serif">How I work — from a problem to a shipped product</h2>
+      <p class="intro">I don't start with screens. I start with the problem, decide what to build and why, then take it all the way to production — and keep it running.</p>
+    </div>
+    <div class="process">
+      <div class="pstep">
+        <div class="n">01</div><h4 class="serif">Discover</h4>
+        <p>Work out who has the problem and what's actually at stake — before any UI.</p>
+        <div class="out"><b>BloomBelly:</b> four maternal-health journeys mapped before a line of code.</div>
+      </div>
+      <div class="pstep">
+        <div class="n">02</div><h4 class="serif">Design</h4>
+        <p>Decide the architecture and the tradeoffs first; information architecture before pixels.</p>
+        <div class="out"><b>CareConnect:</b> three audiences → three focused apps, not one role-switcher.</div>
+      </div>
+      <div class="pstep">
+        <div class="n">03</div><h4 class="serif">Build</h4>
+        <p>Implement what I designed — the Flutter front-end, the backend and data model, the AI or business logic.</p>
+        <div class="out"><b>Mademoiselle:</b> stalled prototype rebuilt natively on a 26+ component system.</div>
+      </div>
+      <div class="pstep">
+        <div class="n">04</div><h4 class="serif">Improve</h4>
+        <p>Shipping is the start — access control, edge cases, and whether the next person can keep it alive.</p>
+        <div class="out"><b>Smart Expense:</b> role-based access at the data layer, open-sourced under LGPL-3.0.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK (PRODUCT) ============ -->
+  <section class="pagebreak">
+    <div class="section-head">
+      <h2 class="serif">Selected work — product &amp; design</h2>
+      <p class="intro">Flutter / AI products taken from research and Figma through to a shipped app.</p>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">Mademoiselle — Santa Media</h3><span class="yr">2026 — Present</span></div>
+      <div class="meta">UI/UX + Flutter · Design System · Designer + Lead Flutter Dev · Commerce / Beauty</div>
+      <p class="impact">Stalled FlutterFlow prototype → live native app.</p>
+      <p>A FlutterFlow prototype had stalled in production with no clear path forward. I started in Figma — a full UI redesign and a bilingual Design System of 26+ components across three themes and both writing directions — then rebuilt the app natively in Flutter. Now active and shipping.</p>
+      <div class="chips"><span class="chip hl">Figma</span><span class="chip">Flutter</span><span class="chip">Design System</span><span class="chip">RTL</span><span class="chip">AI Integration</span></div>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">BloomBelly</h3><span class="yr">2025 · Graduation thesis</span></div>
+      <div class="meta">UI/UX + AI · Arabic-first · Designer + Developer · Healthcare</div>
+      <p class="impact">Three AI models behind one Arabic-first app.</p>
+      <p>Arabic-speaking mothers had no AI health guide in their language. I mapped four user journeys in Figma, designed Arabic-first with full RTL, then integrated three AI models behind one Flutter interface — Gemini for vision, a LoRA-tuned transformer for Arabic Q&amp;A, and a Random Forest for nutrition — calibrated to refuse rather than hallucinate on health questions. Graduation thesis at Al-Sham Private University.</p>
+      <div class="chips"><span class="chip hl">Figma</span><span class="chip">Flutter</span><span class="chip">Flask</span><span class="chip">Gemini</span><span class="chip">LoRA</span><span class="chip">RTL</span></div>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">CareConnect</h3><span class="yr">2024</span></div>
+      <div class="meta">UI/UX + Mobile · Full-stack · Designer + Developer · Childcare marketplace</div>
+      <p class="impact">Three focused apps on one provable backend.</p>
+      <p>Childcare platforms fail by building one interface for three completely different users. I designed three separate Figma files — one per audience — each built around how that person actually thinks, then built three focused Flutter apps over a single Supabase backend with access enforced at the database layer (RLS), so the apps physically can't read each other's data.</p>
+      <div class="chips"><span class="chip hl">Figma</span><span class="chip">Flutter</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">RLS</span><span class="chip">IEEE 830</span></div>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">Eda — multi-tenant clinics platform</h3><span class="yr">2026 · Team build</span></div>
+      <div class="meta">Healthcare · Multi-tenant · Designer + QA tester</div>
+      <p class="impact">Tested that the wall between clinics holds.</p>
+      <p>A multi-tenant clinics platform built with a collaborator (@xvtu2003): three Flutter apps over a NestJS / TypeScript backend, each clinic isolated as its own tenant. Working from the project's requirements, I designed the screens across the apps and was the tester who verified the system — including the data isolation between clinics, the one guarantee a healthcare platform can't break.</p>
+      <div class="chips"><span class="chip">Flutter</span><span class="chip">NestJS</span><span class="chip">TypeScript</span><span class="chip">Multi-tenant</span><span class="chip">Manual QA</span></div>
+    </div>
+  </section>
+
+  <!-- ============ ERP / SYSTEMS ============ -->
+  <section class="pagebreak">
+    <div class="section-head">
+      <h2 class="serif">ERP &amp; business systems — operations, engineered</h2>
+      <p class="intro">Custom Odoo 19 systems for real companies — expense management, HR, payroll, attendance, POS, and approval workflows. Built around how a business actually works, not Odoo's defaults. One module is open source and live on GitHub.</p>
+    </div>
+
+    <div class="stats" style="margin-top:0">
+      <div class="stat"><div class="v small">Days → Secs</div><div class="l">Expense approval time — login removed</div></div>
+      <div class="stat"><div class="v small">3-division</div><div class="l">Company run on one Odoo system</div></div>
+      <div class="stat"><div class="v small">1-click</div><div class="l">Manager &amp; finance approvals from email</div></div>
+      <div class="stat"><div class="v small">LGPL-3.0</div><div class="l">Smart Expense — open source &amp; live</div></div>
+    </div>
+
+    <h3 class="serif" style="font-size:13pt;margin:18px 0 8px">Featured implementations — two businesses, live on Odoo</h3>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">Techno Solution — a 3-division company</h3><span class="yr">2025 — Present</span></div>
+      <div class="meta">Odoo Developer · Systems Designer · Import / warehousing / solar</div>
+      <p>HR, payroll, attendance, purchasing, inventory, and accounting for an import / warehousing / solar company — one Odoo system replacing a scattered Excel operation. Still live after handoff.</p>
+      <div class="facts"><b>18 employees</b> · <b>6,514 hours</b> tracked · <b>140 purchase orders</b> · <b>884 inventory moves</b></div>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">Burgasm — a restaurant, fully on Odoo</h3><span class="yr">2025 — Present</span></div>
+      <div class="meta">Odoo Developer · Systems Designer · Restaurant / hospitality</div>
+      <p>Proper books, a live point of sale, a kitchen display, and inventory tracked down to the ingredient — a restaurant run end-to-end on Odoo. 30+ modules configured around the way the kitchen and till actually run.</p>
+      <div class="facts"><b>68 accounts</b> (3 partners, dual-currency) · <b>500+ POS orders</b> · <b>10,000+ ingredient moves</b> linked to POS · <b>30+ modules</b></div>
+    </div>
+
+    <div class="grid2" style="margin-top:14px">
+      <div>
+        <p class="eyebrow">What I've built</p>
+        <ul class="clean">
+          <li>Expense management — receipt → approval → journal entry</li>
+          <li>HR — employees · contracts · hierarchy</li>
+          <li>Attendance — check-in/out, linked to payroll</li>
+          <li>Payroll — salary rules · automated runs</li>
+          <li>Point of sale — live restaurant POS</li>
+          <li>Approval workflows — email-based, no login</li>
+        </ul>
+      </div>
+      <div>
+        <p class="eyebrow">What goes into them</p>
+        <ul class="clean">
+          <li>Custom Odoo modules — Python · XML · ORM</li>
+          <li>Workflow automation — server actions · cron · Studio</li>
+          <li>Access control — record rules · 3-tier RBAC</li>
+          <li>Reporting — QWeb PDF · scheduled email</li>
+          <li>API integrations — REST · external systems</li>
+          <li>Localization — full EN / AR · RTL</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="eyebrow" style="margin-top:14px">Results that matter</p>
+    <div class="callout"><div class="k">Approval time</div><p>Cut expense approvals from <b>days to seconds</b> — by removing the login requirement entirely. The approval lives in the email; one click moves the request forward.</p></div>
+    <div class="callout"><div class="k">Manual work</div><p>Replaced paper-based workflows with automated ones — receipts, approvals, journal entries, and monthly department reports that used to be typed by hand now generate themselves.</p></div>
+    <div class="callout"><div class="k">Operations</div><p>Moved two businesses onto Odoo — a three-division company and a restaurant — each its own company on one deployment, replacing scattered Excel operations.</p></div>
+
+    <h3 class="serif" style="font-size:13pt;margin:18px 0 8px">Selected systems</h3>
+    <div class="project">
+      <div class="top"><h3 class="serif">Takhrjy — a seven-role ERP (Vue)</h3><span class="yr">2025 · Team build</span></div>
+      <div class="meta">Designer + QA tester · Custom graduation-gifts business</div>
+      <p>Not every ERP is Odoo. Takhrjy is a Vue system a team built for a custom graduation-gifts business — a seven-role permission model (super admin, sales, production, local delivery, international shipping, wholesale, accountant), a six-stage order pipeline, retail and wholesale, and local plus international fulfillment. Working from the team's requirements I designed the system's screens, and I was the tester who verified it worked before launch.</p>
+      <div class="facts"><b>7 user roles</b> · <b>6-stage</b> order pipeline · retail + wholesale · local + international fulfillment</div>
+    </div>
+    <div class="project">
+      <div class="top"><h3 class="serif">Smart Expense Manager — open source</h3><span class="yr">2025 · LGPL-3.0</span></div>
+      <div class="meta">Odoo Developer · github.com/Mozn-jamous/smart-expense-manager</div>
+      <p>A custom Odoo 19 module that replaces paper expense flows with token-secured, one-click email approvals routed through the hr.employee hierarchy — no login required. Journal entries are generated automatically on finance sign-off (only on approval, never on submission, so the ledger stays clean); monthly PDF reports are emailed by cron. Three-tier RBAC is enforced at the record-rule layer, and everything ships in full English and Arabic.</p>
+      <div class="chips"><span class="chip">Odoo 19</span><span class="chip">Python</span><span class="chip">QWeb</span><span class="chip">OWL</span><span class="chip">cron</span><span class="chip">account.move</span></div>
+    </div>
+  </section>
+
+  <!-- ============ CLIENT & BRAND WEBSITES ============ -->
+  <section class="pagebreak">
+    <div class="section-head">
+      <h2 class="serif">Client &amp; brand websites</h2>
+      <p class="intro">Brand sites designed and built from scratch in vanilla HTML/CSS/JS — Arabic-first, fast, and deployable with no build step.</p>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">Pharmacology — clinical-nutrition brand</h3><span class="yr">2026 · Client work</span></div>
+      <div class="meta">Web · Design System · Bilingual · Designer + Front-end Developer (complete redesign)</div>
+      <p class="impact">A drifted inherited site → a clean, systematised v3.</p>
+      <p>A complete redesign and from-scratch rebuild of the brand &amp; service site for a clinical-nutrition practice (client: Dr. Ahmed Elkhateeb, Pharm.D). 25 fully bilingual (Arabic-first, RTL) pages on a single locked design-token system and one ~30-component library, built in vanilla HTML/CSS/JS with no build step, and Supabase-wired apply + waitlist forms. RTL-native: all copy lives in one bilingual dictionary, layout uses CSS logical properties throughout.</p>
+      <div class="facts"><b>25 pages</b> · <b>EN / AR</b> RTL-first · locked <b>design tokens</b> · <b>~30 components</b> · Supabase forms</div>
+    </div>
+
+    <div class="project">
+      <div class="top"><h3 class="serif">Noodlna — food brand storefront + B2B</h3><span class="yr">2026 · Client work</span></div>
+      <div class="meta">Web · Brand · B2B · Designer + Front-end Developer · Client: Syria Macarna</div>
+      <p class="impact">One brand site for two audiences — shoppers and distributors.</p>
+      <p>Designed and built the website for Noodlna, an instant-noodles brand by Syria Macarna: an Arabic-first consumer storefront that sells the product (hero, flavor range, a three-minute cooking ritual, recipes, reviews, heritage), plus a separate B2B page that opens wholesale, export, and private-label partnerships with commercial specs and an export-request funnel (WhatsApp + form). Vanilla HTML/CSS/JS, RTL, deployed on Vercel.</p>
+      <div class="facts"><b>2 audiences</b> (consumer + B2B) · <b>Arabic / RTL</b> · vanilla HTML/CSS/JS · deployed on <b>Vercel</b></div>
+    </div>
+  </section>
+
+  <!-- ============ ARCHITECTURE ============ -->
+  <section class="pagebreak">
+    <div class="section-head">
+      <h2 class="serif">Under the hood — the full-stack line</h2>
+      <p class="intro">One stack; every layer is something I've actually built, not theory — each shown with the product it came from.</p>
+    </div>
+
+    <div class="layer">
+      <div class="lh"><h4 class="serif">Frontend</h4><span class="tech">Flutter · Dart</span></div>
+      <p class="sum">One codebase, iOS + Android, Arabic-first and RTL.</p>
+      <div class="items">Cross-platform UI from a single Dart codebase · Arabic-first / RTL layouts (not bolted-on translation) · a shared design system so screens never drift · state management, navigation, and offline-aware flows.</div>
+      <div class="ex"><b>CareConnect:</b> three Flutter apps — mother · babysitter · admin — from one design system.</div>
+    </div>
+
+    <div class="layer">
+      <div class="lh"><h4 class="serif">Backend</h4><span class="tech">Python · Flask</span></div>
+      <p class="sum">An orchestration layer between the app and everything behind it.</p>
+      <div class="items">REST APIs the mobile client talks to · request routing (intent → the right service) · auth-gated endpoints and input validation · business logic kept off the client.</div>
+      <div class="ex"><b>BloomBelly:</b> a Flask orchestrator routes each request to one of three AI models.</div>
+    </div>
+
+    <div class="layer">
+      <div class="lh"><h4 class="serif">Database &amp; Access</h4><span class="tech">Supabase · PostgreSQL</span></div>
+      <p class="sum">One source of truth, with access rules the apps can't bypass.</p>
+      <div class="items">Relational schema as the single source of truth · row-level security (RLS) enforcing role boundaries · role-based access (mother / babysitter / admin) · rules enforced in the database, not in each app.</div>
+      <div class="ex"><b>CareConnect:</b> one Postgres + RLS, so three apps physically can't read each other's data.</div>
+    </div>
+
+    <div class="layer">
+      <div class="lh"><h4 class="serif">AI</h4><span class="tech">Gemini · LoRA · Random Forest</span></div>
+      <p class="sum">Three models, each for the job it's actually good at.</p>
+      <div class="items">Vision understanding with Google Gemini · Arabic Q&amp;A via a LoRA-tuned transformer with calibrated refusals · nutrition scoring with a Random Forest model · all orchestrated behind one Arabic-first interface.</div>
+      <div class="ex"><b>BloomBelly:</b> three AI models behind a single maternal-health interface.</div>
+    </div>
+
+    <div class="layer">
+      <div class="lh"><h4 class="serif">Business Systems</h4><span class="tech">Odoo 19 · ORM · QWeb · OWL</span></div>
+      <p class="sum">The ERP and operations a business runs on day to day.</p>
+      <div class="items">Custom Odoo modules (ORM models, QWeb, OWL components) · token-secured email approval flows · auto-journaling on finance sign-off (account.move) · scheduled jobs and QWeb PDF digests.</div>
+      <div class="ex"><b>Smart Expense Manager:</b> submit → approve → post, with the journal entry generated automatically.</div>
+    </div>
+  </section>
+
+  <!-- ============ DECISION LOG ============ -->
+  <section class="pagebreak">
+    <div class="section-head">
+      <h2 class="serif">Decision log — the judgment behind the work</h2>
+      <p class="intro">Anyone can list technologies. These are real decisions from the projects — the cheaper default I turned down, the call I made instead, and what it cost.</p>
+    </div>
+
+    <div class="decision">
+      <span class="tag">Product</span>
+      <p class="q">Why three separate apps instead of one role-switching app?</p>
+      <div class="row"><span class="k">Easy path</span> A single app with role-switching is cheaper to build — one codebase, one store listing, one onboarding. Most marketplaces ship this way.</div>
+      <div class="row"><span class="k">I chose</span> Three apps. Each audience has a different primary action and vocabulary, so each gets a focused navigation and a store listing that says exactly what it does — no "you are logged in as: Mother" cognitive load.</div>
+      <div class="row"><span class="k">Trade-off</span> Higher initial build cost, but every surface stays honest to its audience.</div>
+      <div class="src">CareConnect</div>
+    </div>
+
+    <div class="decision">
+      <span class="tag">Backend</span>
+      <p class="q">Why Supabase + RLS over Firebase + client-side guards?</p>
+      <div class="row"><span class="k">Easy path</span> Firebase is the default for student marketplaces — auth + Firestore is fast to wire. But its security rules are a JSON DSL that's easy to get subtly wrong, and the client can be modified.</div>
+      <div class="row"><span class="k">I chose</span> Postgres + Supabase RLS. Policies are real SQL, run on every query, and can't be bypassed from the client — a mother's query physically cannot return another mother's bookings.</div>
+      <div class="row"><span class="k">Trade-off</span> More operational overhead, but the security model is auditable, and it's what made the three-app design viable.</div>
+      <div class="src">CareConnect</div>
+    </div>
+
+    <div class="decision">
+      <span class="tag">AI</span>
+      <p class="q">Why three AI models instead of one capable LLM?</p>
+      <div class="row"><span class="k">Easy path</span> A single fine-tuned LLM could answer questions, classify nutrition, and describe images — one model, one screen, one deployment surface.</div>
+      <div class="row"><span class="k">I chose</span> Three specialized models — Gemini for vision, a LoRA-tuned transformer for Arabic Q&amp;A, Random Forest for nutrition — each with a purpose-built screen designed around how that capability is actually used.</div>
+      <div class="row"><span class="k">Trade-off</span> More to maintain, but each model stays auditable in isolation — critical in healthcare — and users pick the right tool instead of one modal that does everything.</div>
+      <div class="src">BloomBelly</div>
+    </div>
+
+    <div class="decision">
+      <span class="tag">AI</span>
+      <p class="q">Why design the AI's refusal as a feature, not an error?</p>
+      <div class="row"><span class="k">Easy path</span> A confident chatbot that always answers demos well. But one that hallucinates dosages is dangerous in maternal care.</div>
+      <div class="row"><span class="k">I chose</span> Below a confidence threshold the bot returns "Consult your doctor / استشيري طبيبتك" — designed as a warm, first-class state in Figma, not a red error box.</div>
+      <div class="row"><span class="k">Trade-off</span> Fewer impressive demo answers, but the product is safe to put in front of real mothers. Trust over benchmark.</div>
+      <div class="src">BloomBelly</div>
+    </div>
+
+    <div class="decision">
+      <span class="tag">Systems</span>
+      <p class="q">Why post the journal entry on approval, not on submission?</p>
+      <div class="row"><span class="k">Easy path</span> Auto-creating the journal entry the moment an employee submits is a simpler state machine.</div>
+      <div class="row"><span class="k">I chose</span> The account.move is generated only on the finance-approval transition. Until then the request is just an HR record.</div>
+      <div class="row"><span class="k">Trade-off</span> An extra state to manage, but the ledger stays clean — accountants only ever see entries that are real liabilities, never unapproved ones to reverse.</div>
+      <div class="src">Smart Expense Manager</div>
+    </div>
+
+    <div class="decision">
+      <span class="tag">Design</span>
+      <p class="q">Why design RTL-native instead of mirroring the LTR layout?</p>
+      <div class="row"><span class="k">Easy path</span> RTL is usually shipped as a visual mirror of an LTR layout — flip direction, swap icons, done. It always feels foreign to Arabic readers.</div>
+      <div class="row"><span class="k">I chose</span> The Figma file and every Flutter screen was designed in Arabic first — reading direction, hierarchy, spacing, and icon choices all made in RTL context, then adapted for LTR.</div>
+      <div class="row"><span class="k">Trade-off</span> Slower to design two-directionally, but the Arabic interface reads as the primary version. Because it is — LTR is the adaptation.</div>
+      <div class="src">Mademoiselle</div>
+    </div>
+  </section>
+
+  <!-- ============ EDUCATION ============ -->
+  <section class="avoid">
+    <div class="section-head"><h2 class="serif">Education &amp; certifications</h2></div>
+    <div class="edu">
+      <h4 class="serif">B.Sc. Information Technology Engineering</h4>
+      <span class="org">Al-Sham Private University (ASPU) · 2025</span>
+      <p>Graduation thesis: BloomBelly — an Arabic-first maternal-health app with three AI models, designed in Figma and built end-to-end in Flutter.</p>
+    </div>
+    <div class="certgrid">
+      <div class="edu" style="margin:0">
+        <h4 class="serif" style="font-size:11pt">Odoo Functional Certification</h4>
+        <span class="org">Odoo S.A. · 2025</span>
+        <p>Backed by the Techno Solution &amp; Burgasm production implementations.</p>
+      </div>
+      <div class="edu" style="margin:0">
+        <h4 class="serif" style="font-size:11pt">1 Million Prompters</h4>
+        <span class="org">Dubai Future Foundation · 2025</span>
+        <p>Backed by the three-model AI integration in BloomBelly.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <footer>
+    <p class="eyebrow">Contact</p>
+    <p class="big serif">Let's build something meaningful.</p>
+    <p class="muted" style="max-width:88%">Open to product engineering, product design, and Flutter roles — remote and early-stage especially, and bilingual or Arabic-first products. Usually replies within a day. Email is the fastest way to reach me.</p>
+    <div class="contactbar" style="margin-top:8px">
+      <span><b>Email</b> &nbsp;moznjamous9@gmail.com</span>
+      <span><b>LinkedIn</b> &nbsp;linkedin.com/in/mozn-jamous</span>
+      <span><b>GitHub</b> &nbsp;github.com/Mozn-jamous</span>
+      <span><b>Portfolio</b> &nbsp;moznjamous.com</span>
+    </div>
+    <p class="note" style="margin-top:14px">Mozn Jamous — Product Designer + Engineer · Damascus, Syria · available remote.</p>
+  </footer>
+
+</body>
+</html>

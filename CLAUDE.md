@@ -35,7 +35,7 @@ Exports:
 | `scenes` | `SelectedWork.tsx` | Product project cards (Flutter/AI). `track` is a legacy field — all are `"mobile"`; one group renders. ERP work is NOT here (see `/odoo`). |
 | `businessSystemsContent` | `BusinessSystems.tsx` | ERP/Odoo gateway section — heading, systems chips, result stats, CTA to `/odoo` |
 | `stackChapter` | `Stack.tsx` | Stack layers (Design / Mobile / Backend / AI / ERP) |
-| `journeyChapter` | `Trajectory.tsx` | Timeline milestones + credentials (ERP milestones `href` to `/odoo`) |
+| `educationChapter` | `AboutFull.tsx` | Education (degree + thesis note) + certifications list, in the About section (replaced the old growing milestone timeline) |
 | `outroContent` | `Contact.tsx` | Contact heading + contact links |
 
 ### Page composition (`src/app/page.tsx`)
@@ -51,7 +51,7 @@ That sequence is the deliberate hiring read: who, why-they're-good, the proof in
 ### Scenes & motion (immersive theme)
 
 Each home section is a "place" in one pastel world:
-- **`SceneBackground`** (`components/site/`) — a vivid full-bleed illustrated scene (`public/scenes/*.png`) per section, masked to fade into its neighbours, with a twilight (darkening) scrim. Uses `next/image` (optimised + lazy). Keep `opacity` high and `scrim` low (~0.1–0.16); readability over text-heavy sections comes from a `.veil-*` div or solid `.panel` cards, **not** from washing out the scene.
+- **`SceneBackground`** (`components/site/`) — a vivid full-bleed illustrated scene (`public/scenes/*.webp`) per section, masked to fade into its neighbours, with a twilight (darkening) scrim. Uses `next/image` (optimised + lazy). Keep `opacity` high and `scrim` low (~0.1–0.16); readability over text-heavy sections comes from a `.veil-*` div or solid `.panel` cards, **not** from washing out the scene.
 - **`.panel`** — the solid translucent card content sits in so it stays readable over a vivid scene. Prefer it over bare `.glass` for text-heavy blocks.
 - **`Reveal`** (`components/site/`) — scroll-in motion. **Animates `y` only; opacity stays 1** (so content is never hidden if the observer doesn't fire — the bfcache rule). Wrap inner content, never whole sections.
 - **`Hero.tsx` is a client component** with mouse parallax: scene, foreground clouds, planet, and orb translate at different depths on pointer move.
@@ -112,11 +112,11 @@ Avoid making everything a centered card. Prefer **editorial layouts**: a big ser
 
 ### The Orb — recurring guide (`components/site/Orb.tsx`)
 
-The pastel mascot (a glowing pearlescent orb with eyes) is the site's recurring visual thread. Source image: `public/demo/character.png`. The `<Orb size={px} float alt?>` component renders the image with a pulsing radial glow (`.orb-glow`) and a radial mask (`.orb-img`) that fades the PNG's square corners. It appears at `size={200}` in the Hero, `size={28}` beside every section eyebrow (the thread), in the nav wordmark, and large/faded in the Contact finale. Decorative by default (`aria-hidden`) unless you pass `alt`.
+The pastel mascot (a glowing pearlescent orb with eyes) is the site's recurring visual thread. Source image: `public/demo/character.webp`. The `<Orb size={px} float alt?>` component renders the image with a pulsing radial glow (`.orb-glow`) and a radial mask (`.orb-img`) that fades the image's square corners. It appears at `size={200}` in the Hero, `size={28}` beside every section eyebrow (the thread), in the nav wordmark, and large/faded in the Contact finale. Decorative by default (`aria-hidden`) unless you pass `alt`.
 
 ### Hero scene (`components/home/Hero.tsx`)
 
-The Hero is a full immersive scene: `public/demo/scene-bg.png` (pastel retro-futuristic landscape) as a cover background with legibility scrims that **melt into the page** at the bottom, the guide Orb floating above the name, white text with soft shadows, and a scroll cue. The old 3D `ArabesqueAccent.tsx` is **no longer used** (the Orb replaced it) — safe to delete along with `three` / `@react-three/fiber` when convenient.
+The Hero is a full immersive scene: `public/demo/scene-bg.webp` (pastel retro-futuristic landscape) as a cover background with legibility scrims that **melt into the page** at the bottom, the guide Orb floating above the name, white text with soft shadows, and a scroll cue. The old 3D `ArabesqueAccent.tsx` is **no longer used** (the Orb replaced it) — safe to delete along with `three` / `@react-three/fiber` when convenient.
 
 ### `/demo` reference page (`src/app/demo/`)
 

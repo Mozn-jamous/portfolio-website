@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { Modal } from "./Modal";
+import { T } from "@/components/i18n/T";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 /** Event other components dispatch to open the palette (e.g. the nav hint). */
@@ -10,35 +11,44 @@ export const OPEN_COMMAND_PALETTE = "open-command-palette";
 
 type Command = {
   label: string;
+  labelAr: string;
   hint: string;
+  hintAr: string;
   /** Internal href (may include a #hash) or external URL. */
   href: string;
   external?: boolean;
 };
 
 const COMMANDS: Command[] = [
-  { label: "Home", hint: "Top of page", href: "/" },
-  { label: "All projects", hint: "Directory", href: "/projects" },
-  { label: "About", hint: "Page", href: "/about" },
-  { label: "Contact", hint: "Page", href: "/contact" },
-  { label: "Process", hint: "Section", href: "/#process" },
-  { label: "System architecture", hint: "Section", href: "/#architecture" },
-  { label: "Decision log", hint: "Section", href: "/#decisions" },
-  { label: "Mademoiselle", hint: "Case study", href: "/projects/mademoiselle" },
-  { label: "BloomBelly", hint: "Case study", href: "/projects/bloombelly" },
-  { label: "CareConnect", hint: "Case study", href: "/projects/careconnect" },
-  { label: "Smart Expense Manager", hint: "Case study", href: "/projects/smart-expense" },
-  { label: "ERP & Odoo systems", hint: "Hub", href: "/odoo" },
-  { label: "Download résumé / CV", hint: "Page", href: "/cv" },
-  { label: "GitHub", hint: "External", href: "https://github.com/Mozn-jamous", external: true },
-  { label: "LinkedIn", hint: "External", href: "https://linkedin.com/in/mozn-jamous", external: true },
-  { label: "Email", hint: "External", href: "mailto:moznjamous9@gmail.com", external: true },
+  { label: "Home", labelAr: "الرئيسية", hint: "Top of page", hintAr: "أعلى الصفحة", href: "/" },
+  { label: "All projects", labelAr: "كل المشاريع", hint: "Directory", hintAr: "الدليل", href: "/projects" },
+  { label: "About", labelAr: "عنّي", hint: "Page", hintAr: "صفحة", href: "/about" },
+  { label: "Contact", labelAr: "تواصل", hint: "Page", hintAr: "صفحة", href: "/contact" },
+  { label: "Process", labelAr: "المنهجية", hint: "Section", hintAr: "قسم", href: "/#process" },
+  { label: "System architecture", labelAr: "بنية النظام", hint: "Section", hintAr: "قسم", href: "/#architecture" },
+  { label: "Decision log", labelAr: "سجلّ القرارات", hint: "Section", hintAr: "قسم", href: "/#decisions" },
+  { label: "Mademoiselle", labelAr: "Mademoiselle", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/mademoiselle" },
+  { label: "BloomBelly", labelAr: "BloomBelly", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/bloombelly" },
+  { label: "CareConnect", labelAr: "CareConnect", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/careconnect" },
+  { label: "Eda — clinics platform", labelAr: "Eda — منصّة العيادات", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/eda" },
+  { label: "Smart Expense Manager", labelAr: "Smart Expense Manager", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/smart-expense" },
+  { label: "Techno Solution — Odoo ERP (company)", labelAr: "Techno Solution — نظام Odoo ERP (شركة)", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/techno-solution" },
+  { label: "Burgasm — restaurant on Odoo", labelAr: "Burgasm — مطعم على Odoo", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/burgasm" },
+  { label: "Takhrjy — graduation-gifts ERP", labelAr: "Takhrjy — نظام ERP لهدايا التخرّج", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/takhrjy" },
+  { label: "ERP & Odoo systems", labelAr: "أنظمة ERP وOdoo", hint: "Hub", hintAr: "مركز", href: "/odoo" },
+  { label: "Pharmacology — brand & service site", labelAr: "Pharmacology — موقع علامة وخدمات", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/pharmacology" },
+  { label: "Noodlna — brand & B2B site", labelAr: "Noodlna — موقع علامة وB2B", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/noodlna" },
+  { label: "Download résumé / CV", labelAr: "تحميل السيرة الذاتية", hint: "Page", hintAr: "صفحة", href: "/cv" },
+  { label: "GitHub", labelAr: "GitHub", hint: "External", hintAr: "خارجي", href: "https://github.com/Mozn-jamous", external: true },
+  { label: "LinkedIn", labelAr: "LinkedIn", hint: "External", hintAr: "خارجي", href: "https://linkedin.com/in/mozn-jamous", external: true },
+  { label: "Email", labelAr: "البريد", hint: "External", hintAr: "خارجي", href: "mailto:moznjamous9@gmail.com", external: true },
 ];
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
+  const [isAr, setIsAr] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const reduced = useReducedMotion();
@@ -63,20 +73,22 @@ export function CommandPalette() {
     };
   }, []);
 
-  // reset query/selection whenever it opens
+  // reset query/selection whenever it opens; sync the active language
   useEffect(() => {
     if (open) {
       setQuery("");
       setActive(0);
+      setIsAr(document.documentElement.lang === "ar");
     }
   }, [open]);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return COMMANDS;
-    return COMMANDS.filter(
-      (c) =>
-        c.label.toLowerCase().includes(q) || c.hint.toLowerCase().includes(q)
+    return COMMANDS.filter((c) =>
+      [c.label, c.hint, c.labelAr, c.hintAr].some((s) =>
+        s.toLowerCase().includes(q)
+      )
     );
   }, [query]);
 
@@ -125,7 +137,7 @@ export function CommandPalette() {
     <Modal
       open={open}
       onClose={() => setOpen(false)}
-      label="Command menu"
+      label={isAr ? "قائمة الأوامر" : "Command menu"}
       placement="top"
       panelClassName="w-full max-w-lg overflow-hidden rounded-2xl border border-[var(--glass-border)] bg-[var(--surface)] shadow-soft-lg"
     >
@@ -143,8 +155,12 @@ export function CommandPalette() {
             setActive(0);
           }}
           onKeyDown={onInputKey}
-          placeholder="Jump to a section, case study, or link…"
-          aria-label="Search destinations"
+          placeholder={
+            isAr
+              ? "انتقل إلى قسم أو دراسة حالة أو رابط…"
+              : "Jump to a section, case study, or link…"
+          }
+          aria-label={isAr ? "ابحث في الوجهات" : "Search destinations"}
           className="w-full bg-transparent py-4 text-[0.95rem] text-[var(--ink)] placeholder:text-[var(--ink-faint)] focus:outline-none"
         />
       </div>
@@ -152,7 +168,7 @@ export function CommandPalette() {
       <ul ref={listRef} className="max-h-[52vh] overflow-y-auto p-2">
         {results.length === 0 && (
           <li className="px-3 py-6 text-center text-sm text-[var(--ink-muted)]">
-            No matches
+            <T en="No matches" ar="لا نتائج" />
           </li>
         )}
         {results.map((cmd, i) => (
@@ -161,16 +177,16 @@ export function CommandPalette() {
               type="button"
               onClick={() => run(cmd)}
               onMouseMove={() => setActive(i)}
-              className={`flex w-full items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-left transition ${
+              className={`flex w-full items-center justify-between gap-4 rounded-lg px-3 py-2.5 text-start transition ${
                 i === active
                   ? "bg-[var(--accent-soft)] text-[var(--ink)]"
                   : "text-[var(--ink-muted)]"
               }`}
             >
-              <span className="text-[0.92rem]">{cmd.label}</span>
+              <span className="text-[0.92rem]"><T en={cmd.label} ar={cmd.labelAr} /></span>
               <span className="font-mono text-[0.6rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
-                {cmd.hint}
-                {cmd.external && <span aria-hidden> ↗</span>}
+                <T en={cmd.hint} ar={cmd.hintAr} />
+                {cmd.external && <span aria-hidden className="inline-block rtl:-scale-x-100"> ↗</span>}
               </span>
             </button>
           </li>
