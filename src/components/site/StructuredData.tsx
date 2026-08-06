@@ -1,6 +1,5 @@
 import { heroContent } from "@/lib/scenes-content";
-
-const BASE = "https://moznjamous.com";
+import { SITE_URL, siteUrl } from "@/lib/base-path";
 
 /**
  * Renders a JSON-LD <script>. Server-rendered (no client JS). Pass any
@@ -22,10 +21,10 @@ export const siteStructuredData = {
   "@graph": [
     {
       "@type": "Person",
-      "@id": `${BASE}/#person`,
+      "@id": `${SITE_URL}/#person`,
       name: heroContent.name,
       jobTitle: heroContent.subtitle,
-      url: BASE,
+      url: siteUrl(),
       address: {
         "@type": "PostalAddress",
         addressLocality: "Damascus",
@@ -37,10 +36,10 @@ export const siteStructuredData = {
     },
     {
       "@type": "WebSite",
-      "@id": `${BASE}/#website`,
-      url: BASE,
+      "@id": `${SITE_URL}/#website`,
+      url: siteUrl(),
       name: `${heroContent.name} — ${heroContent.subtitle}`,
-      publisher: { "@id": `${BASE}/#person` },
+      publisher: { "@id": `${SITE_URL}/#person` },
     },
   ],
 };
@@ -57,8 +56,8 @@ export function caseStudyStructuredData(opts: {
     "@type": "CreativeWork",
     name: opts.name,
     description: opts.description,
-    url: `${BASE}${opts.path}`,
+    url: siteUrl(opts.path),
     ...(opts.year ? { dateCreated: opts.year } : {}),
-    creator: { "@id": `${BASE}/#person` },
+    creator: { "@id": `${SITE_URL}/#person` },
   };
 }

@@ -1,9 +1,8 @@
 import type { MetadataRoute } from "next";
+import { SITE_ORIGIN, SITE_URL } from "@/lib/base-path";
 
 // Required so the route can be emitted by `output: export` (GitHub Pages build).
 export const dynamic = "force-static";
-
-const BASE = "https://moznjamous.com";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -13,7 +12,7 @@ export default function robots(): MetadataRoute.Robots {
       // /demo is a theme proof-of-concept, not portfolio content.
       disallow: "/demo",
     },
-    sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_ORIGIN,
   };
 }

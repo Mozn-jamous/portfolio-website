@@ -9,6 +9,7 @@ import { ScrollProgress } from "@/components/site/ScrollProgress";
 import { SmoothScroll } from "@/components/site/SmoothScroll";
 import { CommandPalette } from "@/components/site/CommandPalette";
 import { StructuredData, siteStructuredData } from "@/components/site/StructuredData";
+import { SITE_ORIGIN } from "@/lib/base-path";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -45,7 +46,9 @@ export const metadata: Metadata = {
   title: "Mozn Jamous — End-to-End Product Builder",
   description:
     "End-to-end product builder in Damascus. I design products, build Flutter apps, integrate AI, and engineer the Odoo/ERP systems behind them — from idea to shipped reality. Arabic-first by default.",
-  metadataBase: new URL("https://moznjamous.com"),
+  // Origin only — Next adds the base path itself when resolving the
+  // file-based opengraph-image/icon routes.
+  metadataBase: new URL(SITE_ORIGIN),
   openGraph: {
     title: "Mozn Jamous — End-to-End Product Builder",
     description:

@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Designer and front-end developer on a Vue ERP for a custom graduation-gifts business — a seven-role permission model, a six-stage order pipeline, retail + wholesale, and local + international fulfillment. Working from the team's requirements, I designed the screens and built the Vue front-end.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Takhrjy — a seven-role ERP, designed and built",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/takhrjy",
+    url: siteUrl("/projects/takhrjy"),
   },
   twitter: {
     card: "summary_large_image",

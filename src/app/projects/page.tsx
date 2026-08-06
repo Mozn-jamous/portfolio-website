@@ -3,6 +3,7 @@ import {
   ProjectsDirectory,
   projectsDescription,
 } from "@/components/projects/ProjectsDirectory";
+import { siteUrl } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Projects — Mozn Jamous",
@@ -11,7 +12,7 @@ export const metadata: Metadata = {
     title: "Selected Work — Mozn Jamous",
     description: projectsDescription,
     type: "website",
-    url: "https://moznjamous.com/projects",
+    url: siteUrl("/projects"),
   },
   twitter: {
     card: "summary_large_image",

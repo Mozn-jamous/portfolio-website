@@ -1,10 +1,8 @@
 import type { MetadataRoute } from "next";
+import { siteUrl } from "@/lib/base-path";
 
 // Required so the route can be emitted by `output: export` (GitHub Pages build).
 export const dynamic = "force-static";
-
-/** Canonical site origin — matches `metadataBase` in layout.tsx. */
-const BASE = "https://moznjamous.com";
 
 /** Stable routes. Project pages are explicit (they map 1:1 to case studies). */
 const ROUTES = [
@@ -30,7 +28,7 @@ const ROUTES = [
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
   return ROUTES.map(({ path, priority }) => ({
-    url: `${BASE}${path}`,
+    url: siteUrl(path),
     lastModified,
     changeFrequency: "monthly",
     priority,

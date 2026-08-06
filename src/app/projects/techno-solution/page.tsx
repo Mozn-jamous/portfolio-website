@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Replaced a three-division company's Excel operation — import, warehousing, and solar energy — with one live Odoo ERP: HR, payroll, attendance, purchasing, inventory, and accounting. Built solo in Damascus; still in daily production after handoff.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Techno Solution — from Excel to a live ERP",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/techno-solution",
+    url: siteUrl("/projects/techno-solution"),
   },
   twitter: {
     card: "summary_large_image",

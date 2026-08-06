@@ -17,6 +17,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Arabic-first maternal health app. Designed in Figma, built in Flutter — three AI models behind one bilingual RTL interface.";
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     title: "BloomBelly — three AIs behind one app",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/bloombelly",
+    url: siteUrl("/projects/bloombelly"),
   },
   twitter: {
     card: "summary_large_image",

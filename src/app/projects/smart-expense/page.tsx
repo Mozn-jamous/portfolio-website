@@ -15,6 +15,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Odoo 19 module. Token-secured one-click email approvals routed via hr.employee hierarchy. Auto-generated journal entries on finance sign-off. LGPL-3.0.";
@@ -26,7 +27,7 @@ export const metadata: Metadata = {
     title: "Smart Expense Manager — approvals at one click",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/smart-expense",
+    url: siteUrl("/projects/smart-expense"),
   },
   twitter: {
     card: "summary_large_image",
@@ -224,7 +225,7 @@ export default function SmartExpensePage() {
 
               <Callout kicker={<T en="Problem statements" ar="بيانات المشكلة" />}>
                 <T
-                  en={<><strong>Nour</strong> needs to approve an expense without logging into Odoo, because every login is a chance to forget — and a manager who doesn't approve is the bottleneck the whole system fails on. <strong>Omar</strong> needs visibility into a fast, paperless submission, and <strong>Farah</strong> needs a ledger that only ever holds approved liabilities.</>}
+                  en={<><strong>Nour</strong> needs to approve an expense without logging into Odoo, because every login is a chance to forget — and a manager who doesn&apos;t approve is the bottleneck the whole system fails on. <strong>Omar</strong> needs visibility into a fast, paperless submission, and <strong>Farah</strong> needs a ledger that only ever holds approved liabilities.</>}
                   ar={<><strong>نور</strong> تحتاج أن توافق على نفقةٍ دون تسجيل الدخول إلى Odoo، لأن كلّ تسجيلٍ فرصةٌ للنسيان — ومديرٌ لا يوافق هو عنق الزجاجة الذي يفشل عليه النظام كلّه. و<strong>عمر</strong> يحتاج وضوحاً في تقديمٍ سريعٍ بلا ورق، و<strong>فرح</strong> تحتاج دفتر أستاذٍ لا يحمل إلا التزاماتٍ معتمدة.</>}
                 />
               </Callout>

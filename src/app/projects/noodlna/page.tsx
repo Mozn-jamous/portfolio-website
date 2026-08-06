@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Designed and built the brand website for Noodlna, an instant-noodles product by Syria Macarna — an Arabic-first consumer storefront plus a B2B wholesale/export funnel, built from scratch in vanilla HTML/CSS/JS and deployed on Vercel.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Noodlna — a food brand's storefront, designed and built",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/noodlna",
+    url: siteUrl("/projects/noodlna"),
   },
   twitter: {
     card: "summary_large_image",

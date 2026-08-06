@@ -19,3 +19,28 @@ export function withBase(path: string): string {
   if (path === BASE_PATH || path.startsWith(`${BASE_PATH}/`)) return path;
   return `${BASE_PATH}${path}`;
 }
+
+/**
+ * Origin the site is served from — WITHOUT the base path. This is what
+ * `metadataBase` wants: Next prefixes the base path itself when resolving
+ * file-based metadata images (opengraph-image, icon), so including it here
+ * would double it.
+ */
+export const SITE_ORIGIN = BASE_PATH
+  ? "https://mozn-jamous.github.io"
+  : "https://moznjamous.com";
+
+/** The site's public root URL, base path included. */
+export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}`;
+
+/**
+ * Absolute public URL for an internal path — for hand-written `og:url`,
+ * JSON-LD `@id`, sitemap and robots entries. The static export sets
+ * `trailingSlash: true`, so a trailing slash is added there to keep canonical
+ * URLs off a 301.
+ */
+export function siteUrl(path = "/"): string {
+  if (!path || path === "/") return `${SITE_URL}/`;
+  const p = path.startsWith("/") ? path : `/${path}`;
+  return BASE_PATH ? `${SITE_URL}${p}/` : `${SITE_URL}${p}`;
+}

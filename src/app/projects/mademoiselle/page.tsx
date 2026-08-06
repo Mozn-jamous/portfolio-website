@@ -12,6 +12,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Full product design and Flutter rebuild of Mademoiselle at Santa Media. Production Design System — multi-theme, full RTL, 17 text variants, 9 button variants.";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     title: "Mademoiselle — redesigned from the ground up",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/mademoiselle",
+    url: siteUrl("/projects/mademoiselle"),
   },
   twitter: {
     card: "summary_large_image",

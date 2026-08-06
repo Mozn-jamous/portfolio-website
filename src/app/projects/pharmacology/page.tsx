@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "A complete redesign and from-scratch rebuild of the Pharmacology brand & service site for a clinical-nutrition practice — 25 bilingual (Arabic-first, RTL) pages on a locked design-token system, built in vanilla HTML/CSS/JS with Supabase-wired forms.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Pharmacology — a clinical-nutrition brand, redesigned and rebuilt",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/pharmacology",
+    url: siteUrl("/projects/pharmacology"),
   },
   twitter: {
     card: "summary_large_image",

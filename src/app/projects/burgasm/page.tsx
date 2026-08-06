@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "A restaurant running its entire operation on Odoo — a 68-account dual-currency chart of accounts across three partners, a live point of sale (500+ orders), kitchen display, and ingredient-level inventory (10,000+ moves linked to POS). Built solo; still live in daily service.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Burgasm — a restaurant, fully on Odoo",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/burgasm",
+    url: siteUrl("/projects/burgasm"),
   },
   twitter: {
     card: "summary_large_image",

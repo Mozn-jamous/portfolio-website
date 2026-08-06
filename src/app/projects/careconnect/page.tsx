@@ -16,6 +16,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Three Flutter apps designed for three distinct audiences — Mother, Babysitter, Admin — on one Supabase backend. UX-first, then built.";
@@ -27,7 +28,7 @@ export const metadata: Metadata = {
     title: "CareConnect — one backend, three audiences",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/careconnect",
+    url: siteUrl("/projects/careconnect"),
   },
   twitter: {
     card: "summary_large_image",

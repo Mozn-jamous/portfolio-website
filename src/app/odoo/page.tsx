@@ -12,6 +12,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Custom Odoo 19 business systems — expense management, HR, payroll, POS, and approval workflows. Built around how a company actually works. Reduced approval time from days to seconds; one module is open source and live.";
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     title: "ERP & Odoo Systems — business operations, engineered",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/odoo",
+    url: siteUrl("/odoo"),
   },
   twitter: {
     card: "summary_large_image",

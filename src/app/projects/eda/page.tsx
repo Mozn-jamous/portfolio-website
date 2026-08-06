@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "Designer and QA tester on a multi-tenant clinics platform — three Flutter apps over a NestJS backend, built with a collaborator. Working from the project's requirements, I designed the screens across the apps and tested the system, including the separation between clinics.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Eda — three apps, one isolated tenant per clinic",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/eda",
+    url: siteUrl("/projects/eda"),
   },
   twitter: {
     card: "summary_large_image",

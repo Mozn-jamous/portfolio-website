@@ -11,6 +11,7 @@ import {
   caseStudyStructuredData,
 } from "@/components/site/StructuredData";
 import { T } from "@/components/i18n/T";
+import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
   "A solo, full-stack multi-tenant SaaS for online shops — FastAPI + PostgreSQL + Vue 3 — with an AI Telegram bot per shop (Groq llama-3.3-70b, 15 function-call tools) that serves customers in Arabic, English, Turkish, French, and German.";
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     title: "Blatos — a multi-tenant store SaaS with an AI bot per shop",
     description: DESCRIPTION,
     type: "article",
-    url: "https://moznjamous.com/projects/blatos",
+    url: siteUrl("/projects/blatos"),
   },
   twitter: {
     card: "summary_large_image",
