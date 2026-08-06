@@ -6,7 +6,9 @@ import {
   DesignDecision,
   FactGrid,
   Lead,
+  Persona,
   PhoneDemo,
+  Priorities,
 } from "@/components/case-study/CaseStudyLayout";
 import { CareConnectDiagram } from "@/components/case-study/ArchitectureDiagram";
 import {
@@ -148,6 +150,99 @@ export default function CareConnectPage() {
                 <T
                   en="The most important design decision wasn't a screen — it was the data model. If the schema is wrong, no amount of good UI fixes it. So the spec came before Figma."
                   ar="أهمّ قرارٍ تصميمي لم يكن شاشة — بل نموذج البيانات. إن كان المخطّط خاطئاً، فلا قدرَ من الواجهة الجيدة يُصلحه. لذا جاءت المواصفة قبل Figma."
+                />
+              </Callout>
+            </>
+          ),
+        },
+        {
+          kicker: <T en="Users & personas" ar="المستخدمون والـ Personas" />,
+          heading: <T en="Three audiences, three personas." ar="ثلاثة جماهير، ثلاثة personas." />,
+          body: (
+            <>
+              <p>
+                <T
+                  en="The user types I defined in the IEEE 830 spec became three personas — each with a different primary task, a one-line story, and the frustration that shaped its app."
+                  ar="فئات المستخدمين التي عرّفتها في وثيقة IEEE 830 صارت ثلاثة personas — لكلٍّ مهمةٌ أساسية مختلفة، وقصةٌ من سطر، والإحباط الذي شكّل تطبيقها."
+                />
+              </p>
+
+              <Persona
+                initial={<T en="H" ar="ه" />}
+                name={<T en="Huda — working mother" ar="هُدى — أمٌّ عاملة" />}
+                role={<T en="Mother app · books care" ar="تطبيق الأمّ · تحجز الرعاية" />}
+                story={
+                  <T
+                    en="I want to find a babysitter I can actually trust, quickly — not gamble on a stranger with my child."
+                    ar="أريد أن أجد جليسةً أثق بها فعلاً، وبسرعة — لا أن أقامر بغريبةٍ مع طفلي."
+                  />
+                }
+                goals={
+                  <T
+                    en="Vetted matches near her, fast booking, and a clear sense of who's verified."
+                    ar="تطابقاتٌ مُدقَّقة قريبةٌ منها، وحجزٌ سريع، وإحساسٌ واضح بمن هو موثَّق."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="Not knowing who to trust; platforms where anyone can list themselves with no checks."
+                    ar="عدم معرفة بمن تثق؛ ومنصّاتٌ يُدرج فيها أيٌّ كان نفسه دون تدقيق."
+                  />
+                }
+              />
+
+              <Persona
+                initial={<T en="S" ar="س" />}
+                name={<T en="Sara — babysitter" ar="سارة — جليسة أطفال" />}
+                role={<T en="Babysitter app · offers care" ar="تطبيق الجليسة · تعرض الرعاية" />}
+                story={
+                  <T
+                    en="I want a steady schedule and to know exactly what each booking expects of me before I accept."
+                    ar="أريد جدولاً ثابتاً وأن أعرف بالضبط ما يتوقّعه كلّ حجزٍ منّي قبل أن أقبله."
+                  />
+                }
+                goals={
+                  <T
+                    en="Reliable bookings, a clear schedule, and the right context for each child."
+                    ar="حجوزاتٌ موثوقة، وجدولٌ واضح، والسياق الصحيح لكل طفل."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="No-shows, unclear expectations, and seeing personal data she shouldn't."
+                    ar="عدم الحضور، وتوقّعاتٌ غامضة، ورؤية بياناتٍ شخصية لا ينبغي أن تراها."
+                  />
+                }
+              />
+
+              <Persona
+                initial={<T en="M" ar="م" />}
+                name={<T en="Maya — platform moderator" ar="مايا — مشرفة المنصّة" />}
+                role={<T en="Admin app · moderates" ar="تطبيق المشرف · يُدير" />}
+                story={
+                  <T
+                    en="I want to verify, flag, and intervene without breaking the platform — and to prove every action I took."
+                    ar="أريد أن أوثّق وأُبلّغ وأتدخّل دون كسر المنصّة — وأن أُثبت كلّ إجراءٍ اتخذته."
+                  />
+                }
+                goals={
+                  <T
+                    en="Control over who's verified or flagged, with a clean audit trail."
+                    ar="تحكّمٌ بمن هو موثَّق أو مُبلَّغ عنه، مع سجلّ تدقيقٍ نظيف."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="Abuse slipping through; not being able to see why a decision was made."
+                    ar="تجاوزاتٌ تتسلّل؛ وعدم القدرة على رؤية سبب اتخاذ قرارٍ ما."
+                  />
+                }
+              />
+
+              <Callout kicker={<T en="Problem statements" ar="بيانات المشكلة" />}>
+                <T
+                  en={<><strong>Huda</strong> needs to trust a babysitter before she books, because handing over her child is the highest-stakes decision the product asks of anyone. <strong>Sara</strong> needs a reliable schedule with the right context, and <strong>Maya</strong> needs provable control — each side trusts the platform only if the other two are held to rules they can feel.</>}
+                  ar={<><strong>هُدى</strong> تحتاج أن تثق بالجليسة قبل أن تحجز، لأن تسليم طفلها أعلى قرارٍ مخاطرةً يطلبه المنتج من أحد. و<strong>سارة</strong> تحتاج جدولاً موثوقاً بالسياق الصحيح، و<strong>مايا</strong> تحتاج تحكّماً قابلاً للإثبات — كلّ طرفٍ يأتمن المنصّة فقط إن كان الطرفان الآخران مُلزَمَين بقواعد يشعرون بها.</>}
                 />
               </Callout>
             </>
@@ -368,6 +463,51 @@ export default function CareConnectPage() {
                   ar="قرار التطبيقات الثلاثة لم يكن قراراً هندسياً؛ بل قرار تجربةٍ كان على الهندسة احترامه. وعادة المواصفة-أولاً ليست أكاديمية — بل هي أرخص تأمينٍ ضدّ التباعد بين ثلاثة تطبيقات وخادمٍ واحد."
                 />
               </p>
+            </>
+          ),
+        },
+        {
+          kicker: <T en="Validation" ar="التحقّق" />,
+          heading: <T en="How I'd test three apps at once." ar="كيف سأختبر ثلاثة تطبيقات معاً." />,
+          body: (
+            <>
+              <p>
+                <T
+                  en="Because trust runs across all three sides, I'd run a usability study per app around its primary task — a mother finding and booking vetted care, a babysitter accepting a booking, a moderator verifying and flagging — then cluster the findings in an affinity diagram and prioritize the fixes that unblock the marketplace loop first."
+                  ar="لأن الثقة تسري عبر الأطراف الثلاثة، سأُجري دراسة قابلية استخدامٍ لكل تطبيقٍ حول مهمّته الأساسية — أمٌّ تجد وتحجز رعايةً مُدقَّقة، وجليسةٌ تقبل حجزاً، ومشرفةٌ توثّق وتُبلّغ — ثم أعنقد النتائج في مخطّط تقارب وأرتّب الإصلاحات التي تفكّ حلقة السوق أولاً."
+                />
+              </p>
+              <Priorities
+                items={[
+                  {
+                    tier: "P0",
+                    label: (
+                      <T
+                        en="Trust signals in the mother's app — verification badges and what they mean — must be unmistakable, or she won't book at all."
+                        ar="إشارات الثقة في تطبيق الأمّ — شارات التوثيق ومعناها — يجب أن تكون لا تُخطئ، وإلا فلن تحجز أصلاً."
+                      />
+                    ),
+                  },
+                  {
+                    tier: "P1",
+                    label: (
+                      <T
+                        en="The babysitter's schedule and booking context must be readable at a glance before she accepts."
+                        ar="جدول الجليسة وسياق الحجز يجب أن يكونا مقروءَين بلمحةٍ قبل أن تقبل."
+                      />
+                    ),
+                  },
+                  {
+                    tier: "P2",
+                    label: (
+                      <T
+                        en="The admin's moderation actions should be fast and obviously reversible, with the audit trail one tap away."
+                        ar="إجراءات الإدارة لدى المشرف ينبغي أن تكون سريعةً وقابلةً للتراجع بوضوح، وسجلّ التدقيق على بُعد نقرةٍ واحدة."
+                      />
+                    ),
+                  },
+                ]}
+              />
             </>
           ),
         },

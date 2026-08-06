@@ -6,6 +6,8 @@ import {
   FactGrid,
   Figure,
   Lead,
+  Persona,
+  Priorities,
 } from "@/components/case-study/CaseStudyLayout";
 import { SmartExpenseDiagram } from "@/components/case-study/ArchitectureDiagram";
 import {
@@ -133,6 +135,99 @@ export default function SmartExpensePage() {
                   ar={<>تتطلّب وحدات نفقات Odoo الموجودة أن يسجّل كلّ من في السلسلة دخوله إلى النظام. وعملياً، المديرون لا يسجّلون الدخول. تتعثّر الموافقات. ولا يُستخدَم النظام.{" "}<strong>احتجتُ تدفّقاً يعمل لأناسٍ لا يفتحون Odoo أبداً.</strong></>}
                 />
               </p>
+            </>
+          ),
+        },
+        {
+          kicker: <T en="Users & personas" ar="المستخدمون والـ Personas" />,
+          heading: <T en="Who has to actually use it." ar="من عليه أن يستخدمه فعلاً." />,
+          body: (
+            <>
+              <p>
+                <T
+                  en="The flow crosses three roles, and the one who decides whether the system lives or dies is the manager who never logs in. Each role became a persona with a one-line story and the friction that kept the old paper loop alive."
+                  ar="يعبر التدفّق ثلاثة أدوار، ومن يقرّر حياة النظام أو موته هو المدير الذي لا يسجّل الدخول أبداً. صار كلّ دورٍ persona بقصةٍ من سطرٍ والاحتكاك الذي أبقى الحلقة الورقية القديمة حيّة."
+                />
+              </p>
+
+              <Persona
+                initial={<T en="O" ar="ع" />}
+                name={<T en="Omar — employee" ar="عمر — موظّف" />}
+                role={<T en="Submits the expense" ar="يقدّم النفقة" />}
+                story={
+                  <T
+                    en="I just want to snap the receipt and get reimbursed — not babysit a paper form through the building."
+                    ar="أريد فقط أن ألتقط صورة الإيصال وأُعوَّض — لا أن أرافق نموذجاً ورقياً عبر المبنى."
+                  />
+                }
+                goals={
+                  <T
+                    en="Submit from his phone in seconds; know where the request stands."
+                    ar="التقديم من جوّاله في ثوانٍ؛ ومعرفة أين وصل الطلب."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="Lost receipts; reimbursements that take weeks because a form sat in a drawer."
+                    ar="إيصالاتٌ ضائعة؛ وتعويضاتٌ تستغرق أسابيع لأن نموذجاً بقي في درج."
+                  />
+                }
+              />
+
+              <Persona
+                initial={<T en="N" ar="ن" />}
+                name={<T en="Nour — line manager" ar="نور — مديرة مباشِرة" />}
+                role={<T en="Approves · the make-or-break user" ar="توافق · المستخدمة الحاسمة" />}
+                story={
+                  <T
+                    en="I want to approve in one tap from my inbox — I'm not going to log into yet another system to click yes."
+                    ar="أريد أن أوافق بنقرةٍ واحدة من بريدي — لن أسجّل الدخول إلى نظامٍ آخر فقط لأنقر «نعم»."
+                  />
+                }
+                goals={
+                  <T
+                    en="Clear the approval the moment she sees it, wherever she is."
+                    ar="إنهاء الموافقة لحظة رؤيتها، أينما كانت."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="Being asked to log into Odoo for a 5-second decision — so approvals stall for days."
+                    ar="أن يُطلب منها تسجيل الدخول إلى Odoo لقرارٍ من 5 ثوانٍ — فتتعثّر الموافقات أياماً."
+                  />
+                }
+              />
+
+              <Persona
+                initial={<T en="F" ar="ف" />}
+                name={<T en="Farah — finance" ar="فرح — المالية" />}
+                role={<T en="Posts to the ledger" ar="تُرحّل إلى دفتر الأستاذ" />}
+                story={
+                  <T
+                    en="I want a clean ledger — only real, approved liabilities, never entries I have to reverse."
+                    ar="أريد دفتر أستاذٍ نظيفاً — التزاماتٌ حقيقية معتمدة فقط، لا قيوداً أُضطرّ لعكسها."
+                  />
+                }
+                goals={
+                  <T
+                    en="Post with one click; trust that every entry is already approved."
+                    ar="الترحيل بنقرةٍ واحدة؛ والثقة بأن كلّ قيدٍ معتمدٌ أصلاً."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="A ledger filling with unapproved or duplicate entries she has to clean up."
+                    ar="دفتر أستاذٍ يمتلئ بقيودٍ غير معتمدة أو مكرّرة عليها تنظيفها."
+                  />
+                }
+              />
+
+              <Callout kicker={<T en="Problem statements" ar="بيانات المشكلة" />}>
+                <T
+                  en={<><strong>Nour</strong> needs to approve an expense without logging into Odoo, because every login is a chance to forget — and a manager who doesn't approve is the bottleneck the whole system fails on. <strong>Omar</strong> needs visibility into a fast, paperless submission, and <strong>Farah</strong> needs a ledger that only ever holds approved liabilities.</>}
+                  ar={<><strong>نور</strong> تحتاج أن توافق على نفقةٍ دون تسجيل الدخول إلى Odoo، لأن كلّ تسجيلٍ فرصةٌ للنسيان — ومديرٌ لا يوافق هو عنق الزجاجة الذي يفشل عليه النظام كلّه. و<strong>عمر</strong> يحتاج وضوحاً في تقديمٍ سريعٍ بلا ورق، و<strong>فرح</strong> تحتاج دفتر أستاذٍ لا يحمل إلا التزاماتٍ معتمدة.</>}
+                />
+              </Callout>
             </>
           ),
         },
@@ -313,6 +408,51 @@ export default function SmartExpensePage() {
                   />
                 </li>
               </ol>
+            </>
+          ),
+        },
+        {
+          kicker: <T en="Validation" ar="التحقّق" />,
+          heading: <T en="The real test is adoption." ar="الاختبار الحقيقي هو التبنّي." />,
+          body: (
+            <>
+              <p>
+                <T
+                  en="For an internal tool, the success metric isn't a satisfaction score — it's whether managers actually approve. I'd validate with a short usability study on the one-click email path, then watch the token logs (which already record every transition) as the affinity-style signal for where the flow stalls, and prioritize from there."
+                  ar="بالنسبة لأداةٍ داخلية، مقياس النجاح ليس درجة رضا — بل ما إذا كان المديرون يوافقون فعلاً. سأتحقّق بدراسة قابلية استخدامٍ قصيرة على مسار البريد بنقرةٍ واحدة، ثم أراقب سجلّات الرمز (التي تُسجّل كل انتقالٍ أصلاً) كإشارةٍ — على غرار التقارب — لأين يتعثّر التدفّق، وأرتّب الأولويات من هناك."
+                />
+              </p>
+              <Priorities
+                items={[
+                  {
+                    tier: "P0",
+                    label: (
+                      <T
+                        en="The one-click Approve / Reject must work reliably across the email clients managers actually use — if it breaks once, trust in the link is gone."
+                        ar="«موافقة / رفض» بنقرةٍ واحدة يجب أن يعمل بثباتٍ عبر عملاء البريد التي يستخدمها المديرون فعلاً — إن تعطّل مرّةً، ذهبت الثقة بالرابط."
+                      />
+                    ),
+                  },
+                  {
+                    tier: "P1",
+                    label: (
+                      <T
+                        en="The Arabic and English approval emails must render identically well, since recipients act straight from the inbox."
+                        ar="بريدا الموافقة بالعربية والإنجليزية يجب أن يُعرَضا بجودةٍ متطابقة، لأن المستلِمين يتصرّفون مباشرةً من البريد."
+                      />
+                    ),
+                  },
+                  {
+                    tier: "P2",
+                    label: (
+                      <T
+                        en="A lightweight audit dashboard surfacing the token logs — proving adoption from data that already exists."
+                        ar="لوحة تدقيقٍ خفيفة تُظهر سجلّات الرمز — لإثبات التبنّي من بياناتٍ موجودةٍ أصلاً."
+                      />
+                    ),
+                  },
+                ]}
+              />
             </>
           ),
         },

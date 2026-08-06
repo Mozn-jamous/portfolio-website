@@ -7,7 +7,9 @@ import {
   FactGrid,
   Figure,
   Lead,
+  Persona,
   PhoneDemo,
+  Priorities,
 } from "@/components/case-study/CaseStudyLayout";
 import { BloomBellyDiagram } from "@/components/case-study/ArchitectureDiagram";
 import {
@@ -172,6 +174,75 @@ export default function BloomBellyPage() {
                 label="User journeys"
                 caption={<T en="Four user-journey maps from Figma — add export" ar="أربع خرائط رحلات مستخدمٍ من Figma — يُضاف التصدير" />}
               />
+            </>
+          ),
+        },
+        {
+          kicker: <T en="Users & personas" ar="المستخدمون والـ Personas" />,
+          heading: <T en="Who I designed for." ar="لمن صمّمتُ." />,
+          body: (
+            <>
+              <p>
+                <T
+                  en="From the four journeys I mapped in Figma, I distilled the people behind them into personas — each with a one-line story, a goal, and the frustration the product had to answer."
+                  ar="من الرحلات الأربع التي رسمتها في Figma، استخلصتُ الأشخاص خلفها إلى personas — لكلٍّ قصةٌ من سطرٍ، وهدف، والإحباط الذي كان على المنتج أن يجيبه."
+                />
+              </p>
+
+              <Persona
+                initial={<T en="L" ar="ل" />}
+                name={<T en="Lina — first-time expectant mother" ar="لينا — حاملٌ لأوّل مرّة" />}
+                role={<T en="Primary user · 28 · Damascus" ar="المستخدمة الأساسية · 28 · دمشق" />}
+                story={
+                  <T
+                    en="I want to ask about my pregnancy in Arabic and trust the answer — not get stuck between a stiff article and a chatbot that might be wrong."
+                    ar="أريد أن أسأل عن حملي بالعربية وأثق بالجواب — لا أن أعلق بين مقالٍ متيبّس وروبوتٍ قد يخطئ."
+                  />
+                }
+                goals={
+                  <T
+                    en="Clear, warm guidance for each pregnancy week; a quick read on whether a symptom needs a doctor."
+                    ar="إرشادٌ واضحٌ ودافئ لكل أسبوع حمل؛ وقراءةٌ سريعة لما إذا كان عَرَضٌ ما يحتاج طبيبة."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="English-first apps that don't speak her language; Arabic chatbots that confidently invent medical advice."
+                    ar="تطبيقاتٌ إنجليزية أولاً لا تتحدّث لغتها؛ وروبوتاتٌ عربية تخترع نصائح طبية بثقة."
+                  />
+                }
+              />
+
+              <Persona
+                initial={<T en="R" ar="ر" />}
+                name={<T en="Dr. Rana — OB-GYN the app defers to" ar="د. رنا — طبيبةُ نساءٍ يُحيل إليها التطبيق" />}
+                role={<T en="Secondary user · clinician" ar="مستخدمة ثانوية · طبيبة" />}
+                story={
+                  <T
+                    en="I want the app to send my patient to me when it isn't sure — so she arrives informed, not misinformed."
+                    ar="أريد أن يُحيل التطبيق مريضتي إليّ حين لا يكون متأكّداً — فتصل مطّلعةً، لا مُضلَّلة."
+                  />
+                }
+                goals={
+                  <T
+                    en="Patients who arrive with good questions, not myths; a tool that knows its limits."
+                    ar="مريضاتٌ يأتين بأسئلةٍ جيدة، لا بخرافات؛ وأداةٌ تعرف حدودها."
+                  />
+                }
+                frustrations={
+                  <T
+                    en="Undoing scary misinformation patients picked up from unreliable sources."
+                    ar="تفنيد معلوماتٍ مخيفة مغلوطة التقطتها المريضات من مصادر غير موثوقة."
+                  />
+                }
+              />
+
+              <Callout kicker={<T en="Problem statements" ar="بيانات المشكلة" />}>
+                <T
+                  en={<><strong>Lina</strong> is a first-time expectant mother who needs trustworthy maternal guidance in Arabic, because a confidently wrong answer in maternal care is a safety risk — not a UX papercut. <strong>Dr. Rana</strong> needs the app to defer to her when its confidence is low, because an AI that guesses erodes the trust the whole product depends on.</>}
+                  ar={<><strong>لينا</strong> حاملٌ لأوّل مرّة تحتاج إرشاداً أموميّاً موثوقاً بالعربية، لأن إجابةً واثقةً خاطئة في رعاية الأمومة خطرٌ على السلامة — لا مجرّد عثرة تجربة. و<strong>د. رنا</strong> تحتاج أن يُحيل التطبيق إليها حين تنخفض ثقته، لأن ذكاءً اصطناعياً يخمّن يُضعف الثقة التي يقوم عليها المنتج كلّه.</>}
+                />
+              </Callout>
             </>
           ),
         },
@@ -415,6 +486,51 @@ export default function BloomBellyPage() {
                   ar={<>النتيجة الباقية منهجية. صار نموذج Figma — شاشات عربية أولاً، إنجليزية ثانياً — هو المواصفة؛ وحين بدا شيءٌ خطأً في Flutter، كان ملف Figma هو المرجع.{" "}<strong>التصميم قبل البناء وفّر أسابيع</strong>، وهكذا عملتُ على كل منتجٍ منذ ذلك الحين.</>}
                 />
               </p>
+            </>
+          ),
+        },
+        {
+          kicker: <T en="Validation" ar="التحقّق" />,
+          heading: <T en="How I'd test it with mothers." ar="كيف سأختبره مع الأمّهات." />,
+          body: (
+            <>
+              <p>
+                <T
+                  en="The architecture is ready for evaluation; the evidence is the next step. The plan is a moderated usability study with Arabic-speaking mothers around three core tasks — ask a medical question, interpret a calibrated refusal, and run a growth check — then synthesize the sessions into an affinity diagram and translate the clusters into prioritized insights."
+                  ar="البنية جاهزة للتقييم؛ والدليل هو الخطوة التالية. الخطة دراسة قابلية استخدامٍ موجَّهة مع أمّهاتٍ ناطقاتٍ بالعربية حول ثلاث مهامّ أساسية — طرح سؤالٍ طبي، وتفسير رفضٍ معاير، وإجراء فحص نموّ — ثم تركيب الجلسات في مخطّط تقارب (affinity diagram) وترجمة العناقيد إلى أفكارٍ مرتّبة الأولوية."
+                />
+              </p>
+              <Priorities
+                items={[
+                  {
+                    tier: "P0",
+                    label: (
+                      <T
+                        en="The calibrated-refusal state must read as caring guidance, not an error — it's the moment trust is won or lost."
+                        ar="حالة الرفض المعاير يجب أن تُقرأ كإرشادٍ عطوف، لا كخطأ — فهي اللحظة التي تُكسَب فيها الثقة أو تُفقَد."
+                      />
+                    ),
+                  },
+                  {
+                    tier: "P1",
+                    label: (
+                      <T
+                        en="Mixed Arabic/English medical terms must render correctly on real devices before any answer can be judged."
+                        ar="المصطلحات الطبية المختلطة عربي/إنجليزي يجب أن تُعرَض صحيحةً على أجهزةٍ حقيقية قبل الحكم على أي إجابة."
+                      />
+                    ),
+                  },
+                  {
+                    tier: "P2",
+                    label: (
+                      <T
+                        en="Onboarding should explain the four user roles without a wall of text."
+                        ar="التهيئة ينبغي أن تشرح أدوار المستخدمين الأربعة دون جدارٍ من النصّ."
+                      />
+                    ),
+                  },
+                ]}
+              />
             </>
           ),
         },

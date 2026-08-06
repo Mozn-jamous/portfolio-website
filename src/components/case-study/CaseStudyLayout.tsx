@@ -338,6 +338,77 @@ export function DesignDecision({
   );
 }
 
+/* User persona — Empathize/Define artifact (UX research) */
+export function Persona({
+  initial,
+  name,
+  role,
+  story,
+  goals,
+  frustrations,
+}: {
+  initial: ReactNode;
+  name: ReactNode;
+  role: ReactNode;
+  story: ReactNode;
+  goals: ReactNode;
+  frustrations: ReactNode;
+}) {
+  return (
+    <article className="glass my-8 rounded-2xl p-6 shadow-soft">
+      <header className="flex items-center gap-4 border-b border-[var(--border)] pb-4">
+        <span
+          aria-hidden
+          className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[var(--accent-soft)] font-display text-xl font-semibold text-[var(--accent-deep)]"
+        >
+          {initial}
+        </span>
+        <div>
+          <h3 className="text-lg font-medium tracking-tight text-[var(--ink)]">{name}</h3>
+          <p className="mt-0.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+            {role}
+          </p>
+        </div>
+      </header>
+      <p className="mt-4 text-[0.98rem] italic leading-relaxed text-[var(--ink)]">
+        &ldquo;{story}&rdquo;
+      </p>
+      <div className="mt-5 grid gap-x-5 gap-y-3 text-[0.92rem] leading-relaxed text-[var(--ink-muted)] sm:grid-cols-[110px_1fr]">
+        <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--accent)]">
+          <T en="Goals" ar="الأهداف" />
+        </p>
+        <div>{goals}</div>
+        <p className="font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+          <T en="Frustrations" ar="الإحباطات" />
+        </p>
+        <div>{frustrations}</div>
+      </div>
+    </article>
+  );
+}
+
+/* Usability-insight prioritization — P0/P1/P2 buckets (Test phase) */
+export function Priorities({
+  items,
+}: {
+  items: { tier: string; label: ReactNode }[];
+}) {
+  return (
+    <ul className="my-8 space-y-3">
+      {items.map((item, i) => (
+        <li key={i} className="glass flex items-start gap-4 rounded-xl p-4 shadow-soft">
+          <span className="mt-0.5 shrink-0 rounded-md bg-[var(--accent-soft)] px-2.5 py-1 font-mono text-[0.65rem] font-semibold tracking-[0.12em] text-[var(--accent-deep)]">
+            {item.tier}
+          </span>
+          <span className="text-[0.95rem] leading-relaxed text-[var(--ink-muted)]">
+            {item.label}
+          </span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 /* Architecture Decision Record — proof of engineering depth */
 export function ADR({
   number,
