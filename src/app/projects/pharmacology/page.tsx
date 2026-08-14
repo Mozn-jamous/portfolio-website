@@ -222,11 +222,11 @@ export default function PharmacologyPage() {
         nextProject={{
           label: (
             <T
-              en="Noodlna — a food brand's storefront + B2B funnel →"
-              ar="Noodlna — واجهة متجرٍ لعلامةٍ غذائية + قُمع B2B →"
+              en="Divano — an interior-design firm's site, retyped and retold →"
+              ar="Divano — موقع شركة تصميمٍ داخلي، أُعيدت طباعته وروايته →"
             />
           ),
-          href: "/projects/noodlna",
+          href: "/projects/divano",
         }}
       />
     </>

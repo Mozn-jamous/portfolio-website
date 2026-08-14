@@ -747,16 +747,16 @@ export const projectsIndex: ProjectIndexEntry[] = [
     name: "Blatos",
     href: "/projects/blatos",
     year: "2026",
-    role: "Solo Full-stack Developer",
-    roleAr: "مطوّرة Full-stack منفردة",
+    role: "Full-stack Developer (duo)",
+    roleAr: "مطوّرة Full-stack (بناء ثنائي)",
     industry: "SaaS · AI",
     industryAr: "SaaS · ذكاء اصطناعي",
     impact: "Per-shop AI bot — 15 function-call tools, five languages",
     impactAr: "بوت ذكاء اصطناعي لكل متجر — 15 أداة استدعاء، بخمس لغات",
     summary:
-      "A solo, full-stack multi-tenant SaaS for online shops — FastAPI + PostgreSQL + Vue 3 — with an AI Telegram bot per shop (Groq llama-3.3-70b, 15 function-call tools) serving customers in Arabic, English, Turkish, French, and German.",
+      "A full-stack multi-tenant SaaS for online shops, built by two — the core logic and AI design are a collaborating engineer's; the FastAPI + PostgreSQL + Vue 3 build and the integration of the per-shop AI Telegram bot (Groq llama-3.3-70b, 15 function-call tools, five languages) are mine.",
     summaryAr:
-      "نظام SaaS متعدّد المستأجرين للمتاجر الإلكترونية، بُني بالكامل منفرداً — FastAPI + PostgreSQL + Vue 3 — مع بوت ذكاء اصطناعي عبر Telegram لكل متجر (Groq llama-3.3-70b، 15 أداة استدعاء دوال) يخدم العملاء بالعربية والإنجليزية والتركية والفرنسية والألمانية.",
+      "نظام SaaS متعدّد المستأجرين للمتاجر الإلكترونية، بُني باثنين — منطق النظام وتصميم الذكاء لمهندسٍ مشارك؛ وبناء FastAPI + PostgreSQL + Vue 3 ودمج بوت Telegram الذكي لكل متجر (Groq llama-3.3-70b، 15 أداة استدعاء دوال، بخمس لغات) عملي أنا.",
   },
   {
     name: "Veghnar Tonvair",
@@ -791,19 +791,19 @@ export const projectsIndex: ProjectIndexEntry[] = [
     clientSite: true,
   },
   {
-    name: "Noodlna",
-    href: "/projects/noodlna",
+    name: "Divano",
+    href: "/projects/divano",
     year: "2026",
     role: "Designer + Front-end Developer",
     roleAr: "مصمّمة + مطوّرة واجهة",
-    industry: "Food & beverage · Web",
-    industryAr: "أغذية ومشروبات · ويب",
-    impact: "Consumer storefront + a separate B2B export funnel",
-    impactAr: "واجهة متجر للمستهلك + قُمع B2B منفصل للتصدير",
+    industry: "Interior design · Web",
+    industryAr: "تصميم داخلي · ويب",
+    impact: "86 external font links → 0, on one licensed bilingual typeface",
+    impactAr: "86 رابط خطوط خارجياً ← صفر، على خطٍّ مرخَّصٍ واحدٍ ثنائي اللغة",
     summary:
-      "A food brand's Arabic-first storefront for Syria Macarna plus a separate B2B wholesale/export funnel, built in vanilla HTML/CSS/JS.",
+      "A Dubai interior-design firm's site, redesigned page by page off its WordPress origins: an editorial redesign, a self-hosted bilingual type system replacing 86 Google Fonts links, and an honesty rule for every before/after pair — built with the Santa Media team.",
     summaryAr:
-      "واجهة متجر عربيّة أولاً لعلامة سيريا ماكارنا الغذائية مع قُمع B2B منفصل للجملة والتصدير، مبنيّة بـHTML/CSS/JS صِرف.",
+      "موقع شركة تصميمٍ داخلي في دبي، أُعيد تصميمه صفحةً صفحة بعيداً عن أصله الووردبريسي: إعادة تصميمٍ تحريرية، ونظامُ خطوطٍ ثنائي اللغة مستضافٌ ذاتياً حلّ محلّ 86 رابط Google Fonts، وقاعدةُ صدقٍ لكل زوج «قبل/بعد» — بُني مع فريق Santa Media.",
     clientSite: true,
   },
   // NOTE: ERP/Odoo work (Techno Solution, Burgasm, Smart Expense, Takhrjy) is

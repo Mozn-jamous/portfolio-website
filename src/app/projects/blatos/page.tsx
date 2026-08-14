@@ -14,7 +14,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "A solo, full-stack multi-tenant SaaS for online shops — FastAPI + PostgreSQL + Vue 3 — with an AI Telegram bot per shop (Groq llama-3.3-70b, 15 function-call tools) that serves customers in Arabic, English, Turkish, French, and German.";
+  "A full-stack multi-tenant SaaS for online shops, built by two — a collaborating engineer designed the core logic and the AI; I built the stack around it: FastAPI + PostgreSQL, a Vue 3 dashboard, and the wiring of an AI Telegram bot per shop (Groq llama-3.3-70b, 15 function-call tools) serving customers in five languages.";
 
 export const metadata: Metadata = {
   title: "Blatos — multi-tenant store SaaS with a per-shop AI bot — Mozn Jamous",
@@ -46,7 +46,7 @@ export default function BlatosPage() {
       <CaseStudyLayout
         meta={{
           eyebrow: <T en="SaaS · Full-stack · AI" ar="SaaS · Full-stack · ذكاء اصطناعي" />,
-          status: <T en="Solo · full-stack" ar="منفردة · Full-stack" />,
+          status: <T en="Team of two · full-stack" ar="بناء ثنائي · Full-stack" />,
           title: (
             <T
               en="Blatos — a multi-tenant store SaaS, with an AI bot per shop."
@@ -55,12 +55,12 @@ export default function BlatosPage() {
           ),
           lede: (
             <T
-              en="A full-stack SaaS I designed and built on my own: each shop gets its own isolated workspace and its own AI assistant over Telegram. The bot uses 15 function-call tools to act on that shop's real data and answers customers in five languages — Arabic, English, Turkish, French, and German. I built the whole stack: a FastAPI + PostgreSQL backend, a Vue 3 dashboard, and the AI layer."
-              ar="نظام SaaS متكامل صمّمتُه وبنيتُه وحدي: لكلّ متجرٍ مساحته المعزولة ومساعده الذكي عبر Telegram. يستخدم البوت 15 أداة استدعاء دوال للتعامل مع بيانات المتجر الحقيقية، ويُجيب العملاء بخمس لغات — العربية والإنجليزية والتركية والفرنسية والألمانية. بنيتُ الطبقات كلّها: خلفية FastAPI + PostgreSQL، ولوحة تحكّم Vue 3، وطبقة الذكاء الاصطناعي."
+              en="A full-stack SaaS built by two. A collaborating engineer designed the system's core logic and its AI; I built the stack around that design — the FastAPI + PostgreSQL backend, the Vue 3 dashboard, and the wiring of the AI layer into the product. Each shop gets its own isolated workspace and its own Telegram assistant, which uses 15 function-call tools on the shop's real data and answers customers in five languages — Arabic, English, Turkish, French, and German."
+              ar="نظام SaaS متكامل بُني باثنين. مهندسٌ مشارك صمّم منطق النظام الجوهري وذكاءه الاصطناعي؛ وأنا بنيتُ الطبقات حول ذلك التصميم — خلفية FastAPI + PostgreSQL، ولوحة تحكّم Vue 3، ووصْل طبقة الذكاء بالمنتج. لكلّ متجرٍ مساحته المعزولة ومساعده عبر Telegram، يستخدم 15 أداة استدعاء دوال على بيانات المتجر الحقيقية، ويُجيب العملاء بخمس لغات — العربية والإنجليزية والتركية والفرنسية والألمانية."
             />
           ),
           year: "2026",
-          role: <T en="Solo Full-stack Developer" ar="مطوّرة Full-stack منفردة" />,
+          role: <T en="Full-stack Developer — with a collaborating engineer" ar="مطوّرة Full-stack — مع مهندسٍ مشارك" />,
           stack: [
             "FastAPI",
             "PostgreSQL",
@@ -76,7 +76,7 @@ export default function BlatosPage() {
           { value: <T en="Multi-tenant" ar="متعدّد المستأجرين" />, label: <T en="An isolated workspace per shop" ar="مساحة معزولة لكل متجر" /> },
           { value: "15", label: <T en="AI function-call tools" ar="أدوات استدعاء دوال للذكاء" /> },
           { value: "5", label: <T en="Customer languages — AR · EN · TR · FR · DE" ar="لغات للعملاء — AR · EN · TR · FR · DE" /> },
-          { value: <T en="Solo" ar="منفردة" />, label: <T en="Full stack: API, web, AI" ar="الطبقات كلّها: API، ويب، ذكاء" /> },
+          { value: <T en="Duo" ar="ثنائي" />, label: <T en="Core logic & AI design — a collaborating engineer" ar="منطق النظام وتصميم الذكاء — مهندس مشارك" /> },
         ]}
         sections={[
           {
@@ -86,13 +86,14 @@ export default function BlatosPage() {
               <>
                 <Lead>
                   <T
-                    en="Blatos is a SaaS for online shops: each shop (tenant) runs in its own isolated space and gets its own AI assistant reachable over Telegram. I built all of it solo — the data model and API, the Vue 3 dashboard, and the AI layer — as one coherent system."
-                    ar="Blatos نظام SaaS للمتاجر الإلكترونية: كلّ متجرٍ (مستأجر) يعمل ضمن مساحته المعزولة وله مساعده الذكي عبر Telegram. بنيتُه كاملاً وحدي — نموذج البيانات وواجهة الـAPI، ولوحة تحكّم Vue 3، وطبقة الذكاء — كنظامٍ واحدٍ متماسك."
+                    en="Blatos is a SaaS for online shops: each shop (tenant) runs in its own isolated space and gets its own AI assistant reachable over Telegram. We built it as a pair — the core logic and the AI are a collaborating engineer's design; the build around them — API surface, the Vue 3 dashboard, and the integration that ties the layers into one coherent product — is mine."
+                    ar="Blatos نظام SaaS للمتاجر الإلكترونية: كلّ متجرٍ (مستأجر) يعمل ضمن مساحته المعزولة وله مساعده الذكي عبر Telegram. بنيناه ثنائياً — منطق النظام الجوهري والذكاء الاصطناعي من تصميم مهندسٍ مشارك؛ والبناء حولهما — واجهة الـAPI، ولوحة تحكّم Vue 3، والدمج الذي يربط الطبقات في منتجٍ واحدٍ متماسك — عملي أنا."
                   />
                 </Lead>
                 <FactGrid
                   items={[
-                    { label: <T en="My role" ar="دوري" />, value: <T en="Solo full-stack" ar="Full-stack منفردة" /> },
+                    { label: <T en="My role" ar="دوري" />, value: <T en="Full-stack build & integration" ar="بناء Full-stack ودمج" /> },
+                    { label: <T en="Collaborator" ar="المشارك" />, value: <T en="Core logic & AI design — an engineer" ar="منطق النظام وتصميم الذكاء — مهندس" /> },
                     { label: <T en="Backend" ar="الخلفية" />, value: "FastAPI · PostgreSQL · SQLAlchemy" },
                     { label: <T en="Frontend" ar="الواجهة" />, value: "Vue 3 · Tailwind" },
                     { label: <T en="AI" ar="الذكاء" />, value: <T en="Groq llama-3.3-70b · function-calling" ar="Groq llama-3.3-70b · استدعاء دوال" /> },
@@ -148,8 +149,8 @@ export default function BlatosPage() {
               <>
                 <p>
                   <T
-                    en="Blatos is the project where I owned every layer alone: a multi-tenant data model, a FastAPI backend, a Vue front-end, and an AI layer wired in with function-calling — built so the assistant respects the system's boundaries. That end-to-end range, in one project, is the point."
-                    ar="Blatos هو المشروع الذي امتلكتُ فيه كلّ طبقةٍ وحدي: نموذج بيانات متعدّد المستأجرين، وخلفية FastAPI، وواجهة Vue، وطبقة ذكاءٍ موصولة عبر استدعاء الدوال — مبنيّة بحيث يحترم المساعد حدود النظام. وهذه السعة من الطرف إلى الطرف، في مشروعٍ واحد، هي المقصد."
+                    en="Blatos is the project where I worked across every layer of a real SaaS — a multi-tenant data model, a FastAPI backend, a Vue front-end, and an AI layer wired in with function-calling — alongside an engineer whose core-logic and AI design I was building against. Ranging end-to-end while integrating someone else's strongest thinking, in one product, is the point."
+                    ar="Blatos هو المشروع الذي عملتُ فيه عبر كلّ طبقات نظام SaaS حقيقي — نموذج بيانات متعدّد المستأجرين، وخلفية FastAPI، وواجهة Vue، وطبقة ذكاءٍ موصولة عبر استدعاء الدوال — إلى جانب مهندسٍ كنتُ أبني على تصميمه لمنطق النظام وذكائه. والامتداد من الطرف إلى الطرف مع دمج أقوى تفكير شخصٍ آخر، في منتجٍ واحد، هو المقصد."
                   />
                 </p>
               </>
