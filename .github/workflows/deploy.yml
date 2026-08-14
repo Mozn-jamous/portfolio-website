@@ -1,11 +1,10 @@
 name: Deploy to GitHub Pages
 
-# The repo is public and the live site is GitHub Pages, served under
-# /portfolio-website (see NEXT_PUBLIC_BASE_PATH below). Every push to master
-# republishes; workflow_dispatch stays for manual re-runs from the Actions tab.
+# UNPUBLISHED at Mozn's request (2026-08-14): the Pages deployment was deleted
+# and the repo is private again, so pushes must not trigger deploys. To go
+# live again: make the repo public, enable Pages (build_type=workflow), restore
+# the `push:` trigger below, and run this from the Actions tab.
 on:
-  push:
-    branches: [master]
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.
