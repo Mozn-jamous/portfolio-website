@@ -19,6 +19,7 @@ const ROUTES = [
   { path: "/projects/takhrjy", priority: 0.9 },
   { path: "/projects/pharmacology", priority: 0.9 },
   { path: "/projects/noodlna", priority: 0.9 },
+  { path: "/projects/veghnar-tonvair", priority: 0.9 },
   { path: "/odoo", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/contact", priority: 0.6 },

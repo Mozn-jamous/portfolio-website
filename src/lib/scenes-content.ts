@@ -759,6 +759,22 @@ export const projectsIndex: ProjectIndexEntry[] = [
       "نظام SaaS متعدّد المستأجرين للمتاجر الإلكترونية، بُني بالكامل منفرداً — FastAPI + PostgreSQL + Vue 3 — مع بوت ذكاء اصطناعي عبر Telegram لكل متجر (Groq llama-3.3-70b، 15 أداة استدعاء دوال) يخدم العملاء بالعربية والإنجليزية والتركية والفرنسية والألمانية.",
   },
   {
+    name: "Veghnar Tonvair",
+    href: "/projects/veghnar-tonvair",
+    year: "2026",
+    role: "Designer + Storefront Developer",
+    roleAr: "مصمّمة + مطوّرة متجر",
+    industry: "Fragrance · E-commerce",
+    industryAr: "عطور · تجارة إلكترونية",
+    impact: "A client brand book → a live Arabic-first Shopify store",
+    impactAr: "دليل هوية العميل ← متجر Shopify حيّ عربيّ أولاً",
+    summary:
+      "A fragrance maison's storefront redesigned from scratch on Shopify: the client's identity turned into one governing stylesheet, a four-face Arabic/Latin type system, and product patterns built for perfume.",
+    summaryAr:
+      "واجهة متجرٍ لبيت عطورٍ أُعيد تصميمها من الصفر على Shopify: هويةُ العميل تحوّلت إلى ملف أنماطٍ واحدٍ حاكم، ونظامٍ طباعيٍّ رباعيٍّ عربيٍّ ولاتيني، وأنماطِ منتجٍ مبنيّةٍ للعطر.",
+    clientSite: true,
+  },
+  {
     name: "Pharmacology",
     href: "/projects/pharmacology",
     year: "2026",
