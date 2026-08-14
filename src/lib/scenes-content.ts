@@ -804,6 +804,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
       "A Dubai interior-design firm's site, redesigned page by page off its WordPress origins: an editorial redesign, a self-hosted bilingual type system replacing 86 Google Fonts links, and an honesty rule for every before/after pair — built with the Santa Media team.",
     summaryAr:
       "موقع شركة تصميمٍ داخلي في دبي، أُعيد تصميمه صفحةً صفحة بعيداً عن أصله الووردبريسي: إعادة تصميمٍ تحريرية، ونظامُ خطوطٍ ثنائي اللغة مستضافٌ ذاتياً حلّ محلّ 86 رابط Google Fonts، وقاعدةُ صدقٍ لكل زوج «قبل/بعد» — بُني مع فريق Santa Media.",
+    cover: "/work/divano/home.webp",
     clientSite: true,
   },
   // NOTE: ERP/Odoo work (Techno Solution, Burgasm, Smart Expense, Takhrjy) is
