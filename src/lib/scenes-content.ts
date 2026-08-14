@@ -779,6 +779,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
   {
     name: "Pharmacology",
     href: "/projects/pharmacology",
+    cover: "/work/pharmacology/cover.webp",
     year: "2026",
     role: "Designer + Front-end Developer",
     roleAr: "مصمّمة + مطوّرة واجهة",
