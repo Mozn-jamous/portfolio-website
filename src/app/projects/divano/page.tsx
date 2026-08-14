@@ -140,8 +140,10 @@ export default function DivanoPage() {
                   />
                 </p>
                 <Figure
-                  label="Divano — home, redesigned"
-                  caption={<T en="The redesigned home: the turnkey headline over real project photography — export to add." ar="الرئيسية بعد إعادة التصميم: عنوان تسليم المفتاح فوق تصوير مشاريع حقيقي — تُضاف اللقطة." />}
+                  src="/work/divano/home-ar.webp"
+                  alt="Divano Arabic home page: the turnkey headline in Arabic, right-to-left, over a luxury living-room photograph"
+                  label="Divano — home (Arabic edition)"
+                  caption={<T en="The redesigned home in its Arabic edition: the turnkey promise, right-to-left, over real project photography." ar="الرئيسية بعد إعادة التصميم في نسختها العربية: وعد تسليم المفتاح، من اليمين لليسار، فوق تصوير مشاريع حقيقي." />}
                 />
               </>
             ),
@@ -200,8 +202,10 @@ export default function DivanoPage() {
                   />
                 </p>
                 <Figure
+                  src="/work/divano/before-after.webp"
+                  alt="Divano transformation slider: the media wall at first fix on the left half, the completed lit wall on the right half"
                   label="Divano — before/after slider"
-                  caption={<T en="A shipped pair: first fix and completion of the same wall — export to add." ar="زوج منشور: التأسيس والإنجاز للجدار نفسه — تُضاف اللقطة." />}
+                  caption={<T en="A shipped pair from the Creek Harbour apartment: the media wall at first fix and completed — same wall, so the drag comparison holds." ar="زوج منشور من شقة Creek Harbour: جدار الميديا بين التأسيس والإنجاز — الجدار نفسه، فتصمد المقارنة عند السحب." />}
                 />
                 <Callout kicker={<T en="The stakes" ar="الرهان" />}>
                   <T
