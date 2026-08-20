@@ -1,10 +1,10 @@
 name: Deploy to GitHub Pages
 
-# UNPUBLISHED at Mozn's request (2026-08-14): the Pages deployment was deleted
-# and the repo is private again, so pushes must not trigger deploys. To go
-# live again: make the repo public, enable Pages (build_type=workflow), restore
-# the `push:` trigger below, and run this from the Actions tab.
+# Republished at Mozn's request (2026-08-20) on the custom domain
+# moznjamous.org (public/CNAME + Cloudflare DNS, grey-cloud).
 on:
+  push:
+    branches: [master]
   workflow_dispatch:
 
 # Allow the workflow to publish to GitHub Pages.
