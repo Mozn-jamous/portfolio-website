@@ -25,10 +25,16 @@ export function withBase(path: string): string {
  * `metadataBase` wants: Next prefixes the base path itself when resolving
  * file-based metadata images (opengraph-image, icon), so including it here
  * would double it.
+ *
+ * moznjamous.org is Mozn's own domain (bought Aug 2026, DNS on Cloudflare),
+ * attached to GitHub Pages via public/CNAME — so every build target now
+ * shares one canonical origin, with no /portfolio-website subpath.
  */
-export const SITE_ORIGIN = BASE_PATH
-  ? "https://mozn-jamous.github.io"
-  : "https://moznjamous.com";
+export const SITE_ORIGIN = "https://moznjamous.org";
+
+/** True for static-export builds (GitHub Pages), where trailingSlash is on. */
+const IS_EXPORT =
+  !!BASE_PATH || process.env.NEXT_PUBLIC_STATIC_EXPORT === "1";
 
 /** The site's public root URL, base path included. */
 export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}`;
@@ -42,5 +48,5 @@ export const SITE_URL = `${SITE_ORIGIN}${BASE_PATH}`;
 export function siteUrl(path = "/"): string {
   if (!path || path === "/") return `${SITE_URL}/`;
   const p = path.startsWith("/") ? path : `/${path}`;
-  return BASE_PATH ? `${SITE_URL}${p}/` : `${SITE_URL}${p}`;
+  return IS_EXPORT ? `${SITE_URL}${p}/` : `${SITE_URL}${p}`;
 }

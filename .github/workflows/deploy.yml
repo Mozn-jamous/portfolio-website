@@ -44,8 +44,9 @@ jobs:
       - name: Build static export
         run: pnpm run build
         env:
-          # Serves the app under https://<user>.github.io/portfolio-website/
-          NEXT_PUBLIC_BASE_PATH: /portfolio-website
+          # Root-path static export for the custom domain moznjamous.org
+          # (attached via public/CNAME — no /portfolio-website subpath).
+          NEXT_PUBLIC_STATIC_EXPORT: "1"
 
       - name: Disable Jekyll (keep _next/)
         run: touch out/.nojekyll
