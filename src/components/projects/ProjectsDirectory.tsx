@@ -19,6 +19,26 @@ const projectsDescriptionAr =
  *   to /projects + the (separate) ERP hub CTA.
  * - variant="full" (default, /projects): the same product grid + the ERP hub CTA.
  */
+/**
+ * The four strongest projects lead the grid (deepest ownership + impact);
+ * everything else sits behind the "See more" toggle. Order here IS the
+ * display order of the featured row.
+ */
+const FEATURED = [
+  "/projects/mademoiselle",
+  "/projects/bloombelly",
+  "/projects/veghnar-tonvair",
+  "/projects/pharmacology",
+];
+
+function featuredFirst(projects: typeof projectsIndex) {
+  const rank = (p: (typeof projectsIndex)[number]) => {
+    const i = FEATURED.indexOf(p.href);
+    return i === -1 ? FEATURED.length : i;
+  };
+  return [...projects].sort((a, b) => rank(a) - rank(b));
+}
+
 export function ProjectsDirectory({
   variant = "full",
 }: {
@@ -47,9 +67,10 @@ export function ProjectsDirectory({
         <ProjectsGrid
           projects={
             variant === "home"
-              ? projectsIndex.filter((p) => !p.clientSite)
-              : projectsIndex
+              ? featuredFirst(projectsIndex.filter((p) => !p.clientSite)).slice(0, 4)
+              : featuredFirst(projectsIndex)
           }
+          initialCount={variant === "full" ? 4 : undefined}
         />
 
         {variant === "home" && (

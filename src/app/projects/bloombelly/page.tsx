@@ -172,11 +172,11 @@ export default function BloomBellyPage() {
                 />
               </p>
               <Figure
-                src="/work/bloombelly/journeys.webp"
-                alt="BloomBelly Figma board: an Arabic use-case diagram of the first-time-mother services, beside the mapped journey from sign-in to pregnancy tracking and its screens"
-                aspect="5 / 4"
-                label="User journeys"
-                caption={<T en="The Figma working board: the use-case map, written in Arabic, and the first-time-mother journey from sign-in to tracking." ar="لوحة العمل في Figma: مخطط حالات الاستخدام مكتوباً بالعربية، ورحلة الأم لأول مرة من التسجيل حتى التتبّع." />}
+                src="/work/bloombelly/usecase.webp"
+                alt="BloomBelly use-case diagram, written in Arabic: the first-time-mother services, from sign-in and weight tracking to the AI chat bot"
+                aspect="4 / 5"
+                label="Use-case map"
+                caption={<T en="The use-case map of the first-time-mother services, written in Arabic." ar="مخطط حالات الاستخدام لخدمات الأم لأول مرة، مكتوباً بالعربية." />}
               />
             </>
           ),
