@@ -686,6 +686,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
   {
     name: "Mademoiselle",
     href: "/projects/mademoiselle",
+    cover: "/work/mademoiselle/cover.webp",
     year: "2026",
     role: "Designer + Lead Flutter Dev",
     roleAr: "مصمِّمة + مطوّرة Flutter رئيسية",
@@ -733,6 +734,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
   {
     name: "Eda",
     href: "/projects/eda",
+    cover: "/work/eda/cover.webp",
     year: "2026",
     role: "Designer + QA tester",
     roleAr: "مصمِّمة + مختبِرة (QA)",
@@ -748,6 +750,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
   {
     name: "Blatos",
     href: "/projects/blatos",
+    cover: "/work/blatos/cover.webp",
     year: "2026",
     role: "Full-stack Developer (duo)",
     roleAr: "مطوّرة Full-stack (بناء ثنائي)",
@@ -763,7 +766,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
   {
     name: "Veghnar Tonvair",
     href: "/projects/veghnar-tonvair",
-    cover: "/work/veghnar/home.webp",
+    cover: "/work/veghnar/cover.webp",
     year: "2026",
     role: "Designer + Storefront Developer",
     roleAr: "مصمّمة + مطوّرة متجر",
