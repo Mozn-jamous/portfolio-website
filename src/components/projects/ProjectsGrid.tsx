@@ -59,7 +59,7 @@ export function ProjectsGrid({
   if (reduced) {
     return (
       <>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {visible.map((p) => (
             <li key={p.href} className="h-full">
               <DirectoryCard project={p} />
@@ -74,7 +74,7 @@ export function ProjectsGrid({
   return (
     <>
       <motion.ul
-        className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+        className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
         variants={gridVariants}
         initial="hidden"
         whileInView="show"

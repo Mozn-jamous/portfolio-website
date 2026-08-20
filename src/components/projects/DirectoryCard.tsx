@@ -51,29 +51,30 @@ export function DirectoryCard({ project }: { project: ProjectIndexEntry }) {
         )}
       </div>
 
-      {/* meta */}
-      <div className="flex flex-1 flex-col p-5">
+      {/* meta — on phones the grid is 2-up, so the card keeps only the
+          essentials (industry, name, role); summary + impact join at sm:. */}
+      <div className="flex flex-1 flex-col p-3.5 sm:p-5">
         <div className="flex items-center justify-between font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
           <span><T en={project.industry} ar={project.industryAr ?? project.industry} /></span>
           <span className="text-[var(--accent)]">{project.year}</span>
         </div>
 
-        <h3 className="font-display mt-2.5 text-lg font-semibold tracking-tight text-[var(--ink)] transition group-hover:text-[var(--accent-deep)]">
+        <h3 className="font-display mt-2.5 text-base font-semibold tracking-tight text-[var(--ink)] transition group-hover:text-[var(--accent-deep)] sm:text-lg">
           {project.name}
         </h3>
-        <p className="mt-1 text-[0.8rem] font-medium text-[var(--ink-muted)]">
+        <p className="mt-1 text-[0.72rem] font-medium text-[var(--ink-muted)] sm:text-[0.8rem]">
           <T en={project.role} ar={project.roleAr ?? project.role} />
         </p>
 
-        <p className="mt-2.5 line-clamp-2 text-[0.82rem] leading-relaxed text-[var(--ink-muted)]">
+        <p className="mt-2.5 hidden line-clamp-2 text-[0.82rem] leading-relaxed text-[var(--ink-muted)] sm:block">
           <T en={project.summary} ar={project.summaryAr ?? project.summary} />
         </p>
 
-        <p className="mt-3 border-s-2 border-[var(--accent)]/35 ps-3 text-[0.78rem] leading-snug text-[var(--ink)]">
+        <p className="mt-3 hidden border-s-2 border-[var(--accent)]/35 ps-3 text-[0.78rem] leading-snug text-[var(--ink)] sm:block">
           <T en={project.impact} ar={project.impactAr ?? project.impact} />
         </p>
 
-        <span className="mt-4 inline-flex items-center gap-1 font-mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--accent-deep)]">
+        <span className="mt-3 inline-flex items-center gap-1 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--accent-deep)] sm:mt-4 sm:text-[0.66rem]">
           <T en="Read case study" ar="اقرأ دراسة الحالة" />
           <span aria-hidden className="transition group-hover:translate-x-1 rtl:-scale-x-100">
             →
