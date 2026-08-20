@@ -97,6 +97,13 @@ export default function TakhrjyPage() {
                     { label: <T en="Fulfillment" ar="التنفيذ" />, value: <T en="Local + international" ar="محلّي + دولي" /> },
                   ]}
                 />
+                <Figure
+                  src="/work/takhrjy/cover.webp"
+                  alt="Takhrjy wordmark — gold serif on deep academic green"
+                  aspect="16 / 10"
+                  label="Identity"
+                  caption={<T en="The system's identity: graduation gold on academic green." ar="هوية النظام: ذهبُ التخرّج على أخضرَ جامعيّ." />}
+                />
               </>
             ),
           },
