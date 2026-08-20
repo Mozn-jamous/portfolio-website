@@ -46,13 +46,13 @@ export default function VeghnarTonvairPage() {
       />
       <CaseStudyLayout
         theme={{
-          accent: "#D9B382",
-          accentDeep: "#EBD0AA",
-          accentSoft: "rgba(217, 179, 130, 0.16)",
-          glow: "rgba(180, 138, 88, 0.28)",
-          diagramAccent: "#A87B45",
-          diagramAccentDeep: "#8A6334",
-          diagramAccentSoft: "#F6EEE2",
+          accent: "#D98A97",
+          accentDeep: "#EBB3BD",
+          accentSoft: "rgba(217, 138, 151, 0.16)",
+          glow: "rgba(150, 52, 66, 0.30)",
+          diagramAccent: "#A03445",
+          diagramAccentDeep: "#7E2231",
+          diagramAccentSoft: "#F8E9EC",
         }}
         meta={{
           eyebrow: <T en="E-commerce · Shopify · Design + Build" ar="تجارة إلكترونية · Shopify · تصميم وبناء" />,
@@ -165,8 +165,8 @@ export default function VeghnarTonvairPage() {
               <>
                 <p>
                   <T
-                    en="Shopify themes rot in a predictable way: a colour here, an override there, until the same button exists in five slightly different versions. So the redesign is not scattered across the theme editor — it lives in a single identity stylesheet, versioned and commented, that the whole shop reads from. Warm off-white ground, slate ink, a large centred serif display, underlined discover links, rounded chips. One place to change the brand; every page follows."
-                    ar="ثيمات Shopify تتعفّن على نحوٍ متوقّع: لونٌ هنا، وتجاوزٌ هناك، حتى يوجد الزرُّ نفسه بخمس نسخٍ متفاوتةٍ قليلاً. لذا لم تتوزّع إعادة التصميم في محرّر الثيم — بل تعيش في ملف هويةٍ واحد، مُرقَّمِ الإصدار ومُعلَّق، يقرأ منه المتجر كلّه. أرضيةٌ بيضاء دافئة، وحبرٌ سليتيّ، وعرضٌ سيريفيٌّ كبير موسّط، وروابط استكشافٍ مسطَّرة، ورقاقاتٌ مستديرة. مكانٌ واحد لتغيير العلامة، وكلّ الصفحات تتبع."
+                    en="Shopify themes rot in a predictable way: a colour here, an override there, until the same button exists in five slightly different versions. So the redesign is not scattered across the theme editor — it lives in a single identity stylesheet, versioned and commented, that the whole shop reads from. A calm white canvas, one deep-burgundy accent reserved for actions, a centred serif display, underlined links. One place to change the brand; every page follows."
+                    ar="ثيمات Shopify تتعفّن على نحوٍ متوقّع: لونٌ هنا، وتجاوزٌ هناك، حتى يوجد الزرُّ نفسه بخمس نسخٍ متفاوتةٍ قليلاً. لذا لم تتوزّع إعادة التصميم في محرّر الثيم — بل تعيش في ملف هويةٍ واحد، مُرقَّمِ الإصدار ومُعلَّق، يقرأ منه المتجر كلّه. قماشةٌ بيضاء هادئة، ولونٌ عنّابيٌّ عميقٌ واحد محجوزٌ للأفعال، وعرضٌ سيريفيٌّ موسّط، وروابط مسطَّرة. مكانٌ واحد لتغيير العلامة، وكلّ الصفحات تتبع."
                   />
                 </p>
                 <DesignDecision
@@ -192,8 +192,10 @@ export default function VeghnarTonvairPage() {
                   }
                 />
                 <Figure
-                  label="Veghnar Tonvair — home, as delivered"
-                  caption={<T en="The live storefront: warm ground, centred serif display, and the maison rhythm carried across every page — screen export to add." ar="المتجر الحيّ: أرضيةٌ دافئة، وعرضٌ سيريفيّ موسّط، وإيقاعُ البيت محمولٌ في كلّ صفحة — تُضاف لقطة الشاشة." />}
+                  src="/work/veghnar/home.webp"
+                  alt="Veghnar Tonvair live homepage in Arabic: a perfume bottle held against soft light, with the Arabic tagline and a shop-the-perfumes link"
+                  label="Veghnar Tonvair — home, live"
+                  caption={<T en="The live homepage, opening in Arabic: the campaign hero and the underlined shop link." ar="الرئيسية الحيّة تُفتح بالعربية: بطل الحملة «تَنساه... ولا يَنسونك» والرابط المسطَّر لتسوّق العطور." />}
                 />
               </>
             ),
@@ -241,19 +243,21 @@ export default function VeghnarTonvairPage() {
               <>
                 <p>
                   <T
-                    en="Perfume has a problem no product photo solves: the thing that decides the purchase — how strong it is, how long it stays — is invisible. So the product grid carries intensity dots, a small readable scale that lets a customer compare two bottles at a glance instead of reading two paragraphs; the grid itself runs two columns so each bottle keeps its presence on a phone; and the product page ends in a dark order bar that stays legible against the warm ground. These are decisions the brand book had no reason to contain."
-                    ar="للعطر مشكلةٌ لا تحلّها صورةُ منتجٍ: فما يحسم الشراء — قوّتُه، وبقاؤه — غيرُ مرئيّ. لذا تحمل شبكةُ المنتجات نقاطَ كثافةٍ، مقياساً صغيراً مقروءاً يتيح للعميل الموازنة بين قارورتين بنظرةٍ بدل قراءة فقرتين؛ وتجري الشبكةُ نفسها بعمودين ليحتفظ كلُّ عطرٍ بحضوره على الهاتف؛ وتنتهي صفحةُ المنتج بشريط طلبٍ داكنٍ يبقى مقروءاً على الأرضية الدافئة. وهذه قراراتٌ لم يكن لدليل الهوية سببٌ ليحتويها."
+                    en="Perfume is bought as a gift as much as for oneself, and the product page is built around that. Under the order block sits a gift layer — wrapping plus a hand-written card — so the ritual of giving is part of the purchase, not an afterthought at checkout. The order block itself offers two clear paths, order or buy now, in the brand's burgundy; and the catalogue presents each bottle in clean studio photography with quick-add, letting the scripted bottle names carry the shelf. These are decisions the brand book had no reason to contain."
+                    ar="العطر يُشترى هديةً بقدر ما يُشترى للنفس، وصفحةُ المنتج مبنيّةٌ حول ذلك. تحت كتلة الطلب تجلس طبقةُ إهداء — تغليفٌ وبطاقةٌ مكتوبةٌ بخط اليد — فيصير طقسُ الإهداء جزءاً من الشراء لا فكرةً متأخّرة عند الدفع. وكتلةُ الطلب نفسها تعرض مسارين واضحين، اطلب أو اشترِ الآن، بعنّابيّ العلامة؛ ويقدّم الكتالوج كلَّ قارورةٍ بتصوير استوديو نظيف مع إضافةٍ سريعة، تاركاً لأسماء القوارير المخطوطة أن تحمل الرفّ. وهذه قراراتٌ لم يكن لدليل الهوية سببٌ ليحتويها."
                   />
                 </p>
                 <Figure
-                  label="Veghnar Tonvair — product page & grid"
-                  caption={<T en="Intensity dots on the two-column grid, and the dark order bar on the product page — screen export to add." ar="نقاط الكثافة على شبكة العمودين، وشريط الطلب الداكن في صفحة المنتج — تُضاف لقطة الشاشة." />}
+                  src="/work/veghnar/product.webp"
+                  alt="Veghnar Tonvair product page in Arabic: Kayan all-over spray with burgundy order and buy-now buttons and a gift-wrap plus hand-written card option"
+                  label="Veghnar Tonvair — product page, live"
+                  caption={<T en="The live product page: the two-path order block, and the gift layer — wrapping plus a hand-written card." ar="صفحة المنتج الحيّة: كتلة الطلب بمسارَيها، وطبقة الإهداء — تغليفٌ وبطاقة بخط اليد («لمسة خاصة»)." />}
                 />
                 <FactGrid
                   items={[
-                    { label: <T en="Compare" ar="الموازنة" />, value: <T en="Intensity dots, not paragraphs" ar="نقاط كثافة، لا فقرات" /> },
-                    { label: <T en="Grid" ar="الشبكة" />, value: <T en="Two columns — presence on mobile" ar="عمودان — حضورٌ على الجوال" /> },
-                    { label: <T en="Buy" ar="الشراء" />, value: <T en="Dark order bar on the PDP" ar="شريط طلب داكن في صفحة المنتج" /> },
+                    { label: <T en="Gift ritual" ar="طقس الإهداء" />, value: <T en="Wrapping + hand-written card" ar="تغليف + بطاقة بخط اليد" /> },
+                    { label: <T en="Order block" ar="كتلة الطلب" />, value: <T en="Two paths: order / buy now" ar="مساران: اطلب / شراء الآن" /> },
+                    { label: <T en="Catalogue" ar="الكتالوج" />, value: <T en="Studio bottles + quick add" ar="قوارير استوديو + إضافة سريعة" /> },
                     { label: <T en="Measurement" ar="القياس" />, value: <T en="GTM + social pixels wired" ar="GTM وبكسلات التواصل موصولة" /> },
                   ]}
                 />

@@ -763,6 +763,7 @@ export const projectsIndex: ProjectIndexEntry[] = [
   {
     name: "Veghnar Tonvair",
     href: "/projects/veghnar-tonvair",
+    cover: "/work/veghnar/home.webp",
     year: "2026",
     role: "Designer + Storefront Developer",
     roleAr: "مصمّمة + مطوّرة متجر",
