@@ -7,6 +7,7 @@ import {
   Figure,
   Lead,
 } from "@/components/case-study/CaseStudyLayout";
+import { PhoneDemo } from "@/components/case-study/PhoneDemo";
 import {
   StructuredData,
   caseStudyStructuredData,
@@ -230,9 +231,69 @@ export default function MademoisellePage() {
                 />
               </Callout>
 
-              <Figure
-                label="Mademoiselle UI"
-                caption={<T en="Key screens across Light / Dark / Brand themes — add export" ar="شاشات أساسية عبر سمات الفاتح / الداكن / العلامة — يُضاف التصدير" />}
+              <PhoneDemo
+                screens={[
+                  {
+                    src: "/work/mademoiselle/home.webp",
+                    alt: "Mademoiselle home: greeting, search, saved looks, offers and map shortcuts, review nudges",
+                    title: "Beauty, from the front door.",
+                    titleAr: "الجمال، من الباب الأول.",
+                    blurb:
+                      "Home opens on the user's city, a search over salons, services and looks, and gentle nudges — saved looks, offers, and a review prompt after every visit.",
+                    blurbAr:
+                      "تفتح الرئيسية على مدينة المستخدمة، وبحثٍ في الصالونات والخدمات والإطلالات، وإيماءاتٍ لطيفة — إطلالات محفوظة، وعروض، ودعوة لتقييم كل زيارة.",
+                  },
+                  {
+                    src: "/work/mademoiselle/styling.webp",
+                    alt: "Occasion styling: Date, Work and Wedding looks, plus AI 'on you' previews",
+                    title: "What are you styling for?",
+                    titleAr: "لأي مناسبةٍ تتجهزين؟",
+                    blurb:
+                      "Styling starts from the occasion — a date, work, a wedding — and the 'For you' shelf previews every look on the user's own photo, not a model's.",
+                    blurbAr:
+                      "ينطلق التنسيق من المناسبة — موعد، عمل، عرس — ويعرض رفّ «لأجلك» كل إطلالةٍ على صورة المستخدمة نفسها، لا على عارضة.",
+                  },
+                  {
+                    src: "/work/mademoiselle/ai-hub.webp",
+                    alt: "The three AI try-on modules: hairstyle, Smart Closet outfits, and makeup",
+                    title: "Try it before you book it.",
+                    titleAr: "جرّبيها قبل أن تحجزيها.",
+                    blurb:
+                      "The AI module's three doors: a new hairstyle on your own face, a Smart Closet that fits outfits to your measurements, and makeup previewed before you decide.",
+                    blurbAr:
+                      "أبواب وحدة الذكاء الثلاثة: تسريحة جديدة على وجهك أنت، وخزانة ذكية تقيس الملابس على مقاساتك، ومكياج يُعايَن قبل القرار.",
+                  },
+                  {
+                    src: "/work/mademoiselle/community-hub.webp",
+                    alt: "Style Community hub: Hair Studio, Dressing Room, Makeup AI, and trending looks",
+                    title: "A community around the looks.",
+                    titleAr: "مجتمعٌ حول الإطلالات.",
+                    blurb:
+                      "Style Club gathers the AI studios in one place and surfaces what's trending — Soft Bob, Korean Waves — each look counted by real uses.",
+                    blurbAr:
+                      "يجمع نادي الأناقة استوديوهات الذكاء في مكانٍ واحد ويُظهر الرائج — Soft Bob وKorean Waves — وكل إطلالةٍ بعدد استخداماتها الحقيقي.",
+                  },
+                  {
+                    src: "/work/mademoiselle/community-post.webp",
+                    alt: "A community post: an A/B hair try-on with live voting and a 'Try this look' action",
+                    title: "Should I book this hair?",
+                    titleAr: "أأحجز هذه التسريحة؟",
+                    blurb:
+                      "Posts are decisions, not just photos: an A/B try-on the community votes on, and a one-tap 'Try this look' that puts the same style on your face.",
+                    blurbAr:
+                      "المنشورات قراراتٌ لا صورٌ فحسب: تجربة A/B يصوّت عليها المجتمع، وزرّ «جرّبي الإطلالة» ينقل التسريحة نفسها إلى وجهك بلمسة.",
+                  },
+                  {
+                    src: "/work/mademoiselle/near-you.webp",
+                    alt: "Nearby beauty centers, referral rewards, and subscription plans",
+                    title: "From screen to salon chair.",
+                    titleAr: "من الشاشة إلى كرسي الصالون.",
+                    blurb:
+                      "The loop closes offline: centers near you, referral rewards, and plans — because every try-on is meant to end in a real booking.",
+                    blurbAr:
+                      "تكتمل الدائرة خارج الشاشة: مراكز قريبة منك، ومكافآت إحالة، وباقات — لأن كل تجربةٍ غايتها حجزٌ حقيقي.",
+                  },
+                ]}
               />
             </>
           ),
