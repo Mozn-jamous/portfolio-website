@@ -106,8 +106,8 @@ export function ProjectsDirectory({
               </h3>
               <p className="mt-1 text-sm text-[var(--ink-muted)]">
                 <T
-                  en="The systems-engineering work — Techno Solution, Burgasm & more — lives in its own focused hub."
-                  ar="أعمال هندسة الأنظمة — Techno Solution وBurgasm وغيرها — في مركزها الخاص."
+                  en="The systems work, including Techno Solution and Burgasm, lives in its own hub."
+                  ar="أعمال الأنظمة، ومنها Techno Solution وBurgasm، في مركزها الخاص."
                 />
               </p>
             </div>

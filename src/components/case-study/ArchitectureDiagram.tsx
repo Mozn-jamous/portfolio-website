@@ -169,7 +169,7 @@ export function CareConnectDiagram() {
   const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
-      title={<T en="CareConnect — three apps, one backend" ar="CareConnect — ثلاثة تطبيقات، خلفية واحدة" />}
+      title={<T en="CareConnect: three apps, one backend" ar="CareConnect: ثلاثة تطبيقات، وخادم واحد" />}
       caption={
         <T
           en="Single Postgres + Supabase RLS enforces role boundaries. Apps cannot drift."
@@ -212,7 +212,7 @@ export function SmartExpenseDiagram() {
   const reduced = useReducedMotion();
   return (
     <ArchitectureDiagram
-      title={<T en="Smart Expense Manager — approval flow" ar="Smart Expense Manager — مسار الموافقة" />}
+      title={<T en="Smart Expense Manager: the approval flow" ar="Smart Expense Manager: مسار الموافقة" />}
       caption={
         <T
           en="Token-secured email approvals · auto-journal on finance sign-off."

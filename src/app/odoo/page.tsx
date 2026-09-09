@@ -51,11 +51,11 @@ export default function OdooPage() {
         title: <T en="Business operations, engineered." ar="عمليات الأعمال، مهندَسة." />,
         lede: (
           <T
-            en="Custom Odoo 19 systems for real companies — expense management, HR, payroll, POS, and approval workflows. Built around how a business actually works, not Odoo's defaults. One module is open source and live on GitHub."
-            ar="أنظمة Odoo 19 مخصّصة لشركاتٍ حقيقية — إدارة النفقات، والموارد البشرية، والرواتب، ونقاط البيع، وتدفّقات الموافقات. مبنيّة حول طريقة عمل الشركة فعلاً، لا حول إعدادات Odoo الافتراضية. إحدى الوحدات مفتوحة المصدر وحيّة على GitHub."
+            en="Custom Odoo 19 systems for real companies: expense management, HR, payroll, point of sale, and approval workflows. Each one is shaped around how the business already works rather than around Odoo's defaults. One module is open source and live on GitHub."
+            ar="أنظمة Odoo 19 مخصّصة لشركات حقيقية: إدارة النفقات، والموارد البشرية، والرواتب، ونقاط البيع، وتدفّقات الموافقات. وكل واحد منها مصوغ حول طريقة عمل الشركة القائمة بدل إعدادات Odoo الافتراضية. وإحدى الوحدات مفتوحة المصدر وحيّة على GitHub."
           />
         ),
-        year: <T en="2025 — Present" ar="2025 — حتى الآن" />,
+        year: <T en="2025 to now" ar="2025 حتى الآن" />,
         role: <T en="Odoo Developer · Systems Designer" ar="مطوّرة Odoo · مصمّمة أنظمة" />,
         stack: [
           "Odoo 19",
@@ -80,7 +80,7 @@ export default function OdooPage() {
       metrics={[
         {
           value: <T en="Days → Secs" ar="أيام ← ثوانٍ" />,
-          label: <T en="Expense approval time — login requirement removed" ar="زمن الموافقة على النفقات — أُلغيت الحاجة لتسجيل الدخول" />,
+          label: <T en="Expense approval time, once the login was removed" ar="زمن الموافقة على النفقات، بعد إلغاء الحاجة لتسجيل الدخول" />,
         },
         {
           value: <T en="3-division" ar="3 أقسام" />,
@@ -88,11 +88,11 @@ export default function OdooPage() {
         },
         {
           value: <T en="1-click" ar="نقرة واحدة" />,
-          label: <T en="Manager & finance approvals — straight from email" ar="موافقات المدير والمالية — مباشرةً من البريد" />,
+          label: <T en="Manager and finance approvals, straight from email" ar="موافقات المدير والمالية، مباشرة من البريد" />,
         },
         {
           value: <T en="LGPL-3.0" ar="LGPL-3.0" />,
-          label: <T en="Smart Expense Manager — open source & live" ar="Smart Expense Manager — مفتوح المصدر وحيّ" />,
+          label: <T en="Smart Expense Manager, open source and live" ar="Smart Expense Manager، مفتوح المصدر وحيّ" />,
         },
       ]}
       sections={[
@@ -103,8 +103,8 @@ export default function OdooPage() {
             <>
               <Lead>
                 <T
-                  en="The fullest expression of this work — two separate businesses I moved onto Odoo, each its own company on one deployment, both still running in daily production. Real screenshots, real numbers."
-                  ar="أكمل تعبيرٍ عن هذا العمل — شركتان منفصلتان نقلتهما إلى Odoo، كلٌّ شركةً مستقلّة على نشرٍ واحد، وكلتاهما ما زالتا تعملان في الإنتاج اليومي. لقطاتٌ حقيقية، أرقامٌ حقيقية."
+                  en="This is the fullest version of the work: two separate businesses I moved onto Odoo, each its own company on one deployment, and both still running in daily production. Real screenshots and real numbers."
+                  ar="هذه أكمل نسخة من هذا العمل: شركتان منفصلتان نقلتُهما إلى Odoo، كل واحدة شركة مستقلّة على نشر واحد، وكلتاهما ما زالت تعمل في الإنتاج اليومي. لقطات حقيقية وأرقام حقيقية."
                 />
               </Lead>
 
@@ -116,8 +116,8 @@ export default function OdooPage() {
                 />
                 <h3 className="mt-2 text-xl font-medium tracking-tight text-[var(--ink)]">
                   <T
-                    en="Techno Solution — a 3-division company, Excel to ERP"
-                    ar="Techno Solution — شركة بثلاثة أقسام، من Excel إلى ERP"
+                    en="Techno Solution: a three-division company, from spreadsheets to ERP"
+                    ar="Techno Solution: شركة بثلاثة أقسام، من Excel إلى ERP"
                   />
                 </h3>
                 <p className="mt-3">
@@ -158,7 +158,7 @@ export default function OdooPage() {
                   caption="Burgasm — 30+ Odoo modules configured for the restaurant"
                 />
                 <h3 className="mt-2 text-xl font-medium tracking-tight text-[var(--ink)]">
-                  <T en="Burgasm — a restaurant, fully on Odoo" ar="Burgasm — مطعمٌ بالكامل على Odoo" />
+                  <T en="Burgasm: a restaurant running entirely on Odoo" ar="Burgasm: مطعم يعمل بالكامل على Odoo" />
                 </h3>
                 <p className="mt-3">
                   <T
@@ -198,8 +198,8 @@ export default function OdooPage() {
             <>
               <Lead>
                 <T
-                  en="Not demos that look good in a meeting — systems that survive contact with daily operations. Across multiple companies I've designed, built, and deployed:"
-                  ar="ليست عروضاً تبدو جيدة في اجتماع — بل أنظمة تصمد أمام العمليات اليومية. عبر عدّة شركات، صمّمتُ وبنيتُ وأطلقتُ:"
+                  en="These are systems that survived contact with daily operations rather than demos that look good in a meeting. Across several companies I have designed, built and deployed:"
+                  ar="هذه أنظمة صمدت أمام العمليات اليومية، لا عروضاً تبدو جيدة في اجتماع. وعبر عدّة شركات صمّمتُ وبنيتُ وأطلقتُ:"
                 />
               </Lead>
               <FactGrid
@@ -214,8 +214,8 @@ export default function OdooPage() {
               />
               <p>
                 <T
-                  en="The common thread isn't a feature list — it's that each one was shaped around the people who use it. A manager who never opens Odoo still approves expenses. A cashier who never touched an ERP runs the till on day one. The system bends to the business, not the other way around."
-                  ar="الخيط المشترك ليس قائمة ميزات — بل أن كلّ نظامٍ صِيغ حول من يستخدمه. مديرٌ لا يفتح Odoo أبداً يوافق على النفقات رغم ذلك. وكاشيرٌ لم يلمس نظام ERP من قبل يدير الصندوق في يومه الأول. النظام ينحني للشركة، لا العكس."
+                  en="What these have in common is not a feature list. Each one was shaped around the people who use it. A manager who never opens Odoo still approves expenses. A cashier who had never touched an ERP ran the till on day one. The system bends to the business rather than the other way around."
+                  ar="ما يجمع هذه الأنظمة ليس قائمة ميزات. كل واحد منها صِيغ حول من يستخدمه. مديرٌ لا يفتح Odoo أبداً يوافق على النفقات مع ذلك. وكاشيرٌ لم يلمس نظام ERP من قبل أدار الصندوق في يومه الأول. والنظام ينحني للشركة بدل أن ينحني العكس."
                 />
               </p>
             </>
@@ -228,8 +228,8 @@ export default function OdooPage() {
             <>
               <p>
                 <T
-                  en="Under the systems is real Odoo engineering — not just configuration in the UI. Modules are written in Python and XML, access is enforced at the data layer, and everything ships bilingual."
-                  ar="تحت هذه الأنظمة هندسة Odoo حقيقية — لا مجرّد إعدادٍ في الواجهة. الوحدات مكتوبة بـPython وXML، والوصول مفروضٌ في طبقة البيانات، وكلّ شيء يُطلق ثنائي اللغة."
+                  en="Under these systems is real Odoo engineering, not just configuration in the UI. The modules are written in Python and XML, access is enforced at the data layer, and everything ships bilingual."
+                  ar="تحت هذه الأنظمة هندسة Odoo حقيقية، لا مجرّد إعداد في الواجهة. الوحدات مكتوبة بـPython وXML، والوصول مفروض في طبقة البيانات، وكل شيء يُطلق ثنائي اللغة."
                 />
               </p>
               <FactGrid
@@ -252,8 +252,8 @@ export default function OdooPage() {
             <>
               <p>
                 <T
-                  en="The point of a business system is not the technology — it's what changes for the company once it's running."
-                  ar="جوهر نظام الأعمال ليس التقنية — بل ما الذي يتغيّر للشركة بمجرّد تشغيله."
+                  en="The point of a business system is not the technology. It is what changes for the company once the thing is running."
+                  ar="جوهر نظام الأعمال ليس التقنية. بل ما الذي يتغيّر للشركة بمجرّد أن يعمل."
                 />
               </p>
               <Callout kicker={<T en="Approval time" ar="زمن الموافقة" />}>
@@ -324,14 +324,14 @@ export default function OdooPage() {
               <article className="mb-10">
                 <h3 className="text-xl font-medium tracking-tight text-[var(--ink)]">
                   <T
-                    en="Takhrjy — a non-Odoo ERP (design & front-end)"
-                    ar="Takhrjy — نظام ERP بغير Odoo (تصميم وواجهة)"
+                    en="Takhrjy: an ERP that is not Odoo (design and front-end)"
+                    ar="Takhrjy: نظام ERP بغير Odoo (تصميم وواجهة)"
                   />
                 </h3>
                 <p className="mt-3">
                   <T
-                    en="Not every ERP is Odoo. Takhrjy is a Vue system a team built for a custom graduation-gifts business — a seven-role permission model, a six-stage order pipeline, retail and wholesale, and local plus international fulfillment. Here the front-end was mine: working from the team's requirements I designed the system's screens and built them in Vue, while a teammate handled the backend."
-                    ar="ليس كلّ نظام ERP هو Odoo. Takhrjy نظامٌ بُني بـVue من قِبل فريق لمشروع هدايا تخرّجٍ مخصّص — نموذج صلاحياتٍ بسبعة أدوار، وخطّ طلباتٍ بستّ مراحل، وبيعٌ بالتجزئة والجملة، وتنفيذٌ محلّي ودولي. هنا كانت الواجهة الأمامية من نصيبي: انطلاقاً من متطلبات الفريق صمّمتُ شاشات النظام وبنيتُها بـVue، بينما تكفّل زميلٌ بالـ backend."
+                    en="Not every ERP is Odoo. Takhrjy is a Vue system a team built for a custom graduation-gifts business: seven roles, a six-stage order pipeline, retail and wholesale, and both local and international fulfillment. The front-end here was mine. Working from the team's requirements I designed the system's screens and wrote them in Vue, while a teammate handled the backend."
+                    ar="ليس كل نظام ERP هو Odoo. Takhrjy نظام بناه فريق بـVue لمشروع هدايا تخرّج مخصّص: سبعة أدوار، وخطّ طلبات بستّ مراحل، وبيع بالتجزئة والجملة، وتنفيذ محلّي ودولي. والواجهة هنا كانت من نصيبي. انطلاقاً من متطلبات الفريق صمّمتُ شاشات النظام وكتبتُها بـVue، بينما تكفّل زميل بالـbackend."
                   />
                 </p>
                 <p className="mt-4 font-mono text-[0.8rem]">
@@ -346,7 +346,7 @@ export default function OdooPage() {
 
               <article>
                 <h3 className="text-xl font-medium tracking-tight text-[var(--ink)]">
-                  <T en="Smart Expense Manager — open source" ar="Smart Expense Manager — مفتوح المصدر" />
+                  <T en="Smart Expense Manager, open source" ar="Smart Expense Manager، مفتوح المصدر" />
                 </h3>
                 <p className="mt-3">
                   <T
