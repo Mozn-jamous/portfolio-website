@@ -19,7 +19,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "Three Flutter apps designed for three distinct audiences — Mother, Babysitter, Admin — on one Supabase backend. UX-first, then built.";
+  "Three Flutter apps for three different audiences (mother, babysitter, admin) on one Supabase backend, with the permission rules enforced in SQL.";
 
 export const metadata: Metadata = {
   title: "CareConnect — Mozn Jamous",
@@ -59,17 +59,17 @@ export default function CareConnectPage() {
         diagramAccentSoft: "#E0EBF8",
       }}
       meta={{
-        eyebrow: <T en="UI/UX · Mobile · 3-app marketplace" ar="UI/UX · جوال · سوقٌ بثلاثة تطبيقات" />,
-        status: <T en="Built — 2024" ar="مبنيّ — 2024" />,
-        title: <T en="CareConnect — one backend, three audiences." ar="CareConnect — خادمٌ واحد، ثلاثة جماهير." />,
+        eyebrow: <T en="Mobile · Backend · Three-app marketplace" ar="جوال · خادم · سوق بثلاثة تطبيقات" />,
+        status: <T en="Built, 2024" ar="مبنيّ، 2024" />,
+        title: <T en="CareConnect: one backend, three audiences." ar="CareConnect: خادم واحد، ثلاثة جماهير." />,
         lede: (
           <T
-            en="A childcare marketplace designed and built as three native Flutter apps — each shaped around a different user's mental model — on a single Supabase backend. The information architecture came before the first Figma frame."
-            ar="سوقٌ لرعاية الأطفال صُمّم وبُني كثلاثة تطبيقات Flutter أصلية — كلٌّ مُشكَّل حول النموذج الذهني لمستخدمٍ مختلف — على خادم Supabase واحد. جاءت هندسة المعلومات قبل أول إطارٍ في Figma."
+            en="A childcare marketplace built as three native Flutter apps, each shaped around a different person's mental model, all sitting on one Supabase backend. I wrote the information architecture before I opened Figma."
+            ar="سوق لرعاية الأطفال بُني كثلاثة تطبيقات Flutter أصلية، كل واحد مصوغ حول النموذج الذهني لشخص مختلف، وكلها على خادم Supabase واحد. كتبتُ هندسة المعلومات قبل أن أفتح Figma."
           />
         ),
         year: "2024",
-        role: <T en="UI/UX Designer + Developer" ar="مصمّمة UI/UX + مطوّرة" />,
+        role: <T en="Engineer + designer (lead)" ar="مهندسة + مصمّمة (قيادة)" />,
         stack: ["Figma", "Flutter", "Dart", "Supabase", "PostgreSQL", "RLS", "REST", "RBAC", "IEEE 830"],
         links: [
           {
@@ -81,10 +81,10 @@ export default function CareConnectPage() {
         ],
       }}
       metrics={[
-        { value: <T en="3 apps" ar="3 تطبيقات" />, label: <T en="One per audience — no role-switching compromises" ar="واحدٌ لكل جمهور — دون تنازلات تبديل الأدوار" /> },
-        { value: <T en="1 backend" ar="خادمٌ واحد" />, label: <T en="Supabase RLS enforces access at the database layer" ar="يفرض Supabase RLS الوصول في طبقة قاعدة البيانات" /> },
-        { value: <T en="Spec-first" ar="المواصفة أولاً" />, label: <T en="IEEE 830 requirements written before any wireframe" ar="متطلبات IEEE 830 كُتبت قبل أي مخطّطٍ هيكلي" /> },
-        { value: <T en="Auditable" ar="قابل للتدقيق" />, label: <T en="Every admin action logged; access provable in SQL" ar="كل إجراء مشرفٍ مُسجَّل؛ والوصول قابل للإثبات بـSQL" /> },
+        { value: <T en="3 apps" ar="3 تطبيقات" />, label: <T en="One per audience, with no role-switching compromises" ar="واحد لكل جمهور، دون تنازلات تبديل الأدوار" /> },
+        { value: <T en="1 backend" ar="خادم واحد" />, label: <T en="Supabase RLS decides access at the database layer" ar="يقرّر Supabase RLS الوصول في طبقة قاعدة البيانات" /> },
+        { value: <T en="Spec-first" ar="المواصفة أولاً" />, label: <T en="IEEE 830 requirements written before any wireframe" ar="متطلبات IEEE 830 كُتبت قبل أي مخطّط هيكلي" /> },
+        { value: <T en="Auditable" ar="قابل للتدقيق" />, label: <T en="Admin actions logged, and access provable in SQL" ar="إجراءات المشرف مسجّلة، والوصول قابل للإثبات بـSQL" /> },
       ]}
       sections={[
         {
@@ -94,18 +94,18 @@ export default function CareConnectPage() {
             <>
               <Lead>
                 <T
-                  en="CareConnect is a childcare marketplace with three sides — mothers booking care, babysitters offering it, and admins moderating the platform. I designed and built all three as separate Flutter apps over one shared backend."
-                  ar="CareConnect سوقٌ لرعاية الأطفال بثلاثة أطراف — أمّهاتٌ يحجزن الرعاية، وجليساتٌ يعرضنها، ومشرفون يديرون المنصّة. صمّمتُ وبنيتُ الثلاثة جميعاً كتطبيقات Flutter منفصلة على خادمٍ مشترك واحد."
+                  en="CareConnect is a childcare marketplace with three sides: mothers booking care, babysitters offering it, and admins keeping the platform honest. I designed all three apps and led the build, with the babysitter app developed together with a collaborator."
+                  ar="CareConnect سوق لرعاية الأطفال بثلاثة أطراف: أمّهات يحجزن الرعاية، وجليسات يعرضنها، ومشرفون يحفظون نزاهة المنصّة. صمّمتُ التطبيقات الثلاثة وقدتُ البناء، وطُوّر تطبيق الجليسة بالتعاون مع زميل."
                 />
               </Lead>
               <FactGrid
                 items={[
-                  { label: <T en="Role" ar="الدور" />, value: <T en="Designer + developer (solo)" ar="مصمّمة + مطوّرة (منفردة)" /> },
+                  { label: <T en="Role" ar="الدور" />, value: <T en="Designed all three, led the build" ar="صمّمتُ الثلاثة، وقدتُ البناء" /> },
                   { label: <T en="Timeline" ar="الإطار الزمني" />, value: "2024" },
                   { label: <T en="Platform" ar="المنصّة" />, value: "3× Flutter · iOS + Android" },
                   { label: <T en="Audiences" ar="الجماهير" />, value: <T en="Mother · Babysitter · Admin" ar="أمّ · جليسة · مشرف" /> },
                   { label: <T en="Backend" ar="الخادم" />, value: "Supabase · Postgres · RLS" },
-                  { label: <T en="Scope" ar="النطاق" />, value: <T en="SRS → Figma → Flutter" ar="وثيقة متطلبات ← Figma ← Flutter" /> },
+                  { label: <T en="Scope" ar="النطاق" />, value: <T en="Requirements, Figma, Flutter" ar="متطلبات، وFigma، وFlutter" /> },
                 ]}
               />
             </>
@@ -123,14 +123,14 @@ export default function CareConnectPage() {
             <>
               <p>
                 <T
-                  en="You can't solve childcare with a single app. Mothers need quick, vetted matches. Babysitters need a schedule and reliable payment visibility. Admins need control — who is verified, who is flagged, and how to intervene without breaking the platform."
-                  ar="لا يمكن حلّ رعاية الأطفال بتطبيقٍ واحد. الأمّهات يحتجن تطابقاً سريعاً ومُدقَّقاً. والجليسات يحتجن جدولاً ووضوحاً موثوقاً في الدفع. والمشرفون يحتاجون تحكّماً — مَن مُوثَّق، ومَن مُبلَّغ عنه، وكيف يتدخّلون دون كسر المنصّة."
+                  en="Childcare doesn't fit in one app. A mother wants a vetted match quickly. A babysitter wants a schedule she can rely on and clarity about what she'll be paid. An admin wants control over who's verified, who's been flagged, and how to step in without breaking anything."
+                  ar="رعاية الأطفال لا تتّسع لتطبيق واحد. الأمّ تريد تطابقاً مُدقَّقاً بسرعة. والجليسة تريد جدولاً تعتمد عليه ووضوحاً في ما ستُقبضه. والمشرف يريد تحكّماً بمن هو موثَّق، ومن أُبلغ عنه، وكيف يتدخّل دون أن يكسر شيئاً."
                 />
               </p>
               <p>
                 <T
-                  en="Each side trusts the platform only if the other two are held to rules they can't see but can feel. That trust is an information-architecture and access-control problem long before it's a UI one."
-                  ar="كلّ طرفٍ يأتمن المنصّة فقط إن كان الطرفان الآخران مُلزَمَين بقواعد لا يرونها لكن يشعرون بها. وتلك الثقة مشكلة هندسة معلوماتٍ وتحكّمٍ بالوصول قبل أن تكون مشكلة واجهة بزمنٍ طويل."
+                  en="Each side only trusts the platform if the other two are being held to rules they can't see but can feel. That makes trust an information-architecture and permissions problem long before it becomes a UI one."
+                  ar="كل طرف لا يثق بالمنصّة إلا إن كان الطرفان الآخران مُلزَمَين بقواعد لا يرونها لكن يشعرون بها. وهذا يجعل الثقة مشكلة هندسة معلومات وصلاحيات قبل أن تصبح مشكلة واجهة بزمن طويل."
                 />
               </p>
             </>
@@ -138,19 +138,19 @@ export default function CareConnectPage() {
         },
         {
           kicker: <T en="Research" ar="البحث" />,
-          heading: <T en="One spec, three mental models." ar="مواصفةٌ واحدة، ثلاثة نماذج ذهنية." />,
+          heading: <T en="One spec, three mental models." ar="مواصفة واحدة، ثلاثة نماذج ذهنية." />,
           body: (
             <>
               <p>
                 <T
-                  en={<>I started with an IEEE 830 software requirements spec — every entity, every relation, every user flow — before any screen was designed. Writing it forced the core insight: a mother is{" "}<em>shopping</em>, a babysitter is <em>selling time</em>, and an admin is <em>moderating</em>. Three fundamentally different tasks that produce three fundamentally different information architectures.</>}
-                  ar={<>بدأتُ بوثيقة متطلبات برمجية IEEE 830 — كلّ كيان، وكلّ علاقة، وكلّ تدفّق مستخدم — قبل تصميم أي شاشة. فرضت كتابتها الاستنتاج الجوهري: الأمّ <em>تتسوّق</em>، والجليسة <em>تبيع وقتاً</em>، والمشرف <em>يُدير</em>. ثلاث مهامّ مختلفة جوهرياً تُنتج ثلاث هندسات معلوماتٍ مختلفة جوهرياً.</>}
+                  en={<>I started with an IEEE 830 requirements document covering every entity, relation and user flow, before a single screen got designed. Writing it produced the insight the whole product rests on: a mother is{" "}<em>shopping</em>, a babysitter is <em>selling her time</em>, and an admin is <em>moderating</em>. Three different tasks, which means three different information architectures.</>}
+                  ar={<>بدأتُ بوثيقة متطلبات IEEE 830 تغطّي كل كيان وعلاقة وتدفّق مستخدم، قبل أن تُصمَّم شاشة واحدة. وأنتجت كتابتها الاستنتاج الذي يقوم عليه المنتج كله: الأمّ <em>تتسوّق</em>، والجليسة <em>تبيع وقتها</em>، والمشرف <em>يُدير</em>. ثلاث مهامّ مختلفة، وهذا يعني ثلاث هندسات معلومات مختلفة.</>}
                 />
               </p>
               <Callout kicker={<T en="Key insight" ar="الاستنتاج الأساسي" />}>
                 <T
-                  en="The most important design decision wasn't a screen — it was the data model. If the schema is wrong, no amount of good UI fixes it. So the spec came before Figma."
-                  ar="أهمّ قرارٍ تصميمي لم يكن شاشة — بل نموذج البيانات. إن كان المخطّط خاطئاً، فلا قدرَ من الواجهة الجيدة يُصلحه. لذا جاءت المواصفة قبل Figma."
+                  en="The most important design decision here was the data model rather than any screen. A wrong schema is something no amount of good UI can rescue, so the spec came before Figma."
+                  ar="أهمّ قرار تصميمي هنا كان نموذج البيانات لا أي شاشة. المخطّط الخاطئ شيء لا تنقذه أي واجهة جيدة، فجاءت المواصفة قبل Figma."
                 />
               </Callout>
             </>
@@ -163,87 +163,87 @@ export default function CareConnectPage() {
             <>
               <p>
                 <T
-                  en="The user types I defined in the IEEE 830 spec became three personas — each with a different primary task, a one-line story, and the frustration that shaped its app."
-                  ar="فئات المستخدمين التي عرّفتها في وثيقة IEEE 830 صارت ثلاثة personas — لكلٍّ مهمةٌ أساسية مختلفة، وقصةٌ من سطر، والإحباط الذي شكّل تطبيقها."
+                  en="The user types from the requirements document became three personas, each with a different primary task and the frustration that shaped its app."
+                  ar="فئات المستخدمين من وثيقة المتطلبات صارت ثلاثة personas، لكل واحد مهمّة أساسية مختلفة والإحباط الذي شكّل تطبيقه."
                 />
               </p>
 
               <Persona
                 initial={<T en="H" ar="ه" />}
-                name={<T en="Huda — working mother" ar="هُدى — أمٌّ عاملة" />}
+                name={<T en="Huda, a working mother" ar="هُدى، أمّ عاملة" />}
                 role={<T en="Mother app · books care" ar="تطبيق الأمّ · تحجز الرعاية" />}
                 story={
                   <T
-                    en="I want to find a babysitter I can actually trust, quickly — not gamble on a stranger with my child."
-                    ar="أريد أن أجد جليسةً أثق بها فعلاً، وبسرعة — لا أن أقامر بغريبةٍ مع طفلي."
+                    en="I want to find a babysitter I can actually trust, and quickly, instead of gambling on a stranger with my child."
+                    ar="أريد أن أجد جليسة أثق بها فعلاً، وبسرعة، بدل أن أقامر بغريبة مع طفلي."
                   />
                 }
                 goals={
                   <T
-                    en="Vetted matches near her, fast booking, and a clear sense of who's verified."
-                    ar="تطابقاتٌ مُدقَّقة قريبةٌ منها، وحجزٌ سريع، وإحساسٌ واضح بمن هو موثَّق."
+                    en="Vetted matches near her, a fast booking, and a clear sense of who has actually been verified."
+                    ar="تطابقات مُدقَّقة قريبة منها، وحجز سريع، وإحساس واضح بمن تمّ توثيقه فعلاً."
                   />
                 }
                 frustrations={
                   <T
-                    en="Not knowing who to trust; platforms where anyone can list themselves with no checks."
-                    ar="عدم معرفة بمن تثق؛ ومنصّاتٌ يُدرج فيها أيٌّ كان نفسه دون تدقيق."
+                    en="Not knowing who to trust, and platforms where anyone can list themselves with no checks at all."
+                    ar="ألّا تعرف بمن تثق، ومنصّات يُدرج فيها أي أحد نفسه دون أي تدقيق."
                   />
                 }
               />
 
               <Persona
                 initial={<T en="S" ar="س" />}
-                name={<T en="Sara — babysitter" ar="سارة — جليسة أطفال" />}
+                name={<T en="Sara, a babysitter" ar="سارة، جليسة أطفال" />}
                 role={<T en="Babysitter app · offers care" ar="تطبيق الجليسة · تعرض الرعاية" />}
                 story={
                   <T
-                    en="I want a steady schedule and to know exactly what each booking expects of me before I accept."
-                    ar="أريد جدولاً ثابتاً وأن أعرف بالضبط ما يتوقّعه كلّ حجزٍ منّي قبل أن أقبله."
+                    en="I want a steady schedule, and I want to know exactly what a booking expects of me before I accept it."
+                    ar="أريد جدولاً ثابتاً، وأريد أن أعرف بالضبط ما يتوقّعه الحجز منّي قبل أن أقبله."
                   />
                 }
                 goals={
                   <T
-                    en="Reliable bookings, a clear schedule, and the right context for each child."
-                    ar="حجوزاتٌ موثوقة، وجدولٌ واضح، والسياق الصحيح لكل طفل."
+                    en="Bookings she can count on, a schedule she can read, and the right context about each child."
+                    ar="حجوزات تعتمد عليها، وجدول تستطيع قراءته، والسياق الصحيح عن كل طفل."
                   />
                 }
                 frustrations={
                   <T
-                    en="No-shows, unclear expectations, and seeing personal data she shouldn't."
-                    ar="عدم الحضور، وتوقّعاتٌ غامضة، ورؤية بياناتٍ شخصية لا ينبغي أن تراها."
+                    en="No-shows, vague expectations, and being shown personal data she has no business seeing."
+                    ar="عدم الحضور، وتوقّعات غامضة، وأن تُعرَض عليها بيانات شخصية لا شأن لها برؤيتها."
                   />
                 }
               />
 
               <Persona
                 initial={<T en="M" ar="م" />}
-                name={<T en="Maya — platform moderator" ar="مايا — مشرفة المنصّة" />}
+                name={<T en="Maya, a platform moderator" ar="مايا، مشرفة المنصّة" />}
                 role={<T en="Admin app · moderates" ar="تطبيق المشرف · يُدير" />}
                 story={
                   <T
-                    en="I want to verify, flag, and intervene without breaking the platform — and to prove every action I took."
-                    ar="أريد أن أوثّق وأُبلّغ وأتدخّل دون كسر المنصّة — وأن أُثبت كلّ إجراءٍ اتخذته."
+                    en="I want to verify people, flag problems and step in without breaking the platform, and I want a record of everything I did."
+                    ar="أريد أن أوثّق الناس وأُبلّغ عن المشكلات وأتدخّل دون أن أكسر المنصّة، وأريد سجلاً بكل ما فعلته."
                   />
                 }
                 goals={
                   <T
-                    en="Control over who's verified or flagged, with a clean audit trail."
-                    ar="تحكّمٌ بمن هو موثَّق أو مُبلَّغ عنه، مع سجلّ تدقيقٍ نظيف."
+                    en="Control over who's verified or flagged, with a clean trail behind every decision."
+                    ar="تحكّم بمن هو موثَّق أو مُبلَّغ عنه، مع أثر نظيف خلف كل قرار."
                   />
                 }
                 frustrations={
                   <T
-                    en="Abuse slipping through; not being able to see why a decision was made."
-                    ar="تجاوزاتٌ تتسلّل؛ وعدم القدرة على رؤية سبب اتخاذ قرارٍ ما."
+                    en="Abuse slipping through, and having no way to see why a past decision was made."
+                    ar="تجاوزات تتسلّل، وألّا تجد طريقة لمعرفة سبب قرار سابق."
                   />
                 }
               />
 
               <Callout kicker={<T en="Problem statements" ar="بيانات المشكلة" />}>
                 <T
-                  en={<><strong>Huda</strong> needs to trust a babysitter before she books, because handing over her child is the highest-stakes decision the product asks of anyone. <strong>Sara</strong> needs a reliable schedule with the right context, and <strong>Maya</strong> needs provable control — each side trusts the platform only if the other two are held to rules they can feel.</>}
-                  ar={<><strong>هُدى</strong> تحتاج أن تثق بالجليسة قبل أن تحجز، لأن تسليم طفلها أعلى قرارٍ مخاطرةً يطلبه المنتج من أحد. و<strong>سارة</strong> تحتاج جدولاً موثوقاً بالسياق الصحيح، و<strong>مايا</strong> تحتاج تحكّماً قابلاً للإثبات — كلّ طرفٍ يأتمن المنصّة فقط إن كان الطرفان الآخران مُلزَمَين بقواعد يشعرون بها.</>}
+                  en={<><strong>Huda</strong> has to trust a babysitter before she books, because handing over her child is the highest-stakes thing this product ever asks of anyone. <strong>Sara</strong> needs a schedule she can rely on with the right context, and <strong>Maya</strong> needs control she can prove she used properly. Each side trusts the platform only when the other two are visibly held to rules.</>}
+                  ar={<><strong>هُدى</strong> عليها أن تثق بالجليسة قبل أن تحجز، لأن تسليم طفلها أعلى ما يطلبه هذا المنتج من أحد مخاطرةً. و<strong>سارة</strong> تحتاج جدولاً تعتمد عليه بالسياق الصحيح، و<strong>مايا</strong> تحتاج تحكّماً تستطيع إثبات أنها استخدمته كما يجب. وكل طرف لا يثق بالمنصّة إلا حين يرى الطرفين الآخرين مُلزَمَين بقواعد."</>}
                 />
               </Callout>
             </>
@@ -254,23 +254,23 @@ export default function CareConnectPage() {
           heading: (
             <T
               en="Decide the structure before drawing a single screen."
-              ar="احسم البنية قبل رسم شاشةٍ واحدة."
+              ar="احسم البنية قبل رسم شاشة واحدة."
             />
           ),
           body: (
             <>
               <Lead>
                 <T
-                  en="The strategic bet was that a marketplace's hardest problem is keeping three audiences and one backend coherent — so the schema and permission model had to lead, and the UI follow."
-                  ar="كان الرهان الاستراتيجي أن أصعب مشكلة في سوقٍ هي إبقاء ثلاثة جماهير وخادمٍ واحد متماسكين — فكان على المخطّط ونموذج الصلاحيات أن يقودا، والواجهة أن تتبع."
+                  en="My bet was that the hardest problem in a marketplace is keeping three audiences and one backend coherent. So the schema and the permission model led, and the interface followed."
+                  ar="كان رهاني أن أصعب مشكلة في سوق هي إبقاء ثلاثة جماهير وخادم واحد متماسكين. فقاد المخطّط ونموذج الصلاحيات، وتبعت الواجهة."
                 />
               </Lead>
               <FactGrid
                 items={[
                   { label: <T en="Goal" ar="الهدف" />, value: <T en="Trust across all three sides of the marketplace" ar="الثقة عبر أطراف السوق الثلاثة" /> },
-                  { label: <T en="Hypothesis" ar="الفرضية" />, value: <T en="Three focused apps beat one role-switching app" ar="ثلاثة تطبيقات مركّزة تتفوّق على تطبيقٍ واحد بتبديل الأدوار" /> },
-                  { label: <T en="Priority" ar="الأولوية" />, value: <T en="Data model & access rules before UI" ar="نموذج البيانات وقواعد الوصول قبل الواجهة" /> },
-                  { label: <T en="Tradeoff" ar="المفاضلة" />, value: <T en="Higher build cost for honest, focused surfaces" ar="كلفة بناءٍ أعلى مقابل واجهاتٍ أمينة ومركّزة" /> },
+                  { label: <T en="Hypothesis" ar="الفرضية" />, value: <T en="Three focused apps beat one app with a role switch" ar="ثلاثة تطبيقات مركّزة تتفوّق على تطبيق فيه مبدّل أدوار" /> },
+                  { label: <T en="Priority" ar="الأولوية" />, value: <T en="Data model and access rules ahead of UI" ar="نموذج البيانات وقواعد الوصول قبل الواجهة" /> },
+                  { label: <T en="Tradeoff" ar="المفاضلة" />, value: <T en="A costlier build for surfaces that stay honest" ar="بناء أكلف مقابل واجهات تبقى أمينة" /> },
                 ]}
               />
             </>
@@ -283,30 +283,30 @@ export default function CareConnectPage() {
             <>
               <p>
                 <T
-                  en="The decision to build three separate apps instead of one with role-switching is a design decision before it's an engineering one. I designed each app in its own Figma file, with its own navigation and vocabulary."
-                  ar="قرار بناء ثلاثة تطبيقات منفصلة بدل واحدٍ بتبديل الأدوار قرارٌ تصميمي قبل أن يكون هندسياً. صمّمتُ كلّ تطبيقٍ في ملف Figma خاصٍّ به، بتنقّله ومفرداته."
+                  en="Choosing three separate apps over one with a role switch is a design decision before it's an engineering one. Each app got its own Figma file, its own navigation and its own vocabulary."
+                  ar="اختيار ثلاثة تطبيقات منفصلة بدل واحد فيه مبدّل أدوار قرار تصميمي قبل أن يكون هندسياً. ولكل تطبيق ملف Figma خاص به، وتنقّله ومفرداته."
                 />
               </p>
 
               <DesignDecision
                 number={1}
-                title={<T en="Three dedicated apps over one role-switching app." ar="ثلاثة تطبيقات مخصّصة بدل تطبيقٍ واحد بتبديل الأدوار." />}
+                title={<T en="Three dedicated apps rather than one with a role switch." ar="ثلاثة تطبيقات مخصّصة بدل واحد فيه مبدّل أدوار." />}
                 challenge={
                   <T
-                    en="A single app with role-switching is cheaper to build and maintain. Many marketplaces ship this way — one codebase, one store listing, one onboarding flow."
-                    ar="تطبيقٌ واحد بتبديل الأدوار أرخص في البناء والصيانة. كثيرٌ من الأسواق تُطلق هكذا — قاعدة كودٍ واحدة، إدراج واحد في المتجر، تدفّق تهيئةٍ واحد."
+                    en="One app with a role switch is cheaper to build and cheaper to maintain, and plenty of marketplaces ship exactly that: one codebase, one store listing, one onboarding flow."
+                    ar="تطبيق واحد فيه مبدّل أدوار أرخص في البناء وأرخص في الصيانة، وكثير من الأسواق تُطلق هذا بالضبط: قاعدة كود واحدة، وإدراج واحد في المتجر، وتهيئة واحدة."
                   />
                 }
                 decision={
                   <T
-                    en={<>Three apps. Each audience has a different primary action, a different vocabulary, and different expectations.{" "}<strong>No &ldquo;you are logged in as: Mother&rdquo; cognitive load.</strong></>}
-                    ar={<>ثلاثة تطبيقات. لكلّ جمهور فعلٌ أساسي مختلف، ومفرداتٌ مختلفة، وتوقّعاتٌ مختلفة.{" "}<strong>دون عبءٍ ذهني من نوع «أنتِ مسجَّلة الدخول كـ: أمّ».</strong></>}
+                    en={<>Three apps. Each audience has a different primary action, a different vocabulary and different expectations.{" "}<strong>Nobody has to read &ldquo;you are logged in as: Mother&rdquo;.</strong></>}
+                    ar={<>ثلاثة تطبيقات. لكل جمهور فعل أساسي مختلف، ومفردات مختلفة، وتوقّعات مختلفة.{" "}<strong>ولا أحد مضطرّ أن يقرأ «أنتِ مسجَّلة الدخول كـ: أمّ».</strong></>}
                   />
                 }
                 outcome={
                   <T
-                    en="Each app has a focused navigation structure and a store listing that describes exactly what it does for that user. Higher initial cost, but each surface stays honest to its audience."
-                    ar="لكلّ تطبيقٍ بنية تنقّلٍ مركّزة وإدراجٌ في المتجر يصف بالضبط ما يفعله لذلك المستخدم. كلفةٌ أولية أعلى، لكن كلّ واجهة تبقى أمينةً لجمهورها."
+                    en="Each app ended up with navigation built for one job and a store listing that describes what it actually does. It cost more up front, and each surface stays honest to the person using it."
+                    ar="انتهى كل تطبيق بتنقّل مبنيّ لمهمّة واحدة وإدراج في المتجر يصف ما يفعله فعلاً. كلّف أكثر في البداية، وتبقى كل واجهة أمينة لمن يستخدمها."
                   />
                 }
               />
@@ -315,35 +315,35 @@ export default function CareConnectPage() {
                 screens={[
                   {
                     src: "/work/careconnect/login.webp",
-                    alt: "CareConnect login — the axolotl mascot over a pale sky-blue ground, bilingual Arabic/English with full RTL",
+                    alt: "CareConnect login: the axolotl mascot over a pale sky-blue ground, bilingual Arabic and English with full RTL",
                     title: "A friendly face to start",
-                    titleAr: "وجهٌ ودود للبداية",
-                    blurb: "The mascot and a calm sky-blue palette set the tone — reassuring, not clinical — and the whole app works in both Arabic and English.",
-                    blurbAr: "الشخصية ولوحةٌ زرقاء هادئة تضبط النبرة — مُطمئنة لا سريرية — والتطبيق كلّه يعمل بالعربية والإنجليزية.",
+                    titleAr: "وجه ودود للبداية",
+                    blurb: "The mascot and a calm sky-blue palette set a reassuring tone rather than a clinical one, and the whole app works in Arabic and English.",
+                    blurbAr: "الشخصية ولوحة زرقاء هادئة تضبطان نبرة مُطمئنة لا سريرية، والتطبيق كله يعمل بالعربية والإنجليزية.",
                   },
                   {
                     src: "/work/careconnect/home.webp",
-                    alt: "CareConnect home — feature tiles for meals, sleep, vaccinations, activities, booking and appointments",
+                    alt: "CareConnect home: feature tiles for meals, sleep, vaccinations, activities, booking and appointments",
                     title: "A day of care, in one grid",
-                    titleAr: "يوم رعايةٍ في شبكةٍ واحدة",
-                    blurb: "Meals, sleep, vaccinations, activities, booking and appointments — the mother's app gathers everything in one place.",
-                    blurbAr: "الوجبات، والنوم، واللقاحات، والأنشطة، والحجز، والمواعيد — تطبيق الأمّ يجمع كل شيء في مكانٍ واحد.",
+                    titleAr: "يوم رعاية في شبكة واحدة",
+                    blurb: "Meals, sleep, vaccinations, activities, booking and appointments. The mother's app keeps the whole day in one place.",
+                    blurbAr: "الوجبات، والنوم، واللقاحات، والأنشطة، والحجز، والمواعيد. تطبيق الأمّ يحفظ اليوم كله في مكان واحد.",
                   },
                   {
                     src: "/work/careconnect/activity.webp",
-                    alt: "CareConnect activity detail — guided steps and age/interactive tags for a child activity",
+                    alt: "CareConnect activity detail: guided steps and age and interactive tags for a child activity",
                     title: "Guided activities by age",
                     titleAr: "أنشطة موجَّهة حسب العمر",
-                    blurb: "Each activity comes with simple steps and age tags, so play stays safe and developmentally right.",
-                    blurbAr: "كل نشاطٍ يأتي بخطواتٍ بسيطة ووسومِ عمر، فيبقى اللعب آمناً ومناسباً للنموّ.",
+                    blurb: "Every activity comes with simple steps and an age tag, which keeps play both safe and appropriate to where the child is.",
+                    blurbAr: "كل نشاط يأتي بخطوات بسيطة ووسم عمر، وهذا يجعل اللعب آمناً ومناسباً لمرحلة الطفل.",
                   },
                   {
                     src: "/work/careconnect/booking.webp",
-                    alt: "CareConnect booking details — child info, health notes and parent contact for a babysitter booking",
+                    alt: "CareConnect booking details: child info, health notes and parent contact for a babysitter booking",
                     title: "Bookings with full context",
-                    titleAr: "حجوزاتٌ بسياقٍ كامل",
-                    blurb: "A booking carries the child's info, health notes and parent contact — everything a babysitter needs, nothing she shouldn't see.",
-                    blurbAr: "يحمل الحجز معلومات الطفل، وملاحظاتٍ صحّية، وتواصل الوالدين — كل ما تحتاجه الجليسة، ولا شيء لا ينبغي أن تراه.",
+                    titleAr: "حجوزات بسياق كامل",
+                    blurb: "A booking carries the child's details, health notes and a parent contact: everything the babysitter needs and nothing beyond it.",
+                    blurbAr: "يحمل الحجز تفاصيل الطفل وملاحظاته الصحّية وتواصل الوالدين: كل ما تحتاجه الجليسة ولا شيء بعده.",
                   },
                 ]}
               />
@@ -354,16 +354,16 @@ export default function CareConnectPage() {
           kicker: <T en="Technical architecture" ar="البنية التقنية" />,
           heading: (
             <T
-              en="One Postgres. Three clients. Zero shared-state hacks."
-              ar="قاعدة Postgres واحدة. ثلاثة عملاء. صفر حِيَل للحالة المشتركة."
+              en="One Postgres, three clients, no shared-state tricks."
+              ar="قاعدة Postgres واحدة، وثلاثة عملاء، وبلا حِيَل للحالة المشتركة."
             />
           ),
           body: (
             <>
               <p>
                 <T
-                  en="Every read and write goes through Supabase RLS. A mother can only see active babysitters within her search radius. A babysitter can only see and modify her own profile and bookings. An admin sees everything — but every admin action is logged. The role enforcement lives in the database, not the client."
-                  ar="كلّ قراءةٍ وكتابة تمرّ عبر Supabase RLS. الأمّ ترى فقط الجليسات النشطات ضمن نطاق بحثها. والجليسة ترى وتُعدّل فقط ملفّها وحجوزاتها. والمشرف يرى كل شيء — لكن كلّ إجراء مشرفٍ مُسجَّل. فرضُ الأدوار يعيش في قاعدة البيانات، لا في العميل."
+                  en="Every read and write goes through Supabase row-level security. A mother sees active babysitters inside her search radius. A babysitter sees and edits her own profile and bookings. An admin sees everything, and everything an admin does is written to a log. The role enforcement lives in the database, so the client never has to be trusted with it."
+                  ar="كل قراءة وكتابة تمرّ عبر أمان مستوى الصف في Supabase. الأمّ ترى الجليسات النشطات داخل نطاق بحثها. والجليسة ترى وتحرّر ملفها وحجوزاتها. والمشرف يرى كل شيء، وكل ما يفعله المشرف يُكتب في سجلّ. وفرض الأدوار يعيش في قاعدة البيانات، فلا يُضطرّ أحد لائتمان العميل عليه."
                 />
               </p>
 
@@ -382,23 +382,23 @@ export default function CareConnectPage() {
 
               <ADR
                 number={1}
-                title={<T en="Supabase + RLS over Firebase + client-side guards." ar="Supabase + RLS بدل Firebase وحُرّاسٍ من جهة العميل." />}
+                title={<T en="Supabase and RLS instead of Firebase with client-side guards." ar="Supabase وRLS بدل Firebase بحُرّاس من جهة العميل." />}
                 context={
                   <T
-                    en="Firebase is the default for student marketplaces. Auth + Firestore is fast to wire. But security rules in Firestore are a JSON DSL that's easy to get subtly wrong — and the client can be modified."
-                    ar="Firebase هو الخيار الافتراضي لأسواق الطلاب. المصادقة + Firestore سريعة الربط. لكن قواعد الأمان في Firestore لغة JSON يسهل الخطأ فيها بدقّة — والعميل قابل للتعديل."
+                    en="Firebase is what student marketplaces usually reach for, and auth with Firestore is quick to wire. Its security rules are a JSON dialect that's easy to get subtly wrong, and the client is modifiable."
+                    ar="Firebase ما تلجأ إليه عادة أسواق الطلاب، وربط المصادقة مع Firestore سريع. لكن قواعد أمانه لهجة JSON يسهل أن تُخطئ فيها دون أن تنتبه، والعميل قابل للتعديل."
                   />
                 }
                 decision={
                   <T
-                    en={<>Postgres + Supabase RLS. RLS policies are real SQL, run on every query, and{" "}<strong>impossible to bypass from the client</strong>. A mother&apos;s query physically cannot return another mother&apos;s bookings.</>}
-                    ar={<>Postgres + Supabase RLS. سياسات RLS هي SQL حقيقية، تُنفَّذ مع كل استعلام، و<strong>يستحيل تجاوزها من العميل</strong>. استعلام أمٍّ لا يمكنه فيزيائياً إعادة حجوزات أمٍّ أخرى.</>}
+                    en={<>Postgres with Supabase RLS. The policies are ordinary SQL, they run on every query, and there is{" "}<strong>no client-side path around them</strong>. A mother&apos;s query cannot return another mother&apos;s bookings.</>}
+                    ar={<>Postgres مع Supabase RLS. السياسات SQL عادية، تُنفَّذ مع كل استعلام، و<strong>لا يوجد طريق من جهة العميل يلتفّ حولها</strong>. استعلام أمّ لا يمكنه إعادة حجوزات أمّ أخرى.</>}
                   />
                 }
                 consequences={
                   <T
-                    en="The security model is auditable and reviewable. It's also what made the three-app design viable — each client just asks the database for what it can see; the database is the access layer."
-                    ar="نموذج الأمان قابلٌ للتدقيق والمراجعة. وهو أيضاً ما جعل تصميم التطبيقات الثلاثة ممكناً — كلّ عميلٍ يسأل قاعدة البيانات عمّا يستطيع رؤيته فقط؛ قاعدة البيانات هي طبقة الوصول."
+                    en="The security model is something a reviewer can read and check. It's also what made the three-app split safe: each client asks the database for what it's allowed to see, and the database is the access layer."
+                    ar="نموذج الأمان شيء يستطيع المراجع أن يقرأه ويتحقّق منه. وهو أيضاً ما جعل فصل التطبيقات الثلاثة آمناً: كل عميل يسأل قاعدة البيانات عمّا يُسمح له برؤيته، وقاعدة البيانات هي طبقة الوصول."
                   />
                 }
               />
@@ -410,37 +410,37 @@ export default function CareConnectPage() {
           heading: (
             <T
               en="Keeping three apps and one backend from drifting apart."
-              ar="إبقاء ثلاثة تطبيقات وخادمٍ واحد من التباعد."
+              ar="منع ثلاثة تطبيقات وخادم واحد من التباعد."
             />
           ),
           body: (
             <>
               <p>
                 <T
-                  en="Three apps are tempting to think of as three projects. In practice the apps are the easy part; the hard part is keeping a schema and permission model consistent across three distinct experiences without forking into three copies of the same code."
-                  ar="من المُغري التفكير في ثلاثة تطبيقات كثلاثة مشاريع. عملياً، التطبيقات هي الجزء السهل؛ والصعب هو إبقاء المخطّط ونموذج الصلاحيات متّسقَين عبر ثلاث تجارب متمايزة دون التشعّب إلى ثلاث نسخٍ من الكود نفسه."
+                  en="It's tempting to treat three apps as three projects. The apps turned out to be the easy part. The hard part was holding one schema and one permission model steady across three quite different experiences without ending up with three copies of the same code."
+                  ar="من المغري أن تتعامل مع ثلاثة تطبيقات كثلاثة مشاريع. تبيّن أن التطبيقات هي الجزء السهل. والصعب كان تثبيت مخطّط واحد ونموذج صلاحيات واحد عبر ثلاث تجارب مختلفة تماماً دون أن تنتهي بثلاث نسخ من الكود نفسه."
                 />
               </p>
 
               <ADR
                 number={2}
-                title={<T en="IEEE 830 SRS before a single screen was designed." ar="وثيقة متطلبات IEEE 830 قبل تصميم شاشةٍ واحدة." />}
+                title={<T en="A full requirements document before any screen." ar="وثيقة متطلبات كاملة قبل أي شاشة." />}
                 context={
                   <T
-                    en="Most projects skip the SRS and discover the spec through implementation. Faster start, painful middle."
-                    ar="معظم المشاريع تتخطّى وثيقة المتطلبات وتكتشف المواصفة عبر التنفيذ. بدايةٌ أسرع، ووسطٌ مؤلم."
+                    en="Most projects skip the requirements document and discover the spec while implementing it. That starts faster and hurts in the middle."
+                    ar="معظم المشاريع تتخطّى وثيقة المتطلبات وتكتشف المواصفة أثناء تنفيذها. يبدأ ذلك أسرع ويؤلم في الوسط."
                   />
                 }
                 decision={
                   <T
-                    en="A full IEEE 830 SRS first — every entity, relation, and user flow. Then Figma. Then Flutter."
-                    ar="وثيقة متطلبات IEEE 830 كاملة أولاً — كلّ كيان وعلاقة وتدفّق مستخدم. ثم Figma. ثم Flutter."
+                    en="I wrote the IEEE 830 document first, covering every entity, relation and user flow. Then Figma. Then Flutter."
+                    ar="كتبتُ وثيقة IEEE 830 أولاً، تغطّي كل كيان وعلاقة وتدفّق مستخدم. ثم Figma. ثم Flutter."
                   />
                 }
                 consequences={
                   <T
-                    en="When a payments change landed mid-development, the spec told me exactly which six screens across two apps needed to update. Refactoring became a search, not an excavation."
-                    ar="حين طرأ تغييرٌ في الدفع منتصف التطوير، أخبرتني المواصفة بالضبط أيّ ستّ شاشاتٍ عبر تطبيقين تحتاج تحديثاً. صارت إعادة الهيكلة بحثاً، لا تنقيباً."
+                    en="When a payments change came in mid-development, the document told me which six screens across two apps had to change. The refactor was a search instead of an excavation."
+                    ar="حين وصل تغيير في الدفع منتصف التطوير، أخبرتني الوثيقة أي ست شاشات في تطبيقين يجب أن تتغيّر. وصارت إعادة الهيكلة بحثاً بدل تنقيب."
                   />
                 }
               />
@@ -449,19 +449,19 @@ export default function CareConnectPage() {
         },
         {
           kicker: <T en="Outcomes" ar="النتائج" />,
-          heading: <T en="Three honest surfaces on one provable backend." ar="ثلاث واجهاتٍ أمينة على خادمٍ واحد قابل للإثبات." />,
+          heading: <T en="Three honest surfaces on a backend you can check." ar="ثلاث واجهات أمينة على خادم يمكنك التحقّق منه." />,
           body: (
             <>
               <p>
                 <T
-                  en="CareConnect shipped as three focused apps on a single Supabase backend, with access control enforced in the database rather than trusted to the client — so each side's data boundaries are provable in SQL, and every admin action is auditable."
-                  ar="أُطلق CareConnect كثلاثة تطبيقات مركّزة على خادم Supabase واحد، بتحكّمٍ بالوصول مفروضٍ في قاعدة البيانات بدل ائتمان العميل عليه — فحدود بيانات كل طرفٍ قابلة للإثبات بـSQL، وكلّ إجراء مشرفٍ قابل للتدقيق."
+                  en="CareConnect shipped as three focused apps on one Supabase backend, with access decided in the database rather than trusted to the client. Each side's data boundary can be demonstrated in SQL, and every admin action leaves a record."
+                  ar="أُطلق CareConnect كثلاثة تطبيقات مركّزة على خادم Supabase واحد، والوصول فيه يُقرَّر في قاعدة البيانات بدل أن يُؤتمَن عليه العميل. وحدّ بيانات كل طرف يمكن إظهاره بـSQL، وكل إجراء مشرف يترك سجلاً."
                 />
               </p>
               <p>
                 <T
-                  en="The three-app decision wasn't an engineering call; it was a UX call that engineering had to honour. The spec-first habit isn't academic — it's the cheapest insurance against drift between three apps and one backend."
-                  ar="قرار التطبيقات الثلاثة لم يكن قراراً هندسياً؛ بل قرار تجربةٍ كان على الهندسة احترامه. وعادة المواصفة-أولاً ليست أكاديمية — بل هي أرخص تأمينٍ ضدّ التباعد بين ثلاثة تطبيقات وخادمٍ واحد."
+                  en="The three-app split was a UX call that engineering then had to honour. And writing the spec first was the cheapest insurance I could buy against three apps and one backend drifting apart."
+                  ar="كان فصل التطبيقات الثلاثة قراراً في التجربة كان على الهندسة بعده أن تحترمه. وكتابة المواصفة أولاً كانت أرخص تأمين أستطيع شراءه ضدّ تباعد ثلاثة تطبيقات وخادم واحد."
                 />
               </p>
             </>
@@ -474,8 +474,8 @@ export default function CareConnectPage() {
             <>
               <p>
                 <T
-                  en="Because trust runs across all three sides, I'd run a usability study per app around its primary task — a mother finding and booking vetted care, a babysitter accepting a booking, a moderator verifying and flagging — then cluster the findings in an affinity diagram and prioritize the fixes that unblock the marketplace loop first."
-                  ar="لأن الثقة تسري عبر الأطراف الثلاثة، سأُجري دراسة قابلية استخدامٍ لكل تطبيقٍ حول مهمّته الأساسية — أمٌّ تجد وتحجز رعايةً مُدقَّقة، وجليسةٌ تقبل حجزاً، ومشرفةٌ توثّق وتُبلّغ — ثم أعنقد النتائج في مخطّط تقارب وأرتّب الإصلاحات التي تفكّ حلقة السوق أولاً."
+                  en="Since trust has to hold across all three sides, I'd run a usability study per app around its main task: a mother finding and booking vetted care, a babysitter accepting a booking, a moderator verifying and flagging. Then I'd cluster the findings and fix whatever blocks the marketplace loop first."
+                  ar="بما أن الثقة يجب أن تصمد عبر الأطراف الثلاثة، سأُجري دراسة قابلية استخدام لكل تطبيق حول مهمّته الرئيسية: أمّ تجد وتحجز رعاية مُدقَّقة، وجليسة تقبل حجزاً، ومشرفة توثّق وتُبلّغ. ثم أعنقد النتائج وأُصلح ما يعيق حلقة السوق أولاً."
                 />
               </p>
               <Priorities
@@ -484,8 +484,8 @@ export default function CareConnectPage() {
                     tier: "P0",
                     label: (
                       <T
-                        en="Trust signals in the mother's app — verification badges and what they mean — must be unmistakable, or she won't book at all."
-                        ar="إشارات الثقة في تطبيق الأمّ — شارات التوثيق ومعناها — يجب أن تكون لا تُخطئ، وإلا فلن تحجز أصلاً."
+                        en="The trust signals in the mother's app, the verification badges and what they actually mean, have to be unmistakable, or she won't book at all."
+                        ar="إشارات الثقة في تطبيق الأمّ، شارات التوثيق ومعناها الفعلي، يجب أن تكون لا تُخطئ، وإلا فلن تحجز أصلاً."
                       />
                     ),
                   },
@@ -493,8 +493,8 @@ export default function CareConnectPage() {
                     tier: "P1",
                     label: (
                       <T
-                        en="The babysitter's schedule and booking context must be readable at a glance before she accepts."
-                        ar="جدول الجليسة وسياق الحجز يجب أن يكونا مقروءَين بلمحةٍ قبل أن تقبل."
+                        en="The babysitter's schedule and the context of a booking have to be readable at a glance before she accepts it."
+                        ar="جدول الجليسة وسياق الحجز يجب أن يُقرآ بلمحة قبل أن تقبله."
                       />
                     ),
                   },
@@ -502,8 +502,8 @@ export default function CareConnectPage() {
                     tier: "P2",
                     label: (
                       <T
-                        en="The admin's moderation actions should be fast and obviously reversible, with the audit trail one tap away."
-                        ar="إجراءات الإدارة لدى المشرف ينبغي أن تكون سريعةً وقابلةً للتراجع بوضوح، وسجلّ التدقيق على بُعد نقرةٍ واحدة."
+                        en="The admin's moderation actions should be quick and obviously reversible, with the log one tap away."
+                        ar="إجراءات الإدارة لدى المشرف ينبغي أن تكون سريعة وقابلة للتراجع بوضوح، والسجلّ على بُعد نقرة."
                       />
                     ),
                   },
@@ -519,14 +519,14 @@ export default function CareConnectPage() {
             <>
               <p>
                 <T
-                  en="The lesson that stuck: most of a multi-sided product's difficulty is information architecture and access control, not screen count. Writing the spec first felt slow and turned out to be the fastest path — it's now my default for anything with more than one type of user."
-                  ar="الدرس الذي علق: معظم صعوبة منتجٍ متعدّد الأطراف هندسة معلوماتٍ وتحكّمٌ بالوصول، لا عدد الشاشات. بدا كتابة المواصفة أولاً بطيئاً وتبيّن أنه أسرع طريق — وصار خياري الافتراضي لأي شيءٍ بأكثر من نوع مستخدمٍ واحد."
+                  en="What stuck with me is that most of the difficulty in a multi-sided product is information architecture and access control, not how many screens there are. Writing the spec first felt slow and turned out to be the fastest route. It's my default now for anything with more than one kind of user."
+                  ar="ما بقي معي أن معظم الصعوبة في منتج متعدّد الأطراف هندسة معلومات وتحكّم بالوصول، لا عدد الشاشات. بدت كتابة المواصفة أولاً بطيئة وتبيّن أنها أسرع طريق. وهي الآن خياري الافتراضي لأي شيء فيه أكثر من نوع مستخدم."
                 />
               </p>
               <p>
                 <T
-                  en="Next time I'd invest earlier in a shared component layer across the three apps, so visual consistency is enforced by code and not just by discipline."
-                  ar="في المرة القادمة سأستثمر مبكراً في طبقة مكوّناتٍ مشتركة عبر التطبيقات الثلاثة، كي يُفرَض الاتّساق البصري بالكود لا بالانضباط وحده."
+                  en="Next time I'd build a shared component layer across the three apps much earlier, so visual consistency is held by code instead of by discipline."
+                  ar="في المرة القادمة سأبني طبقة مكوّنات مشتركة عبر التطبيقات الثلاثة أبكر بكثير، ليحفظ الكودُ الاتّساق البصري بدل الانضباط."
                 />
               </p>
             </>
@@ -534,7 +534,7 @@ export default function CareConnectPage() {
         },
       ]}
       nextProject={{
-        label: <T en="Smart Expense Manager — Odoo 19 open source →" ar="Smart Expense Manager — Odoo 19 مفتوح المصدر →" />,
+        label: <T en="Smart Expense Manager: an open-source Odoo module →" ar="Smart Expense Manager: وحدة Odoo مفتوحة المصدر →" />,
         href: "/projects/smart-expense",
       }}
       />

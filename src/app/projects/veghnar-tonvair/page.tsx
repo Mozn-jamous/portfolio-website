@@ -15,13 +15,13 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "Redesigned a fragrance maison's Shopify storefront from scratch — the client supplied the brand identity, I turned it into a live Arabic-first storefront: one identity stylesheet as the single source of truth, a four-face bilingual type system, and product patterns built for perfume.";
+  "A fragrance house's Shopify storefront, redesigned from scratch. The client supplied the brand identity and I turned it into a live Arabic storefront: one identity stylesheet the whole shop reads from, a four-face bilingual type system, and product patterns built for perfume.";
 
 export const metadata: Metadata = {
-  title: "Veghnar Tonvair — Arabic-first Shopify storefront (design + build) — Mozn Jamous",
+  title: "Veghnar Tonvair — an Arabic Shopify storefront — Mozn Jamous",
   description: DESCRIPTION,
   openGraph: {
-    title: "Veghnar Tonvair — a brand book, turned into a live Arabic-first storefront",
+    title: "Veghnar Tonvair — a brand book turned into a live Arabic storefront",
     description: DESCRIPTION,
     type: "article",
     url: siteUrl("/projects/veghnar-tonvair"),
@@ -38,7 +38,7 @@ export default function VeghnarTonvairPage() {
     <>
       <StructuredData
         data={caseStudyStructuredData({
-          name: "Veghnar Tonvair — Arabic-first Shopify storefront",
+          name: "Veghnar Tonvair — an Arabic Shopify storefront",
           description: DESCRIPTION,
           path: "/projects/veghnar-tonvair",
           year: "2026",
@@ -55,22 +55,22 @@ export default function VeghnarTonvairPage() {
           diagramAccentSoft: "#F8E9EC",
         }}
         meta={{
-          eyebrow: <T en="E-commerce · Shopify · Design + Build" ar="تجارة إلكترونية · Shopify · تصميم وبناء" />,
-          status: <T en="Client work · Live" ar="عمل لعميل · منشور" />,
+          eyebrow: <T en="E-commerce · Shopify · Design and build" ar="تجارة إلكترونية · Shopify · تصميم وبناء" />,
+          status: <T en="Client work, live" ar="عمل لعميل، منشور" />,
           title: (
             <T
-              en="Veghnar Tonvair — a brand book, turned into a living storefront."
-              ar="Veghnar Tonvair — دليل هويةٍ، تحوّل إلى متجرٍ حيّ."
+              en="Veghnar Tonvair: a brand book, turned into a working shop."
+              ar="Veghnar Tonvair: دليل هوية، تحوّل إلى متجر يعمل."
             />
           ),
           lede: (
             <T
-              en="A fragrance maison, delivered to me as a pale, generic Shopify store plus the client's own brand identity file. I redesigned the storefront completely, from scratch: the identity became one stylesheet that governs the whole shop, Arabic became the store's primary language rather than a translation of it, and the product pages got patterns that fit perfume specifically. It is live, and it opens in Arabic."
-              ar="بيت عطورٍ وصلني متجراً باهتاً عامّاً على Shopify، ومعه ملف الهوية البصرية الخاص بالعميل. أعدتُ تصميم المتجر كاملاً من الصفر: صارت الهوية ملفَّ أنماطٍ واحداً يحكم المتجر بأكمله، وصارت العربية لغةَ المتجر الأساسية لا ترجمةً عنه، ونالت صفحات المنتج أنماطاً تناسب العطر تحديداً. والمتجر منشورٌ الآن، ويُفتح بالعربية."
+              en="A fragrance house that reached me as a pale, generic Shopify store plus the client's brand identity file. I redesigned the storefront from scratch. The identity became one stylesheet the whole shop reads from, Arabic became the store's primary language instead of a translation of it, and the product pages got patterns that suit perfume. It is live, and it opens in Arabic."
+              ar="بيت عطور وصلني متجراً باهتاً عامّاً على Shopify، ومعه ملف الهوية البصرية الخاص بالعميل. أعدتُ تصميم المتجر من الصفر. صارت الهوية ملف أنماط واحداً يقرأ منه المتجر كله، وصارت العربية لغة المتجر الأساسية بدل أن تكون ترجمة عنه، ونالت صفحات المنتج أنماطاً تناسب العطر. والمتجر منشور الآن، ويُفتح بالعربية."
             />
           ),
           year: "2026",
-          role: <T en="Designer + Storefront Developer" ar="مصمّمة + مطوّرة متجر" />,
+          role: <T en="Designer + storefront engineer" ar="مصمّمة + مهندسة متجر" />,
           stack: [
             "Shopify",
             "Liquid",
@@ -90,15 +90,15 @@ export default function VeghnarTonvairPage() {
         metrics={[
           {
             value: <T en="Arabic-first" ar="عربيّ أولاً" />,
-            label: <T en="The live store's primary locale — RTL by default" ar="اللغة الأساسية للمتجر الحيّ — من اليمين لليسار افتراضياً" />,
+            label: <T en="The live store's primary locale, RTL by default" ar="اللغة الأساسية للمتجر الحيّ، من اليمين لليسار افتراضياً" />,
           },
           {
             value: <T en="One file" ar="ملفٌ واحد" />,
-            label: <T en="Identity stylesheet governing the whole shop" ar="ملف هويةٍ واحد يحكم المتجر كلّه" />,
+            label: <T en="An identity stylesheet the whole shop reads from" ar="ملف هوية واحد يقرأ منه المتجر كله" />,
           },
           {
             value: "4",
-            label: <T en="Type faces — Arabic and Latin, paired" ar="أربعة خطوط — عربية ولاتينية، مقترنة" />,
+            label: <T en="Typefaces, Arabic and Latin, paired deliberately" ar="خطوط عربية ولاتينية، مقترنة بقصد" />,
           },
           {
             value: <T en="Live" ar="منشور" />,
@@ -113,24 +113,24 @@ export default function VeghnarTonvairPage() {
               <>
                 <Lead>
                   <T
-                    en="Veghnar Tonvair is a fragrance house selling online. I was handed two things: a Shopify store that worked but looked like every other Shopify store, and the client's brand identity file. My job was the distance between them — turning a static identity document into a storefront that actually behaves like the brand, in Arabic, on a real shop taking real orders."
-                    ar="Veghnar Tonvair بيتُ عطورٍ يبيع عبر الإنترنت. سُلّمتُ شيئين: متجراً على Shopify يعمل لكنه يشبه كلّ متاجر Shopify الأخرى، وملفَ الهوية البصرية الخاص بالعميل. وكان عملي هو المسافة بينهما — تحويلُ مستند هويةٍ ثابت إلى متجرٍ يتصرّف فعلاً كالعلامة، بالعربية، على متجرٍ حقيقيٍّ يستقبل طلباتٍ حقيقية."
+                    en="Veghnar Tonvair is a fragrance house selling online. I was handed two things: a Shopify store that worked but looked like every other Shopify store, and the client's brand identity file. My job was the distance between them, which meant turning a static identity document into a storefront that behaves like the brand, in Arabic, on a shop taking real orders."
+                    ar="Veghnar Tonvair بيت عطور يبيع عبر الإنترنت. سُلّمتُ شيئين: متجراً على Shopify يعمل لكنه يشبه كل متاجر Shopify الأخرى، وملف الهوية البصرية الخاص بالعميل. وكان عملي هو المسافة بينهما، أي تحويل مستند هوية ثابت إلى متجر يتصرّف كالعلامة، بالعربية، على متجر يستقبل طلبات حقيقية."
                   />
                 </Lead>
                 <FactGrid
                   items={[
-                    { label: <T en="My role" ar="دوري" />, value: <T en="Storefront redesign + build" ar="إعادة تصميم المتجر وبناؤه" /> },
-                    { label: <T en="Given to me" ar="ما سُلِّم لي" />, value: <T en="A pale store + the client's identity file" ar="متجر باهت + ملف هوية العميل" /> },
+                    { label: <T en="My role" ar="دوري" />, value: <T en="Redesigned and built the storefront" ar="أعدتُ تصميم المتجر وبنيته" /> },
+                    { label: <T en="Given to me" ar="ما سُلِّم لي" />, value: <T en="A pale store and the client's identity file" ar="متجر باهت وملف هوية العميل" /> },
                     { label: <T en="Industry" ar="القطاع" />, value: <T en="Fragrance · Retail" ar="عطور · تجزئة" /> },
-                    { label: <T en="Platform" ar="المنصّة" />, value: <T en="Shopify — Dawn 14 base" ar="Shopify — على أساس Dawn 14" /> },
-                    { label: <T en="Primary language" ar="اللغة الأساسية" />, value: <T en="Arabic · RTL (English second)" ar="العربية · من اليمين لليسار (والإنجليزية ثانياً)" /> },
+                    { label: <T en="Platform" ar="المنصّة" />, value: <T en="Shopify, on a Dawn 14 base" ar="Shopify، على أساس Dawn 14" /> },
+                    { label: <T en="Primary language" ar="اللغة الأساسية" />, value: <T en="Arabic, RTL, with English second" ar="العربية، من اليمين لليسار، والإنجليزية ثانياً" /> },
                     { label: <T en="Support" ar="مساندة" />, value: <T en="An assisting engineer fixed some logic bugs" ar="مهندس مساعد أصلح بعض أخطاء المنطق" /> },
                   ]}
                 />
                 <Callout kicker={<T en="What was mine, and what wasn't" ar="ما كان لي، وما لم يكن" />}>
                   <T
-                    en="The brand identity — the marks, the palette direction, the Latin typographic voice — came from the client's own file; I did not invent the brand. Everything you see working on the store is mine: the redesign, the layout system, the Arabic typography, the product patterns, and the CSS that holds it together. At the end, an assisting engineer fixed a number of logic bugs."
-                    ar="الهوية البصرية — الشعارات، واتجاه الألوان، والصوت الطباعي اللاتيني — جاءت من ملف العميل نفسه؛ فأنا لم أخترع العلامة. وكلّ ما تراه يعمل على المتجر لي: إعادة التصميم، ونظام التخطيط، والطباعة العربية، وأنماط المنتج، وملف الأنماط الذي يجمعها. وفي النهاية أصلح مهندس مساعد عدداً من أخطاء المنطق."
+                    en="The brand identity came from the client's own file: the marks, the palette direction, the Latin typographic voice. I did not invent the brand. What I did is everything you see working on the store: the redesign, the layout system, the Arabic typography, the product patterns, and the CSS holding it together. Near the end, an assisting engineer fixed a number of logic bugs."
+                    ar="الهوية البصرية جاءت من ملف العميل نفسه: الشعارات، واتجاه الألوان، والصوت الطباعي اللاتيني. فأنا لم أخترع العلامة. وما فعلتُه هو كل ما تراه يعمل على المتجر: إعادة التصميم، ونظام التخطيط، والطباعة العربية، وأنماط المنتج، وملف الأنماط الذي يجمعها. وقُبيل النهاية أصلح مهندس مساعد عدداً من أخطاء المنطق."
                   />
                 </Callout>
               </>
@@ -143,16 +143,16 @@ export default function VeghnarTonvairPage() {
               <>
                 <p>
                   <T
-                    en="An identity file tells you what the brand looks like standing still: a logo, a palette, a serif, a mood. It does not tell you what a two-column product grid looks like on a phone, how a customer compares two perfumes, what the checkout bar should feel like under a thumb — and it almost never says anything about Arabic. That gap is the actual work, and it is where a store either becomes the brand or stays a template wearing its colors."
-                    ar="ملفُّ الهوية يخبرك كيف تبدو العلامة واقفةً ساكنة: شعارٌ، ولوحةُ ألوان، وخطٌّ سيريفي، ومزاج. لكنه لا يخبرك كيف تبدو شبكةُ منتجاتٍ بعمودين على الهاتف، ولا كيف يوازن العميل بين عطرين، ولا بأيّ إحساسٍ ينبغي أن يكون شريط الشراء تحت الإبهام — ولا يقول شيئاً عن العربية تقريباً أبداً. تلك الفجوة هي العمل الحقيقي، وفيها إمّا أن يصبح المتجر هو العلامة، أو يبقى قالباً يلبس ألوانها."
+                    en="An identity file tells you what a brand looks like standing still: a logo, a palette, a serif, a mood. It says nothing about what a two-column product grid looks like on a phone, how somebody compares two perfumes, or how the checkout bar should sit under a thumb. It almost never mentions Arabic at all. That gap is the actual work, and it decides whether a store becomes the brand or stays a template wearing its colours."
+                    ar="ملف الهوية يخبرك كيف تبدو العلامة واقفة ساكنة: شعار، ولوحة ألوان، وخطّ سيريفي، ومزاج. ولا يقول شيئاً عن شكل شبكة منتجات بعمودين على الهاتف، ولا عن كيف يوازن أحدهم بين عطرين، ولا عن كيف ينبغي أن يجلس شريط الشراء تحت الإبهام. ولا يذكر العربية تقريباً أبداً. تلك الفجوة هي العمل الحقيقي، وهي التي تقرّر إن كان المتجر سيصبح العلامة أم سيبقى قالباً يلبس ألوانها."
                   />
                 </p>
                 <FactGrid
                   items={[
-                    { label: <T en="Came with the brief" ar="جاء مع الموجز" />, value: <T en="Marks, palette, Latin type" ar="الشعارات، الألوان، الخط اللاتيني" /> },
-                    { label: <T en="Missing entirely" ar="غائب تماماً" />, value: <T en="Arabic type, RTL, product UX" ar="الخط العربي، الاتجاه، تجربة المنتج" /> },
+                    { label: <T en="Came with the brief" ar="جاء مع الموجز" />, value: <T en="Marks, palette, Latin type" ar="الشعارات، والألوان، والخط اللاتيني" /> },
+                    { label: <T en="Missing entirely" ar="غائب تماماً" />, value: <T en="Arabic type, RTL, product UX" ar="الخط العربي، والاتجاه، وتجربة المنتج" /> },
                     { label: <T en="Starting point" ar="نقطة البداية" />, value: <T en="A generic Shopify theme" ar="ثيم Shopify عامّ" /> },
-                    { label: <T en="Target" ar="الهدف" />, value: <T en="A store that reads as a maison" ar="متجر يُقرأ كبيت عطورٍ" /> },
+                    { label: <T en="Target" ar="الهدف" />, value: <T en="A store that reads like a fragrance house" ar="متجر يُقرأ كبيت عطور" /> },
                   ]}
                 />
               </>
@@ -165,8 +165,8 @@ export default function VeghnarTonvairPage() {
               <>
                 <p>
                   <T
-                    en="Shopify themes rot in a predictable way: a colour here, an override there, until the same button exists in five slightly different versions. So the redesign is not scattered across the theme editor — it lives in a single identity stylesheet, versioned and commented, that the whole shop reads from. A calm white canvas, one deep-burgundy accent reserved for actions, a centred serif display, underlined links. One place to change the brand; every page follows."
-                    ar="ثيمات Shopify تتعفّن على نحوٍ متوقّع: لونٌ هنا، وتجاوزٌ هناك، حتى يوجد الزرُّ نفسه بخمس نسخٍ متفاوتةٍ قليلاً. لذا لم تتوزّع إعادة التصميم في محرّر الثيم — بل تعيش في ملف هويةٍ واحد، مُرقَّمِ الإصدار ومُعلَّق، يقرأ منه المتجر كلّه. قماشةٌ بيضاء هادئة، ولونٌ عنّابيٌّ عميقٌ واحد محجوزٌ للأفعال، وعرضٌ سيريفيٌّ موسّط، وروابط مسطَّرة. مكانٌ واحد لتغيير العلامة، وكلّ الصفحات تتبع."
+                    en="Shopify themes rot in a predictable way. A colour here, an override there, and eventually the same button exists in five slightly different versions. So the redesign isn't scattered across the theme editor. It lives in one identity stylesheet, versioned and commented, that the whole shop reads from: a calm white canvas, a single deep burgundy kept for actions, a centred serif display, underlined links. Change the brand in one place and every page follows."
+                    ar="ثيمات Shopify تتعفّن على نحو متوقّع. لون هنا، وتجاوز هناك، وينتهي الأمر بوجود الزرّ نفسه بخمس نسخ متفاوتة قليلاً. لذا لم تتوزّع إعادة التصميم في محرّر الثيم. هي تعيش في ملف هوية واحد، مرقّم الإصدار ومعلّق، يقرأ منه المتجر كله: قماشة بيضاء هادئة، وعنّابيّ عميق واحد محجوز للأفعال، وعرض سيريفي موسّط، وروابط مسطّرة. غيّر العلامة في مكان واحد فتتبعه كل الصفحات."
                   />
                 </p>
                 <DesignDecision
@@ -174,20 +174,20 @@ export default function VeghnarTonvairPage() {
                   title={<T en="The identity lives in code, not in the theme editor." ar="الهوية تعيش في الكود، لا في محرّر الثيم." />}
                   challenge={
                     <T
-                      en="Theme-editor settings are invisible, unversioned, and easy for anyone to nudge. Left there, a brand drifts: the same button ends up in five slightly different versions."
-                      ar="إعدادات محرّر الثيم غير مرئية، وبلا إصدارات، ويسهل على أيّ أحد تحريكها. وإن تُركت الهوية فيها انزاحت: فينتهي الزرُّ نفسه بخمس نسخٍ متفاوتةٍ قليلاً."
+                      en="Theme-editor settings are invisible, unversioned and easy for anyone to nudge. Leave a brand in there and it drifts, until the same button exists in five slightly different versions."
+                      ar="إعدادات محرّر الثيم غير مرئية، وبلا إصدارات، ويسهل على أي أحد تحريكها. واترك العلامة فيها فتنزاح، حتى يوجد الزرّ نفسه بخمس نسخ متفاوتة قليلاً."
                     />
                   }
                   decision={
                     <T
-                      en="Govern the whole shop from one versioned, commented identity stylesheet — a single source of truth that every page reads from."
-                      ar="حُكْمُ المتجر كلّه من ملف هويةٍ واحد مُرقَّمِ الإصدار ومُعلَّق — مصدرُ حقيقةٍ واحد تقرأ منه كلّ صفحة."
+                      en="Run the whole shop from one versioned, commented identity stylesheet that every page reads from."
+                      ar="أن يُدار المتجر كله من ملف هوية واحد مرقّم الإصدار ومعلّق تقرأ منه كل صفحة."
                     />
                   }
                   outcome={
                     <T
-                      en="One place to change the brand, and every page follows. The trade is deliberate: a non-technical editor can no longer restyle the brand from the admin — which is exactly what stops it drifting."
-                      ar="مكانٌ واحد لتغيير العلامة، وكلّ الصفحات تتبع. والمقايضة مقصودة: لم يعد بإمكان محرّرٍ غير تقنيٍّ إعادة تنسيق العلامة من لوحة الإدارة — وهذا بالضبط ما يوقف انزياحها."
+                      en="One place to change the brand, and every page follows. The cost is deliberate: a non-technical editor can no longer restyle the brand from the admin, and that is exactly what keeps it from drifting."
+                      ar="مكان واحد لتغيير العلامة، وكل الصفحات تتبع. والكلفة مقصودة: لم يعد بإمكان محرّر غير تقني أن يعيد تنسيق العلامة من لوحة الإدارة، وهذا بالضبط ما يمنع انزياحها."
                     />
                   }
                 />
@@ -202,19 +202,19 @@ export default function VeghnarTonvairPage() {
           },
           {
             kicker: <T en="Arabic-first" ar="عربيّ أولاً" />,
-            heading: <T en="Not a translated store. An Arabic one." ar="ليس متجراً مترجَماً. بل متجراً عربياً." />,
+            heading: <T en="An Arabic store, not a translated one." ar="متجر عربي، لا متجر مترجَم." />,
             body: (
               <>
                 <Lead>
                   <T
-                    en="Most Arabic Shopify stores are an English store flipped: the layout mirrors, but the type stays a default face that was never drawn for Arabic. The result reads as a translation, and customers feel it before they can name it."
-                    ar="أكثر متاجر Shopify العربية متجرٌ إنجليزيٌّ مقلوب: ينعكس التخطيط، لكن الخطّ يبقى خطاً افتراضياً لم يُرسم للعربية قطّ. فتُقرأ النتيجة كترجمة، ويشعر العميل بذلك قبل أن يعرف كيف يسمّيه."
+                    en="Most Arabic Shopify stores are an English store flipped over. The layout mirrors, but the type stays a default face nobody drew for Arabic. It reads as a translation, and customers feel that before they can name it."
+                    ar="أكثر متاجر Shopify العربية متجر إنجليزي مقلوب. ينعكس التخطيط، لكن الخطّ يبقى خطاً افتراضياً لم يرسمه أحد للعربية. فتُقرأ كترجمة، ويشعر العميل بذلك قبل أن يعرف كيف يسمّيه."
                   />
                 </Lead>
                 <p>
                   <T
-                    en="Because the identity file only spoke Latin, the Arabic voice was mine to build. The store runs on four faces, paired deliberately: an Arabic display face for headings, a serif for Latin display, an Arabic body face for reading, and a script for the brand's signature moments. The Arabic locale file is by far the largest in the theme — the copy is written in Arabic, not filled in from English — and the live store opens right-to-left by default, with English as the second edition."
-                    ar="ولأن ملف الهوية لم يتحدّث إلا اللاتينية، كان بناء الصوت العربي لي. يعمل المتجر على أربعة خطوط، مقترنةٍ بقصد: خطٌّ عربيٌّ للعناوين، وسيريفيٌّ للعرض اللاتيني، وخطُّ متنٍ عربيٌّ للقراءة، وخطٌّ راقنٌ للحظات توقيع العلامة. وملفُّ اللغة العربية هو الأكبر في الثيم بفارقٍ واسع — فالنصوص مكتوبةٌ بالعربية لا معبَّأةٌ عن الإنجليزية — والمتجر الحيّ يُفتح من اليمين لليسار افتراضياً، والإنجليزية نسخته الثانية."
+                    en="The identity file only spoke Latin, so the Arabic voice was mine to build. The store runs on four faces, paired deliberately: an Arabic display face for headings, a serif for Latin display, an Arabic body face for reading, and a script for the brand's signature moments. The Arabic locale file is by far the largest in the theme, because the copy was written in Arabic rather than filled in from English. The live store opens right-to-left, and English is the second edition."
+                    ar="ملف الهوية لم يتحدّث إلا اللاتينية، فكان بناء الصوت العربي لي. يعمل المتجر على أربعة خطوط مقترنة بقصد: خطّ عربي للعناوين، وسيريفي للعرض اللاتيني، وخطّ متن عربي للقراءة، وخطّ راقن للحظات توقيع العلامة. وملف اللغة العربية هو الأكبر في الثيم بفارق واسع، لأن النصوص كُتبت بالعربية بدل أن تُعبَّأ عن الإنجليزية. والمتجر الحيّ يُفتح من اليمين لليسار، والإنجليزية نسخته الثانية."
                   />
                 </p>
                 <FactGrid
@@ -223,14 +223,14 @@ export default function VeghnarTonvairPage() {
                     { label: <T en="Arabic body" ar="متن عربي" />, value: "Tajawal" },
                     { label: <T en="Latin display" ar="عرض لاتيني" />, value: "Cormorant" },
                     { label: <T en="Signature script" ar="خط التوقيع" />, value: "Roundhand" },
-                    { label: <T en="Default direction" ar="الاتجاه الافتراضي" />, value: <T en="RTL — Arabic is primary" ar="من اليمين لليسار — العربية أساسية" /> },
+                    { label: <T en="Default direction" ar="الاتجاه الافتراضي" />, value: <T en="RTL, with Arabic primary" ar="من اليمين لليسار، والعربية أساسية" /> },
                     { label: <T en="Second edition" ar="النسخة الثانية" />, value: <T en="English" ar="الإنجليزية" /> },
                   ]}
                 />
                 <Callout kicker={<T en="Why this is the differentiator" ar="لماذا هذا هو الفارق" />}>
                   <T
-                    en="Plenty of people can style a Shopify theme. Far fewer can make an Arabic store read like it was designed in Arabic — because that needs type pairing, not translation. On a Gulf-facing fragrance brand, that is the difference between a shop that feels imported and one that feels local."
-                    ar="كثيرون يستطيعون تنسيق ثيم Shopify. وقليلون جداً يستطيعون أن يجعلوا متجراً عربياً يُقرأ كأنه صُمّم بالعربية — لأن ذلك يحتاج اقتران خطوطٍ لا ترجمة. ولعلامة عطورٍ موجَّهةٍ للخليج، هذا هو الفرق بين متجرٍ يبدو مستورداً وآخر يبدو محلياً."
+                    en="Plenty of people can style a Shopify theme. Far fewer can make an Arabic store read like it was designed in Arabic, because that takes type pairing rather than translation. For a fragrance brand selling into the Gulf, that is the difference between a shop that feels imported and one that feels local."
+                    ar="كثيرون يستطيعون تنسيق ثيم Shopify. وقليلون جداً يستطيعون أن يجعلوا متجراً عربياً يُقرأ كأنه صُمّم بالعربية، لأن ذلك يحتاج اقتران خطوط لا ترجمة. ولعلامة عطور تبيع إلى الخليج، هذا هو الفرق بين متجر يبدو مستورداً وآخر يبدو محلياً."
                   />
                 </Callout>
               </>
@@ -243,8 +243,8 @@ export default function VeghnarTonvairPage() {
               <>
                 <p>
                   <T
-                    en="Perfume is bought as a gift as much as for oneself, and the product page is built around that. Under the order block sits a gift layer — wrapping plus a hand-written card — so the ritual of giving is part of the purchase, not an afterthought at checkout. The order block itself offers two clear paths, order or buy now, in the brand's burgundy; and the catalogue presents each bottle in clean studio photography with quick-add, letting the scripted bottle names carry the shelf. These are decisions the brand book had no reason to contain."
-                    ar="العطر يُشترى هديةً بقدر ما يُشترى للنفس، وصفحةُ المنتج مبنيّةٌ حول ذلك. تحت كتلة الطلب تجلس طبقةُ إهداء — تغليفٌ وبطاقةٌ مكتوبةٌ بخط اليد — فيصير طقسُ الإهداء جزءاً من الشراء لا فكرةً متأخّرة عند الدفع. وكتلةُ الطلب نفسها تعرض مسارين واضحين، اطلب أو اشترِ الآن، بعنّابيّ العلامة؛ ويقدّم الكتالوج كلَّ قارورةٍ بتصوير استوديو نظيف مع إضافةٍ سريعة، تاركاً لأسماء القوارير المخطوطة أن تحمل الرفّ. وهذه قراراتٌ لم يكن لدليل الهوية سببٌ ليحتويها."
+                    en="Perfume gets bought as a gift about as often as for oneself, and the product page is built around that. Under the order block sits a gift layer, wrapping plus a hand-written card, so the ritual of giving is part of the purchase instead of an afterthought at checkout. The order block offers two clear paths, order or buy now, in the brand's burgundy. In the catalogue each bottle appears in clean studio photography with quick-add, letting the scripted bottle names carry the shelf. None of this is something a brand book would have had reason to contain."
+                    ar="العطر يُشترى هديةً بقدر ما يُشترى للنفس، وصفحة المنتج مبنيّة حول ذلك. تحت كتلة الطلب تجلس طبقة إهداء، تغليف وبطاقة مكتوبة بخط اليد، فيصير طقس الإهداء جزءاً من الشراء بدل أن يكون فكرة متأخّرة عند الدفع. وتعرض كتلة الطلب مسارين واضحين، اطلب أو اشترِ الآن، بعنّابيّ العلامة. وفي الكتالوج تظهر كل قارورة بتصوير استوديو نظيف مع إضافة سريعة، تاركةً لأسماء القوارير المخطوطة أن تحمل الرفّ. ولا شيء من هذا كان لدليل الهوية سبب ليحتويه."
                   />
                 </p>
                 <Figure
@@ -256,9 +256,9 @@ export default function VeghnarTonvairPage() {
                 <FactGrid
                   items={[
                     { label: <T en="Gift ritual" ar="طقس الإهداء" />, value: <T en="Wrapping + hand-written card" ar="تغليف + بطاقة بخط اليد" /> },
-                    { label: <T en="Order block" ar="كتلة الطلب" />, value: <T en="Two paths: order / buy now" ar="مساران: اطلب / شراء الآن" /> },
-                    { label: <T en="Catalogue" ar="الكتالوج" />, value: <T en="Studio bottles + quick add" ar="قوارير استوديو + إضافة سريعة" /> },
-                    { label: <T en="Measurement" ar="القياس" />, value: <T en="GTM + social pixels wired" ar="GTM وبكسلات التواصل موصولة" /> },
+                    { label: <T en="Order block" ar="كتلة الطلب" />, value: <T en="Two paths: order, or buy now" ar="مساران: اطلب، أو اشترِ الآن" /> },
+                    { label: <T en="Catalogue" ar="الكتالوج" />, value: <T en="Studio bottles with quick add" ar="قوارير استوديو مع إضافة سريعة" /> },
+                    { label: <T en="Measurement" ar="القياس" />, value: <T en="GTM and social pixels wired up" ar="GTM وبكسلات التواصل موصولة" /> },
                   ]}
                 />
               </>
@@ -271,8 +271,8 @@ export default function VeghnarTonvairPage() {
               <>
                 <p>
                   <T
-                    en="This is the project that taught me the commercial half of design. A brand file is an opinion about how something should look; a live store is a place where that opinion meets a thumb, a slow connection, and a customer deciding in four seconds. Working inside someone else's identity — respecting it, then extending it exactly where it ran out, in Arabic — turned out to be a harder and more useful skill than designing from a blank page."
-                    ar="هذا المشروع هو الذي علّمني النصفَ التجاريَّ من التصميم. ملفُّ الهوية رأيٌ في كيف ينبغي أن يبدو شيء؛ أمّا المتجر الحيُّ فمكانٌ يلتقي فيه ذلك الرأي بإبهامٍ، واتصالٍ بطيء، وعميلٍ يقرّر في أربع ثوانٍ. والعملُ داخل هوية شخصٍ آخر — احترامُها، ثم تمديدُها في الموضع الذي نفدت فيه بالضبط، بالعربية — تبيّن أنه مهارةٌ أصعبُ وأنفعُ من التصميم على صفحةٍ بيضاء."
+                    en="This is the project that taught me the commercial half of design. A brand file is an opinion about how something should look. A live store is where that opinion meets a thumb, a slow connection and a customer deciding in four seconds. Working inside someone else's identity, respecting it and then extending it exactly where it ran out, in Arabic, turned out to be harder and more useful than designing from a blank page."
+                    ar="هذا المشروع هو الذي علّمني النصف التجاري من التصميم. ملف الهوية رأي في كيف ينبغي أن يبدو شيء. أما المتجر الحيّ فهو حيث يلتقي ذلك الرأي بإبهام، واتصال بطيء، وعميل يقرّر في أربع ثوانٍ. والعمل داخل هوية شخص آخر، باحترامها ثم تمديدها في الموضع الذي نفدت فيه بالضبط، بالعربية، تبيّن أنه أصعب وأنفع من التصميم على صفحة بيضاء."
                   />
                 </p>
               </>
@@ -282,8 +282,8 @@ export default function VeghnarTonvairPage() {
         nextProject={{
           label: (
             <T
-              en="Pharmacology — a bilingual clinical-nutrition brand site →"
-              ar="Pharmacology — موقع علامة تغذيةٍ سريرية ثنائي اللغة →"
+              en="Pharmacology: a bilingual clinical-nutrition site →"
+              ar="Pharmacology: موقع تغذية سريرية ثنائي اللغة →"
             />
           ),
           href: "/projects/pharmacology",
