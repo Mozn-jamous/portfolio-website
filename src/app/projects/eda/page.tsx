@@ -14,10 +14,10 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "Designer and QA tester on a multi-tenant clinics platform — three Flutter apps over a NestJS backend, built with a collaborator. Working from the project's requirements, I designed the screens across the apps and tested the system, including the separation between clinics.";
+  "Designer and QA engineer on a multi-tenant clinics platform: three Flutter apps over a NestJS backend, built with a collaborator. I designed the screens across the apps and ran the testing, including whether the separation between clinics actually held.";
 
 export const metadata: Metadata = {
-  title: "Eda — multi-tenant clinics platform (design & QA) — Mozn Jamous",
+  title: "Eda — a multi-tenant clinics platform — Mozn Jamous",
   description: DESCRIPTION,
   openGraph: {
     title: "Eda — three apps, one isolated tenant per clinic",
@@ -37,7 +37,7 @@ export default function EdaPage() {
     <>
       <StructuredData
         data={caseStudyStructuredData({
-          name: "Eda — multi-tenant clinics platform",
+          name: "Eda — a multi-tenant clinics platform",
           description: DESCRIPTION,
           path: "/projects/eda",
           year: "2026",
@@ -45,22 +45,22 @@ export default function EdaPage() {
       />
       <CaseStudyLayout
         meta={{
-          eyebrow: <T en="Healthcare · Multi-tenant · Design & QA" ar="رعاية صحية · متعدّد المستأجرين · تصميم وضمان جودة" />,
+          eyebrow: <T en="Healthcare · Multi-tenant · Design and QA" ar="رعاية صحية · متعدّد المستأجرين · تصميم واختبار" />,
           status: <T en="Team build" ar="بناء جماعي" />,
           title: (
             <T
-              en="Eda — three apps, one isolated tenant per clinic."
-              ar="Eda — ثلاثة تطبيقات، ومستأجِرٌ معزول لكل عيادة."
+              en="Eda: three apps, and one isolated tenant per clinic."
+              ar="Eda: ثلاثة تطبيقات، ومستأجِر معزول لكل عيادة."
             />
           ),
           lede: (
             <T
-              en="A multi-tenant clinics platform, built with a collaborator (@xvtu2003): three Flutter apps over a NestJS/TypeScript backend. The backend and apps were built by my collaborator; my two roles were design and testing — working from the project's requirements, I designed the screens across the apps and I was the tester who verified the system, including the separation between clinics."
-              ar="منصّة عياداتٍ متعدّدة المستأجرين، بُنيت مع متعاون (@xvtu2003): ثلاثة تطبيقات Flutter فوق خادم NestJS/TypeScript. بنى المتعاون الخادم والتطبيقات؛ وكان دوراي التصميم والاختبار — انطلاقاً من متطلبات المشروع، صمّمتُ الشاشات عبر التطبيقات، وكنتُ المختبِرة التي تحقّقت من النظام، بما في ذلك الفصل بين العيادات."
+              en="A multi-tenant clinics platform built with a collaborator (@xvtu2003): three Flutter apps over a NestJS and TypeScript backend. He wrote the backend and the apps. My two jobs were design and testing. Working from the project requirements, I designed the screens across all three apps, and I was the person who verified the system, including whether one clinic could reach another's data."
+              ar="منصّة عيادات متعدّدة المستأجرين بُنيت مع متعاون (@xvtu2003): ثلاثة تطبيقات Flutter فوق خادم NestJS وTypeScript. هو كتب الخادم والتطبيقات. ومهمّتاي كانتا التصميم والاختبار. انطلاقاً من متطلبات المشروع صمّمتُ الشاشات عبر التطبيقات الثلاثة، وكنتُ من تحقّق من النظام، ومنه ما إذا كانت عيادة تستطيع الوصول إلى بيانات أخرى."
             />
           ),
           year: "2026",
-          role: <T en="Designer + QA tester" ar="مصمّمة + مختبِرة جودة" />,
+          role: <T en="Designer + QA engineer" ar="مصمّمة + مهندسة اختبار" />,
           stack: [
             "Flutter",
             "NestJS",
@@ -71,10 +71,10 @@ export default function EdaPage() {
           ],
         }}
         metrics={[
-          { value: "3", label: <T en="Flutter apps — patient + clinic admin" ar="تطبيقات Flutter — مريض + إدارة عيادة" /> },
-          { value: <T en="Multi-tenant" ar="متعدّد المستأجرين" />, label: <T en="Each clinic isolated as its own tenant" ar="كل عيادة معزولة كمستأجِرٍ خاص" /> },
+          { value: "3", label: <T en="Flutter apps, from patient to clinic admin" ar="تطبيقات Flutter، من المريض إلى إدارة العيادة" /> },
+          { value: <T en="Multi-tenant" ar="متعدّد المستأجرين" />, label: <T en="Every clinic isolated as its own tenant" ar="كل عيادة معزولة كمستأجِر خاص بها" /> },
           { value: "NestJS", label: <T en="One TypeScript backend behind the apps" ar="خادم TypeScript واحد خلف التطبيقات" /> },
-          { value: <T en="Tested" ar="مُختبَر" />, label: <T en="Verified, including clinic separation" ar="تمّ التحقّق، بما في ذلك فصل العيادات" /> },
+          { value: <T en="Tested" ar="مُختبَر" />, label: <T en="Verified, the separation between clinics included" ar="تحقّقتُ منه، ومنه الفصل بين العيادات" /> },
         ]}
         sections={[
           {
@@ -84,15 +84,15 @@ export default function EdaPage() {
               <>
                 <Lead>
                   <T
-                    en="Eda is a platform that lets many clinics run on one system while each stays walled off from the others — three Flutter apps over a shared NestJS backend. I built it with a collaborator (@xvtu2003), who owned the backend and the apps. My two responsibilities were the design and the testing."
-                    ar="Eda منصّةٌ تتيح لعياداتٍ كثيرة العمل على نظامٍ واحد مع بقاء كلٍّ منها معزولةً عن الأخريات — ثلاثة تطبيقات Flutter فوق خادم NestJS مشترك. بنيتها مع متعاون (@xvtu2003) تولّى الخادم والتطبيقات. وكانت مسؤوليّتاي التصميم والاختبار."
+                    en="Eda lets many clinics run on one system while each stays walled off from the rest: three Flutter apps over a shared NestJS backend. I worked on it with a collaborator (@xvtu2003) who owned the backend and the apps, and my two responsibilities were the design and the testing."
+                    ar="Eda تتيح لعيادات كثيرة أن تعمل على نظام واحد مع بقاء كل واحدة معزولة عن الباقي: ثلاثة تطبيقات Flutter فوق خادم NestJS مشترك. عملتُ عليها مع متعاون (@xvtu2003) تولّى الخادم والتطبيقات، ومسؤوليّتاي كانتا التصميم والاختبار."
                   />
                 </Lead>
                 <FactGrid
                   items={[
-                    { label: <T en="My role" ar="دوري" />, value: <T en="Designer + QA tester" ar="مصمّمة + مختبِرة جودة" /> },
+                    { label: <T en="My role" ar="دوري" />, value: <T en="Designed the screens, ran the testing" ar="صمّمتُ الشاشات، وتوليتُ الاختبار" /> },
                     { label: <T en="Team" ar="الفريق" />, value: <T en="Built with @xvtu2003" ar="بُني مع @xvtu2003" /> },
-                    { label: <T en="Domain" ar="المجال" />, value: <T en="Healthcare · clinics" ar="رعاية صحية · عيادات" /> },
+                    { label: <T en="Domain" ar="المجال" />, value: <T en="Healthcare, clinic operations" ar="رعاية صحية، وعمليات العيادات" /> },
                     { label: <T en="Apps" ar="التطبيقات" />, value: <T en="3 Flutter apps" ar="3 تطبيقات Flutter" /> },
                     { label: <T en="Backend" ar="الخادم" />, value: "NestJS · TypeScript" },
                     { label: <T en="Architecture" ar="البنية" />, value: <T en="Multi-tenant" ar="متعدّد المستأجرين" /> },
@@ -103,13 +103,13 @@ export default function EdaPage() {
           },
           {
             kicker: <T en="The problem" ar="المشكلة" />,
-            heading: <T en="Many clinics, one system, zero leakage." ar="عيادات كثيرة، نظامٌ واحد، صفر تسرّب." />,
+            heading: <T en="Many clinics on one system, with nothing leaking." ar="عيادات كثيرة على نظام واحد، ولا شيء يتسرّب." />,
             body: (
               <>
                 <p>
                   <T
-                    en="The point of a multi-tenant platform is leverage: build once, serve every clinic. The risk is the flip side of that same coin — everyone shares the same software, so the boundary between one clinic's patients and another's has to be absolute. In healthcare, a leak across that line isn't a bug, it's a breach — which is exactly why it mattered that someone tested for it specifically."
-                    ar="جوهر المنصّة متعدّدة المستأجرين هو الرافعة: ابنِ مرّةً واحدة، واخدم كل عيادة. والخطر هو الوجه الآخر للعملة ذاتها — الجميع يتشارك البرمجية نفسها، فالحدّ بين مرضى عيادةٍ ومرضى أخرى يجب أن يكون مطلقاً. في الرعاية الصحية، التسرّب عبر هذا الخطّ ليس خللاً، بل خرقاً — وهذا بالضبط سبب أهمّية أن يختبره أحدٌ تحديداً."
+                    en="The point of a multi-tenant platform is leverage: build it once and serve every clinic. The risk sits on the other side of the same coin. Everyone shares the same software, so the boundary between one clinic's patients and another's has to be absolute. In healthcare, a leak across that line is a breach rather than a bug, and that is why somebody had to test for it deliberately."
+                    ar="جوهر المنصّة متعدّدة المستأجرين هو الرافعة: ابنِها مرة واحدة واخدم كل عيادة. والخطر يقف على الوجه الآخر للعملة نفسها. الجميع يتشارك البرمجية ذاتها، فالحدّ بين مرضى عيادة ومرضى أخرى يجب أن يكون مطلقاً. وفي الرعاية الصحية التسرّب عبر هذا الخطّ خرقٌ لا خلل، ولهذا كان على أحدٍ أن يختبره عن قصد."
                   />
                 </p>
               </>
@@ -122,21 +122,21 @@ export default function EdaPage() {
               <>
                 <p>
                   <T
-                    en="The platform splits into separate apps for separate users rather than overloading one app with modes. Working from the project's requirements, I designed the screens across the apps — keeping them feeling like one product, with shared patterns and language, while each stayed focused on its own job."
-                    ar="تنقسم المنصّة إلى تطبيقاتٍ منفصلة لمستخدمين منفصلين بدل إثقال تطبيقٍ واحد بأوضاعٍ متعدّدة. انطلاقاً من متطلبات المشروع، صمّمتُ الشاشات عبر التطبيقات — مع الحفاظ على إحساسٍ بأنها منتجٌ واحد، بأنماطٍ ولغةٍ مشتركة، مع بقاء كلٍّ مركّزاً على وظيفته."
+                    en="The platform splits into separate apps for separate users instead of loading one app with modes. Working from the project requirements, I designed the screens across all of them, keeping shared patterns and shared language so they still feel like one product while each stays focused on its own job."
+                    ar="تنقسم المنصّة إلى تطبيقات منفصلة لمستخدمين منفصلين بدل أن يُثقَل تطبيق واحد بأوضاع. انطلاقاً من متطلبات المشروع صمّمتُ الشاشات عبرها كلها، محافظةً على أنماط ولغة مشتركة كي تبقى منتجاً واحداً في الإحساس، مع بقاء كل واحد مركّزاً على وظيفته."
                   />
                 </p>
                 <FactGrid
                   items={[
                     { label: <T en="Patient app" ar="تطبيق المريض" />, value: <T en="The clinic's end users" ar="المستخدمون النهائيون للعيادة" /> },
                     { label: <T en="Clinic admin" ar="إدارة العيادة" />, value: <T en="Day-to-day operations" ar="العمليات اليومية" /> },
-                    { label: <T en="Admin (2nd)" ar="مشرف (ثانٍ)" />, value: <T en="Platform / oversight" ar="المنصّة / الإشراف" /> },
-                    { label: <T en="Shared" ar="مشترك" />, value: <T en="One design language" ar="لغة تصميمٍ واحدة" /> },
+                    { label: <T en="Second admin" ar="مشرف ثانٍ" />, value: <T en="Platform-level oversight" ar="إشراف على مستوى المنصّة" /> },
+                    { label: <T en="Shared" ar="مشترك" />, value: <T en="One design language across all three" ar="لغة تصميم واحدة عبر الثلاثة" /> },
                   ]}
                 />
                 <Figure
                   label="App screens"
-                  caption={<T en="Patient + clinic-admin screens — export to add" ar="شاشات المريض وإدارة العيادة — يُضاف التصدير لاحقاً" />}
+                  caption={<T en="Patient and clinic-admin screens. Export still to add." ar="شاشات المريض وإدارة العيادة. التصدير لم يُضَف بعد." />}
                 />
               </>
             ),
@@ -145,28 +145,28 @@ export default function EdaPage() {
             kicker: <T en="Testing" ar="الاختبار" />,
             heading: (
               <T
-                en="My job: make sure it all worked — and stayed separate."
-                ar="مهمّتي: التأكّد أن كل شيء يعمل — ويبقى منفصلاً."
+                en="My job was to make sure it worked, and stayed separate."
+                ar="كانت مهمّتي أن أتأكّد أنه يعمل، ويبقى منفصلاً."
               />
             ),
             body: (
               <>
                 <Lead>
                   <T
-                    en="Alongside the design, I was the tester. With a multi-tenant system the everyday flows matter, but so does one thing most apps never have to worry about: that the wall between tenants holds."
-                    ar="إلى جانب التصميم، كنتُ المختبِرة. في نظامٍ متعدّد المستأجرين تهمّ التدفّقات اليومية، لكن يهمّ أيضاً أمرٌ لا تقلق منه معظم التطبيقات: أن يصمد الجدار بين المستأجرين."
+                    en="Alongside the design, I did the testing. In a multi-tenant system the everyday flows matter, and so does one thing most apps never have to think about: whether the wall between tenants holds."
+                    ar="إلى جانب التصميم توليتُ الاختبار. في نظام متعدّد المستأجرين تهمّ التدفّقات اليومية، ويهمّ أيضاً أمر لا تفكّر فيه معظم التطبيقات: هل يصمد الجدار بين المستأجرين."
                   />
                 </Lead>
                 <p>
                   <T
-                    en="I worked through the platform across the three apps, checking that the normal flows behaved as specified — and verifying the part that mattered most in this domain: that data, actions, and views stayed scoped to the right clinic, and that nothing from one tenant surfaced in another. Where behavior didn't match the requirements, I flagged it to be fixed."
-                    ar="عملتُ خلال المنصّة عبر التطبيقات الثلاثة، أتحقّق من أن التدفّقات الطبيعية تتصرّف كما هو محدّد — وأتأكّد من الجزء الأهمّ في هذا المجال: أن تبقى البيانات والإجراءات والعروض محصورةً في العيادة الصحيحة، وألّا يظهر شيءٌ من مستأجِرٍ في آخر. وحيثما لم يطابق السلوك المتطلبات، كنتُ أُبلّغ عنه ليُصلَح."
+                    en="I worked through the platform across all three apps, checking the normal flows against the spec and then verifying the part that matters most here: that data, actions and views stayed scoped to the right clinic, and that nothing from one tenant showed up in another. Wherever the behaviour did not match the requirements, I wrote it up to be fixed."
+                    ar="عملتُ خلال المنصّة عبر التطبيقات الثلاثة، أراجع التدفّقات الطبيعية مقابل المواصفة ثم أتحقّق من الجزء الأهمّ هنا: أن تبقى البيانات والإجراءات والعروض محصورة في العيادة الصحيحة، وألّا يظهر شيء من مستأجِر في آخر. وحيثما لم يطابق السلوك المتطلبات كتبتُه ليُصلَح."
                   />
                 </p>
                 <Callout kicker={<T en="Why this is the testing that counts" ar="لماذا هذا هو الاختبار الذي يهمّ" />}>
                   <T
-                    en="In a single-tenant app a missed bug annoys a user. In a multi-tenant healthcare app, a missed isolation bug exposes one clinic's patients to another. That asymmetry is why testing the boundary, not just the features, was the priority."
-                    ar="في تطبيقٍ بمستأجِرٍ واحد، خللٌ فائت يُزعج مستخدماً. وفي تطبيق رعايةٍ صحية متعدّد المستأجرين، خللُ عزلٍ فائت يكشف مرضى عيادةٍ لأخرى. هذا التفاوت هو سبب أولوية اختبار الحدّ، لا الميزات فقط."
+                    en="In a single-tenant app a missed bug annoys a user. In a multi-tenant healthcare app, a missed isolation bug exposes one clinic's patients to another. That asymmetry is why the boundary got tested as carefully as the features did."
+                    ar="في تطبيق بمستأجِر واحد، خلل فائت يُزعج مستخدماً. وفي تطبيق رعاية صحية متعدّد المستأجرين، خلل عزل فائت يكشف مرضى عيادة لأخرى. هذا التفاوت هو سبب اختبار الحدّ بالعناية نفسها التي نالتها الميزات."
                   />
                 </Callout>
               </>
@@ -179,8 +179,8 @@ export default function EdaPage() {
               <>
                 <p>
                   <T
-                    en="Eda is where designing across multiple surfaces — and testing a system whose hardest requirement is invisible — became concrete for me. The habit it left: find the one guarantee a product can't break, and make sure someone has actually tested that it doesn't."
-                    ar="في Eda صار التصميمُ عبر أسطحٍ متعدّدة — واختبارُ نظامٍ أصعبُ متطلّباته غير مرئي — أمراً ملموساً لي. والعادة التي تركها: ابحثي عن الضمان الوحيد الذي لا يمكن للمنتج كسره، وتأكّدي أن أحداً اختبر فعلاً أنه لا يُكسَر."
+                    en="Eda is where designing across several surfaces, and testing a system whose hardest requirement is invisible, became concrete for me. The habit it left me with is to find the one guarantee a product cannot break, then make sure somebody has actually tested that it doesn't."
+                    ar="في Eda صار التصميم عبر عدّة أسطح، واختبار نظام أصعبُ متطلّباته غير مرئي، أمراً ملموساً لي. والعادة التي تركها لي أن أجد الضمان الوحيد الذي لا يمكن للمنتج كسره، ثم أتأكّد أن أحداً اختبر فعلاً أنه لا يُكسَر."
                   />
                 </p>
               </>
@@ -190,8 +190,8 @@ export default function EdaPage() {
         nextProject={{
           label: (
             <T
-              en="CareConnect — three apps on one provable backend →"
-              ar="CareConnect — ثلاثة تطبيقات على خادمٍ واحد قابل للإثبات →"
+              en="CareConnect: three apps on a backend you can check →"
+              ar="CareConnect: ثلاثة تطبيقات على خادم يمكنك التحقّق منه →"
             />
           ),
           href: "/projects/careconnect",
