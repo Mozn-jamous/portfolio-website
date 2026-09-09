@@ -43,24 +43,24 @@ const clashDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Mozn Jamous — End-to-End Product Builder",
+  title: "Mozn Jamous — Software Engineer",
   description:
-    "End-to-end product builder in Damascus. I design products, build Flutter apps, integrate AI, and engineer the Odoo/ERP systems behind them — from idea to shipped reality. Arabic-first by default.",
+    "Software engineer in Damascus. Mobile apps in Flutter, web front-ends in Vue and plain JavaScript, Python services with AI wired in, and the Odoo ERP systems companies run on.",
   // Origin only — Next adds the base path itself when resolving the
   // file-based opengraph-image/icon routes.
   metadataBase: new URL(SITE_ORIGIN),
   openGraph: {
-    title: "Mozn Jamous — End-to-End Product Builder",
+    title: "Mozn Jamous — Software Engineer",
     description:
-      "Designs products, builds Flutter apps, integrates AI, and engineers the systems behind them — from idea to shipped reality. Based in Damascus, Arabic-first by default.",
+      "Software engineer in Damascus. Mobile, web, backend, AI features, and the business systems underneath them. Arabic-first by default.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mozn Jamous — End-to-End Product Builder",
+    title: "Mozn Jamous — Software Engineer",
     description:
-      "Designs products, builds Flutter apps, integrates AI, and engineers the systems behind them — from idea to shipped reality.",
+      "Software engineer in Damascus. Mobile, web, backend, AI features, and the business systems underneath them.",
   },
 };
 

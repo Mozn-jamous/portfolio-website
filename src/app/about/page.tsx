@@ -4,7 +4,7 @@ import { heroContent } from "@/lib/scenes-content";
 import { SITE_URL, siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "Mozn Jamous — an end-to-end product builder: research and UX through Flutter, AI integration, and the business systems products run on. Journey, strengths, and working philosophy.";
+  "Mozn Jamous, a software engineer working across mobile, web, backend, AI features and ERP systems. Background, strengths, and how she works.";
 
 export const metadata: Metadata = {
   title: "About — Mozn Jamous",

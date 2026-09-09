@@ -7,7 +7,7 @@ import { T } from "@/components/i18n/T";
 export const metadata: Metadata = {
   title: "CV — Mozn Jamous",
   description:
-    "Mozn Jamous — End-to-End Product Builder based in Damascus. Designs products, builds Flutter apps, and engineers the Odoo/ERP systems behind them. Curriculum vitae.",
+    "Mozn Jamous, software engineer in Damascus. Mobile, web, backend, AI features, and Odoo ERP systems. Curriculum vitae.",
 };
 
 type Role = {
@@ -267,8 +267,8 @@ export default function CVPage() {
             </h1>
             <p className="mt-3 max-w-2xl text-balance text-lg leading-relaxed text-[var(--ink-muted)]">
               <T
-                en="End-to-End Product Builder — I design products, build the mobile apps, and engineer the systems behind them. Arabic-first by default, from research and Figma through to production."
-                ar="صناعة منتجاتٍ من الفكرة إلى الإطلاق — أصمّم المنتجات، وأبني تطبيقات الجوال، وأهندس الأنظمة التي تقف خلفها. العربية أولاً بشكلٍ افتراضي، من البحث وFigma وصولاً إلى الإنتاج."
+                en="Software engineer. I build mobile apps, web front-ends, Python services with AI in them, and the ERP systems companies run their operations on. Arabic-first by default."
+                ar="مهندسة برمجيات. أبني تطبيقات الجوال، وواجهات الويب، وخدمات Python فيها ذكاء اصطناعي، وأنظمة ERP التي تدير بها الشركات عملياتها. العربية أولاً بشكل افتراضي."
               />
             </p>
             <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs sm:grid-cols-4">
