@@ -49,22 +49,22 @@ export default function SmartExpensePage() {
       />
       <CaseStudyLayout
       meta={{
-        eyebrow: <T en="UX-led design · Odoo 19 · Open source" ar="تصميمٌ بقيادة التجربة · Odoo 19 · مفتوح المصدر" />,
-        status: <T en="Live · LGPL-3.0" ar="حيّ · LGPL-3.0" />,
+        eyebrow: <T en="Odoo 19 · Python · Open source" ar="Odoo 19 · Python · مفتوح المصدر" />,
+        status: <T en="Live, LGPL-3.0" ar="حيّ، LGPL-3.0" />,
         title: (
           <T
-            en="Smart Expense Manager — approvals at the speed of one click."
-            ar="Smart Expense Manager — موافقاتٌ بسرعة نقرةٍ واحدة."
+            en="Smart Expense Manager: an approval that takes one click."
+            ar="Smart Expense Manager: موافقة بنقرة واحدة."
           />
         ),
         lede: (
           <T
-            en="An Odoo 19 custom module that replaces paper-based expense flows. Token-secured email approvals route via the hr.employee hierarchy — no login required. Auto-generated journal entries on finance sign-off; monthly PDF reports emailed by cron."
-            ar="وحدة Odoo 19 مخصّصة تحلّ محلّ تدفّقات النفقات الورقية. موافقاتٌ بريديّة مؤمّنة برمز تُوجَّه عبر تسلسل hr.employee — دون الحاجة لتسجيل الدخول. قيودٌ محاسبية مُولّدة تلقائياً عند اعتماد المالية؛ وتقارير PDF شهرية تُرسَل بالبريد عبر cron."
+            en="A custom Odoo 19 module that replaces the paper expense loop. Approval emails carry a single-use token and route through the hr.employee hierarchy, so nobody has to log in. Finance sign-off generates the journal entry, and a cron job emails a monthly PDF report."
+            ar="وحدة Odoo 19 مخصّصة تحلّ محلّ حلقة النفقات الورقية. رسائل الموافقة تحمل رمزاً يُستخدَم مرة واحدة وتُوجَّه عبر تسلسل hr.employee، فلا يحتاج أحد إلى تسجيل الدخول. واعتماد المالية يولّد القيد المحاسبي، ومهمّة cron ترسل تقرير PDF شهرياً."
           />
         ),
-        year: <T en="2026 — Present" ar="2026 — حتى الآن" />,
-        role: <T en="UX-led design + Sole developer" ar="تصميمٌ بقيادة التجربة + مطوّرة وحيدة" />,
+        year: <T en="2026 to now" ar="2026 حتى الآن" />,
+        role: <T en="Designed and wrote it on my own" ar="صمّمتها وكتبتها وحدي" />,
         stack: [
           "Python",
           "Odoo 19 ORM",
@@ -84,9 +84,9 @@ export default function SmartExpensePage() {
         ],
       }}
       metrics={[
-        { value: <T en="Days → Secs" ar="أيام ← ثوانٍ" />, label: <T en="Approval time — one-click flow, no login required" ar="زمن الموافقة — تدفّق بنقرةٍ واحدة، دون تسجيل دخول" /> },
+        { value: <T en="Days to seconds" ar="من أيام إلى ثوانٍ" />, label: <T en="Approval time, on a one-click flow with no login" ar="زمن الموافقة، على تدفّق بنقرة واحدة بلا تسجيل دخول" /> },
         { value: <T en="No login" ar="بلا تسجيل دخول" />, label: <T en="Managers act from email; the system gets used" ar="المديرون يتصرّفون من البريد؛ فيُستخدَم النظام" /> },
-        { value: <T en="Audit-grade" ar="بمستوى التدقيق" />, label: <T en="Access enforced in record rules, not hidden menus" ar="الوصول مفروضٌ في قواعد السجلات، لا في قوائم مخفية" /> },
+        { value: <T en="Audit-grade" ar="بمستوى التدقيق" />, label: <T en="Access enforced in record rules rather than hidden menus" ar="الوصول مفروض في قواعد السجلات بدل قوائم مخفية" /> },
         { value: <T en="Open source" ar="مفتوح المصدر" />, label: <T en="Live on GitHub under LGPL-3.0" ar="حيّ على GitHub تحت LGPL-3.0" /> },
       ]}
       sections={[
@@ -97,18 +97,18 @@ export default function SmartExpensePage() {
             <>
               <Lead>
                 <T
-                  en="Employee submits a receipt from mobile. Manager approves with one click from email. Finance posts with one click from email. The journal entry is generated automatically and a monthly department digest is mailed by cron — no logins along the way."
-                  ar="الموظّف يقدّم إيصالاً من الجوال. المدير يوافق بنقرةٍ واحدة من البريد. المالية تُرحّل بنقرةٍ واحدة من البريد. يُولَّد القيد المحاسبي تلقائياً ويُرسَل ملخّصٌ شهري للقسم عبر cron — دون أي تسجيل دخولٍ في الطريق."
+                  en="An employee submits a receipt from their phone. A manager approves with one click from email. Finance posts with one click from email. The journal entry is generated automatically, and a cron job mails a monthly department digest. Nobody logs in anywhere along the way."
+                  ar="يقدّم الموظّف إيصالاً من جوّاله. ويوافق المدير بنقرة واحدة من البريد. وتُرحّل المالية بنقرة واحدة من البريد. ويُولَّد القيد المحاسبي تلقائياً، وترسل مهمّة cron ملخّصاً شهرياً للقسم. ولا يسجّل أحد دخوله في أي موضع من الطريق."
                 />
               </Lead>
               <FactGrid
                 items={[
-                  { label: <T en="Role" ar="الدور" />, value: <T en="UX + sole developer" ar="تجربة المستخدم + مطوّرة وحيدة" /> },
-                  { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="2026 — present" ar="2026 — حتى الآن" /> },
+                  { label: <T en="Role" ar="الدور" />, value: <T en="Designed it and wrote all of it" ar="صمّمتها وكتبتها كلها" /> },
+                  { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="2026 to now" ar="2026 حتى الآن" /> },
                   { label: <T en="Module type" ar="نوع الوحدة" />, value: <T en="Odoo 19 custom" ar="Odoo 19 مخصّصة" /> },
-                  { label: <T en="Users" ar="المستخدمون" />, value: <T en="Employees · managers · finance" ar="موظفون · مديرون · مالية" /> },
+                  { label: <T en="Users" ar="المستخدمون" />, value: <T en="Employees, managers, finance" ar="موظفون، ومديرون، ومالية" /> },
                   { label: <T en="Auth pattern" ar="نمط المصادقة" />, value: <T en="Token-secured URL" ar="رابطٌ مؤمّن برمز" /> },
-                  { label: <T en="License" ar="الترخيص" />, value: <T en="LGPL-3.0 · open source" ar="LGPL-3.0 · مفتوح المصدر" /> },
+                  { label: <T en="License" ar="الترخيص" />, value: <T en="LGPL-3.0, open source" ar="LGPL-3.0، مفتوح المصدر" /> },
                 ]}
               />
             </>
@@ -126,8 +126,8 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en="In a typical small business in Damascus, an employee buys something for work, keeps the receipt in a desk drawer for two weeks, hands it to a manager who signs a paper form, walks it to finance who types it into a ledger — and at every stage someone is the bottleneck. Receipts get lost. Numbers get re-typed. The whole loop is invisible to the company until month-end."
-                  ar="في شركةٍ صغيرة نموذجية بدمشق، يشتري موظّفٌ شيئاً للعمل، ويحتفظ بالإيصال في درج مكتبٍ أسبوعين، ثم يسلّمه لمديرٍ يوقّع نموذجاً ورقياً، ويمشي به إلى المالية التي تكتبه في دفترٍ — وفي كل مرحلةٍ يكون أحدٌ هو عنق الزجاجة. تضيع الإيصالات. تُعاد كتابة الأرقام. وتبقى الحلقة كلّها غير مرئيةٍ للشركة حتى نهاية الشهر."
+                  en="In a typical small business in Damascus, an employee buys something for work, keeps the receipt in a desk drawer for two weeks, hands it to a manager who signs a paper form, then walks it to finance who types it into a ledger. At every stage somebody is the bottleneck. Receipts get lost. Numbers get re-typed. And the whole loop is invisible to the company until month-end."
+                  ar="في شركة صغيرة نموذجية بدمشق، يشتري موظّف شيئاً للعمل، ويحتفظ بالإيصال في درج مكتب أسبوعين، ثم يسلّمه لمدير يوقّع نموذجاً ورقياً، ثم يمشي به إلى المالية التي تكتبه في دفتر. وفي كل مرحلة يكون أحدهم عنق الزجاجة. تضيع الإيصالات. وتُعاد كتابة الأرقام. وتبقى الحلقة كلها غير مرئية للشركة حتى نهاية الشهر."
                 />
               </p>
               <p>
@@ -146,19 +146,19 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en="The flow crosses three roles, and the one who decides whether the system lives or dies is the manager who never logs in. Each role became a persona with a one-line story and the friction that kept the old paper loop alive."
-                  ar="يعبر التدفّق ثلاثة أدوار، ومن يقرّر حياة النظام أو موته هو المدير الذي لا يسجّل الدخول أبداً. صار كلّ دورٍ persona بقصةٍ من سطرٍ والاحتكاك الذي أبقى الحلقة الورقية القديمة حيّة."
+                  en="The flow crosses three roles, and the person who decides whether the system lives or dies is the manager who never logs in. Each role became a persona with a short story and the friction that kept the old paper loop alive."
+                  ar="يعبر التدفّق ثلاثة أدوار، ومن يقرّر حياة النظام أو موته هو المدير الذي لا يسجّل الدخول أبداً. وصار كل دور persona بقصة قصيرة والاحتكاك الذي أبقى الحلقة الورقية القديمة حيّة."
                 />
               </p>
 
               <Persona
                 initial={<T en="O" ar="ع" />}
-                name={<T en="Omar — employee" ar="عمر — موظّف" />}
+                name={<T en="Omar, an employee" ar="عمر، موظّف" />}
                 role={<T en="Submits the expense" ar="يقدّم النفقة" />}
                 story={
                   <T
-                    en="I just want to snap the receipt and get reimbursed — not babysit a paper form through the building."
-                    ar="أريد فقط أن ألتقط صورة الإيصال وأُعوَّض — لا أن أرافق نموذجاً ورقياً عبر المبنى."
+                    en="I want to photograph the receipt and get reimbursed, not walk a paper form around the building."
+                    ar="أريد أن أصوّر الإيصال وأُعوَّض، لا أن أتنقّل بنموذج ورقي في المبنى."
                   />
                 }
                 goals={
@@ -169,20 +169,20 @@ export default function SmartExpensePage() {
                 }
                 frustrations={
                   <T
-                    en="Lost receipts; reimbursements that take weeks because a form sat in a drawer."
-                    ar="إيصالاتٌ ضائعة؛ وتعويضاتٌ تستغرق أسابيع لأن نموذجاً بقي في درج."
+                    en="Lost receipts, and reimbursements that take weeks because a form sat in a drawer."
+                    ar="إيصالات ضائعة، وتعويضات تستغرق أسابيع لأن نموذجاً بقي في درج."
                   />
                 }
               />
 
               <Persona
                 initial={<T en="N" ar="ن" />}
-                name={<T en="Nour — line manager" ar="نور — مديرة مباشِرة" />}
-                role={<T en="Approves · the make-or-break user" ar="توافق · المستخدمة الحاسمة" />}
+                name={<T en="Nour, a line manager" ar="نور، مديرة مباشِرة" />}
+                role={<T en="Approves, and makes or breaks the system" ar="توافق، وعليها يقوم النظام أو يسقط" />}
                 story={
                   <T
-                    en="I want to approve in one tap from my inbox — I'm not going to log into yet another system to click yes."
-                    ar="أريد أن أوافق بنقرةٍ واحدة من بريدي — لن أسجّل الدخول إلى نظامٍ آخر فقط لأنقر «نعم»."
+                    en="I want to approve in one tap from my inbox. I am not logging into another system just to click yes."
+                    ar="أريد أن أوافق بنقرة واحدة من بريدي. ولن أسجّل الدخول إلى نظام آخر فقط لأنقر «نعم»."
                   />
                 }
                 goals={
@@ -193,26 +193,26 @@ export default function SmartExpensePage() {
                 }
                 frustrations={
                   <T
-                    en="Being asked to log into Odoo for a 5-second decision — so approvals stall for days."
-                    ar="أن يُطلب منها تسجيل الدخول إلى Odoo لقرارٍ من 5 ثوانٍ — فتتعثّر الموافقات أياماً."
+                    en="Being asked to log into Odoo for a five-second decision, which is why approvals stall for days."
+                    ar="أن يُطلب منها تسجيل الدخول إلى Odoo لقرار من خمس ثوانٍ، ولهذا تتعثّر الموافقات أياماً."
                   />
                 }
               />
 
               <Persona
                 initial={<T en="F" ar="ف" />}
-                name={<T en="Farah — finance" ar="فرح — المالية" />}
+                name={<T en="Farah, in finance" ar="فرح، في المالية" />}
                 role={<T en="Posts to the ledger" ar="تُرحّل إلى دفتر الأستاذ" />}
                 story={
                   <T
-                    en="I want a clean ledger — only real, approved liabilities, never entries I have to reverse."
-                    ar="أريد دفتر أستاذٍ نظيفاً — التزاماتٌ حقيقية معتمدة فقط، لا قيوداً أُضطرّ لعكسها."
+                    en="I want a clean ledger with real approved liabilities in it, and nothing I have to reverse later."
+                    ar="أريد دفتر أستاذ نظيفاً فيه التزامات حقيقية معتمدة، ولا شيء أُضطرّ لعكسه لاحقاً."
                   />
                 }
                 goals={
                   <T
-                    en="Post with one click; trust that every entry is already approved."
-                    ar="الترحيل بنقرةٍ واحدة؛ والثقة بأن كلّ قيدٍ معتمدٌ أصلاً."
+                    en="Post with one click, and trust that every entry was already approved."
+                    ar="الترحيل بنقرة واحدة، والثقة بأن كل قيد كان معتمداً أصلاً."
                   />
                 }
                 frustrations={
@@ -225,8 +225,8 @@ export default function SmartExpensePage() {
 
               <Callout kicker={<T en="Problem statements" ar="بيانات المشكلة" />}>
                 <T
-                  en={<><strong>Nour</strong> needs to approve an expense without logging into Odoo, because every login is a chance to forget — and a manager who doesn&apos;t approve is the bottleneck the whole system fails on. <strong>Omar</strong> needs visibility into a fast, paperless submission, and <strong>Farah</strong> needs a ledger that only ever holds approved liabilities.</>}
-                  ar={<><strong>نور</strong> تحتاج أن توافق على نفقةٍ دون تسجيل الدخول إلى Odoo، لأن كلّ تسجيلٍ فرصةٌ للنسيان — ومديرٌ لا يوافق هو عنق الزجاجة الذي يفشل عليه النظام كلّه. و<strong>عمر</strong> يحتاج وضوحاً في تقديمٍ سريعٍ بلا ورق، و<strong>فرح</strong> تحتاج دفتر أستاذٍ لا يحمل إلا التزاماتٍ معتمدة.</>}
+                  en={<><strong>Nour</strong> has to be able to approve an expense without logging into Odoo, because every login is a chance to forget, and a manager who does not approve is the bottleneck the whole system fails on. <strong>Omar</strong> needs a fast paperless submission he can track, and <strong>Farah</strong> needs a ledger that only ever holds approved liabilities.</>}
+                  ar={<><strong>نور</strong> يجب أن تستطيع الموافقة على نفقة دون تسجيل الدخول إلى Odoo، لأن كل تسجيل فرصة للنسيان، ومديرٌ لا يوافق هو عنق الزجاجة الذي يفشل عليه النظام كله. و<strong>عمر</strong> يحتاج تقديماً سريعاً بلا ورق يستطيع تتبّعه، و<strong>فرح</strong> تحتاج دفتر أستاذ لا يحمل إلا التزامات معتمدة.</>}
                 />
               </Callout>
             </>
@@ -239,16 +239,16 @@ export default function SmartExpensePage() {
             <>
               <Lead>
                 <T
-                  en="A module that's technically complete but never used is a failure. The whole strategy was to remove every reason a manager might not approve — starting with the login."
-                  ar="وحدةٌ مكتملة تقنياً لكن لا تُستخدَم أبداً هي فشل. كانت الاستراتيجية كلّها إزالة كل سببٍ قد يجعل المدير لا يوافق — بدءاً من تسجيل الدخول."
+                  en="A module that is technically complete and never used has failed. So the whole strategy was to remove every reason a manager might not approve, starting with the login."
+                  ar="الوحدة المكتملة تقنياً التي لا تُستخدَم أبداً فاشلة. فكانت الاستراتيجية كلها إزالة كل سبب قد يجعل المدير لا يوافق، وأولها تسجيل الدخول."
                 />
               </Lead>
               <FactGrid
                 items={[
                   { label: <T en="Goal" ar="الهدف" />, value: <T en="Approvals that actually get done, fast" ar="موافقاتٌ تُنجَز فعلاً، وبسرعة" /> },
-                  { label: <T en="Hypothesis" ar="الفرضية" />, value: <T en="Email-as-UI removes the stall that kills adoption" ar="«البريد كواجهة» يزيل التعثّر الذي يقتل التبنّي" /> },
-                  { label: <T en="Priority" ar="الأولوية" />, value: <T en="Friction reduction over feature surface" ar="تقليل الاحتكاك قبل اتّساع الميزات" /> },
-                  { label: <T en="Tradeoff" ar="المفاضلة" />, value: <T en="Token-security burden for a zero-login flow" ar="عبء تأمين الرمز مقابل تدفّقٍ بلا تسجيل دخول" /> },
+                  { label: <T en="Hypothesis" ar="الفرضية" />, value: <T en="Putting the action in email removes the stall that kills adoption" ar="وضع الإجراء في البريد يزيل التعثّر الذي يقتل التبنّي" /> },
+                  { label: <T en="Priority" ar="الأولوية" />, value: <T en="Less friction ahead of more features" ar="احتكاك أقل قبل ميزات أكثر" /> },
+                  { label: <T en="Tradeoff" ar="المفاضلة" />, value: <T en="Carrying token security to get a login-free flow" ar="حمل عبء تأمين الرمز لنيل تدفّق بلا تسجيل دخول" /> },
                 ]}
               />
             </>
@@ -261,8 +261,8 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en={<>The module attaches a unique token to each expense request when it&apos;s sent to a manager. The approval email contains two links: <strong>Approve</strong> and <strong>Reject</strong>. Each link is a one-time URL bound to the token, the request ID, and the manager&apos;s hr.employee record. Clicking it triggers a state transition — no Odoo login required.</>}
-                  ar={<>تُرفق الوحدة رمزاً فريداً بكل طلب نفقةٍ عند إرساله إلى المدير. ويحوي بريد الموافقة رابطين: <strong>موافقة</strong> و<strong>رفض</strong>. كلّ رابطٍ عنوانٌ يُستخدَم مرّةً واحدة مرتبطٌ بالرمز، ومعرّف الطلب، وسجلّ hr.employee للمدير. والنقر عليه يُطلق انتقال حالة — دون الحاجة لتسجيل الدخول إلى Odoo.</>}
+                  en={<>The module attaches a unique token to an expense request when it goes out to a manager. The approval email carries two links, <strong>Approve</strong> and <strong>Reject</strong>, each a one-time URL bound to that token, the request ID and the manager&apos;s hr.employee record. Clicking one moves the request to its next state, with no Odoo login anywhere in it.</>}
+                  ar={<>ترفق الوحدة رمزاً فريداً بطلب النفقة عند إرساله إلى المدير. ويحمل بريد الموافقة رابطين، <strong>موافقة</strong> و<strong>رفض</strong>، كل واحد عنوان يُستخدَم مرة واحدة مرتبط بذلك الرمز ومعرّف الطلب وسجلّ hr.employee للمدير. والنقر على أحدهما ينقل الطلب إلى حالته التالية، دون أي تسجيل دخول إلى Odoo فيه.</>}
                 />
               </p>
 
@@ -270,14 +270,14 @@ export default function SmartExpensePage() {
 
               <Callout kicker={<T en="Design principle" ar="مبدأ التصميم" />}>
                 <T
-                  en="Friction is the enemy of compliance. Every login the user has to make is a chance to forget to approve — so the action lives where they already are: their inbox."
-                  ar="الاحتكاك عدوّ الالتزام. كلّ تسجيل دخولٍ يُجبَر عليه المستخدم فرصةٌ لنسيان الموافقة — لذا يعيش الإجراء حيث هم أصلاً: في بريدهم."
+                  en="Friction is the enemy of compliance. Every login you ask for is another chance to forget, so the action lives where the person already is: their inbox."
+                  ar="الاحتكاك عدوّ الالتزام. وكل تسجيل دخول تطلبه فرصة أخرى للنسيان، فيعيش الإجراء حيث يكون الشخص أصلاً: في بريده."
                 />
               </Callout>
 
               <Figure
                 label="Approval email"
-                caption={<T en="One-click Approve / Reject email — add screenshot" ar="بريد موافقة / رفض بنقرةٍ واحدة — تُضاف اللقطة" />}
+                caption={<T en="The one-click approve or reject email. Screenshot still to add." ar="بريد الموافقة أو الرفض بنقرة واحدة. اللقطة لم تُضَف بعد." />}
               />
             </>
           ),
@@ -292,8 +292,8 @@ export default function SmartExpensePage() {
                 title={<T en="Token-secured URLs over OAuth approval flows." ar="روابط مؤمّنة برمز بدل تدفّقات موافقة OAuth." />}
                 context={
                   <T
-                    en="The standard Odoo pattern sends a notification email with a link into the Odoo UI. Manager logs in, finds the record, clicks approve. Real-world result: approvals stall for days."
-                    ar="النمط القياسي في Odoo يرسل بريد إشعارٍ برابطٍ إلى واجهة Odoo. المدير يسجّل الدخول، ويجد السجلّ، وينقر موافقة. النتيجة في الواقع: تتعثّر الموافقات أياماً."
+                    en="The standard Odoo pattern emails a notification with a link into the Odoo UI. The manager logs in, finds the record, clicks approve. What actually happens is that approvals stall for days."
+                    ar="النمط القياسي في Odoo يرسل إشعاراً برابط إلى واجهة Odoo. يسجّل المدير الدخول، ويجد السجلّ، وينقر موافقة. وما يحدث فعلاً أن الموافقات تتعثّر أياماً."
                   />
                 }
                 decision={
@@ -304,8 +304,8 @@ export default function SmartExpensePage() {
                 }
                 consequences={
                   <T
-                    en="Approvals collapse from days to seconds, and every state transition logs the token used. Trade-off: emails must be sent over TLS-encrypted SMTP, since the token grants action rights."
-                    ar="تنهار الموافقات من أيامٍ إلى ثوانٍ، وكلّ انتقال حالةٍ يُسجّل الرمز المُستخدَم. المفاضلة: يجب إرسال الرسائل عبر SMTP مشفّر بـTLS، لأن الرمز يمنح حقوق التصرّف."
+                    en="Approvals drop from days to seconds, and every state transition records the token that was used. The cost is that mail has to go over TLS-encrypted SMTP, because the token itself grants the right to act."
+                    ar="تنزل الموافقات من أيام إلى ثوانٍ، وكل انتقال حالة يسجّل الرمز الذي استُخدم. والكلفة أن البريد يجب أن يمرّ عبر SMTP مشفّر بـTLS، لأن الرمز نفسه يمنح حقّ التصرّف."
                   />
                 }
               />
@@ -315,8 +315,8 @@ export default function SmartExpensePage() {
                 title={<T en="Journal entries on finance approval, not on submission." ar="القيود المحاسبية عند موافقة المالية، لا عند التقديم." />}
                 context={
                   <T
-                    en="An eager design auto-creates the journal entry the moment an employee submits. Simpler state machine, but the ledger fills with unapproved entries that have to be reversed."
-                    ar="تصميمٌ متعجّل يُنشئ القيد المحاسبي تلقائياً لحظة تقديم الموظّف. آلة حالاتٍ أبسط، لكن دفتر الأستاذ يمتلئ بقيودٍ غير معتمدة يلزم عكسها."
+                    en="An eager design creates the journal entry the moment an employee submits. That is a simpler state machine, and it fills the ledger with unapproved entries somebody then has to reverse."
+                    ar="التصميم المتعجّل يُنشئ القيد المحاسبي لحظة تقديم الموظّف. وهذه آلة حالات أبسط، وهي تملأ دفتر الأستاذ بقيود غير معتمدة على أحدهم أن يعكسها بعدها."
                   />
                 }
                 decision={
@@ -327,8 +327,8 @@ export default function SmartExpensePage() {
                 }
                 consequences={
                   <T
-                    en="The ledger stays clean — accountants only see entries that are real liabilities. Trade-off: an extra state, and the cron digest must know to skip pending requests."
-                    ar="يبقى دفتر الأستاذ نظيفاً — لا يرى المحاسبون إلا قيوداً تمثّل التزاماتٍ حقيقية. المفاضلة: حالةٌ إضافية، وعلى ملخّص cron أن يعرف تخطّي الطلبات المعلّقة."
+                    en="The ledger stays clean, and an accountant only ever sees entries that are real liabilities. The cost is one more state, plus the cron digest having to know to skip pending requests."
+                    ar="يبقى دفتر الأستاذ نظيفاً، ولا يرى المحاسب إلا قيوداً تمثّل التزامات حقيقية. والكلفة حالة إضافية، مع أن على ملخّص cron أن يعرف تخطّي الطلبات المعلّقة."
                   />
                 }
               />
@@ -338,20 +338,20 @@ export default function SmartExpensePage() {
                 title={<T en="RBAC at the record-rule layer, not the menu layer." ar="تحكّمٌ بالوصول في طبقة قواعد السجلات، لا طبقة القوائم." />}
                 context={
                   <T
-                    en="The easiest Odoo RBAC hides menus per group. But users can still construct URLs and reach records they shouldn't see."
-                    ar="أسهل تحكّمٍ بالوصول في Odoo يُخفي القوائم حسب المجموعة. لكن يظلّ بإمكان المستخدمين تركيب الروابط والوصول إلى سجلاتٍ لا ينبغي أن يروها."
+                    en="The easiest Odoo access control hides menus per group. A user can still construct a URL and reach records they were never meant to see."
+                    ar="أسهل تحكّم بالوصول في Odoo يخفي القوائم حسب المجموعة. ويستطيع المستخدم مع ذلك أن يركّب رابطاً ويصل إلى سجلات لم يكن مقصوداً أن يراها."
                   />
                 }
                 decision={
                   <T
-                    en={<>Permissions live in <strong>record rules</strong> at the ORM layer. An employee sees only their own requests; a manager only requests routed to them; finance the approved queue. Menu hiding is cosmetic — the rules are the contract.</>}
-                    ar={<>تعيش الصلاحيات في <strong>قواعد السجلات</strong> في طبقة ORM. الموظّف يرى طلباته فقط؛ والمدير الطلبات المُوجَّهة إليه فقط؛ والمالية الطابور المعتمد. إخفاء القوائم تجميلي — القواعد هي العقد.</>}
+                    en={<>Permissions live in <strong>record rules</strong> at the ORM layer. An employee sees their own requests, a manager sees the requests routed to them, and finance sees the approved queue. Hiding menus is cosmetic; the rules are the contract.</>}
+                    ar={<>تعيش الصلاحيات في <strong>قواعد السجلات</strong> في طبقة ORM. الموظّف يرى طلباته، والمدير يرى الطلبات المُوجَّهة إليه، والمالية ترى الطابور المعتمد. وإخفاء القوائم تجميلي؛ القواعد هي العقد.</>}
                   />
                 }
                 consequences={
                   <T
-                    en="Audit-grade access enforcement. A URL-poking employee hits an ORM exception, not a leak. Trade-off: a small testing matrix for cross-role visibility."
-                    ar="فرضُ وصولٍ بمستوى التدقيق. موظّفٌ يعبث بالروابط يصطدم باستثناء ORM، لا بتسريب. المفاضلة: مصفوفة اختبارٍ صغيرة للرؤية عبر الأدوار."
+                    en="Access enforcement you can audit. An employee poking at URLs hits an ORM exception instead of finding a leak. The cost is a small testing matrix for cross-role visibility."
+                    ar="فرضُ وصول يمكنك تدقيقه. الموظّف الذي يعبث بالروابط يصطدم باستثناء ORM بدل أن يجد تسريباً. والكلفة مصفوفة اختبار صغيرة للرؤية عبر الأدوار."
                   />
                 }
               />
@@ -360,7 +360,7 @@ export default function SmartExpensePage() {
         },
         {
           kicker: <T en="Bilingual by default" ar="ثنائي اللغة افتراضياً" />,
-          heading: <T en="Full EN/AR translations — not an afterthought." ar="ترجمةٌ كاملة بالإنجليزية والعربية — لا فكرةً لاحقة." />,
+          heading: <T en="Arabic and English, both complete." ar="العربية والإنجليزية، كلتاهما كاملة." />,
           body: (
             <>
               <p>
@@ -371,8 +371,8 @@ export default function SmartExpensePage() {
               </p>
               <p>
                 <T
-                  en="In a Damascus-based SME, this is what makes the difference between a module that gets installed and one that gets used."
-                  ar="في شركةٍ صغيرة بدمشق، هذا ما يصنع الفرق بين وحدةٍ تُثبَّت وأخرى تُستخدَم."
+                  en="In a Damascus SME, that is the difference between a module that gets installed and one that gets used."
+                  ar="في شركة صغيرة بدمشق، هذا هو الفرق بين وحدة تُثبَّت وأخرى تُستخدَم."
                 />
               </p>
             </>
@@ -385,8 +385,8 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en="Smart Expense is live and open source under LGPL-3.0 — the token-secured approval flow turns a multi-day paper loop into a one-click action that managers complete from their inbox, with access enforced at the ORM layer and a clean ledger downstream."
-                  ar="Smart Expense حيّ ومفتوح المصدر تحت LGPL-3.0 — يحوّل تدفّق الموافقة المؤمّن بالرمز حلقةً ورقية تستغرق أياماً إلى إجراءٍ بنقرةٍ واحدة يُنجزه المديرون من بريدهم، بوصولٍ مفروضٍ في طبقة ORM ودفتر أستاذٍ نظيف تالياً."
+                  en="Smart Expense is live and open source under LGPL-3.0. The token-secured approval flow turns a multi-day paper loop into a one-click action a manager finishes from their inbox, with access enforced at the ORM layer and a clean ledger downstream."
+                  ar="Smart Expense حيّ ومفتوح المصدر تحت LGPL-3.0. ويحوّل تدفّق الموافقة المؤمّن بالرمز حلقةً ورقية تستغرق أياماً إلى إجراء بنقرة واحدة يُنجزه المدير من بريده، بوصول مفروض في طبقة ORM ودفتر أستاذ نظيف تالياً."
                 />
               </p>
               <ol className="list-decimal space-y-2 ps-5 marker:text-[var(--accent)]">
@@ -404,8 +404,8 @@ export default function SmartExpensePage() {
                 </li>
                 <li>
                   <T
-                    en={<><strong>Low IP risk.</strong> The module is mechanical, not strategic — sharing it costs nothing and helps the Odoo community.</>}
-                    ar={<><strong>مخاطر ملكيةٍ فكرية منخفضة.</strong> الوحدة آليّة، لا استراتيجية — مشاركتها لا تكلّف شيئاً وتُفيد مجتمع Odoo.</>}
+                    en={<><strong>Low IP risk.</strong> The module is mechanical rather than strategic, so sharing it costs nothing and helps the Odoo community.</>}
+                    ar={<><strong>مخاطر ملكية فكرية منخفضة.</strong> الوحدة آليّة أكثر منها استراتيجية، فمشاركتها لا تكلّف شيئاً وتفيد مجتمع Odoo.</>}
                   />
                 </li>
               </ol>
