@@ -47,11 +47,11 @@ export default function TechnoSolutionPage() {
         meta={{
           eyebrow: <T en="Odoo ERP · Full implementation" ar="نظام Odoo ERP · تطبيق كامل" />,
           status: <T en="Live in production" ar="حيّ في الإنتاج" />,
-          title: <T en="Techno Solution — from Excel to a live ERP." ar="Techno Solution — من Excel إلى نظام ERP حيّ." />,
+          title: <T en="Techno Solution: from spreadsheets to an ERP the company runs on." ar="Techno Solution: من جداول Excel إلى نظام ERP تعمل عليه الشركة." />,
           lede: (
             <T
-              en="Techno Solution (Eyad Mahfouz Trading) runs three divisions — import, warehousing, and solar energy. When I arrived, the whole operation lived in spreadsheets. I designed, configured, and deployed a single Odoo system the company runs on: HR, payroll, attendance, purchasing, inventory, and accounting. Built solo, with no local Odoo support to lean on."
-              ar="تدير Techno Solution (إياد محفوظ للتجارة) ثلاثة أقسام — الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ، كانت العملية كلّها تعيش في جداول Excel. صمّمتُ وهيّأتُ وأطلقتُ نظام Odoo واحداً تعمل عليه الشركة: الموارد البشرية، والرواتب، والحضور، والمشتريات، والمخزون، والمحاسبة. بُني منفردةً، دون دعم Odoo محلّي أتّكئ عليه."
+              en="Techno Solution (Eyad Mahfouz Trading) runs three divisions: import, warehousing and solar energy. When I arrived the whole operation lived in spreadsheets. I designed, configured and deployed one Odoo system the company now runs on, covering HR, payroll, attendance, purchasing, inventory and accounting. I did it on my own, with no local Odoo support to lean on."
+              ar="تدير Techno Solution (إياد محفوظ للتجارة) ثلاثة أقسام: الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ كانت العملية كلها تعيش في جداول Excel. صمّمتُ وهيّأتُ وأطلقتُ نظام Odoo واحداً تعمل عليه الشركة الآن، يغطّي الموارد البشرية والرواتب والحضور والمشتريات والمخزون والمحاسبة. فعلتُ ذلك وحدي، دون دعم Odoo محلّي أتّكئ عليه."
             />
           ),
           year: <T en="Feb – Sep 2025" ar="شباط – أيلول 2025" />,
@@ -82,8 +82,8 @@ export default function TechnoSolutionPage() {
               <>
                 <Lead>
                   <T
-                    en="Techno Solution runs three divisions — import, warehousing, and solar energy. When I arrived, the entire operation lived in spreadsheets, with a single secretary entering data for all of it. There was no real-time visibility, no unified accounting, and no way to see the business as one system."
-                    ar="تدير Techno Solution ثلاثة أقسام — الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ، كانت العملية كلّها تعيش في جداول Excel، بسكرتيرةٍ واحدة تُدخل البيانات لكل ذلك. لم تكن هناك رؤيةٌ لحظية، ولا محاسبةٌ موحّدة، ولا طريقةٌ لرؤية المشروع كنظامٍ واحد."
+                    en="Techno Solution runs three divisions: import, warehousing and solar energy. When I arrived the entire operation lived in spreadsheets, with one secretary entering data for all of it. Nobody had real-time visibility, the accounting was not unified, and there was no way to see the business as a single system."
+                    ar="تدير Techno Solution ثلاثة أقسام: الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ كانت العملية كلها تعيش في جداول Excel، وسكرتيرة واحدة تُدخل البيانات لكل ذلك. لم يكن لأحد رؤية لحظية، ولم تكن المحاسبة موحّدة، ولا طريقة لرؤية المشروع نظاماً واحداً."
                   />
                 </Lead>
                 <FactGrid
@@ -103,22 +103,22 @@ export default function TechnoSolutionPage() {
             kicker: <T en="The challenge" ar="التحدّي" />,
             heading: (
               <T
-                en="Learning Odoo and shipping it — at the same time."
-                ar="تعلّم Odoo وإطلاقه — في الوقت نفسه."
+                en="Learning Odoo while shipping it."
+                ar="أن أتعلّم Odoo وأُطلقه في الوقت نفسه."
               />
             ),
             body: (
               <>
                 <p>
                   <T
-                    en="At the time there was no local Odoo expertise in Syria to call on and no support network to fall back to. The learning curve and the build happened simultaneously — I was teaching myself the platform while standing up a live system that real people depended on every day."
-                    ar="في ذلك الوقت لم تكن هناك خبرة Odoo محلّية في سوريا أستعين بها، ولا شبكة دعمٍ أرجع إليها. حدث منحنى التعلّم والبناء في آنٍ معاً — كنتُ أُعلّم نفسي المنصّة بينما أُقيم نظاماً حيّاً يعتمد عليه أناسٌ حقيقيون كل يوم."
+                    en="At the time there was no local Odoo expertise in Syria to call on and no support network to fall back to. The learning curve and the build happened at once: I was teaching myself the platform while standing up a live system real people depended on every day."
+                    ar="في ذلك الوقت لم تكن هناك خبرة Odoo محلّية في سوريا أستعين بها، ولا شبكة دعم أرجع إليها. وحدث منحنى التعلّم والبناء في آنٍ واحد: كنتُ أُعلّم نفسي المنصّة بينما أُقيم نظاماً حيّاً يعتمد عليه أناس حقيقيون كل يوم."
                   />
                 </p>
                 <Callout kicker={<T en="The constraint" ar="القيد" />}>
                   <T
-                    en="There was no margin for a long sandbox phase. Whatever I configured had to be correct enough to put in front of staff the same week — accounting that has to balance, payroll that has to pay people, purchasing that has to track real money."
-                    ar="لم يكن هناك هامشٌ لمرحلة تجربةٍ طويلة. كلّ ما أُهيّئه كان يجب أن يكون صحيحاً بما يكفي لوضعه أمام الموظفين في الأسبوع نفسه — محاسبةٌ يجب أن تتوازن، ورواتب يجب أن تدفع للناس، ومشترياتٌ يجب أن تتتبّع أموالاً حقيقية."
+                    en="There was no margin for a long sandbox phase. Whatever I configured had to be correct enough to put in front of staff that same week: accounting that has to balance, payroll that has to pay people, purchasing that has to track real money."
+                    ar="لم يكن هناك هامش لمرحلة تجربة طويلة. كل ما أُهيّئه كان يجب أن يكون صحيحاً بما يكفي لوضعه أمام الموظفين في الأسبوع نفسه: محاسبة يجب أن تتوازن، ورواتب يجب أن تدفع للناس، ومشتريات يجب أن تتتبّع أموالاً حقيقية."
                   />
                 </Callout>
               </>
@@ -131,14 +131,14 @@ export default function TechnoSolutionPage() {
               <>
                 <p>
                   <T
-                    en="I replaced the spreadsheets with a single Odoo system built around how Techno Solution actually works — HR and payroll, attendance, purchasing, inventory, and accounting, all on one source of truth. The first step was getting the whole company into it: 18 employees onboarded across the three divisions."
-                    ar="استبدلتُ جداول Excel بنظام Odoo واحد مبنيٍّ حول طريقة عمل Techno Solution فعلاً — الموارد البشرية والرواتب، والحضور، والمشتريات، والمخزون، والمحاسبة، كلّها على مصدرٍ واحد للحقيقة. كانت الخطوة الأولى إدخال الشركة كلّها إليه: 18 موظفاً عبر الأقسام الثلاثة."
+                    en="I replaced the spreadsheets with one Odoo system shaped around how Techno Solution actually works: HR and payroll, attendance, purchasing, inventory and accounting, all reading from the same place. The first step was getting the whole company into it, which meant onboarding 18 employees across the three divisions."
+                    ar="استبدلتُ جداول Excel بنظام Odoo واحد مصوغ حول طريقة عمل Techno Solution فعلاً: الموارد البشرية والرواتب، والحضور، والمشتريات، والمخزون، والمحاسبة، كلها تقرأ من المكان نفسه. وكانت الخطوة الأولى إدخال الشركة كلها إليه، أي إدخال 18 موظفاً عبر الأقسام الثلاثة."
                   />
                 </p>
                 <Figure
                   src="/work/techno-solution/employees.webp"
                   label="Employees"
-                  caption={<T en="Employees — 18 staff onboarded across all divisions" ar="الموظفون — 18 موظفاً أُدخلوا عبر كل الأقسام" />}
+                  caption={<T en="Employees: 18 staff onboarded across all divisions" ar="الموظفون: 18 موظفاً أُدخلوا عبر كل الأقسام" />}
                 />
                 <FactGrid
                   items={[
@@ -147,7 +147,7 @@ export default function TechnoSolutionPage() {
                     { label: <T en="Purchase" ar="المشتريات" />, value: <T en="Dual-currency purchase orders" ar="أوامر شراء بعملة مزدوجة" /> },
                     { label: <T en="Inventory" ar="المخزون" />, value: <T en="Multi-division stock moves" ar="حركات مخزون متعدّدة الأقسام" /> },
                     { label: <T en="Accounting" ar="المحاسبة" />, value: <T en="Unified company books" ar="دفاتر شركةٍ موحّدة" /> },
-                    { label: <T en="Reporting" ar="التقارير" />, value: <T en="Live dashboards, not Excel" ar="لوحات حيّة، لا Excel" /> },
+                    { label: <T en="Reporting" ar="التقارير" />, value: <T en="Live dashboards instead of spreadsheets" ar="لوحات حيّة بدل جداول Excel" /> },
                   ]}
                 />
               </>
@@ -160,8 +160,8 @@ export default function TechnoSolutionPage() {
               <>
                 <Lead>
                   <T
-                    en="An ERP is only real once people put their daily work into it. These are the live reports — attendance, purchasing, and stock — running on the company's actual operations."
-                    ar="لا يصير نظام ERP حقيقياً إلا حين يضع الناس عملهم اليومي فيه. هذه هي التقارير الحيّة — الحضور، والمشتريات، والمخزون — تعمل على عمليات الشركة الفعلية."
+                    en="An ERP only becomes real once people put their daily work into it. These are the live reports for attendance, purchasing and stock, running on the company's actual operations."
+                    ar="لا يصير نظام ERP حقيقياً إلا حين يضع الناس عملهم اليومي فيه. وهذه هي التقارير الحيّة للحضور والمشتريات والمخزون، تعمل على عمليات الشركة الفعلية."
                   />
                 </Lead>
                 <Figure

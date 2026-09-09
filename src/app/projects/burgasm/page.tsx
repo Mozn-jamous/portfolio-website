@@ -47,11 +47,11 @@ export default function BurgasmPage() {
         meta={{
           eyebrow: <T en="Odoo · Restaurant · POS" ar="Odoo · مطعم · نقاط بيع" />,
           status: <T en="Live in production" ar="حيّ في الإنتاج" />,
-          title: <T en="Burgasm — a restaurant, fully on Odoo." ar="Burgasm — مطعمٌ بالكامل على Odoo." />,
+          title: <T en="Burgasm: a restaurant running entirely on Odoo." ar="Burgasm: مطعم يعمل بالكامل على Odoo." />,
           lede: (
             <T
-              en="A restaurant running its whole operation on one Odoo system — proper books across three partners, a live point of sale, a kitchen display, and inventory tracked down to the ingredient. Built and configured solo, on the same engagement as the Techno Solution rollout, and still live in daily service."
-              ar="مطعمٌ يدير عمليّته كاملةً على نظام Odoo واحد — دفاتر محاسبية سليمة عبر ثلاثة شركاء، ونقطة بيعٍ حيّة، وشاشة مطبخ، ومخزونٌ متتبَّع حتى مستوى المكوّن. بُني وهُيّئ منفردةً، ضمن التكليف نفسه الذي شمل تطبيق Techno Solution، وما زال حيّاً في الخدمة اليومية."
+              en="A restaurant running its whole operation on one Odoo system: proper books across three partners, a live point of sale, a kitchen display, and inventory tracked down to the ingredient. I built and configured it on my own, during the same engagement as the Techno Solution rollout, and it is still in daily service."
+              ar="مطعم يدير عمليّته كاملة على نظام Odoo واحد: دفاتر محاسبية سليمة عبر ثلاثة شركاء، ونقطة بيع حيّة، وشاشة مطبخ، ومخزون متتبَّع حتى مستوى المكوّن. بنيتُه وهيّأتُه وحدي، خلال التكليف نفسه الذي شمل تطبيق Techno Solution، وما زال في الخدمة اليومية."
             />
           ),
           year: "2025",
@@ -67,7 +67,7 @@ export default function BurgasmPage() {
           ],
         }}
         metrics={[
-          { value: "68", label: <T en="GL accounts — 3 partners, dual-currency" ar="حساب أستاذ — 3 شركاء، عملة مزدوجة" /> },
+          { value: "68", label: <T en="GL accounts across 3 partners, in two currencies" ar="حساب أستاذ عبر 3 شركاء، بعملتين" /> },
           { value: "500+", label: <T en="POS orders processed" ar="طلب نقاط بيع مُعالَج" /> },
           { value: "10K+", label: <T en="Ingredient moves linked to POS" ar="حركة مكوّنات مرتبطة بنقاط البيع" /> },
           { value: "30+", label: <T en="Odoo modules configured" ar="وحدة Odoo مُهيّأة" /> },
@@ -80,14 +80,14 @@ export default function BurgasmPage() {
               <>
                 <Lead>
                   <T
-                    en="Plenty of restaurants run a till and call it software. Burgasm runs on a full Odoo system — accounting, point of sale, kitchen display, and inventory all on one source of truth, with over thirty modules installed and configured around how the place actually operates."
-                    ar="كثيرٌ من المطاعم تُشغّل صندوقاً وتسمّيه برمجية. أما Burgasm فيعمل على نظام Odoo كامل — المحاسبة، ونقاط البيع، وشاشة المطبخ، والمخزون، كلّها على مصدرٍ واحد للحقيقة، مع أكثر من ثلاثين وحدة مُثبَّتة ومُهيّأة حول طريقة عمل المكان فعلاً."
+                    en="Plenty of restaurants run a till and call it software. Burgasm runs on a full Odoo system, with accounting, point of sale, kitchen display and inventory all reading from the same place, and over thirty modules installed and configured around how the place actually operates."
+                    ar="كثير من المطاعم تُشغّل صندوقاً وتسمّيه برمجية. أما Burgasm فيعمل على نظام Odoo كامل، فيه المحاسبة ونقاط البيع وشاشة المطبخ والمخزون كلها تقرأ من المكان نفسه، وأكثر من ثلاثين وحدة مُثبَّتة ومُهيّأة حول طريقة عمل المكان فعلاً."
                   />
                 </Lead>
                 <Figure
                   src="/work/burgasm/system-overview.webp"
                   label="System overview"
-                  caption={<T en="System overview — 30+ active modules configured for the restaurant" ar="نظرة عامة على النظام — 30+ وحدة نشطة مُهيّأة للمطعم" />}
+                  caption={<T en="System overview: 30+ active modules configured for the restaurant" ar="نظرة عامة على النظام: أكثر من 30 وحدة نشطة مُهيّأة للمطعم" />}
                 />
                 <FactGrid
                   items={[
@@ -104,19 +104,19 @@ export default function BurgasmPage() {
           },
           {
             kicker: <T en="The books" ar="الدفاتر" />,
-            heading: <T en="Real accounting, not just a cash drawer." ar="محاسبةٌ حقيقية، لا مجرّد درج نقود." />,
+            heading: <T en="Real accounting behind the cash drawer." ar="محاسبة حقيقية خلف درج النقود." />,
             body: (
               <>
                 <p>
                   <T
-                    en="The foundation is a custom chart of accounts — 68 accounts with a dual-currency setup (SYP and USD) and a three-partner structure that mirrors the restaurant's real ownership. Dedicated restaurant cash accounts and a point-of-sale receivable line tie the daily till straight into the books."
-                    ar="الأساس شجرة حساباتٍ مخصّصة — 68 حساباً بإعداد عملةٍ مزدوجة (الليرة السورية والدولار) وبنية ثلاثة شركاء تعكس الملكية الحقيقية للمطعم. وتربط حسابات نقدٍ مخصّصة للمطعم وبند ذممٍ مدينة لنقاط البيع الصندوقَ اليومي مباشرةً بالدفاتر."
+                    en="The foundation is a custom chart of accounts: 68 accounts, a dual-currency setup in Syrian pounds and dollars, and a three-partner structure that mirrors the restaurant's real ownership. Dedicated cash accounts and a point-of-sale receivable line tie the daily till straight into the books."
+                    ar="الأساس شجرة حسابات مخصّصة: 68 حساباً، وإعداد عملتين بالليرة السورية والدولار، وبنية ثلاثة شركاء تعكس الملكية الحقيقية للمطعم. وتربط حسابات نقد مخصّصة وبند ذمم مدينة لنقاط البيع الصندوقَ اليومي مباشرة بالدفاتر."
                   />
                 </p>
                 <Figure
                   src="/work/burgasm/chart-of-accounts.webp"
                   label="Chart of accounts"
-                  caption={<T en="Chart of Accounts — 68 accounts, dual-currency, 3-partner structure" ar="شجرة الحسابات — 68 حساباً، عملة مزدوجة، بنية ثلاثة شركاء" />}
+                  caption={<T en="Chart of accounts: 68 accounts, two currencies, three partners" ar="شجرة الحسابات: 68 حساباً، وعملتان، وثلاثة شركاء" />}
                 />
               </>
             ),
@@ -128,14 +128,14 @@ export default function BurgasmPage() {
               <>
                 <p>
                   <T
-                    en="Cashiers who had never touched an ERP were running the POS from day one. Over 500 orders flowed through it, with revenue broken down per session and per cashier — so the owners can see exactly what each shift brought in."
-                    ar="كاشيرون لم يلمسوا نظام ERP من قبل كانوا يُشغّلون نقاط البيع من اليوم الأول. مرّ أكثر من 500 طلب عبرها، مع تفصيل الإيرادات لكل جلسةٍ ولكل كاشير — ليرى المُلّاك بالضبط ما جنته كلّ وردية."
+                    en="Cashiers who had never touched an ERP were running the POS from day one. Over 500 orders went through it, with revenue broken down per session and per cashier, so the owners can see what each shift actually brought in."
+                    ar="كاشيرون لم يلمسوا نظام ERP من قبل كانوا يشغّلون نقاط البيع من اليوم الأول. ومرّ أكثر من 500 طلب عبرها، مع تفصيل الإيرادات لكل جلسة ولكل كاشير، فيرى المُلّاك ما جنته كل وردية فعلاً."
                   />
                 </p>
                 <Figure
                   src="/work/burgasm/pos-orders.webp"
                   label="POS orders"
-                  caption={<T en="POS Orders Analysis — revenue per session" ar="تحليل طلبات نقاط البيع — الإيراد لكل جلسة" />}
+                  caption={<T en="POS orders analysis, with revenue per session" ar="تحليل طلبات نقاط البيع، والإيراد لكل جلسة" />}
                 />
                 <Figure
                   src="/work/burgasm/pos-by-cashier.webp"

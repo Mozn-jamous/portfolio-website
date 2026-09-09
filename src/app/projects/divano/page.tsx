@@ -59,8 +59,8 @@ export default function DivanoPage() {
           status: <T en="Client work · Pre-launch" ar="عمل لعميل · قبل الإطلاق" />,
           title: (
             <T
-              en="Divano — an interior-design firm's site, retyped and retold."
-              ar="Divano — موقع شركة تصميمٍ داخلي، أُعيدت طباعته وروايته."
+              en="Divano: an interior-design firm's site, retyped and retold."
+              ar="Divano: موقع شركة تصميم داخلي، أُعيدت طباعته وروايته."
             />
           ),
           lede: (
@@ -86,7 +86,7 @@ export default function DivanoPage() {
           },
           {
             value: "28",
-            label: <T en="Pages — 14 English + 14 Arabic" ar="صفحة: 14 إنجليزية و14 عربية" />,
+            label: <T en="Pages: 14 in English, 14 in Arabic" ar="صفحة: 14 إنجليزية و14 عربية" />,
           },
           {
             value: "1",
@@ -111,7 +111,7 @@ export default function DivanoPage() {
                 </Lead>
                 <FactGrid
                   items={[
-                    { label: <T en="Client" ar="العميل" />, value: <T en="Divano Bespoke Interiors — Dubai" ar="Divano Bespoke Interiors — دبي" /> },
+                    { label: <T en="Client" ar="العميل" />, value: <T en="Divano Bespoke Interiors, Dubai" ar="Divano Bespoke Interiors، دبي" /> },
                     { label: <T en="My role" ar="دوري" />, value: <T en="Design lead + front-end" ar="قيادة التصميم + الواجهة" /> },
                     { label: <T en="Team" ar="الفريق" />, value: <T en="With Santa Media" ar="مع فريق Santa Media" /> },
                     { label: <T en="Base" ar="الأساس" />, value: <T en="Static rebuild of a WordPress site" ar="بناء ثابت بديل عن ووردبريس" /> },
@@ -135,7 +135,7 @@ export default function DivanoPage() {
               <>
                 <p>
                   <T
-                    en="The inherited hero said “Interior Design”, which undersold a firm that also manufactures and installs. The new hero sells the full promise: “From Concept to Completion — Design, Fit-Out, Joinery & Turnkey Solutions”. Around it I rebuilt home, about, contact and projects, wrote editorial service pages for each discipline, and added two new offerings (Smart Solutions and Flooring) as designed pages of their own. Placeholder testimonials went out. Real Google reviews went in, with the reviewers' names."
+                    en="The inherited hero said “Interior Design”, which undersold a firm that also manufactures and installs. The new one sells the full promise: “From Concept to Completion, Design, Fit-Out, Joinery & Turnkey Solutions”. Around it I rebuilt home, about, contact and projects, wrote editorial service pages for each discipline, and added Smart Solutions and Flooring as designed pages of their own. Placeholder testimonials came out and real Google reviews went in, with the reviewers' names on them."
                     ar="كانت واجهة الموقع الموروث تقول «تصميم داخلي»، وهذا يبخس شركةً تُصنّع وتُركّب أيضاً. الواجهة الجديدة تبيع الوعد كاملاً: «من الفكرة إلى الإنجاز: تصميم، تنفيذ، نجارة، وحلول تسليم مفتاح». وحولها أعدتُ بناء الرئيسية وعن الشركة والتواصل والمشاريع، وكتبتُ صفحة خدمةٍ تحريرية لكل تخصّص، وأضفتُ خدمتين جديدتين (الحلول الذكية والأرضيات) كصفحتين مصمّمتين. خرجت التوصيات الوهمية، ودخلت مراجعات Google حقيقية بأسماء أصحابها."
                   />
                 </p>
@@ -205,7 +205,7 @@ export default function DivanoPage() {
                   src="/work/divano/before-after.webp"
                   alt="Divano transformation slider: the media wall at first fix on the left half, the completed lit wall on the right half"
                   label="Divano — before/after slider"
-                  caption={<T en="A shipped pair from the Creek Harbour apartment: the media wall at first fix and completed — same wall, so the drag comparison holds." ar="زوج منشور من شقة Creek Harbour: جدار الميديا بين التأسيس والإنجاز — الجدار نفسه، فتصمد المقارنة عند السحب." />}
+                  caption={<T en="A shipped pair from the Creek Harbour apartment: the media wall at first fix and completed. It is the same wall, so the drag comparison actually holds." ar="زوج منشور من شقة Creek Harbour: جدار الميديا بين التأسيس والإنجاز. وهو الجدار نفسه، فتصمد المقارنة عند السحب فعلاً." />}
                 />
                 <Callout kicker={<T en="The stakes" ar="الرهان" />}>
                   <T
@@ -220,8 +220,8 @@ export default function DivanoPage() {
         nextProject={{
           label: (
             <T
-              en="Veghnar Tonvair — an Arabic-first Shopify storefront →"
-              ar="Veghnar Tonvair — متجر Shopify عربيّ أولاً →"
+              en="Veghnar Tonvair: an Arabic Shopify storefront →"
+              ar="Veghnar Tonvair: متجر Shopify عربي →"
             />
           ),
           href: "/projects/veghnar-tonvair",
