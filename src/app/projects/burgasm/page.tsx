@@ -140,7 +140,7 @@ export default function BurgasmPage() {
                 <Figure
                   src="/work/burgasm/pos-by-cashier.webp"
                   label="POS by cashier"
-                  caption={<T en="POS by Cashier — 500+ orders distributed across sessions" ar="نقاط البيع حسب الكاشير — 500+ طلب موزّعة على الجلسات" />}
+                  caption={<T en="POS by cashier, with 500+ orders across sessions" ar="نقاط البيع حسب الكاشير، وأكثر من 500 طلب موزّعة على الجلسات" />}
                 />
               </>
             ),
@@ -152,8 +152,8 @@ export default function BurgasmPage() {
               <>
                 <Lead>
                   <T
-                    en="This is the part most restaurant POS rollouts skip — and the part that actually controls food cost."
-                    ar="هذا هو الجزء الذي تتجاوزه معظم تطبيقات نقاط البيع في المطاعم — وهو الجزء الذي يضبط تكلفة الطعام فعلاً."
+                    en="This is the part most restaurant POS rollouts skip, and it is the part that actually controls food cost."
+                    ar="هذا هو الجزء الذي تتجاوزه معظم تطبيقات نقاط البيع في المطاعم، وهو الجزء الذي يضبط تكلفة الطعام فعلاً."
                   />
                 </Lead>
                 <p>
@@ -181,7 +181,7 @@ export default function BurgasmPage() {
                 <Figure
                   src="/work/burgasm/restaurant-inventory.webp"
                   label="Restaurant inventory"
-                  caption={<T en="Restaurant Inventory — 10,000+ ingredient movements linked to POS orders" ar="مخزون المطعم — 10,000+ حركة مكوّنات مرتبطة بطلبات نقاط البيع" />}
+                  caption={<T en="Restaurant inventory, with 10,000+ ingredient movements linked to POS orders" ar="مخزون المطعم، وأكثر من 10,000 حركة مكوّنات مرتبطة بطلبات نقاط البيع" />}
                 />
                 <Callout kicker={<T en="Why it matters" ar="لماذا يهمّ" />}>
                   <T
@@ -212,8 +212,8 @@ export default function BurgasmPage() {
               <>
                 <p>
                   <T
-                    en="Burgasm is still live in daily service. What stuck with me was how much of a restaurant's real problem is invisible at the counter — it's in the books and the stockroom. Wiring the till all the way through to ingredients is what turned a cash register into an actual operating system for the business."
-                    ar="ما زال Burgasm حيّاً في الخدمة اليومية. ما علق في ذهني هو كم أن المشكلة الحقيقية للمطعم غير مرئيةٍ عند الصندوق — إنها في الدفاتر والمستودع. وصلُ الصندوق حتى المكوّنات هو ما حوّل آلة تسجيل النقد إلى نظام تشغيلٍ فعلي للمشروع."
+                    en="Burgasm is still live in daily service. What stuck with me was how much of a restaurant's real problem is invisible at the counter, because it sits in the books and the stockroom. Wiring the till all the way through to ingredients is what turned a cash register into an actual operating system for the business."
+                    ar="ما زال Burgasm في الخدمة اليومية. وما علق في ذهني هو كم أن المشكلة الحقيقية للمطعم غير مرئية عند الصندوق، لأنها تقع في الدفاتر والمستودع. ووصلُ الصندوق حتى المكوّنات هو ما حوّل آلة تسجيل النقد إلى نظام تشغيل فعلي للمشروع."
                   />
                 </p>
               </>
@@ -223,8 +223,8 @@ export default function BurgasmPage() {
         nextProject={{
           label: (
             <T
-              en="Smart Expense Manager — the email-as-UI deep dive →"
-              ar="Smart Expense Manager — الغوص في «البريد كواجهة» →"
+              en="Smart Expense Manager: the full story of email as the interface →"
+              ar="Smart Expense Manager: القصة الكاملة للبريد كواجهة →"
             />
           ),
           href: "/projects/smart-expense",

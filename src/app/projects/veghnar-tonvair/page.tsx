@@ -251,7 +251,7 @@ export default function VeghnarTonvairPage() {
                   src="/work/veghnar/product.webp"
                   alt="Veghnar Tonvair product page in Arabic: Kayan all-over spray with burgundy order and buy-now buttons and a gift-wrap plus hand-written card option"
                   label="Veghnar Tonvair — product page, live"
-                  caption={<T en="The live product page: the two-path order block, and the gift layer — wrapping plus a hand-written card." ar="صفحة المنتج الحيّة: كتلة الطلب بمسارَيها، وطبقة الإهداء — تغليفٌ وبطاقة بخط اليد («لمسة خاصة»)." />}
+                  caption={<T en="The live product page: the two-path order block, and the gift layer with wrapping and a hand-written card." ar="صفحة المنتج الحيّة: كتلة الطلب بمسارَيها، وطبقة الإهداء بتغليفها وبطاقتها المكتوبة بخط اليد («لمسة خاصة»)." />}
                 />
                 <FactGrid
                   items={[

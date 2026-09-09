@@ -419,8 +419,8 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en="For an internal tool, the success metric isn't a satisfaction score — it's whether managers actually approve. I'd validate with a short usability study on the one-click email path, then watch the token logs (which already record every transition) as the affinity-style signal for where the flow stalls, and prioritize from there."
-                  ar="بالنسبة لأداةٍ داخلية، مقياس النجاح ليس درجة رضا — بل ما إذا كان المديرون يوافقون فعلاً. سأتحقّق بدراسة قابلية استخدامٍ قصيرة على مسار البريد بنقرةٍ واحدة، ثم أراقب سجلّات الرمز (التي تُسجّل كل انتقالٍ أصلاً) كإشارةٍ — على غرار التقارب — لأين يتعثّر التدفّق، وأرتّب الأولويات من هناك."
+                  en="For an internal tool the success metric is not a satisfaction score. It is whether managers actually approve. I would validate with a short usability study on the one-click email path, then read the token logs, which already record every transition, to see where the flow stalls, and prioritize from there."
+                  ar="بالنسبة لأداة داخلية، مقياس النجاح ليس درجة رضا. بل ما إذا كان المديرون يوافقون فعلاً. سأتحقّق بدراسة قابلية استخدام قصيرة على مسار البريد بنقرة واحدة، ثم أقرأ سجلّات الرمز، التي تسجّل كل انتقال أصلاً، لأرى أين يتعثّر التدفّق، وأرتّب الأولويات من هناك."
                 />
               </p>
               <Priorities
@@ -429,8 +429,8 @@ export default function SmartExpensePage() {
                     tier: "P0",
                     label: (
                       <T
-                        en="The one-click Approve / Reject must work reliably across the email clients managers actually use — if it breaks once, trust in the link is gone."
-                        ar="«موافقة / رفض» بنقرةٍ واحدة يجب أن يعمل بثباتٍ عبر عملاء البريد التي يستخدمها المديرون فعلاً — إن تعطّل مرّةً، ذهبت الثقة بالرابط."
+                        en="The one-click approve and reject links have to work reliably in the email clients managers actually use. If it breaks once, nobody trusts the link again."
+                        ar="على رابطَي الموافقة والرفض بنقرة واحدة أن يعملا بثبات في عملاء البريد التي يستخدمها المديرون فعلاً. وإن تعطّل مرة، لن يثق أحد بالرابط بعدها."
                       />
                     ),
                   },
@@ -447,8 +447,8 @@ export default function SmartExpensePage() {
                     tier: "P2",
                     label: (
                       <T
-                        en="A lightweight audit dashboard surfacing the token logs — proving adoption from data that already exists."
-                        ar="لوحة تدقيقٍ خفيفة تُظهر سجلّات الرمز — لإثبات التبنّي من بياناتٍ موجودةٍ أصلاً."
+                        en="A lightweight audit dashboard over the token logs, proving adoption from data that already exists."
+                        ar="لوحة تدقيق خفيفة على سجلّات الرمز، تُثبت التبنّي من بيانات موجودة أصلاً."
                       />
                     ),
                   },
@@ -470,8 +470,8 @@ export default function SmartExpensePage() {
               </p>
               <p>
                 <T
-                  en="Next, I'd add usage analytics and a lightweight audit dashboard — the token model already logs every transition, so the data to prove adoption is there to surface."
-                  ar="تالياً، سأضيف تحليلات استخدامٍ ولوحة تدقيقٍ خفيفة — نموذج الرمز يُسجّل كلّ انتقالٍ أصلاً، فالبيانات اللازمة لإثبات التبنّي موجودةٌ وجاهزة للعرض."
+                  en="Next I would add usage analytics and a lightweight audit dashboard. The token model already logs every transition, so the data that proves adoption is already there waiting to be shown."
+                  ar="تالياً سأضيف تحليلات استخدام ولوحة تدقيق خفيفة. نموذج الرمز يسجّل كل انتقال أصلاً، فالبيانات اللازمة لإثبات التبنّي موجودة وجاهزة للعرض."
                 />
               </p>
             </>
@@ -479,7 +479,7 @@ export default function SmartExpensePage() {
         },
       ]}
       nextProject={{
-        label: <T en="BloomBelly — three AIs behind one app →" ar="BloomBelly — ثلاثة نماذج ذكاء اصطناعي خلف تطبيقٍ واحد →" />,
+        label: <T en="BloomBelly: three AI models behind one app →" ar="BloomBelly: ثلاثة نماذج ذكاء اصطناعي خلف تطبيق واحد →" />,
         href: "/projects/bloombelly",
       }}
       />

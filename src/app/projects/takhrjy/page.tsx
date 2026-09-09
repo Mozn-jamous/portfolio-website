@@ -232,8 +232,8 @@ export default function TakhrjyPage() {
         nextProject={{
           label: (
             <T
-              en="Techno Solution — from Excel to a live ERP →"
-              ar="Techno Solution — من Excel إلى نظام ERP حيّ →"
+              en="Techno Solution: from spreadsheets to a live ERP →"
+              ar="Techno Solution: من جداول Excel إلى نظام ERP حيّ →"
             />
           ),
           href: "/projects/techno-solution",

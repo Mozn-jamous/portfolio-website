@@ -167,7 +167,7 @@ export default function TechnoSolutionPage() {
                 <Figure
                   src="/work/techno-solution/attendance.webp"
                   label="Attendance report"
-                  caption={<T en="Attendance Report — 6,514+ working hours tracked, per-employee breakdown" ar="تقرير الحضور — 6,514+ ساعة عملٍ متتبَّعة، بتفصيلٍ لكل موظف" />}
+                  caption={<T en="Attendance report: 6,514+ working hours tracked, broken down per employee" ar="تقرير الحضور: أكثر من 6,514 ساعة عمل متتبَّعة، بتفصيل لكل موظف" />}
                 />
                 <FactGrid
                   items={[
@@ -180,18 +180,18 @@ export default function TechnoSolutionPage() {
                 <Figure
                   src="/work/techno-solution/purchase-orders.webp"
                   label="Purchase orders"
-                  caption={<T en="Purchase Orders — 140+ orders, dual-currency (SYP & USD)" ar="أوامر الشراء — 140+ أمراً، بعملة مزدوجة (الليرة والدولار)" />}
+                  caption={<T en="Purchase orders: 140+ orders in Syrian pounds and dollars" ar="أوامر الشراء: أكثر من 140 أمراً، بالليرة والدولار" />}
                 />
                 <p>
                   <T
-                    en="The inventory is real solar and electrical stock — cables, inverters, breakers, changeover switches — moving through the warehouse division, every movement tracked."
-                    ar="المخزون مخزونٌ شمسي وكهربائي حقيقي — كابلات، عاكسات، قواطع، مفاتيح تحويل — يتحرّك عبر قسم المستودع، وكل حركةٍ متتبَّعة."
+                    en="The inventory is real solar and electrical stock: cables, inverters, breakers, changeover switches, all moving through the warehouse division with every movement tracked."
+                    ar="المخزون مخزون شمسي وكهربائي حقيقي: كابلات، وعاكسات، وقواطع، ومفاتيح تحويل، يتحرّك كله عبر قسم المستودع وكل حركة متتبَّعة."
                   />
                 </p>
                 <Figure
                   src="/work/techno-solution/inventory-moves.webp"
                   label="Inventory moves"
-                  caption={<T en="Inventory Moves — 884 movements (solar / electrical stock)" ar="حركات المخزون — 884 حركة (مخزون شمسي / كهربائي)" />}
+                  caption={<T en="Inventory moves: 884 movements of solar and electrical stock" ar="حركات المخزون: 884 حركة من المخزون الشمسي والكهربائي" />}
                 />
               </>
             ),
@@ -209,14 +209,14 @@ export default function TechnoSolutionPage() {
                 </Callout>
                 <p>
                   <T
-                    en="The screenshots above aren't a demo — they're the live system as it runs today, captured nine months after I handed it off. The sales report below covers twelve continuous months of activity. The strongest signal that an implementation worked is that there's something solid enough to hand off, and that it keeps running once you're gone."
-                    ar="اللقطات أعلاه ليست عرضاً تجريبياً — بل هي النظام الحيّ كما يعمل اليوم، التُقطت بعد تسعة أشهرٍ من تسليمه. ويغطّي تقرير المبيعات أدناه اثني عشر شهراً متواصلاً من النشاط. أقوى إشارةٍ على نجاح أي تطبيق هي وجود شيءٍ متينٍ بما يكفي ليُسلَّم، وأن يستمرّ في العمل بعد رحيلك."
+                    en="The screenshots above are not a demo. They are the live system as it runs today, captured nine months after I handed it off, and the sales report below covers twelve continuous months of activity. The strongest signal that an implementation worked is that there was something solid enough to hand over, and that it keeps running once you are gone."
+                    ar="اللقطات أعلاه ليست عرضاً تجريبياً. هي النظام الحيّ كما يعمل اليوم، التُقطت بعد تسعة أشهر من تسليمه، ويغطّي تقرير المبيعات أدناه اثني عشر شهراً متواصلاً من النشاط. وأقوى إشارة على نجاح أي تطبيق أن يوجد شيء متين بما يكفي ليُسلَّم، وأن يستمرّ في العمل بعد رحيلك."
                   />
                 </p>
                 <Figure
                   src="/work/techno-solution/sales-analysis.webp"
                   label="Sales analysis"
-                  caption={<T en="Sales Analysis — 12 months of activity after handoff" ar="تحليل المبيعات — 12 شهراً من النشاط بعد التسليم" />}
+                  caption={<T en="Sales analysis: twelve months of activity after handoff" ar="تحليل المبيعات: اثنا عشر شهراً من النشاط بعد التسليم" />}
                 />
               </>
             ),
@@ -228,8 +228,8 @@ export default function TechnoSolutionPage() {
               <>
                 <p>
                   <T
-                    en="The lesson wasn't technical — it was that an ERP succeeds or fails on whether the people using it can do their jobs without thinking about the software. Building it solo, with no local support, is where the habit of designing systems around the business — and then making them simple enough to hand off — came from."
-                    ar="لم يكن الدرس تقنياً — بل أن نظام ERP ينجح أو يفشل بناءً على ما إذا كان مستخدموه يستطيعون أداء عملهم دون التفكير في البرمجية. بناؤه منفردةً، دون دعمٍ محلّي، هو منشأ عادة تصميم الأنظمة حول المشروع — ثم جعلها بسيطةً بما يكفي لتُسلَّم."
+                    en="The lesson was not a technical one. An ERP succeeds or fails on whether the people using it can do their jobs without thinking about the software. Building it alone, with no local support, is where I picked up the habit of designing systems around the business and then making them simple enough to hand over."
+                    ar="لم يكن الدرس تقنياً. نظام ERP ينجح أو يفشل بناءً على ما إذا كان مستخدموه يستطيعون أداء عملهم دون التفكير في البرمجية. وبناؤه وحدي، دون دعم محلّي، هو حيث اكتسبتُ عادة تصميم الأنظمة حول المشروع ثم جعلها بسيطة بما يكفي لتُسلَّم."
                   />
                 </p>
               </>
@@ -237,7 +237,7 @@ export default function TechnoSolutionPage() {
           },
         ]}
         nextProject={{
-          label: <T en="Burgasm — a restaurant, fully on Odoo →" ar="Burgasm — مطعمٌ بالكامل على Odoo →" />,
+          label: <T en="Burgasm: a restaurant running entirely on Odoo →" ar="Burgasm: مطعم يعمل بالكامل على Odoo →" />,
           href: "/projects/burgasm",
         }}
       />

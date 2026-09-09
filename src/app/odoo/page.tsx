@@ -350,8 +350,8 @@ export default function OdooPage() {
                 </h3>
                 <p className="mt-3">
                   <T
-                    en="A custom Odoo 19 module that replaces paper expense flows with token-secured, one-click email approvals routed through the hr.employee hierarchy — no login required. Journal entries are generated automatically on finance sign-off; monthly PDF reports are emailed by cron. Three-tier RBAC is enforced at the record-rule layer, and everything ships in full English and Arabic. Licensed LGPL-3.0 and live on GitHub."
-                    ar="وحدة Odoo 19 مخصّصة تحلّ محلّ تدفّقات النفقات الورقية بموافقاتٍ بريديّة بنقرةٍ واحدة مؤمّنة برمز، تُوجَّه عبر تسلسل hr.employee — دون الحاجة لتسجيل الدخول. تُولَّد القيود المحاسبية تلقائياً عند اعتماد المالية؛ وتُرسَل تقارير PDF الشهرية بالبريد عبر cron. ويُفرَض تحكّمٌ بالوصول بثلاث طبقات على مستوى قواعد السجلات، وكلّ شيء يُطلق بالإنجليزية والعربية كاملةً. مرخّص LGPL-3.0 وحيّ على GitHub."
+                    en="A custom Odoo 19 module that replaces paper expense flows with token-secured, one-click email approvals routed through the hr.employee hierarchy, so nobody has to log in. Journal entries are generated automatically on finance sign-off, and monthly PDF reports go out by cron. Three-tier access control is enforced at the record-rule layer, and everything ships in full English and Arabic. Licensed LGPL-3.0 and live on GitHub."
+                    ar="وحدة Odoo 19 مخصّصة تحلّ محلّ تدفّقات النفقات الورقية بموافقات بريدية بنقرة واحدة مؤمّنة برمز، تُوجَّه عبر تسلسل hr.employee، فلا يحتاج أحد إلى تسجيل الدخول. وتُولَّد القيود المحاسبية تلقائياً عند اعتماد المالية، وتخرج تقارير PDF الشهرية عبر cron. ويُفرَض تحكّم بالوصول بثلاث طبقات على مستوى قواعد السجلات، وكل شيء يُطلق بالإنجليزية والعربية كاملة. مرخّص LGPL-3.0 وحيّ على GitHub."
                   />
                 </p>
                 <p className="mt-4 font-mono text-[0.8rem]">
@@ -370,8 +370,8 @@ export default function OdooPage() {
       nextProject={{
         label: (
           <T
-            en="Smart Expense Manager — the email-as-UI deep dive →"
-            ar="Smart Expense Manager — الغوص في «البريد كواجهة» →"
+            en="Smart Expense Manager: the full story of email as the interface →"
+            ar="Smart Expense Manager: القصة الكاملة للبريد كواجهة →"
           />
         ),
         href: "/projects/smart-expense",
