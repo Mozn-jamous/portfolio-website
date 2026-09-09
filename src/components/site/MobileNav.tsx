@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Modal } from "./Modal";
 import { T } from "@/components/i18n/T";
+import { heroContent } from "@/lib/scenes-content";
 
 type Item = { href: string; label: string; labelAr?: string };
 
@@ -41,9 +42,9 @@ export function MobileNav({
         onClose={() => setOpen(false)}
         label="Site menu"
         placement="right"
-        panelClassName="flex h-full w-[80vw] max-w-xs flex-col gap-1 border-s border-[var(--glass-border)] bg-[var(--surface)] p-6 shadow-soft-lg"
+        panelClassName="flex h-full w-[82vw] max-w-xs flex-col gap-1 overflow-y-auto border-s border-[var(--glass-border)] bg-[var(--surface)] p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] shadow-soft-lg"
       >
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-4 flex items-center justify-between">
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--ink-faint)]">
             <T en="Menu" ar="القائمة" />
           </span>
@@ -65,21 +66,44 @@ export function MobileNav({
               key={item.href}
               href={item.href}
               onClick={() => setOpen(false)}
-              className="border-b border-[var(--border)] py-3.5 text-lg text-[var(--ink)] transition hover:text-[var(--accent-deep)]"
+              className="border-b border-[var(--border)] py-3 text-base text-[var(--ink)] transition hover:text-[var(--accent-deep)]"
             >
               <T en={item.label} ar={item.labelAr ?? item.label} />
             </Link>
           ))}
         </nav>
 
-        <Link
-          href={contactHref}
-          onClick={() => setOpen(false)}
-          className="mt-6 inline-flex items-center justify-center gap-1.5 rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[var(--accent-deep)]"
-        >
-          <T en="Let's Talk" ar="لنتحدّث" />
-          <span aria-hidden className="rtl:-scale-x-100">→</span>
-        </Link>
+        {/* Pinned to the foot of the sheet: the CTA plus the direct links, so
+            the tall empty space below a five-item menu carries something. */}
+        <div className="mt-auto pt-8">
+          <Link
+            href={contactHref}
+            onClick={() => setOpen(false)}
+            className="inline-flex w-full items-center justify-center gap-1.5 rounded-full bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[var(--accent-deep)]"
+          >
+            <T en="Let's Talk" ar="لنتحدّث" />
+            <span aria-hidden className="rtl:-scale-x-100">→</span>
+          </Link>
+
+          <ul className="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2">
+            {heroContent.socials.map((s) => (
+              <li key={s.label}>
+                <a
+                  href={s.href}
+                  target={s.icon === "email" ? undefined : "_blank"}
+                  rel={s.icon === "email" ? undefined : "noopener noreferrer"}
+                  onClick={() => setOpen(false)}
+                  className="text-[0.8rem] text-[var(--ink-muted)] transition hover:text-[var(--accent-deep)]"
+                >
+                  <T en={s.label} ar={s.labelAr} />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-3 font-mono text-[0.58rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
+            <T en={heroContent.location} ar={heroContent.locationAr} />
+          </p>
+        </div>
       </Modal>
     </div>
   );

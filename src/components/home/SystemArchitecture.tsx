@@ -12,9 +12,10 @@ import { T } from "@/components/i18n/T";
  *
  * The five layers (Frontend → Backend → Data → AI → Systems) are the real
  * stack behind the shipped products; selecting one reveals what lives in it
- * and the project that proves it. Master-detail on desktop, accordion on
- * mobile. Content is conditionally clipped (CSS grid-rows), never hidden by
- * opacity, so nothing depends on JS/observers to be readable.
+ * and the project that proves it. Master-detail throughout: a vertical stack
+ * beside a sticky panel on desktop, a swipeable tab strip above that same
+ * panel on phones. Only the selected layer's contents are ever rendered, so
+ * nothing depends on JS/observers to be readable.
  */
 export function SystemArchitecture() {
   const { eyebrow, eyebrowAr, heading, headingAr, intro, introAr, layers } =
@@ -30,33 +31,43 @@ export function SystemArchitecture() {
       <SceneBackground src="/scenes/trajectory.webp" position="center 40%" scrim={0} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
-      <div className="mx-auto max-w-5xl px-5 py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-5xl px-5 py-10 sm:py-20 lg:px-8 lg:py-28">
         <Reveal>
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en={eyebrow} ar={eyebrowAr} />
           </span>
-          <h2 className="font-display mt-4 max-w-3xl text-[2rem] font-medium leading-[1.1] tracking-tight text-[var(--ink)] lg:text-[2.75rem]">
+          <h2 className="font-display mt-4 max-w-3xl text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
             <T en={heading} ar={headingAr} />
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-[1.7] text-[var(--ink-muted)]">
+          <p className="mt-4 max-w-2xl text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-5 sm:text-lg sm:leading-[1.7]">
             <T en={intro} ar={introAr} />
           </p>
         </Reveal>
 
         <Reveal>
-          <div className="mt-12 grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-10">
-            {/* Left — the layer stack (data flows top → down) */}
-            <ol className="relative">
+          <div className="mt-8 grid gap-4 sm:mt-12 sm:gap-8 lg:grid-cols-[1fr_1.05fr] lg:gap-10">
+            {/* The layer picker. On desktop it's a vertical stack that reads as
+                the stack itself, data flowing top → down through the
+                connectors. On phones that shape doesn't fit: five expandable
+                rows meant five screens of scroll. So it becomes a swipeable
+                tab strip feeding the one detail panel below — same select-a-
+                layer interaction, phone-shaped. */}
+            <ol
+              role="tablist"
+              aria-label="Stack layers"
+              className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-1 lg:mx-0 lg:block lg:overflow-visible lg:px-0 lg:pb-0"
+            >
               {layers.map((layer, i) => {
                 const selected = layer.id === activeId;
                 return (
-                  <li key={layer.id}>
+                  <li key={layer.id} className="w-[58vw] max-w-[220px] shrink-0 snap-start lg:w-auto lg:max-w-none">
                     <button
                       type="button"
+                      role="tab"
                       onClick={() => setActiveId(layer.id)}
-                      aria-expanded={selected}
-                      aria-controls={`layer-panel-${layer.id}`}
-                      className={`group flex w-full items-center gap-4 rounded-2xl border px-4 py-4 text-start transition lg:px-5 ${
+                      aria-selected={selected}
+                      aria-controls="layer-panel"
+                      className={`group flex h-full w-full items-center gap-3 rounded-2xl border p-3.5 text-start transition lg:gap-4 lg:px-5 lg:py-4 ${
                         selected
                           ? "border-[var(--accent)] bg-[var(--accent-soft)] shadow-soft"
                           : "border-[var(--border)] bg-[var(--glass)] hover:border-[var(--border-strong)]"
@@ -71,20 +82,22 @@ export function SystemArchitecture() {
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="flex flex-wrap items-baseline gap-x-3">
-                          <span className="font-display text-lg font-medium text-[var(--ink)]">
+                          <span className="font-display text-[0.95rem] font-medium leading-snug text-[var(--ink)] lg:text-lg">
                             <T en={layer.label} ar={layer.labelAr ?? layer.label} />
                           </span>
-                          <span className="font-mono text-[0.66rem] uppercase tracking-[0.14em] text-[var(--accent-deep)]">
+                          <span className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[var(--accent-deep)] lg:text-[0.66rem]">
                             {layer.tech}
                           </span>
                         </span>
-                        <span className="mt-1 block text-[0.86rem] leading-snug text-[var(--ink-muted)]">
+                        {/* the one-line role only earns its space in the wide
+                            vertical rows; on a tab the label + tech say it */}
+                        <span className="mt-1 hidden text-[0.86rem] leading-snug text-[var(--ink-muted)] lg:block">
                           <T en={layer.summary} ar={layer.summaryAr ?? layer.summary} />
                         </span>
                       </span>
                       <span
                         aria-hidden
-                        className={`shrink-0 text-[var(--accent)] transition rtl:-scale-x-100 ${
+                        className={`hidden shrink-0 text-[var(--accent)] transition rtl:-scale-x-100 lg:block ${
                           selected ? "translate-x-0.5 opacity-100" : "opacity-40 group-hover:opacity-70"
                         }`}
                       >
@@ -92,24 +105,12 @@ export function SystemArchitecture() {
                       </span>
                     </button>
 
-                    {/* Mobile inline detail (desktop uses the right panel) */}
-                    <div
-                      id={`layer-panel-${layer.id}`}
-                      className="grid transition-[grid-template-rows] duration-300 ease-out lg:hidden"
-                      style={{ gridTemplateRows: selected ? "1fr" : "0fr" }}
-                    >
-                      <div className="overflow-hidden">
-                        <div className="px-1 pb-2 pt-3">
-                          <LayerDetail layer={layer} />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* connector — a glow travels down it, like data flowing */}
+                    {/* connector — a glow travels down it, like data flowing.
+                        Only meaningful in the vertical desktop stack. */}
                     {i < layers.length - 1 && (
                       <div
                         aria-hidden
-                        className="flex h-7 items-center justify-center text-[var(--ink-faint)] lg:h-8"
+                        className="hidden h-8 items-center justify-center text-[var(--ink-faint)] lg:flex"
                       >
                         <span
                           className="t-flow text-sm leading-none"
@@ -124,11 +125,16 @@ export function SystemArchitecture() {
               })}
             </ol>
 
-            {/* Right — sticky detail panel (desktop) */}
-            <div className="hidden lg:block">
-              <div className="panel sticky top-24 rounded-3xl p-7" aria-live="polite">
-                <LayerDetail layer={activeLayer} showIndex />
-              </div>
+            {/* Detail panel — below the strip on phones, sticky beside the
+                stack on desktop. One panel either way, so only the selected
+                layer's contents are ever in the page. */}
+            <div
+              id="layer-panel"
+              role="tabpanel"
+              aria-live="polite"
+              className="panel rounded-2xl p-4 sm:p-6 lg:sticky lg:top-24 lg:self-start lg:rounded-3xl lg:p-7"
+            >
+              <LayerDetail layer={activeLayer} showIndex />
             </div>
           </div>
         </Reveal>
@@ -152,7 +158,7 @@ function LayerDetail({
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--ink-faint)]">
             <T en={layer.label} ar={layer.labelAr ?? layer.label} />
           </span>
-          <h3 className="font-display mt-1 text-xl font-medium text-[var(--ink)] lg:text-2xl">
+          <h3 className="font-display mt-1 text-lg font-medium text-[var(--ink)] sm:text-xl lg:text-2xl">
             {layer.tech}
           </h3>
         </div>
@@ -163,11 +169,11 @@ function LayerDetail({
         )}
       </div>
 
-      <ul className="mt-5 space-y-2.5">
+      <ul className="mt-4 space-y-2 sm:mt-5 sm:space-y-2.5">
         {layer.items.map((item, i) => (
           <li
             key={item}
-            className="flex gap-3 text-[0.92rem] leading-relaxed text-[var(--ink-muted)]"
+            className="flex gap-2.5 text-[0.86rem] leading-[1.55] text-[var(--ink-muted)] sm:gap-3 sm:text-[0.92rem] sm:leading-relaxed"
           >
             <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
             <span>
@@ -179,7 +185,7 @@ function LayerDetail({
 
       <Link
         href={layer.example.href}
-        className="group mt-6 block rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] p-4 transition hover:border-[var(--accent)]"
+        className="group mt-5 block rounded-2xl border border-[var(--border)] bg-[var(--surface-2)] p-3.5 transition hover:border-[var(--accent)] sm:mt-6 sm:p-4"
       >
         <span className="flex items-center justify-between">
           <span className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">

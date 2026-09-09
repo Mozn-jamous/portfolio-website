@@ -20,15 +20,15 @@ export function ContactFull() {
       <SceneBackground src="/scenes/contact.webp" position="center 42%" scrim={0} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
-      <div className="mx-auto max-w-3xl px-5 pb-32 pt-24 text-center lg:px-8 lg:pb-40 lg:pt-28">
+      <div className="mx-auto max-w-3xl px-5 pb-20 pt-14 text-center sm:pb-28 sm:pt-20 lg:px-8 lg:pb-40 lg:pt-28">
         <Reveal>
           <span className="block font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en={eyebrow} ar={c10n.eyebrowAr} />
           </span>
-          <h2 className="font-display mx-auto mt-4 max-w-2xl text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.025em] text-[var(--ink)] sm:text-[3.5rem] lg:text-[4rem]">
+          <h2 className="font-display mx-auto mt-3 max-w-2xl text-[2.15rem] font-semibold leading-[1.05] tracking-[-0.025em] text-[var(--ink)] sm:mt-4 sm:text-[3.5rem] lg:text-[4rem]">
             <T en={title} ar={c10n.titleAr} />
           </h2>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-[1.7] text-[var(--ink-muted)]">
+          <p className="mx-auto mt-4 max-w-xl text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-6 sm:text-lg sm:leading-[1.7]">
             <T en={body} ar={c10n.bodyAr} />
           </p>
         </Reveal>
@@ -51,7 +51,7 @@ export function ContactFull() {
 
         {/* contact links */}
         <Reveal>
-          <div className="mx-auto mt-12 flex max-w-md flex-col gap-3">
+          <div className="mx-auto mt-8 flex max-w-md flex-col gap-2.5 sm:mt-12 sm:gap-3">
             {contacts.map((c) => (
               <a
                 key={c.label}

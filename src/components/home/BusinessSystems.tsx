@@ -10,6 +10,10 @@ import { T } from "@/components/i18n/T";
  * facet of the same engineer), then hands off to its own focused page so it
  * never competes with the product/design work above.
  */
+/** Systems chips shown on a phone; the rest appear from `sm:` up — the /odoo
+ *  page carries the full list, so nothing is lost. */
+const PHONE_CHIPS = 4;
+
 export function BusinessSystems() {
   const {
     eyebrow,
@@ -32,46 +36,40 @@ export function BusinessSystems() {
       <SceneBackground src="/scenes/stack.webp" position="center 55%" scrim={0} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
-      <div className="mx-auto max-w-5xl px-5 py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-5xl px-5 py-10 sm:py-20 lg:px-8 lg:py-28">
         <Reveal>
-          <span className="mb-8 block font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
+          <span className="mb-6 block font-mono sm:mb-8 text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en={eyebrow} ar={eyebrowAr} />
           </span>
         </Reveal>
 
         <Reveal>
-          <div className="panel grid gap-10 rounded-3xl p-8 lg:grid-cols-[1.4fr_1fr] lg:p-12">
+          <div className="panel grid gap-6 rounded-3xl p-5 sm:gap-10 sm:p-8 lg:grid-cols-[1.4fr_1fr] lg:p-12">
             {/* Left — the pitch */}
             <div>
-              <h2 className="font-display text-[2rem] font-medium leading-[1.1] tracking-tight text-[var(--ink)] lg:text-[2.75rem]">
+              <h2 className="font-display text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
                 <T en={heading} ar={headingAr} />
               </h2>
-              <p className="mt-5 max-w-xl text-[1.02rem] leading-relaxed text-[var(--ink-muted)]">
+              <p className="mt-4 max-w-xl text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-5 sm:text-[1.02rem] sm:leading-relaxed">
                 <T en={body} ar={bodyAr} />
               </p>
 
-              <ul className="mt-7 flex flex-wrap gap-2">
-                {systems.map((s) => (
+              <ul className="mt-6 flex flex-wrap gap-2 sm:mt-7">
+                {systems.map((label, i) => (
                   <li
-                    key={s}
-                    className="lang-en rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur"
+                    key={label}
+                    className={`rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur ${
+                      i >= PHONE_CHIPS ? "hidden sm:block" : ""
+                    }`}
                   >
-                    {s}
-                  </li>
-                ))}
-                {systemsAr.map((s) => (
-                  <li
-                    key={s}
-                    className="lang-ar rounded-full border border-[var(--border-strong)] bg-[var(--chip)] px-3.5 py-1.5 font-mono text-[0.72rem] text-[var(--ink)] backdrop-blur"
-                  >
-                    {s}
+                    <T en={label} ar={systemsAr[i] ?? label} />
                   </li>
                 ))}
               </ul>
 
               <Link
                 href={cta.href}
-                className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[var(--accent-deep)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
+                className="group mt-7 inline-flex sm:mt-9 items-center gap-2 rounded-full bg-[var(--accent)] px-6 py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-[var(--accent-deep)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
               >
                 <T en={cta.label} ar={cta.labelAr} />
                 <span aria-hidden className="transition group-hover:translate-x-0.5 rtl:-scale-x-100">
@@ -81,10 +79,12 @@ export function BusinessSystems() {
             </div>
 
             {/* Right — the results */}
-            <dl className="flex flex-col justify-center gap-6 border-t border-[var(--border)] pt-8 lg:border-s lg:border-t-0 lg:ps-10 lg:pt-0">
+            {/* 2-up on phones: stacked full-width stats cost a third of the
+                fold for three numbers. Back to a column from lg: up. */}
+            <dl className="grid grid-cols-2 gap-x-4 gap-y-5 border-t border-[var(--border)] pt-6 sm:gap-y-6 lg:flex lg:flex-col lg:justify-center lg:border-s lg:border-t-0 lg:ps-10 lg:pt-0">
               {results.map((r) => (
                 <div key={r.label}>
-                  <dt className="font-display text-gradient text-4xl font-semibold leading-none tracking-tight lg:text-5xl">
+                  <dt className="font-display text-gradient text-3xl font-semibold leading-none tracking-tight sm:text-4xl lg:text-5xl">
                     <T en={r.value} ar={r.valueAr} />
                   </dt>
                   <dd className="mt-2 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--ink-muted)]">

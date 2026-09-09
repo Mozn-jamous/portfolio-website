@@ -232,6 +232,11 @@ html[lang="ar"] .arch-diagram svg text {
     rgba(var(--paper-rgb), 0.88) 100%
   );
 }
+/* Swipeable card rails (phone) — the scrollbar is redundant when the next
+   card already peeks in from the edge, and on Windows it eats real height. */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
 /* hairline rule with an accent fade */
 .rule-accent {
   height: 1px;

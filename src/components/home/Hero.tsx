@@ -154,7 +154,7 @@ export function Hero() {
 
       {/* main hero content */}
       <div className="flex flex-1 items-center">
-        <div className="mx-auto w-full max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto w-full max-w-6xl px-5 py-10 sm:py-16 lg:px-8 lg:py-20">
           <motion.div className="max-w-3xl" {...parentProps}>
             {/* status pill */}
             <motion.span
@@ -171,7 +171,7 @@ export function Hero() {
             {/* eyebrow */}
             <motion.p
               {...itemProps}
-              className="mt-7 font-mono text-[0.72rem] uppercase tracking-[0.28em] text-[var(--accent)]"
+              className="mt-5 font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--accent)] sm:mt-7 sm:text-[0.72rem] sm:tracking-[0.28em]"
             >
               <T en={eyebrow} ar={heroContent.eyebrowAr} />
             </motion.p>
@@ -190,23 +190,34 @@ export function Hero() {
             {/* subheading — Inter 400, 24/160% */}
             <motion.p
               {...itemProps}
-              className="mt-6 max-w-[650px] text-xl font-normal leading-[1.6] text-[var(--ink)] sm:text-2xl"
+              className="mt-4 max-w-[650px] text-lg font-normal leading-[1.5] text-[var(--ink)] sm:mt-6 sm:text-2xl sm:leading-[1.6]"
             >
               <T en={subheading} ar={heroContent.subheadingAr} />
             </motion.p>
 
-            {/* intro */}
+            {/* intro — desktop only; on a phone the subheading above already
+                lands the pitch and this pushed the CTAs off the first screen */}
             <motion.p
               {...itemProps}
-              className="mt-4 max-w-[650px] text-base leading-[1.7] text-[var(--ink-muted)]"
+              className="hidden max-w-[650px] text-[0.9rem] leading-[1.6] text-[var(--ink-muted)] sm:mt-4 sm:block sm:text-base sm:leading-[1.7]"
             >
               <T en={intro} ar={heroContent.introAr} />
             </motion.p>
 
             {/* stats */}
-            <motion.dl {...itemProps} className="mt-10 flex flex-wrap gap-x-9 gap-y-6">
-              {stats.map((s) => (
-                <div key={s.key} className="flex items-start gap-2.5">
+            {/* 2-up on phones (one per row wasted a third of the fold); the
+                last stat is a phrase, not a number, so it spans both columns. */}
+            <motion.dl
+              {...itemProps}
+              className="mt-7 grid grid-cols-2 gap-x-5 gap-y-4 sm:mt-10 sm:flex sm:flex-wrap sm:gap-x-9 sm:gap-y-6"
+            >
+              {stats.map((s, i) => (
+                <div
+                  key={s.key}
+                  className={`flex items-start gap-2.5 ${
+                    i === stats.length - 1 ? "col-span-2 sm:col-auto" : ""
+                  }`}
+                >
                   <svg
                     width="20"
                     height="20"
@@ -222,7 +233,7 @@ export function Hero() {
                     {statIcons[s.key]}
                   </svg>
                   <div>
-                    <dt className="font-display text-2xl font-semibold leading-none text-[var(--ink)]">
+                    <dt className="font-display text-xl font-semibold leading-none text-[var(--ink)] sm:text-2xl">
                       <T
                         en={<CountUp value={s.value} />}
                         ar={<CountUp value={s.valueAr} />}
@@ -237,7 +248,7 @@ export function Hero() {
             </motion.dl>
 
             {/* CTAs */}
-            <motion.div {...itemProps} className="mt-10 flex flex-wrap items-center gap-3">
+            <motion.div {...itemProps} className="mt-7 flex flex-wrap items-center gap-2.5 sm:mt-10 sm:gap-3">
               <Magnetic>
                 <Link
                   href={ctas.primary.href}
@@ -257,7 +268,7 @@ export function Hero() {
             </motion.div>
 
             {/* socials */}
-            <motion.ul {...itemProps} className="mt-8 flex flex-wrap items-center gap-6">
+            <motion.ul {...itemProps} className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3 sm:mt-8 sm:gap-6">
               {socials.map((s) => (
                 <li key={s.label}>
                   <a
@@ -289,22 +300,22 @@ export function Hero() {
       </div>
 
       {/* trusted-by bar */}
-      <div className="mx-auto w-full max-w-6xl px-5 pb-10 lg:px-8">
-        <div className="panel flex flex-wrap items-center gap-x-8 gap-y-3 rounded-2xl px-6 py-4">
-          <span className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
+      <div className="mx-auto w-full max-w-6xl px-5 pb-8 lg:px-8 lg:pb-10">
+        <div className="panel flex flex-wrap items-center gap-x-6 gap-y-2 rounded-2xl px-4 py-3 sm:gap-x-8 sm:gap-y-3 sm:px-6 sm:py-4">
+          <span className="font-mono text-[0.55rem] uppercase tracking-[0.18em] text-[var(--ink-faint)] sm:text-[0.6rem] sm:tracking-[0.22em]">
             <T en={trustedBy.label} ar={trustedBy.labelAr} />
           </span>
-          <ul className="flex flex-wrap items-center gap-x-7 gap-y-2">
+          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1.5 sm:gap-x-7 sm:gap-y-2">
             {trustedBy.items.map((item) => (
               <li
                 key={item}
-                className="text-sm font-medium text-[var(--ink-muted)]"
+                className="text-[0.8rem] font-medium text-[var(--ink-muted)] sm:text-sm"
               >
                 {item}
               </li>
             ))}
           </ul>
-          <span className="ml-auto font-mono text-[0.62rem] text-[var(--ink-faint)]">
+          <span className="ms-auto font-mono text-[0.58rem] text-[var(--ink-faint)] sm:text-[0.62rem]">
             <T en={location} ar={heroContent.locationAr} />
           </span>
         </div>

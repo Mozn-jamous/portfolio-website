@@ -18,7 +18,7 @@ export default function Home() {
       <DecisionLog />
       <BusinessSystems />
       <Testimonials />
-      <AboutFull />
+      <AboutFull variant="home" />
       <ContactFull />
     </>
   );

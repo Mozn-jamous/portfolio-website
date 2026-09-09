@@ -36,6 +36,11 @@ export function ProjectsGrid({
 }) {
   const reduced = useReducedMotion();
   const [expanded, setExpanded] = useState(false);
+  // The cascade is driven by a persistent `animate` prop rather than
+  // `whileInView`: a while-gesture stops propagating once its viewport
+  // observer is done, so cards mounted later (by "See more") would stay stuck
+  // at the hidden variant — visible as a blank gap where they should be.
+  const [inView, setInView] = useState(false);
 
   const collapsible = !!initialCount && projects.length > initialCount;
   const visible =
@@ -59,7 +64,7 @@ export function ProjectsGrid({
   if (reduced) {
     return (
       <>
-        <ul className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
+        <ul className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
           {visible.map((p) => (
             <li key={p.href} className="h-full">
               <DirectoryCard project={p} />
@@ -74,10 +79,11 @@ export function ProjectsGrid({
   return (
     <>
       <motion.ul
-        className="mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
+        className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4"
         variants={gridVariants}
         initial="hidden"
-        whileInView="show"
+        animate={inView ? "show" : "hidden"}
+        onViewportEnter={() => setInView(true)}
         viewport={{ once: true, amount: 0.15 }}
       >
         {visible.map((p) => (

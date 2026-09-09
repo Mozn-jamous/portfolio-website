@@ -18,7 +18,7 @@ export function Testimonials() {
       <SceneBackground src="/scenes/about.webp" position="center 60%" scrim={0} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
-      <div className="mx-auto max-w-6xl px-5 py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:py-20 lg:px-8 lg:py-28">
         <Reveal>
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             What people say
@@ -28,7 +28,7 @@ export function Testimonials() {
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {items.map((t, i) => (
             <Reveal key={t.name} delay={(i % 3) * 0.08} className="h-full">
-              <figure className="panel flex h-full flex-col rounded-2xl p-6">
+              <figure className="panel flex h-full flex-col rounded-2xl p-5 sm:p-6">
                 <blockquote className="flex-1 text-[1.02rem] leading-relaxed text-[var(--ink)]">
                   “{t.quote}”
                 </blockquote>

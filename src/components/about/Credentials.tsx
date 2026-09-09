@@ -48,7 +48,7 @@ export function Credentials({
     <>
       <div className="mt-8 grid gap-4 md:grid-cols-2">
         {/* Education */}
-        <div className="panel flex h-full flex-col rounded-2xl p-6 lg:p-7">
+        <div className="panel flex h-full flex-col rounded-2xl p-5 sm:p-6 lg:p-7">
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--accent)]">
             <T en="Education" ar="التعليم" />
           </span>
@@ -83,7 +83,7 @@ export function Credentials({
         </div>
 
         {/* Certifications */}
-        <div className="panel flex h-full flex-col rounded-2xl p-6 lg:p-7">
+        <div className="panel flex h-full flex-col rounded-2xl p-5 sm:p-6 lg:p-7">
           <span className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-[var(--accent)]">
             <T en="Certifications" ar="الشهادات" />
           </span>

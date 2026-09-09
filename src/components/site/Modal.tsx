@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, type ReactNode } from "react";
+import { useEffect, useRef, useSyncExternalStore, type ReactNode } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -8,6 +9,12 @@ type Placement = "center" | "top" | "right";
 
 const FOCUSABLE =
   'a[href],button:not([disabled]),input:not([disabled]),textarea:not([disabled]),select:not([disabled]),[tabindex]:not([tabindex="-1"])';
+
+// "Have we hydrated?" — document.body only exists on the client, so the
+// portal can't be created during SSR or the first render.
+const noopSubscribe = () => () => {};
+const onClient = () => true;
+const onServer = () => false;
 
 const overlayAlign: Record<Placement, string> = {
   center: "items-center justify-center p-4",
@@ -21,6 +28,12 @@ const overlayAlign: Record<Placement, string> = {
  * Esc to close, backdrop click to dismiss, and focus restoration to the
  * trigger on close. Open/close transition respects reduced motion and stays
  * under 200ms. Children render the panel; `placement` aligns the overlay.
+ *
+ * Rendered through a portal on <body>: several call sites sit inside an
+ * ancestor with backdrop-filter / transform (the sticky nav's backdrop-blur,
+ * a Reveal's motion wrapper). Those establish a containing block for
+ * `position: fixed`, which would otherwise clamp the overlay to the
+ * ancestor's box instead of the viewport.
  */
 export function Modal({
   open,
@@ -44,6 +57,7 @@ export function Modal({
   const panelRef = useRef<HTMLDivElement>(null);
   const restoreRef = useRef<HTMLElement | null>(null);
   const reduced = useReducedMotion();
+  const mounted = useSyncExternalStore(noopSubscribe, onClient, onServer);
 
   useEffect(() => {
     if (!open) return;
@@ -97,16 +111,19 @@ export function Modal({
 
   const dur = reduced ? 0 : 0.18;
   const slide = placement === "right";
-  // The slide-in sheet anchors to the inline-END edge, which flips in RTL:
-  // it enters from the right in LTR and from the left in RTL.
+  // The slide-in sheet anchors to the inline-END edge: the right in LTR, the
+  // left in RTL. `justify-end` already resolves against the writing direction,
+  // so the overlay needs no RTL branch — only the entrance transform does,
+  // since translateX() is not direction-aware.
   const isRtl =
     typeof document !== "undefined" &&
     document.documentElement.dir === "rtl";
   const slideOffset = slide && isRtl ? "-100%" : "100%";
-  const overlayClass =
-    slide && isRtl ? "items-stretch justify-start" : overlayAlign[placement];
+  const overlayClass = overlayAlign[placement];
 
-  return (
+  if (!mounted) return null;
+
+  return createPortal(
     <AnimatePresence>
       {open && (
         <motion.div
@@ -149,6 +166,7 @@ export function Modal({
           </motion.div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

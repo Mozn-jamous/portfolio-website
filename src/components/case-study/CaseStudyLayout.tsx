@@ -82,7 +82,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
             />
           </div>
         )}
-        <div className="mx-auto max-w-5xl px-5 pb-16 pt-16 lg:px-8 lg:pb-24 lg:pt-24">
+        <div className="mx-auto max-w-5xl px-5 pb-10 pt-10 sm:pb-16 sm:pt-16 lg:px-8 lg:pb-24 lg:pt-24">
           <Link
             href="/#work"
             className="inline-flex items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-muted)] transition hover:text-[var(--accent-deep)]"
@@ -91,28 +91,31 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
             <T en="Back to work" ar="عودة إلى الأعمال" />
           </Link>
 
-          <div className="mt-10 flex items-center gap-2.5">
+          {/* The status pill is a flex sibling, not inline text: as inline
+              content its padding overflowed the eyebrow's line box and
+              collided with the line above whenever the eyebrow wrapped. */}
+          <div className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-2 sm:mt-10">
             <Orb size={28} className="shrink-0" />
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--accent)]">
               {meta.eyebrow}
-              {meta.status && (
-                <span className="ms-3 inline-flex items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-2 py-0.5 text-[0.6rem] tracking-[0.18em] text-[var(--accent-deep)]">
-                  ● {meta.status}
-                </span>
-              )}
             </p>
+            {meta.status && (
+              <span className="inline-flex items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--accent-deep)]">
+                ● {meta.status}
+              </span>
+            )}
           </div>
 
-          <h1 className="font-display mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-[-0.025em] text-[var(--ink)] sm:text-5xl lg:text-6xl">
+          <h1 className="font-display mt-4 max-w-4xl text-[2rem] font-semibold leading-[1.06] tracking-[-0.025em] text-[var(--ink)] sm:mt-5 sm:text-5xl lg:text-6xl">
             {meta.title}
           </h1>
 
-          <p className="mt-7 max-w-2xl text-balance text-lg leading-relaxed text-[var(--ink-muted)] sm:text-xl">
+          <p className="mt-5 max-w-2xl text-balance text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-7 sm:text-xl sm:leading-relaxed">
             {meta.lede}
           </p>
 
           {/* Meta strip */}
-          <dl className="mt-12 grid grid-cols-2 gap-x-8 gap-y-6 border-t border-[var(--border)] pt-8 sm:grid-cols-4">
+          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-[var(--border)] pt-6 sm:mt-12 sm:gap-x-8 sm:gap-y-6 sm:pt-8 sm:grid-cols-4">
             <div>
               <dt className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
                 <T en="Year" ar="السنة" />
@@ -147,7 +150,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
           </dl>
 
           {meta.links && meta.links.length > 0 && (
-            <div className="mt-10 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-wrap gap-2.5 sm:mt-10 sm:gap-3">
               {meta.links.map((l) => (
                 <a
                   key={l.href}
@@ -194,18 +197,18 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
       )}
 
       {/* Sections */}
-      <div className="mx-auto max-w-3xl px-5 py-20 lg:px-8 lg:py-24">
+      <div className="mx-auto max-w-3xl px-5 py-14 sm:py-20 lg:px-8 lg:py-24">
         {sections.map((s, i) => (
-          <section key={i} className="mb-20 last:mb-0">
+          <section key={i} className="mb-12 last:mb-0 sm:mb-20">
             {s.kicker && (
               <p className="mb-3 font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--accent)]">
                 § {s.kicker}
               </p>
             )}
-            <h2 className="mb-7 font-display text-3xl font-medium leading-[1.1] tracking-tight text-[var(--ink)] sm:text-[2.5rem]">
+            <h2 className="mb-5 font-display text-2xl font-medium leading-[1.14] tracking-tight text-[var(--ink)] sm:mb-7 sm:text-[2.5rem]">
               {s.heading}
             </h2>
-            <div className="space-y-5 text-[1.0625rem] leading-[1.75] text-[var(--ink-muted)]">
+            <div className="space-y-4 text-base leading-[1.65] text-[var(--ink-muted)] sm:space-y-5 sm:text-[1.0625rem] sm:leading-[1.75]">
               {s.body}
             </div>
           </section>
@@ -218,7 +221,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
           <div className="mx-auto max-w-5xl px-5 py-14 lg:px-8 lg:py-16">
             <Link
               href={nextProject.href}
-              className="glass group flex items-center justify-between gap-6 rounded-2xl p-8 shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft-lg"
+              className="glass group flex items-center justify-between gap-4 rounded-2xl p-5 shadow-soft transition hover:-translate-y-0.5 hover:shadow-soft-lg sm:gap-6 sm:p-8"
             >
               <div>
                 <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">

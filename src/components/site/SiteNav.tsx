@@ -54,20 +54,22 @@ export function SiteNav() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-[var(--glass-border)] bg-[var(--glass)] backdrop-blur-xl">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3.5 lg:px-8">
-        {/* wordmark — monogram + name + role */}
-        <Link href="/" className="group inline-flex items-center gap-2.5">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2.5 sm:gap-6 sm:px-5 sm:py-3.5 lg:px-8">
+        {/* wordmark — monogram + name + role. The role line is a second line of
+            small mono text: it only fits from sm up, so below that the wordmark
+            is monogram + name alone rather than a wrapped, overlapping stack. */}
+        <Link href="/" className="group inline-flex min-w-0 items-center gap-2 sm:gap-2.5">
           <span
             aria-hidden
-            className="font-display grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-[var(--c-mauve)] to-[var(--accent)] text-lg font-semibold text-white shadow-soft"
+            className="font-display grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-gradient-to-br from-[var(--c-mauve)] to-[var(--accent)] text-base font-semibold text-white shadow-soft sm:h-9 sm:w-9 sm:text-lg"
           >
             M
           </span>
-          <span className="flex flex-col leading-none">
-            <span className="text-sm font-semibold tracking-tight text-[var(--ink)]">
+          <span className="flex min-w-0 flex-col leading-none">
+            <span className="truncate text-sm font-semibold tracking-tight text-[var(--ink)]">
               <T en={heroContent.name} ar={heroContent.nameAr} />
             </span>
-            <span className="mt-1 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
+            <span className="mt-1 hidden font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)] sm:block">
               <T en={heroContent.subtitle} ar={heroContent.subtitleAr} />
             </span>
           </span>
@@ -103,7 +105,7 @@ export function SiteNav() {
         </nav>
 
         {/* actions */}
-        <div className="flex items-center gap-2.5">
+        <div className="flex shrink-0 items-center gap-1.5 sm:gap-2.5">
           {/* ⌘K command palette hint (desktop) */}
           <button
             type="button"

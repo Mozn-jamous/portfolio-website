@@ -57,6 +57,7 @@ Each home section is a "place" in one pastel world:
 - **`Reveal`** (`components/site/`) — scroll-in motion. **Animates `y` only; opacity stays 1** (so content is never hidden if the observer doesn't fire — the bfcache rule). Wrap inner content, never whole sections.
 - **`Hero.tsx` is a client component** with mouse parallax: scene, foreground clouds, planet, and orb translate at different depths on pointer move.
 - Dev visual check: `node scripts/shot.mjs <url> <out.png>` (puppeteer-core, drives the already-installed Chrome — no browser download) captures a true full-page render with lazy images loaded. Headless Chrome `--screenshot` with URL anchors is unreliable; prefer the script.
+- Mobile check: `node scripts/shot-mobile.mjs <url> <prefix> [slices|menu] [lang] [theme]` renders at a 390×844 phone viewport and writes one PNG per viewport-height band (`<prefix>-00.png`, …), which is how you actually see density and dead-space problems; `menu` instead captures the open nav sheet, and the trailing `ar`/`light` args check RTL and the light palette. `node scripts/shot-variants.mjs <url> <prefix> [menu|page]` shoots the same page across Arabic/RTL and light theme in one run. Output goes to `.shots/` (gitignored).
 
 ### Case studies (`src/app/projects/<slug>/page.tsx`)
 
@@ -108,6 +109,18 @@ Three fonts, each with a job:
 - **JetBrains Mono** — eyebrows, labels, years, status pills, the `· ·` meta.
 
 Avoid making everything a centered card. Prefer **editorial layouts**: a big serif lead statement, huge numbers with hairline dividers, a numbered manifesto list, flowing chip rows, a real vertical timeline, large inline links — content integrated **into** the scene via the directional `.scrim-l` / `.scrim-b` washes (or an inline gradient) plus text-shadow, not boxed in a `.panel`. Reserve `.panel` for genuine cards (project gallery). Motion: `Reveal` (scroll rise), `ScrollProgress` (top bar), hero mouse-parallax.
+
+### Phones get an app, not a squeezed page
+
+Everything is mobile-first with `sm:`/`lg:` restoring the desktop values — never the reverse. The rule that matters: **a row of cards on desktop must not become a vertical stack on a phone.** Four full-width cards is four screens of scrolling, and it's what made the site read as a shrunken desktop page.
+
+Instead, a desktop row becomes a **swipeable rail**: `flex snap-x snap-mandatory overflow-x-auto no-scrollbar` with each item `w-[74vw] shrink-0 snap-start`, plus `-mx-5 px-5` so the rail bleeds to the screen edge while the first card still lines up with the text above it, and the next card peeks in to make the swipe discoverable. From `sm:` up the same markup flips back to a grid (`sm:grid sm:overflow-visible sm:mx-0 sm:px-0`) — one DOM tree, no duplicated markup. `ProductProcess` is the reference implementation.
+
+A **master-detail** layout (`SystemArchitecture`) follows the same idea: the desktop's vertical selector column becomes a horizontal tab strip above a single detail panel. Never expand all five layers inline — one panel means only the selected layer's contents are ever in the page. Vertical-only ornament (the `↓` flow connectors) is `hidden lg:flex`.
+
+Both rails work in RTL for free — flex and scroll-snap follow the writing direction. Verify anyway with the `ar` arg on `shot-mobile.mjs`.
+
+Keep the copy short enough for a phone card **in `scenes-content.ts` itself** rather than adding mobile-only text variants — the tighter line reads better on desktop too, and a second set of strings would double the bilingual maintenance (each string already has an `Ar` twin).
 
 ### Site chrome
 

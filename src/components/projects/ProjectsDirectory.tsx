@@ -48,18 +48,20 @@ export function ProjectsDirectory({
     <section id="work" className="relative isolate scroll-mt-16 overflow-hidden">
       <SceneBackground src="/scenes/work.webp" scrim={0.16} />
 
-      <div className="mx-auto max-w-6xl px-5 py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-6xl px-5 py-10 sm:py-20 lg:px-8 lg:py-28">
         <Reveal>
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en="Selected work" ar="مختارات من العمل" />
           </span>
-          <h2 className="font-display mt-4 max-w-3xl text-[2rem] font-medium leading-[1.1] tracking-tight text-[var(--ink)] lg:text-[2.75rem]">
+          <h2 className="font-display mt-4 max-w-3xl text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
             <T
               en="Every project, designed and built end-to-end."
               ar="كل مشروع: مُصمَّم ومبنيّ من الفكرة إلى الإطلاق."
             />
           </h2>
-          <p className="mt-5 max-w-2xl text-lg leading-[1.7] text-[var(--ink-muted)]">
+          {/* Desktop-only: on a phone the heading carries the point and this
+              paragraph just pushed the first project card below the fold. */}
+          <p className="hidden max-w-2xl text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-5 sm:block sm:text-lg sm:leading-[1.7]">
             <T en={projectsDescription} ar={projectsDescriptionAr} />
           </p>
         </Reveal>
@@ -75,7 +77,7 @@ export function ProjectsDirectory({
 
         {variant === "home" && (
           <Reveal>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-8 flex justify-center sm:mt-10">
               <Link
                 href="/projects"
                 className="group inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-6 py-3 text-sm font-semibold text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]"
@@ -89,10 +91,15 @@ export function ProjectsDirectory({
           </Reveal>
         )}
 
-        {/* ERP / Odoo work — kept SEPARATE, reached via its own hub, never mixed
-            into the developer grid above. */}
+        {/* ERP / Odoo gateway. On the HOME page this duplicates the dedicated
+            #systems section further down, so phones (where a duplicate costs a
+            third of a screen) see it only on /projects. */}
         <Reveal>
-          <div className="panel mt-10 flex flex-wrap items-center justify-between gap-4 rounded-2xl p-6 lg:p-8">
+          <div
+            className={`panel mt-8 flex-wrap items-center justify-between gap-4 rounded-2xl p-5 sm:mt-10 sm:flex sm:p-6 lg:p-8 ${
+              variant === "home" ? "hidden" : "flex"
+            }`}
+          >
             <div>
               <h3 className="font-display text-xl font-medium text-[var(--ink)] lg:text-2xl">
                 <T en="ERP & Odoo systems" ar="أنظمة ERP وOdoo" />

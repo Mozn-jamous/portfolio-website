@@ -19,8 +19,11 @@ import { T } from "@/components/i18n/T";
 export function DecisionLog() {
   const { eyebrow, eyebrowAr, heading, headingAr, intro, introAr, decisions } =
     decisionLog;
-  // First decision open by default; the rest collapsed.
-  const [open, setOpen] = useState<Set<string>>(new Set([decisions[0].id]));
+  // Everything starts collapsed: the six "Why …?" questions ARE the signal and
+  // read as a scannable one-screen list, where a pre-opened panel cost ~450px
+  // of a 13-screen phone page. Same state on every viewport, so SSR and
+  // hydration agree and aria-expanded always matches what's on screen.
+  const [open, setOpen] = useState<Set<string>>(new Set());
 
   function toggle(id: string) {
     setOpen((prev) => {
@@ -36,21 +39,23 @@ export function DecisionLog() {
       <SceneBackground src="/scenes/work.webp" position="center 30%" scrim={0.18} />
       <div aria-hidden className="veil-v absolute inset-0 -z-10" />
 
-      <div className="mx-auto max-w-3xl px-5 py-24 lg:px-8 lg:py-28">
+      <div className="mx-auto max-w-3xl px-5 py-10 sm:py-20 lg:px-8 lg:py-28">
         <Reveal>
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en={eyebrow} ar={eyebrowAr} />
           </span>
-          <h2 className="font-display mt-4 text-[2rem] font-medium leading-[1.1] tracking-tight text-[var(--ink)] lg:text-[2.75rem]">
+          <h2 className="font-display mt-4 text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
             <T en={heading} ar={headingAr} />
           </h2>
-          <p className="mt-5 text-lg leading-[1.7] text-[var(--ink-muted)]">
+          {/* The heading already lands the point on a phone; the intro is
+              desktop-only rather than a second mobile-only string. */}
+          <p className="hidden text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-5 sm:block sm:text-lg sm:leading-[1.7]">
             <T en={intro} ar={introAr} />
           </p>
         </Reveal>
 
         <Reveal>
-          <ul className="mt-12 space-y-3">
+          <ul className="mt-6 space-y-2.5 sm:mt-12 sm:space-y-3">
             {decisions.map((d) => {
               const isOpen = open.has(d.id);
               return (
