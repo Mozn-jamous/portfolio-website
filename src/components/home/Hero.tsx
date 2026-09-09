@@ -168,10 +168,11 @@ export function Hero() {
               <T en={status} ar={heroContent.statusAr} />
             </motion.span>
 
-            {/* eyebrow */}
+            {/* eyebrow — desktop only: it repeats the headline word for word,
+                which on a phone costs a line of the fold to say nothing new. */}
             <motion.p
               {...itemProps}
-              className="mt-5 font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--accent)] sm:mt-7 sm:text-[0.72rem] sm:tracking-[0.28em]"
+              className="hidden font-mono text-[0.62rem] uppercase tracking-[0.22em] text-[var(--accent)] sm:mt-7 sm:block sm:text-[0.72rem] sm:tracking-[0.28em]"
             >
               <T en={eyebrow} ar={heroContent.eyebrowAr} />
             </motion.p>
@@ -179,7 +180,7 @@ export function Hero() {
             {/* headline — Clash Display 600, tight */}
             <motion.h1
               {...itemProps}
-              className="font-display mt-3 text-[2.5rem] font-semibold leading-[1.0] tracking-[-0.025em] text-[var(--ink)] sm:text-[3.5rem] lg:text-[5.25rem]"
+              className="font-display mt-5 text-[2.6rem] font-semibold leading-[1.1] tracking-normal text-[var(--ink)] sm:mt-3 sm:text-[3.5rem] sm:leading-[1.0] sm:tracking-[-0.025em] lg:text-[5.25rem]"
             >
               <T en={headlineLead} ar={heroContent.headlineLeadAr} />{" "}
               <span className="text-gradient">
@@ -209,13 +210,13 @@ export function Hero() {
                 last stat is a phrase, not a number, so it spans both columns. */}
             <motion.dl
               {...itemProps}
-              className="mt-7 grid grid-cols-2 gap-x-5 gap-y-4 sm:mt-10 sm:flex sm:flex-wrap sm:gap-x-9 sm:gap-y-6"
+              className="mt-7 grid grid-cols-1 gap-x-5 gap-y-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-x-9 sm:gap-y-6"
             >
               {stats.map((s, i) => (
                 <div
                   key={s.key}
-                  className={`flex items-start gap-2.5 ${
-                    i === stats.length - 1 ? "col-span-2 sm:col-auto" : ""
+                  className={`flex items-center gap-2.5 sm:items-start ${
+                    i === stats.length - 1 ? "hidden sm:flex" : ""
                   }`}
                 >
                   <svg
@@ -232,14 +233,14 @@ export function Hero() {
                   >
                     {statIcons[s.key]}
                   </svg>
-                  <div>
-                    <dt className="font-display text-xl font-semibold leading-none text-[var(--ink)] sm:text-2xl">
+                  <div className="flex min-w-0 items-baseline gap-2 sm:block">
+                    <dt className="font-display shrink-0 text-xl font-semibold leading-none text-[var(--ink)] sm:text-2xl">
                       <T
                         en={<CountUp value={s.value} />}
                         ar={<CountUp value={s.valueAr} />}
                       />
                     </dt>
-                    <dd className="mt-1 text-[0.72rem] leading-tight text-[var(--ink-muted)]">
+                    <dd className="text-[0.78rem] leading-tight text-[var(--ink-muted)] sm:mt-1 sm:text-[0.72rem]">
                       <T en={s.label} ar={s.labelAr} />
                     </dd>
                   </div>

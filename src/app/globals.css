@@ -142,6 +142,13 @@ body {
   letter-spacing: -0.02em;
 }
 
+/* Clash Display is drawn for large sizes: the -0.02em that looks refined at
+   48px+ closes the word gaps at phone sizes, so headings read as one run of
+   letters. Relax it under the sm breakpoint. */
+@media (max-width: 639px) {
+  .font-display { letter-spacing: 0; word-spacing: 0.04em; }
+}
+
 /* ── Bilingual EN/AR ── <T> renders both languages; show only the active one.
    Toggled by <html lang> (+ dir), set pre-paint by the script in layout.tsx
    and flipped by <LanguageToggle>. Untranslated text stays as-is in both. */

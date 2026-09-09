@@ -80,8 +80,8 @@ export default function BurgasmPage() {
               <>
                 <Lead>
                   <T
-                    en="Plenty of restaurants run a till and call it software. Burgasm runs on a full Odoo system, with accounting, point of sale, kitchen display and inventory all reading from the same place, and over thirty modules installed and configured around how the place actually operates."
-                    ar="كثير من المطاعم تُشغّل صندوقاً وتسمّيه برمجية. أما Burgasm فيعمل على نظام Odoo كامل، فيه المحاسبة ونقاط البيع وشاشة المطبخ والمخزون كلها تقرأ من المكان نفسه، وأكثر من ثلاثين وحدة مُثبَّتة ومُهيّأة حول طريقة عمل المكان فعلاً."
+                    en="Plenty of restaurants run a till and call it software. Here the accounting, the point of sale, the kitchen display and the inventory all read from the same place, across thirty-odd modules configured around how the place actually operates."
+                    ar="كثير من المطاعم تُشغّل صندوقاً وتسمّيه برمجية. هنا تقرأ المحاسبة ونقاط البيع وشاشة المطبخ والمخزون كلها من المكان نفسه، عبر ثلاثين وحدة وأكثر مُهيّأة حول طريقة عمل المكان فعلاً."
                   />
                 </Lead>
                 <Figure

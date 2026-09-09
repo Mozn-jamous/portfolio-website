@@ -54,9 +54,17 @@ export function DirectoryCard({ project }: { project: ProjectIndexEntry }) {
       {/* meta — on phones the grid is 2-up, so the card keeps only the
           essentials (industry, name, role); summary + impact join at sm:. */}
       <div className="flex flex-1 flex-col p-3.5 sm:p-5">
-        <div className="flex items-center justify-between font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
-          <span><T en={project.industry} ar={project.industryAr ?? project.industry} /></span>
-          <span className="text-[var(--accent)]">{project.year}</span>
+        <div className="flex items-center justify-between gap-2 font-mono text-[0.58rem] uppercase tracking-[0.16em] text-[var(--ink-faint)]">
+          <span className="truncate sm:hidden">
+            <T
+              en={project.industry.split("·")[0].trim()}
+              ar={(project.industryAr ?? project.industry).split("·")[0].trim()}
+            />
+          </span>
+          <span className="hidden truncate sm:inline">
+            <T en={project.industry} ar={project.industryAr ?? project.industry} />
+          </span>
+          <span className="shrink-0 text-[var(--accent)]">{project.year}</span>
         </div>
 
         <h3 className="font-display mt-2.5 text-base font-semibold tracking-tight text-[var(--ink)] transition group-hover:text-[var(--accent-deep)] sm:text-lg">
@@ -74,7 +82,7 @@ export function DirectoryCard({ project }: { project: ProjectIndexEntry }) {
           <T en={project.impact} ar={project.impactAr ?? project.impact} />
         </p>
 
-        <span className="mt-3 inline-flex items-center gap-1 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--accent-deep)] sm:mt-4 sm:text-[0.66rem]">
+        <span className="mt-auto inline-flex items-center gap-1 pt-3 font-mono text-[0.6rem] uppercase tracking-[0.12em] text-[var(--accent-deep)] sm:pt-4 sm:text-[0.66rem]">
           <T en="Read case study" ar="اقرأ دراسة الحالة" />
           <span aria-hidden className="transition group-hover:translate-x-1 rtl:-scale-x-100">
             →

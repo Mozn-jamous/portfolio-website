@@ -94,8 +94,8 @@ export default function CareConnectPage() {
             <>
               <Lead>
                 <T
-                  en="CareConnect is a childcare marketplace with three sides: mothers booking care, babysitters offering it, and admins keeping the platform honest. I designed all three apps and led the build, with the babysitter app developed together with a collaborator."
-                  ar="CareConnect سوق لرعاية الأطفال بثلاثة أطراف: أمّهات يحجزن الرعاية، وجليسات يعرضنها، ومشرفون يحفظون نزاهة المنصّة. صمّمتُ التطبيقات الثلاثة وقدتُ البناء، وطُوّر تطبيق الجليسة بالتعاون مع زميل."
+                  en="The three sides are mothers booking care, babysitters offering it, and admins keeping the platform honest. I designed all three apps and led the build, with the babysitter app developed together with a collaborator."
+                  ar="الأطراف الثلاثة هي أمّهات يحجزن الرعاية، وجليسات يعرضنها، ومشرفون يحفظون نزاهة المنصّة. صمّمتُ التطبيقات الثلاثة وقدتُ البناء، وطُوّر تطبيق الجليسة بالتعاون مع زميل."
                 />
               </Lead>
               <FactGrid

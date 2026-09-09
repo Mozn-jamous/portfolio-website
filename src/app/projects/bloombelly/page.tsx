@@ -106,8 +106,8 @@ export default function BloomBellyPage() {
             <>
               <Lead>
                 <T
-                  en="BloomBelly is an Arabic health companion for expectant and new mothers: a chatbot, a medical-image helper and a nutrition guide, all under one bilingual interface. It was my graduation project at ASPU, and the requirement was a working product rather than a slide deck."
-                  ar="BloomBelly رفيق صحّي عربي للحوامل والأمّهات الجُدد: روبوت محادثة، ومساعد للصور الطبية، ودليل تغذية، كلّها تحت واجهة واحدة ثنائية اللغة. كان مشروع تخرّجي في ASPU، والمطلوب منتجٌ يعمل لا عرض شرائح."
+                  en="It carries three capabilities: a chatbot, a medical-image helper and a nutrition guide. This was my graduation project at ASPU, where the requirement was a working product rather than a slide deck."
+                  ar="يحمل ثلاث قدرات: روبوت محادثة، ومساعداً للصور الطبية، ودليل تغذية. وكان مشروع تخرّجي في ASPU، والمطلوب فيه منتجٌ يعمل لا عرض شرائح."
                 />
               </Lead>
               <FactGrid

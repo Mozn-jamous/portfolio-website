@@ -83,8 +83,8 @@ export default function TakhrjyPage() {
               <>
                 <Lead>
                   <T
-                    en="Takhrjy runs a business selling personalized graduation gift boxes. Every order is a custom product with embroidery, photos and options, and it has to be made, then shipped, then booked. The system models that whole operation across seven roles. I joined as the designer and front-end engineer, and turned the team's requirements into the actual screens in Vue."
-                    ar="يدير Takhrjy مشروعاً يبيع صناديق هدايا تخرّج مخصّصة. كل طلب منتج مخصّص فيه تطريز وصور وخيارات، ويجب صناعته ثم شحنه ثم قيده محاسبياً. ويُنمذج النظام هذه العملية كاملة عبر سبعة أدوار. انضممتُ مصمّمةً ومهندسةَ واجهة، وحوّلتُ متطلبات الفريق إلى الشاشات الفعلية بـVue."
+                    en="Every order is a custom product with embroidery, photos and options, and it has to be made, then shipped, then booked. The system models that operation across seven roles, and I turned the team's requirements into the actual screens in Vue."
+                    ar="كل طلب منتج مخصّص فيه تطريز وصور وخيارات، ويجب صناعته ثم شحنه ثم قيده محاسبياً. ويُنمذج النظام هذه العملية عبر سبعة أدوار، وحوّلتُ متطلبات الفريق إلى الشاشات الفعلية بـVue."
                   />
                 </Lead>
                 <FactGrid

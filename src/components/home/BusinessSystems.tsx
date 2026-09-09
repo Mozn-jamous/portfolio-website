@@ -47,7 +47,7 @@ export function BusinessSystems() {
           <div className="panel grid gap-6 rounded-3xl p-5 sm:gap-10 sm:p-8 lg:grid-cols-[1.4fr_1fr] lg:p-12">
             {/* Left — the pitch */}
             <div>
-              <h2 className="font-display text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
+              <h2 className="font-display text-[1.55rem] font-medium leading-[1.24] tracking-normal sm:leading-[1.12] sm:tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
                 <T en={heading} ar={headingAr} />
               </h2>
               <p className="mt-4 max-w-xl text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-5 sm:text-[1.02rem] sm:leading-relaxed">

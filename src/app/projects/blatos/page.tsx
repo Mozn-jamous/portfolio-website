@@ -86,8 +86,8 @@ export default function BlatosPage() {
               <>
                 <Lead>
                   <T
-                    en="Blatos is a SaaS for online shops. Each shop is a tenant with its own isolated space and its own AI assistant reachable over Telegram. We built it as a pair. The core logic and the AI are my collaborator's design, and the build around them is mine: the API surface, the Vue 3 dashboard, and the integration that ties the layers into one product."
-                    ar="Blatos نظام SaaS للمتاجر الإلكترونية. كل متجر مستأجر له مساحته المعزولة ومساعده الذكي عبر Telegram. بنيناه ثنائياً. منطق النظام الجوهري والذكاء من تصميم زميلي المشارك، والبناء حولهما لي: واجهة الـAPI، ولوحة تحكّم Vue 3، والدمج الذي يربط الطبقات في منتج واحد."
+                    en="Each shop is a tenant with its own isolated space and its own AI assistant reachable over Telegram. What I owned is the API surface, the Vue 3 dashboard, and the integration that ties the layers into one product."
+                    ar="كل متجر مستأجر له مساحته المعزولة ومساعده الذكي عبر Telegram. وما كان لي هو واجهة الـAPI، ولوحة تحكّم Vue 3، والدمج الذي يربط الطبقات في منتج واحد."
                   />
                 </Lead>
                 <FactGrid

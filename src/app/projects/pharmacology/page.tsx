@@ -85,8 +85,8 @@ export default function PharmacologyPage() {
               <>
                 <Lead>
                   <T
-                    en="The practice belongs to the client, a pharmacist who does medication-aware clinical nutrition. The brand, the site and the system underneath it were my job. I did the redesign and the rewrite, and owned both the visual design and the front-end code."
-                    ar="العيادة للعميل، وهو صيدلي يقدّم تغذية سريرية واعية بالأدوية. أما العلامة والموقع والنظام تحته فكانت مهمّتي. توليتُ إعادة التصميم وإعادة الكتابة، وكان التصميم البصري وكود الواجهة كلاهما لي."
+                    en="The client is a pharmacist who does medication-aware clinical nutrition. What was mine is the brand, the site and the system underneath it: the visual design and the front-end code both."
+                    ar="العميل صيدلي يقدّم تغذية سريرية واعية بالأدوية. وما كان لي هو العلامة والموقع والنظام تحته: التصميم البصري وكود الواجهة كلاهما."
                   />
                 </Lead>
                 <FactGrid

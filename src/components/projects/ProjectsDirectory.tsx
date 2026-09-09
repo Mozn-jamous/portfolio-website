@@ -53,7 +53,7 @@ export function ProjectsDirectory({
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en="Selected work" ar="مختارات من العمل" />
           </span>
-          <h2 className="font-display mt-4 max-w-3xl text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
+          <h2 className="font-display mt-4 max-w-3xl text-[1.55rem] font-medium leading-[1.24] tracking-normal sm:leading-[1.12] sm:tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
             <T
               en="Every project, designed and built end-to-end."
               ar="كل مشروع: مُصمَّم ومبنيّ من الفكرة إلى الإطلاق."

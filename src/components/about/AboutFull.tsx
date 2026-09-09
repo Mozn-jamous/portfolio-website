@@ -57,7 +57,7 @@ export function AboutFull({
             <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
               <T en={eyebrow} ar={eyebrowAr} />
             </span>
-            <h2 className="font-display mt-4 text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2.75rem] lg:text-[3.25rem]">
+            <h2 className="font-display mt-4 text-[1.55rem] font-medium leading-[1.24] tracking-normal sm:leading-[1.12] sm:tracking-tight text-[var(--ink)] sm:text-[2.75rem] lg:text-[3.25rem]">
               <T en={title} ar={titleAr} />
             </h2>
             <p className="mt-4 max-w-xl text-base leading-[1.65] text-[var(--ink-muted)] sm:mt-6 sm:text-lg sm:leading-[1.7]">

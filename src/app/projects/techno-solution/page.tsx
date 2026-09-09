@@ -82,8 +82,8 @@ export default function TechnoSolutionPage() {
               <>
                 <Lead>
                   <T
-                    en="Techno Solution runs three divisions: import, warehousing and solar energy. When I arrived the entire operation lived in spreadsheets, with one secretary entering data for all of it. Nobody had real-time visibility, the accounting was not unified, and there was no way to see the business as a single system."
-                    ar="تدير Techno Solution ثلاثة أقسام: الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ كانت العملية كلها تعيش في جداول Excel، وسكرتيرة واحدة تُدخل البيانات لكل ذلك. لم يكن لأحد رؤية لحظية، ولم تكن المحاسبة موحّدة، ولا طريقة لرؤية المشروع نظاماً واحداً."
+                    en="One secretary was entering the data for all three divisions by hand. Nobody had real-time visibility, the accounting was not unified, and there was no way to see the business as a single system."
+                    ar="كانت سكرتيرة واحدة تُدخل بيانات الأقسام الثلاثة يدوياً. ولم يكن لأحد رؤية لحظية، ولم تكن المحاسبة موحّدة، ولا طريقة لرؤية المشروع نظاماً واحداً."
                   />
                 </Lead>
                 <FactGrid

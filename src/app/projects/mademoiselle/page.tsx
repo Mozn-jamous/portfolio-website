@@ -82,8 +82,8 @@ export default function MademoisellePage() {
             <>
               <Lead>
                 <T
-                  en="Mademoiselle is a commercial mobile product at Santa Media. It had stalled as a FlutterFlow prototype and I was brought in to get it to production. I chose to redesign it before rebuilding it."
-                  ar="Mademoiselle منتج تجاري للجوال في Santa Media. كان متعثّراً كنموذج FlutterFlow واستُقدمتُ لأوصله إلى الإنتاج. واخترتُ أن أعيد تصميمه قبل أن أعيد بناءه."
+                  en="It is a commercial product at Santa Media, and I was brought in to get it to production. I chose to redesign it before rebuilding it."
+                  ar="هو منتج تجاري في Santa Media، واستُقدمتُ لأوصله إلى الإنتاج. واخترتُ أن أعيد تصميمه قبل أن أعيد بناءه."
                 />
               </Lead>
               <FactGrid

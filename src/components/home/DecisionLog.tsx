@@ -44,7 +44,7 @@ export function DecisionLog() {
           <span className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-[var(--accent)]">
             <T en={eyebrow} ar={eyebrowAr} />
           </span>
-          <h2 className="font-display mt-4 text-[1.7rem] font-medium leading-[1.12] tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
+          <h2 className="font-display mt-4 text-[1.55rem] font-medium leading-[1.24] tracking-normal sm:leading-[1.12] sm:tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
             <T en={heading} ar={headingAr} />
           </h2>
           {/* The heading already lands the point on a phone; the intro is

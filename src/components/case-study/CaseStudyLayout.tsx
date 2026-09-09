@@ -96,17 +96,17 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
               collided with the line above whenever the eyebrow wrapped. */}
           <div className="mt-7 flex flex-wrap items-center gap-x-2.5 gap-y-2 sm:mt-10">
             <Orb size={28} className="shrink-0" />
-            <p className="font-mono text-[0.7rem] uppercase tracking-[0.22em] text-[var(--accent)]">
+            <p className="font-mono text-[0.6rem] uppercase tracking-[0.14em] text-[var(--accent)] sm:text-[0.7rem] sm:tracking-[0.22em]">
               {meta.eyebrow}
             </p>
             {meta.status && (
-              <span className="inline-flex items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--accent-deep)]">
+              <span className="hidden items-center gap-1 rounded-full border border-[var(--accent)]/30 bg-[var(--accent-soft)] px-2 py-0.5 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-[var(--accent-deep)] sm:inline-flex">
                 ● {meta.status}
               </span>
             )}
           </div>
 
-          <h1 className="font-display mt-4 max-w-4xl text-[2rem] font-semibold leading-[1.06] tracking-[-0.025em] text-[var(--ink)] sm:mt-5 sm:text-5xl lg:text-6xl">
+          <h1 className="font-display mt-4 max-w-4xl text-[1.8rem] font-semibold leading-[1.22] tracking-normal text-[var(--ink)] sm:mt-5 sm:text-5xl sm:leading-[1.06] sm:tracking-[-0.025em] lg:text-6xl">
             {meta.title}
           </h1>
 
@@ -115,7 +115,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
           </p>
 
           {/* Meta strip */}
-          <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-5 border-t border-[var(--border)] pt-6 sm:mt-12 sm:gap-x-8 sm:gap-y-6 sm:pt-8 sm:grid-cols-4">
+          <dl className="mt-7 grid grid-cols-2 gap-x-5 gap-y-4 border-t border-[var(--border)] pt-5 sm:mt-12 sm:gap-x-8 sm:gap-y-6 sm:pt-8 sm:grid-cols-4">
             <div>
               <dt className="font-mono text-[0.6rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
                 <T en="Year" ar="السنة" />
@@ -140,7 +140,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
                 {meta.stack.map((s) => (
                   <span
                     key={s}
-                    className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2.5 py-0.5 font-mono text-[0.65rem] text-[var(--ink-muted)]"
+                    className="rounded-full border border-[var(--border)] bg-[var(--paper)] px-2 py-0.5 font-mono text-[0.6rem] text-[var(--ink-muted)] sm:px-2.5 sm:text-[0.65rem]"
                   >
                     {s}
                   </span>
@@ -205,7 +205,7 @@ export function CaseStudyLayout({ meta, metrics, sections, nextProject, theme }:
                 § {s.kicker}
               </p>
             )}
-            <h2 className="mb-5 font-display text-2xl font-medium leading-[1.14] tracking-tight text-[var(--ink)] sm:mb-7 sm:text-[2.5rem]">
+            <h2 className="mb-5 font-display text-[1.4rem] font-medium leading-[1.25] tracking-normal text-[var(--ink)] sm:mb-7 sm:text-[2.5rem] sm:leading-[1.14] sm:tracking-tight">
               {s.heading}
             </h2>
             <div className="space-y-4 text-base leading-[1.65] text-[var(--ink-muted)] sm:space-y-5 sm:text-[1.0625rem] sm:leading-[1.75]">
@@ -282,13 +282,13 @@ export function FactGrid({
   items: { label: ReactNode; value: ReactNode }[];
 }) {
   return (
-    <dl className="my-8 grid grid-cols-2 gap-x-6 gap-y-6 border-y border-[var(--border)] py-8 sm:grid-cols-3">
+    <dl className="my-7 grid grid-cols-1 gap-x-6 gap-y-4 border-y border-[var(--border)] py-6 sm:my-8 sm:grid-cols-3 sm:gap-y-6 sm:py-8">
       {items.map((item, i) => (
-        <div key={i}>
-          <dt className="font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--ink-faint)]">
+        <div key={i} className="flex items-baseline justify-between gap-4 sm:block">
+          <dt className="shrink-0 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-[var(--ink-faint)]">
             {item.label}
           </dt>
-          <dd className="mt-1.5 text-base font-medium text-[var(--ink)]">
+          <dd className="text-end text-[0.9375rem] font-medium text-[var(--ink)] sm:mt-1.5 sm:text-start sm:text-base">
             {item.value}
           </dd>
         </div>

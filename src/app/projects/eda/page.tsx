@@ -84,8 +84,8 @@ export default function EdaPage() {
               <>
                 <Lead>
                   <T
-                    en="Eda lets many clinics run on one system while each stays walled off from the rest: three Flutter apps over a shared NestJS backend. I worked on it with a collaborator (@xvtu2003) who owned the backend and the apps, and my two responsibilities were the design and the testing."
-                    ar="Eda تتيح لعيادات كثيرة أن تعمل على نظام واحد مع بقاء كل واحدة معزولة عن الباقي: ثلاثة تطبيقات Flutter فوق خادم NestJS مشترك. عملتُ عليها مع متعاون (@xvtu2003) تولّى الخادم والتطبيقات، ومسؤوليّتاي كانتا التصميم والاختبار."
+                    en="Every clinic shares one system while staying walled off from the rest, and that is where the difficulty sits. Of my two responsibilities, the testing is the one that mattered most here."
+                    ar="كل عيادة تتشارك نظاماً واحداً مع بقائها معزولة عن الباقي، وهنا تقع الصعوبة. ومن مسؤوليّتَيّ، الاختبار هو ما كان الأهمّ هنا."
                   />
                 </Lead>
                 <FactGrid

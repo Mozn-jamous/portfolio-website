@@ -113,8 +113,8 @@ export default function VeghnarTonvairPage() {
               <>
                 <Lead>
                   <T
-                    en="Veghnar Tonvair is a fragrance house selling online. I was handed two things: a Shopify store that worked but looked like every other Shopify store, and the client's brand identity file. My job was the distance between them, which meant turning a static identity document into a storefront that behaves like the brand, in Arabic, on a shop taking real orders."
-                    ar="Veghnar Tonvair بيت عطور يبيع عبر الإنترنت. سُلّمتُ شيئين: متجراً على Shopify يعمل لكنه يشبه كل متاجر Shopify الأخرى، وملف الهوية البصرية الخاص بالعميل. وكان عملي هو المسافة بينهما، أي تحويل مستند هوية ثابت إلى متجر يتصرّف كالعلامة، بالعربية، على متجر يستقبل طلبات حقيقية."
+                    en="My job was the distance between those two things: turning a static identity document into a storefront that behaves like the brand, in Arabic, on a shop taking real orders."
+                    ar="كان عملي هو المسافة بين هذين الشيئين: تحويل مستند هوية ثابت إلى متجر يتصرّف كالعلامة، بالعربية، على متجر يستقبل طلبات حقيقية."
                   />
                 </Lead>
                 <FactGrid
