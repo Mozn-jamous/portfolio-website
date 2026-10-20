@@ -25,63 +25,63 @@ type Role = {
 
 const experience: Role[] = [
   {
-    title: "UI/UX Designer & Flutter Lead",
-    titleAr: "مصمّمة UI/UX وقائدة Flutter",
-    org: "Santa Media — Mademoiselle (MDMZL)",
-    orgAr: "Santa Media — Mademoiselle (MDMZL)",
+    title: "Product Designer & Developer",
+    titleAr: "مصمّمة منتج ومطوّرة",
+    org: "Santa Media",
+    orgAr: "Santa Media",
     period: "Mar 2026 — Present",
     periodAr: "آذار 2026 — حتى الآن",
     location: "Damascus",
     locationAr: "دمشق",
     bullets: [
-      "Leading UI/UX design and native Flutter rebuild of Mademoiselle — from FlutterFlow prototype to production-grade app.",
-      "Designed and shipped a complete Design System: multi-theme, full RTL, 17 typography variants, 9 button variants.",
-      "Owned the full product design lifecycle: wireframes, design system, implementation, QA, and AI module integration.",
+      "Redesigned Mademoiselle, a live beauty-commerce app, and work on its rebuild from FlutterFlow to native Flutter in a three-person team: I own the customer-facing app on Supabase (PostgreSQL functions, row-level security) and co-author the shared design system (three themes, RTL + LTR; Arabic, English and French).",
+      "Redesigned and built Veghnar Tonvair, a fragrance brand's Shopify storefront, from the client's brand book: one governing identity stylesheet, a four-typeface Arabic/Latin system, and perfume-specific product UX. Live, Arabic-first.",
+      "Led the redesign of Divano, a Dubai interior-design firm's bilingual site (14 EN + 14 AR pages, 13 project galleries): a licensed bilingual typeface replacing 86 external font links, a 4K hero video in three resolution tiers, and an image performance pass.",
+      "Front-end and redesign work on ahmedelkhateeb.com (home page, phone UX, supplements and legal pages, Arabic version) and mademoizelle.co (phone layout and the Journal).",
     ],
     bulletsAr: [
-      "أقود تصميم UI/UX وإعادة بناء Mademoiselle أصلياً في Flutter — من نموذج FlutterFlow إلى تطبيقٍ بمستوى الإنتاج.",
-      "صمّمتُ وأطلقتُ نظام تصميمٍ كاملاً: متعدّد السمات، بدعمٍ كامل لليمين-لليسار، 17 خياراً للخطوط، 9 خيارات للأزرار.",
-      "تولّيتُ دورة حياة تصميم المنتج كاملةً: المخططات الهيكلية، ونظام التصميم، والتنفيذ، وضمان الجودة، ودمج وحدات الذكاء الاصطناعي.",
+      "أعدتُ تصميم Mademoiselle، تطبيق تجارة تجميل حيّ، وأعمل على إعادة بنائه من FlutterFlow إلى Flutter أصلي ضمن فريقٍ من ثلاثة: أتولّى تطبيق الزبونة على Supabase (دوال PostgreSQL وأمان مستوى الصف) وأشارك في نظام التصميم المشترك (ثلاث سمات، RTL + LTR؛ بالعربية والإنجليزية والفرنسية).",
+      "أعدتُ تصميم وبناء متجر Veghnar Tonvair على Shopify لعلامة عطور، انطلاقاً من دليل هوية العميل: ملف أنماط واحد يحكم الهوية، ونظام طباعي من أربعة خطوط عربية ولاتينية، وتجربة منتج تناسب العطر. حيّ، وبالعربية أولاً.",
+      "قدتُ إعادة تصميم موقع Divano، شركة تصميم داخلي في دبي، بنسختيه (14 صفحة إنجليزية و14 عربية و13 معرض مشاريع): خطّ ثنائي اللغة مرخَّص حلّ محلّ 86 رابط خطوط خارجياً، وفيديو رئيسي بدقة 4K بثلاث درجات، وتحسين أداء الصور.",
+      "عمل واجهة وإعادة تصميم على ahmedelkhateeb.com (الصفحة الرئيسية، وتجربة الهاتف، وصفحتا المكمّلات والشروط، والنسخة العربية) وعلى mademoizelle.co (تخطيط الهاتف وقسم Journal).",
     ],
   },
   {
-    title: "Freelance UI/UX Designer & Flutter Developer",
-    titleAr: "مصمّمة UI/UX ومطوّرة Flutter — عمل حر",
+    title: "Freelance Product Designer & QA Engineer",
+    titleAr: "مصمّمة منتج ومهندسة اختبار — عمل حر",
     org: "Independent",
     orgAr: "عمل مستقل",
-    period: "Oct 2025 — Mar 2026",
-    periodAr: "تشرين الأول 2025 — آذار 2026",
+    period: "Dec 2025 — Mar 2026",
+    periodAr: "كانون الأول 2025 — آذار 2026",
     location: "Damascus",
     locationAr: "دمشق",
     bullets: [
-      "Designed interfaces and collaborated on a client mobile project with a senior engineer.",
-      "Owned QA across the full application surface — screens, flows, and edge cases.",
+      "Owned UI/UX design (Figma) and QA for a multi-tenant clinics platform (three Flutter apps over a NestJS backend), including testing tenant isolation between clinics.",
     ],
     bulletsAr: [
-      "صمّمتُ الواجهات وتعاونتُ على مشروع جوالٍ لعميلٍ مع مهندسٍ خبير.",
-      "تولّيتُ ضمان الجودة عبر سطح التطبيق كاملاً — الشاشات والتدفّقات والحالات الحديّة.",
+      "تولّيتُ تصميم UI/UX (Figma) والاختبار لمنصّة عيادات متعدّدة المستأجرين (ثلاثة تطبيقات Flutter على خادم NestJS)، ومنه اختبار عزل البيانات بين العيادات.",
     ],
   },
   {
-    title: "Software Developer & ERP Specialist",
-    titleAr: "مطوّرة برمجيات وأخصّائية ERP",
+    title: "Odoo / ERP Developer",
+    titleAr: "مطوّرة Odoo / ERP",
     org: "Techno Solution",
     orgAr: "Techno Solution",
-    period: "Feb 2025 — Sep 2025",
-    periodAr: "شباط 2025 — أيلول 2025",
+    period: "Feb 2025 — Nov 2025",
+    periodAr: "شباط 2025 — تشرين الثاني 2025",
     location: "Damascus",
     locationAr: "دمشق",
     bullets: [
-      "Owned end-to-end Odoo Online implementation across a multi-activity company (import, warehousing, solar).",
-      "Deployed a live Odoo POS in a restaurant; onboarded cashier and supervisory staff into daily production.",
-      "Configured a custom Chart of Accounts linked across HR, payroll, accounting, manufacturing, and purchase modules.",
-      "Built workflow automations with Odoo Studio + custom Python/XML extensions to replace manual reporting.",
+      "Implemented Odoo (17, upgraded through 19, self-hosted) with one colleague for a three-division company (import, warehousing, solar) and Burgasm restaurant, set up as two companies on one instance.",
+      "My modules: accounting and the chart of accounts (dual-currency books for the restaurant), point of sale with ingredient-level inventory, and purchasing and stock. A colleague owned HR, attendance and payroll.",
+      "Trained the restaurant's cashiers and supervisors on the new POS and supported them in daily use; wrote the Python/XML automations within my modules.",
+      "In production at handoff: 18 employees, 6,514 tracked hours, 140 purchase orders and 884 stock moves; 500+ POS orders, 10,000+ ingredient moves, 68 accounts and 30+ modules.",
     ],
     bulletsAr: [
-      "تولّيتُ تنفيذ Odoo Online من البداية إلى النهاية لشركةٍ متعدّدة الأنشطة (استيراد، تخزين، طاقة شمسية).",
-      "أطلقتُ نقاط بيع Odoo حيّة في مطعم؛ ودرّبتُ الكاشيرين والمشرفين على التشغيل اليومي.",
-      "هيّأتُ شجرة حسابات مخصّصة مرتبطة عبر وحدات الموارد البشرية والرواتب والمحاسبة والتصنيع والمشتريات.",
-      "بنيتُ أتمتةً لسير العمل بـOdoo Studio مع امتدادات Python/XML مخصّصة لاستبدال التقارير اليدوية.",
+      "نفّذتُ Odoo (من 17 مع ترقية حتى 19، على خادم خاص) مع زميل لشركةٍ بثلاثة أقسام (استيراد، تخزين، طاقة شمسية) ولمطعم Burgasm، كشركتين على نسخة واحدة.",
+      "وحداتي: المحاسبة وشجرة الحسابات (دفاتر بعملتين للمطعم)، ونقاط البيع مع مخزون على مستوى المكوّنات، والمشتريات والمخزون. وتولّى زميل الموارد البشرية والحضور والرواتب.",
+      "درّبتُ كاشيرات المطعم ومشرفيه على نقاط البيع الجديدة ودعمتهم في الاستخدام اليومي؛ وكتبتُ أتمتة Python/XML ضمن وحداتي.",
+      "في الإنتاج عند التسليم: 18 موظفاً، و6,514 ساعة مسجَّلة، و140 أمر شراء، و884 حركة مخزون؛ وأكثر من 500 طلب على نقاط البيع، و10,000 حركة مكوّنات، و68 حساباً، و30 وحدة.",
     ],
   },
 ];
@@ -90,19 +90,19 @@ const openSource = [
   {
     title: "Smart Expense Manager",
     titleAr: "Smart Expense Manager",
-    org: "Odoo 19 · LGPL-3.0",
-    orgAr: "Odoo 19 · LGPL-3.0",
-    period: "May 2026 — Present",
-    periodAr: "أيار 2026 — حتى الآن",
+    org: "Odoo 19 · LGPL-3.0 · personal project",
+    orgAr: "Odoo 19 · LGPL-3.0 · مشروع شخصي",
+    period: "May 2026",
+    periodAr: "أيار 2026",
     bullets: [
-      "Token-secured one-click email approvals routed via hr.employee hierarchy — no login required.",
-      "Auto-generated journal entries on finance sign-off; QWeb PDF reports emailed by cron.",
-      "Three-tier RBAC at record-rule layer; full EN/AR translations.",
+      "Token-secured one-click email approvals (approve, reject, request revision) routed via the hr.employee hierarchy; no login required.",
+      "Journal entries post automatically on finance approval; monthly QWeb PDF reports emailed by cron.",
+      "Three security groups (Employee, Manager, Finance) with record rules; full EN/AR translations.",
     ],
     bulletsAr: [
-      "موافقات بريديّة بنقرةٍ واحدة مؤمّنة برمز، تُوجَّه عبر تسلسل hr.employee — دون الحاجة لتسجيل الدخول.",
-      "قيود محاسبية مُولّدة تلقائياً عند اعتماد المالية؛ وتقارير PDF عبر QWeb تُرسَل بالبريد عبر cron.",
-      "تحكّمٌ بالوصول بثلاث طبقات على مستوى قواعد السجلات؛ مع ترجمةٍ كاملة بالعربية والإنجليزية.",
+      "موافقات بريدية بنقرة واحدة مؤمّنة برمز (موافقة، رفض، طلب تعديل)، تُوجَّه عبر تسلسل hr.employee؛ دون تسجيل دخول.",
+      "تُرحَّل القيود المحاسبية تلقائياً عند اعتماد المالية؛ وتُرسَل تقارير PDF شهرية عبر QWeb بالبريد عبر cron.",
+      "ثلاث مجموعات صلاحيات (موظف، مدير، مالية) مع قواعد سجلات؛ وترجمة كاملة بالعربية والإنجليزية.",
     ],
     link: "https://github.com/Mozn-jamous/smart-expense-manager",
   },
@@ -112,36 +112,60 @@ const featuredProjects = [
   {
     title: "BloomBelly",
     titleAr: "BloomBelly",
-    org: "Pregnancy & Childcare Platform · 2025",
-    orgAr: "منصّة حملٍ ورعاية أطفال · 2025",
+    org: "Maternal & Child Health App · 2025 · two-person graduation project",
+    orgAr: "تطبيق صحّة الأم والطفل · 2025 · مشروع تخرّج بفريق من اثنتين",
     bullets: [
-      "Designed the full product from scratch — user flows, wireframes, and Figma screens for a bilingual Arabic/English healthcare app.",
-      "Integrated three AI models: Gemini for medical imaging, a LoRA-tuned Arabic transformer for Q&A, Random Forest for nutrition.",
-      "Documented to IEEE 830 standards; built end-to-end as the graduation thesis at ASPU.",
+      "Owned the Python/Flask backend and the three AI models: Gemini for medical images, a LoRA-tuned LLM (Qwen2.5) that answers baby-care questions in Arabic (perplexity 3.05), and Random Forest nutrition scoring.",
+      "Co-designed the Arabic-first, bilingual interface in Figma; my classmate led the Flutter front end.",
+      "Documented to IEEE 830; Supabase for auth, data and conversation history.",
     ],
     bulletsAr: [
-      "صمّمتُ المنتج كاملاً من الصفر — تدفّقات المستخدم والمخططات الهيكلية وشاشات Figma لتطبيق رعايةٍ صحية ثنائي اللغة (عربي/إنجليزي).",
-      "دمجتُ ثلاثة نماذج ذكاء اصطناعي: Gemini للتصوير الطبي، ومحوّل عربي مضبوط بـLoRA للأسئلة والأجوبة، وRandom Forest للتغذية.",
-      "وثّقتُ المشروع وفق معيار IEEE 830؛ وبنيته من البداية للنهاية كمشروع تخرّجٍ في ASPU.",
+      "تولّيتُ خادم Python/Flask ونماذج الذكاء الاصطناعي الثلاثة: Gemini للصور الطبية، ونموذج لغوي مضبوط بـLoRA (Qwen2.5) يجيب عن أسئلة رعاية الطفل بالعربية (perplexity 3.05)، وRandom Forest لتقييم التغذية.",
+      "شاركتُ في تصميم الواجهة العربية أولاً وثنائية اللغة في Figma؛ وقادت زميلتي واجهة Flutter.",
+      "وثّقتُ المشروع وفق IEEE 830؛ وSupabase للمصادقة والبيانات وسجلّ المحادثة.",
     ],
-    stack: "Figma · Flutter · Dart · Flask · Supabase · Gemini · LoRA",
+    stack: "Python · Flask · Gemini · LoRA/PEFT · scikit-learn · Supabase · Figma",
   },
   {
     title: "CareConnect",
     titleAr: "CareConnect",
-    org: "Babysitter Booking & Session Management · 2024",
-    orgAr: "حجز جليسات الأطفال وإدارة الجلسات · 2024",
+    org: "Babysitter Booking Platform · 2024 · lead",
+    orgAr: "منصّة حجز جليسات أطفال · 2024 · قيادة",
     bullets: [
-      "Designed and built a cross-platform booking platform as three Flutter apps (Mother, Babysitter, Admin) on one Supabase backend.",
-      "Owned the full product lifecycle: UX flows, wireframes, Figma screens, implementation, and Supabase integration.",
-      "IEEE 830 SRS authored before any UI work; Supabase RLS enforces role boundaries at the database layer.",
+      "Led a booking platform of three Flutter apps (Mother, Babysitter, Admin) on one Supabase backend; the Babysitter app was co-developed with @shaha123s.",
+      "IEEE 830 SRS before any UI; row-level security enforces role boundaries in the database.",
     ],
     bulletsAr: [
-      "صمّمتُ وبنيتُ منصّة حجزٍ متعدّدة المنصّات كثلاثة تطبيقات Flutter (أمّ، جليسة، مشرف) على خادم Supabase واحد.",
-      "تولّيتُ دورة حياة المنتج كاملةً: تدفّقات التجربة، والمخططات الهيكلية، وشاشات Figma، والتنفيذ، والدمج مع Supabase.",
-      "كتبتُ وثيقة متطلبات IEEE 830 قبل أي عملٍ على الواجهة؛ وتفرض Supabase RLS حدود الأدوار في طبقة قاعدة البيانات.",
+      "قدتُ منصّة حجز من ثلاثة تطبيقات Flutter (أمّ، جليسة، مشرف) على خادم Supabase واحد؛ وطُوّر تطبيق الجليسة بالاشتراك مع @shaha123s.",
+      "وثيقة متطلبات IEEE 830 قبل أي واجهة؛ ويفرض أمان مستوى الصف حدود الأدوار في قاعدة البيانات.",
     ],
     stack: "Figma · Flutter · Dart · Supabase · PostgreSQL · RLS",
+  },
+  {
+    title: "Takhrjy",
+    titleAr: "Takhrjy",
+    org: "Graduation-Gifts ERP · 2026 · team build",
+    orgAr: "نظام ERP لهدايا التخرّج · 2026 · عمل فريق",
+    bullets: [
+      "Designer and front-end developer (Vue 3, TypeScript): designed and built the web views for a 7-role permission model (orders, inventory, employees, reporting). In production at the client.",
+    ],
+    bulletsAr: [
+      "مصمّمة ومطوّرة واجهة (Vue 3، TypeScript): صمّمتُ وبنيتُ واجهات الويب لنموذج صلاحيات بسبعة أدوار (الطلبات، والمخزون، والموظفون، والتقارير). يعمل عند العميل.",
+    ],
+    stack: "Vue 3 · TypeScript · PostgreSQL/PL/pgSQL",
+  },
+  {
+    title: "Blatos",
+    titleAr: "Blatos",
+    org: "AI Multi-Tenant Store SaaS · 2026 · two-person build",
+    orgAr: "SaaS متاجر متعدّد المستأجرين بالذكاء الاصطناعي · 2026 · بناء ثنائي",
+    bullets: [
+      "A web dashboard plus an AI Telegram bot per shop (15 function-call tools) in five languages. The collaborating engineer designed the core AI architecture; implementation was shared. Built, not deployed.",
+    ],
+    bulletsAr: [
+      "لوحة ويب ومعها بوت Telegram بالذكاء الاصطناعي لكل متجر (15 أداة استدعاء دوال) بخمس لغات. صمّم المهندس المشارك بنية الذكاء الأساسية؛ وتقاسمنا التنفيذ. مبنيّ، وغير منشور.",
+    ],
+    stack: "FastAPI · PostgreSQL · SQLAlchemy · Redis · Vue 3 · Groq LLM",
   },
 ];
 
@@ -172,6 +196,13 @@ const certifications = [
     orgAr: "مؤسسة دبي للمستقبل",
     year: "2025",
   },
+  {
+    name: "AI Fluency: Framework & Foundations",
+    nameAr: "AI Fluency: الإطار والأسس",
+    org: "Anthropic",
+    orgAr: "Anthropic",
+    year: "2026",
+  },
 ];
 
 type SkillGroupData = { label: string; labelAr: string; items: string[]; itemsAr: string[] };
@@ -186,26 +217,38 @@ const skills: SkillGroupData[] = [
   {
     label: "Mobile",
     labelAr: "الجوال",
-    items: ["Flutter", "Dart", "iOS + Android"],
-    itemsAr: ["Flutter", "Dart", "iOS + Android"],
+    items: ["Flutter", "Dart", "iOS + Android", "Material 3", "Provider", "BLoC", "GoRouter", "FlutterFlow", "Capacitor", "PWA"],
+    itemsAr: ["Flutter", "Dart", "iOS + Android", "Material 3", "Provider", "BLoC", "GoRouter", "FlutterFlow", "Capacitor", "PWA"],
+  },
+  {
+    label: "Web & e-commerce",
+    labelAr: "الويب والتجارة الإلكترونية",
+    items: ["Vue 3", "Next.js", "TypeScript", "HTML/CSS/JS", "Tailwind", "Shopify (Liquid, Dawn)"],
+    itemsAr: ["Vue 3", "Next.js", "TypeScript", "HTML/CSS/JS", "Tailwind", "Shopify (Liquid، Dawn)"],
   },
   {
     label: "Backend",
     labelAr: "الخادم",
-    items: ["Python", "Flask", "PostgreSQL", "MySQL", "Supabase", "REST APIs"],
-    itemsAr: ["Python", "Flask", "PostgreSQL", "MySQL", "Supabase", "واجهات REST"],
+    items: ["Python", "FastAPI", "Flask", "SQLAlchemy", "PostgreSQL", "MySQL", "Supabase (RLS, Edge Functions)", "Firebase", "Redis", "JWT", "REST APIs"],
+    itemsAr: ["Python", "FastAPI", "Flask", "SQLAlchemy", "PostgreSQL", "MySQL", "Supabase (RLS، Edge Functions)", "Firebase", "Redis", "JWT", "واجهات REST"],
+  },
+  {
+    label: "AI",
+    labelAr: "الذكاء الاصطناعي",
+    items: ["Google Gemini (vision)", "LoRA/PEFT fine-tuning", "scikit-learn", "Function-calling LLM agents", "Prompt engineering"],
+    itemsAr: ["Google Gemini (رؤية)", "ضبط LoRA/PEFT", "scikit-learn", "وكلاء LLM باستدعاء الدوال", "هندسة الأوامر"],
   },
   {
     label: "ERP — Odoo",
     labelAr: "أنظمة ERP — Odoo",
-    items: ["Odoo 17–19", "Odoo Studio", "Python/XML", "ORM", "QWeb", "OWL", "POS"],
-    itemsAr: ["Odoo 17–19", "Odoo Studio", "Python/XML", "ORM", "QWeb", "OWL", "نقاط البيع"],
+    items: ["Odoo 17–19 (self-hosted)", "Odoo Studio", "Python/XML", "ORM", "QWeb", "OWL"],
+    itemsAr: ["Odoo 17–19 (خادم خاص)", "Odoo Studio", "Python/XML", "ORM", "QWeb", "OWL"],
   },
   {
     label: "Odoo modules",
     labelAr: "وحدات Odoo",
-    items: ["POS", "Inventory", "HR", "Payroll", "CRM", "Accounting", "Manufacturing", "Purchase"],
-    itemsAr: ["نقاط البيع", "المخزون", "الموارد البشرية", "الرواتب", "إدارة العلاقات", "المحاسبة", "التصنيع", "المشتريات"],
+    items: ["Accounting", "POS", "Inventory", "Purchase", "HR", "Payroll", "CRM", "Manufacturing"],
+    itemsAr: ["المحاسبة", "نقاط البيع", "المخزون", "المشتريات", "الموارد البشرية", "الرواتب", "إدارة العلاقات", "التصنيع"],
   },
   {
     label: "Tools",
@@ -271,7 +314,9 @@ export default function CVPage() {
                 ar="مهندسة برمجيات. أبني تطبيقات الجوال، وواجهات الويب، وخدمات Python فيها ذكاء اصطناعي، وأنظمة ERP التي تدير بها الشركات عملياتها. العربية أولاً بشكل افتراضي."
               />
             </p>
-            <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs sm:grid-cols-4">
+            {/* No phone number here: this page is public and gets scraped;
+                the number stays in the PDF she sends by hand. */}
+            <dl className="mt-7 grid grid-cols-2 gap-x-6 gap-y-3 font-mono text-xs sm:grid-cols-3">
               <Field label={<T en="Email" ar="البريد" />}>
                 <a
                   href="mailto:moznjamous9@gmail.com"
@@ -280,7 +325,6 @@ export default function CVPage() {
                   moznjamous9@gmail.com
                 </a>
               </Field>
-              <Field label={<T en="Phone" ar="الهاتف" />}>+963 956 959 722</Field>
               <Field label={<T en="LinkedIn" ar="لينكدإن" />}>
                 <a
                   href="https://linkedin.com/in/mozn-jamous"

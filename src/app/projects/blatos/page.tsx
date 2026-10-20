@@ -3,7 +3,6 @@ import {
   CaseStudyLayout,
   Callout,
   FactGrid,
-  Figure,
   Lead,
 } from "@/components/case-study/CaseStudyLayout";
 import {
@@ -14,7 +13,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "A multi-tenant SaaS for online shops, built by two of us. A collaborating engineer designed the core logic and the AI, and I wrote the stack around it: a FastAPI and PostgreSQL backend, a Vue 3 dashboard, and the integration of a Telegram assistant per shop with 15 function-call tools, answering customers in five languages.";
+  "A multi-tenant SaaS for online shops, built by two of us. A collaborating engineer designed the core logic and the AI, and we shared the implementation of the stack around it: a FastAPI and PostgreSQL backend, a Vue 3 dashboard, and the integration of a Telegram assistant per shop with 15 function-call tools, answering customers in five languages. Built, not deployed.";
 
 export const metadata: Metadata = {
   title: "Blatos — a multi-tenant store SaaS with an AI bot per shop — Mozn Jamous",
@@ -46,7 +45,7 @@ export default function BlatosPage() {
       <CaseStudyLayout
         meta={{
           eyebrow: <T en="SaaS · Backend · AI integration" ar="SaaS · خادم · دمج ذكاء اصطناعي" />,
-          status: <T en="Team of two" ar="فريق من اثنين" />,
+          status: <T en="Team of two · Built, not deployed" ar="فريق من اثنين · مبنيّ، غير منشور" />,
           title: (
             <T
               en="Blatos: a multi-tenant store SaaS, with an AI bot per shop."
@@ -55,8 +54,8 @@ export default function BlatosPage() {
           ),
           lede: (
             <T
-              en="A full-stack SaaS built by two of us. A collaborating engineer designed the core logic and the AI, and I built the stack around that design: the FastAPI and PostgreSQL backend, the Vue 3 dashboard, and the wiring that puts the AI layer inside the product. Each shop gets an isolated workspace and its own Telegram assistant, which uses 15 function-call tools against that shop's real data and answers customers in Arabic, English, Turkish, French and German."
-              ar="نظام SaaS متكامل بنيناه اثنين. مهندس مشارك صمّم منطق النظام الجوهري وذكاءه، وأنا بنيتُ الطبقات حول ذلك التصميم: خادم FastAPI وPostgreSQL، ولوحة تحكّم Vue 3، والوصل الذي يضع طبقة الذكاء داخل المنتج. ولكل متجر مساحة معزولة ومساعده الخاص عبر Telegram، يستخدم 15 أداة استدعاء دوال على بيانات ذلك المتجر الحقيقية ويجيب العملاء بالعربية والإنجليزية والتركية والفرنسية والألمانية."
+              en="A full-stack SaaS built by two of us, and not yet deployed. A collaborating engineer designed the core logic and the AI, and we shared the implementation of the stack around that design: the FastAPI and PostgreSQL backend, the Vue 3 dashboard, and the wiring that puts the AI layer inside the product. Each shop gets an isolated workspace and its own Telegram assistant, which uses 15 function-call tools against that shop's own data and answers customers in Arabic, English, Turkish, French and German."
+              ar="نظام SaaS متكامل بنيناه اثنين، ولم يُنشر بعد. مهندس مشارك صمّم منطق النظام الجوهري وذكاءه، وتشاركنا تنفيذ الطبقات حول ذلك التصميم: خادم FastAPI وPostgreSQL، ولوحة تحكّم Vue 3، والوصل الذي يضع طبقة الذكاء داخل المنتج. ولكل متجر مساحة معزولة ومساعده الخاص عبر Telegram، يستخدم 15 أداة استدعاء دوال على بيانات ذلك المتجر نفسه ويجيب العملاء بالعربية والإنجليزية والتركية والفرنسية والألمانية."
             />
           ),
           year: "2026",
@@ -86,13 +85,13 @@ export default function BlatosPage() {
               <>
                 <Lead>
                   <T
-                    en="Each shop is a tenant with its own isolated space and its own AI assistant reachable over Telegram. What I owned is the API surface, the Vue 3 dashboard, and the integration that ties the layers into one product."
-                    ar="كل متجر مستأجر له مساحته المعزولة ومساعده الذكي عبر Telegram. وما كان لي هو واجهة الـAPI، ولوحة تحكّم Vue 3، والدمج الذي يربط الطبقات في منتج واحد."
+                    en="Each shop is a tenant with its own isolated space and its own AI assistant reachable over Telegram. The implementation was shared between us: the API surface, the Vue 3 dashboard, and the integration that ties the layers into one product."
+                    ar="كل متجر مستأجر له مساحته المعزولة ومساعده الذكي عبر Telegram. وتشاركنا التنفيذ بيننا: واجهة الـAPI، ولوحة تحكّم Vue 3، والدمج الذي يربط الطبقات في منتج واحد."
                   />
                 </Lead>
                 <FactGrid
                   items={[
-                    { label: <T en="My role" ar="دوري" />, value: <T en="Wrote the stack and the integration" ar="كتبتُ الطبقات والدمج" /> },
+                    { label: <T en="My role" ar="دوري" />, value: <T en="Co-implemented the stack and the integration" ar="شاركتُ في تنفيذ الطبقات والدمج" /> },
                     { label: <T en="Collaborator" ar="المشارك" />, value: <T en="An engineer, on core logic and AI design" ar="مهندس، على منطق النظام وتصميم الذكاء" /> },
                     { label: <T en="Backend" ar="الخلفية" />, value: "FastAPI · PostgreSQL · SQLAlchemy" },
                     { label: <T en="Frontend" ar="الواجهة" />, value: "Vue 3 · Tailwind" },
@@ -115,10 +114,6 @@ export default function BlatosPage() {
                     ar="الجزء الصعب في نظام متعدّد المستأجرين هو إبقاء بيانات كل متجر منفصلة بنظافة مع تشغيل قاعدة كود واحدة. الخادم FastAPI مع PostgreSQL عبر SQLAlchemy، ومعه مصادقة JWT وRedis، وفصل المستأجرين يمرّ عبر طبقة البيانات بحيث لا يرى متجر صفوف متجر آخر. وفوقها لوحة تحكّم Vue 3 وTailwind لأصحاب المتاجر."
                   />
                 </p>
-                <Figure
-                  label="Architecture"
-                  caption={<T en="The multi-tenant data layer and the AI layer. Diagram still to add." ar="طبقة البيانات متعدّدة المستأجرين وطبقة الذكاء. المخطّط لم يُضَف بعد." />}
-                />
               </>
             ),
           },
@@ -149,8 +144,8 @@ export default function BlatosPage() {
               <>
                 <p>
                   <T
-                    en="Blatos is where I worked across every layer of a real SaaS: a multi-tenant data model, a FastAPI backend, a Vue front-end, and an AI layer wired in with function-calling. I did it alongside an engineer whose core-logic and AI design I was building against, which turned out to be its own skill. Integrating someone else's strongest thinking without flattening it is harder than owning the whole thing."
-                    ar="في Blatos عملتُ عبر كل طبقة في نظام SaaS حقيقي: نموذج بيانات متعدّد المستأجرين، وخادم FastAPI، وواجهة Vue، وطبقة ذكاء موصولة عبر استدعاء الدوال. وفعلتُ ذلك إلى جانب مهندس كنتُ أبني على تصميمه لمنطق النظام وذكائه، وتبيّن أن هذه مهارة بحدّ ذاتها. فدمج أقوى تفكير شخص آخر دون أن تُسطّحه أصعب من أن تملك الشيء كله."
+                    en="Blatos is where I worked across every layer of a SaaS, built but not deployed: a multi-tenant data model, a FastAPI backend, a Vue front-end, and an AI layer wired in with function-calling. I did it alongside an engineer whose core-logic and AI design we were building against, which turned out to be its own skill. Integrating someone else's strongest thinking without flattening it is harder than owning the whole thing."
+                    ar="في Blatos عملتُ عبر كل طبقة في نظام SaaS، مبنيّ وغير منشور: نموذج بيانات متعدّد المستأجرين، وخادم FastAPI، وواجهة Vue، وطبقة ذكاء موصولة عبر استدعاء الدوال. وفعلتُ ذلك إلى جانب مهندس كنّا نبني على تصميمه لمنطق النظام وذكائه، وتبيّن أن هذه مهارة بحدّ ذاتها. فدمج أقوى تفكير شخص آخر دون أن تُسطّحه أصعب من أن تملك الشيء كله."
                   />
                 </p>
               </>

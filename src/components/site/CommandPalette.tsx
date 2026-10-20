@@ -40,7 +40,7 @@ const COMMANDS: Command[] = [
   { label: "Pharmacology — brand & service site", labelAr: "Pharmacology — موقع علامة وخدمات", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/pharmacology" },
   { label: "Divano — interior-design firm site", labelAr: "Divano — موقع شركة تصميم داخلي", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/divano" },
   { label: "Veghnar Tonvair — Arabic-first Shopify store", labelAr: "Veghnar Tonvair — متجر Shopify عربيّ أولاً", hint: "Case study", hintAr: "دراسة حالة", href: "/projects/veghnar-tonvair" },
-  { label: "Download résumé / CV", labelAr: "تحميل السيرة الذاتية", hint: "Page", hintAr: "صفحة", href: "/cv" },
+  { label: "Résumé / CV", labelAr: "السيرة الذاتية", hint: "Page", hintAr: "صفحة", href: "/cv" },
   { label: "GitHub", labelAr: "GitHub", hint: "External", hintAr: "خارجي", href: "https://github.com/Mozn-jamous", external: true },
   { label: "LinkedIn", labelAr: "LinkedIn", hint: "External", hintAr: "خارجي", href: "https://linkedin.com/in/mozn-jamous", external: true },
   { label: "Email", labelAr: "البريد", hint: "External", hintAr: "خارجي", href: "mailto:moznjamous9@gmail.com", external: true },

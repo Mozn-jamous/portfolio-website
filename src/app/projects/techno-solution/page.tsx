@@ -14,7 +14,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "Replaced a three-division company's Excel operation — import, warehousing, and solar energy — with one live Odoo ERP: HR, payroll, attendance, purchasing, inventory, and accounting. Built solo in Damascus; still in daily production after handoff.";
+  "Moved a three-division company's Excel operation (import, warehousing, and solar energy) onto one self-hosted Odoo ERP in Damascus. I owned accounting, purchasing and inventory; a colleague owned HR, attendance and payroll. In production when I handed it off in November 2025.";
 
 export const metadata: Metadata = {
   title: "Techno Solution — Odoo ERP for a 3-division company — Mozn Jamous",
@@ -46,23 +46,22 @@ export default function TechnoSolutionPage() {
       <CaseStudyLayout
         meta={{
           eyebrow: <T en="Odoo ERP · Full implementation" ar="نظام Odoo ERP · تطبيق كامل" />,
-          status: <T en="Live in production" ar="حيّ في الإنتاج" />,
-          title: <T en="Techno Solution: from spreadsheets to an ERP the company runs on." ar="Techno Solution: من جداول Excel إلى نظام ERP تعمل عليه الشركة." />,
+          status: <T en="In production at handoff" ar="في الإنتاج عند التسليم" />,
+          title: <T en="Techno Solution: from spreadsheets to one ERP for the whole company." ar="Techno Solution: من جداول Excel إلى نظام ERP واحد للشركة كلها." />,
           lede: (
             <T
-              en="Techno Solution (Eyad Mahfouz Trading) runs three divisions: import, warehousing and solar energy. When I arrived the whole operation lived in spreadsheets. I designed, configured and deployed one Odoo system the company now runs on, covering HR, payroll, attendance, purchasing, inventory and accounting. I did it on my own, with no local Odoo support to lean on."
-              ar="تدير Techno Solution (إياد محفوظ للتجارة) ثلاثة أقسام: الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ كانت العملية كلها تعيش في جداول Excel. صمّمتُ وهيّأتُ وأطلقتُ نظام Odoo واحداً تعمل عليه الشركة الآن، يغطّي الموارد البشرية والرواتب والحضور والمشتريات والمخزون والمحاسبة. فعلتُ ذلك وحدي، دون دعم Odoo محلّي أتّكئ عليه."
+              en="Techno Solution (Eyad Mahfouz Trading) runs three divisions: import, warehousing and solar energy. When I arrived the whole operation lived in spreadsheets. With one colleague I moved it onto a self-hosted Odoo system covering HR, payroll, attendance, purchasing, inventory and accounting. I owned accounting, purchasing and inventory; my colleague owned HR, attendance and payroll."
+              ar="تدير Techno Solution (إياد محفوظ للتجارة) ثلاثة أقسام: الاستيراد، والتخزين، والطاقة الشمسية. حين وصلتُ كانت العملية كلها تعيش في جداول Excel. مع زميلٍ واحد نقلتُها إلى نظام Odoo مستضاف ذاتياً يغطّي الموارد البشرية والرواتب والحضور والمشتريات والمخزون والمحاسبة. تولّيتُ أنا المحاسبة والمشتريات والمخزون، وتولّى زميلي الموارد البشرية والحضور والرواتب."
             />
           ),
-          year: <T en="Feb – Sep 2025" ar="شباط – أيلول 2025" />,
-          role: <T en="Sole Odoo implementer · Systems designer" ar="مُنفّذة Odoo الوحيدة · مصمّمة أنظمة" />,
+          year: <T en="Feb – Nov 2025" ar="شباط – تشرين الثاني 2025" />,
+          role: <T en="Odoo / ERP developer · Systems designer" ar="مطوّرة Odoo / ERP · مصمّمة أنظمة" />,
           stack: [
-            "Odoo 16/17",
+            "Odoo 17–19",
             "Python",
             "PostgreSQL",
             "QWeb",
             "OWL",
-            "HR & Payroll",
             "Accounting",
             "Inventory",
             "Purchase",
@@ -72,7 +71,7 @@ export default function TechnoSolutionPage() {
           { value: "18", label: <T en="Employees onboarded across 3 divisions" ar="موظفاً أُدخلوا عبر 3 أقسام" /> },
           { value: "6,514", label: <T en="Working hours tracked" ar="ساعة عملٍ متتبَّعة" /> },
           { value: "140", label: <T en="Purchase orders managed" ar="أمر شراءٍ مُدار" /> },
-          { value: <T en="Still live" ar="ما زال حيّاً" />, label: <T en="In daily production after handoff" ar="في الإنتاج اليومي بعد التسليم" /> },
+          { value: <T en="Nov 2025" ar="تشرين الثاني 2025" />, label: <T en="In production when I handed it off" ar="في الإنتاج حين سلّمته" /> },
         ]}
         sections={[
           {
@@ -91,8 +90,8 @@ export default function TechnoSolutionPage() {
                     { label: <T en="Company" ar="الشركة" />, value: <T en="Techno Solution · 3 divisions" ar="Techno Solution · 3 أقسام" /> },
                     { label: <T en="Industry" ar="القطاع" />, value: <T en="Import · warehousing · solar" ar="استيراد · تخزين · طاقة شمسية" /> },
                     { label: <T en="Before" ar="قبل" />, value: <T en="Excel + one secretary" ar="Excel + سكرتيرة واحدة" /> },
-                    { label: <T en="Engagement" ar="مدة التكليف" />, value: <T en="Feb – Sep 2025" ar="شباط – أيلول 2025" /> },
-                    { label: <T en="Role" ar="الدور" />, value: <T en="Sole Odoo implementer" ar="مُنفّذة Odoo الوحيدة" /> },
+                    { label: <T en="Engagement" ar="مدة التكليف" />, value: <T en="Feb – Nov 2025" ar="شباط – تشرين الثاني 2025" /> },
+                    { label: <T en="Role" ar="الدور" />, value: <T en="Odoo developer, in a team of two" ar="مطوّرة Odoo، ضمن فريق من اثنين" /> },
                     { label: <T en="Location" ar="المكان" />, value: <T en="Damascus, Syria" ar="دمشق، سوريا" /> },
                   ]}
                 />
@@ -111,28 +110,28 @@ export default function TechnoSolutionPage() {
               <>
                 <p>
                   <T
-                    en="At the time there was no local Odoo expertise in Syria to call on and no support network to fall back to. The learning curve and the build happened at once: I was teaching myself the platform while standing up a live system real people depended on every day."
-                    ar="في ذلك الوقت لم تكن هناك خبرة Odoo محلّية في سوريا أستعين بها، ولا شبكة دعم أرجع إليها. وحدث منحنى التعلّم والبناء في آنٍ واحد: كنتُ أُعلّم نفسي المنصّة بينما أُقيم نظاماً حيّاً يعتمد عليه أناس حقيقيون كل يوم."
+                    en="The learning curve and the build happened at once: I was teaching myself the platform while standing up a live system real people depended on every day."
+                    ar="حدث منحنى التعلّم والبناء في آنٍ واحد: كنتُ أُعلّم نفسي المنصّة بينما أُقيم نظاماً حيّاً يعتمد عليه أناس حقيقيون كل يوم."
                   />
                 </p>
                 <Callout kicker={<T en="The constraint" ar="القيد" />}>
                   <T
-                    en="There was no margin for a long sandbox phase. Whatever I configured had to be correct enough to put in front of staff that same week: accounting that has to balance, payroll that has to pay people, purchasing that has to track real money."
-                    ar="لم يكن هناك هامش لمرحلة تجربة طويلة. كل ما أُهيّئه كان يجب أن يكون صحيحاً بما يكفي لوضعه أمام الموظفين في الأسبوع نفسه: محاسبة يجب أن تتوازن، ورواتب يجب أن تدفع للناس، ومشتريات يجب أن تتتبّع أموالاً حقيقية."
+                    en="There was no margin for a long sandbox phase. Whatever I configured had to be correct enough to put in front of staff that same week: accounting that has to balance, purchasing that has to track real money, stock that has to match the warehouse."
+                    ar="لم يكن هناك هامش لمرحلة تجربة طويلة. كل ما أُهيّئه كان يجب أن يكون صحيحاً بما يكفي لوضعه أمام الموظفين في الأسبوع نفسه: محاسبة يجب أن تتوازن، ومشتريات يجب أن تتتبّع أموالاً حقيقية، ومخزون يجب أن يطابق المستودع."
                   />
                 </Callout>
               </>
             ),
           },
           {
-            kicker: <T en="What I built" ar="ما الذي بنيته" />,
-            heading: <T en="One system the company runs on." ar="نظامٌ واحد تعمل عليه الشركة." />,
+            kicker: <T en="What we built" ar="ما الذي بنيناه" />,
+            heading: <T en="One system for the whole company." ar="نظامٌ واحد للشركة كلها." />,
             body: (
               <>
                 <p>
                   <T
-                    en="I replaced the spreadsheets with one Odoo system shaped around how Techno Solution actually works: HR and payroll, attendance, purchasing, inventory and accounting, all reading from the same place. The first step was getting the whole company into it, which meant onboarding 18 employees across the three divisions."
-                    ar="استبدلتُ جداول Excel بنظام Odoo واحد مصوغ حول طريقة عمل Techno Solution فعلاً: الموارد البشرية والرواتب، والحضور، والمشتريات، والمخزون، والمحاسبة، كلها تقرأ من المكان نفسه. وكانت الخطوة الأولى إدخال الشركة كلها إليه، أي إدخال 18 موظفاً عبر الأقسام الثلاثة."
+                    en="Together we replaced the spreadsheets with one Odoo system shaped around how Techno Solution actually works: HR and payroll, attendance, purchasing, inventory and accounting, all reading from the same place. My side was accounting and the chart of accounts, purchasing and inventory, with the custom Python and XML automations those modules needed; my colleague took HR, attendance and payroll. The first step was getting the whole company into it, which meant onboarding 18 employees across the three divisions."
+                    ar="استبدلنا معاً جداول Excel بنظام Odoo واحد مصوغ حول طريقة عمل Techno Solution فعلاً: الموارد البشرية والرواتب، والحضور، والمشتريات، والمخزون، والمحاسبة، كلها تقرأ من المكان نفسه. وكان جانبي المحاسبة وشجرة الحسابات، والمشتريات، والمخزون، مع أتمتة Python وXML المخصّصة التي احتاجتها تلك الوحدات؛ وتولّى زميلي الموارد البشرية والحضور والرواتب. وكانت الخطوة الأولى إدخال الشركة كلها إليه، أي إدخال 18 موظفاً عبر الأقسام الثلاثة."
                   />
                 </p>
                 <Figure
@@ -160,8 +159,8 @@ export default function TechnoSolutionPage() {
               <>
                 <Lead>
                   <T
-                    en="An ERP only becomes real once people put their daily work into it. These are the live reports for attendance, purchasing and stock, running on the company's actual operations."
-                    ar="لا يصير نظام ERP حقيقياً إلا حين يضع الناس عملهم اليومي فيه. وهذه هي التقارير الحيّة للحضور والمشتريات والمخزون، تعمل على عمليات الشركة الفعلية."
+                    en="An ERP only becomes real once people put their daily work into it. These are the live reports for attendance, purchasing and stock, running on the company's actual operations, captured while I was still on the project."
+                    ar="لا يصير نظام ERP حقيقياً إلا حين يضع الناس عملهم اليومي فيه. وهذه هي التقارير الحيّة للحضور والمشتريات والمخزون، تعمل على عمليات الشركة الفعلية، التُقطت وأنا ما زلتُ على المشروع."
                   />
                 </Lead>
                 <Figure
@@ -198,25 +197,25 @@ export default function TechnoSolutionPage() {
           },
           {
             kicker: <T en="The proof" ar="الدليل" />,
-            heading: <T en="It outlived my involvement." ar="استمرّ بعد انتهاء عملي." />,
+            heading: <T en="What happened after I left." ar="ما حدث بعد رحيلي." />,
             body: (
               <>
                 <Callout kicker={<T en="The signal it worked" ar="إشارة أنه نجح" />}>
                   <T
-                    en="“When I left, the company didn't go back to Excel. They hired a dedicated Odoo developer to maintain and grow what I built.”"
-                    ar="«حين غادرتُ، لم تعد الشركة إلى Excel. بل وظّفت مطوّر Odoo متفرّغاً لصيانة وتنمية ما بنيته.»"
+                    en="When I left in November 2025, the company did not go back to Excel. They hired a dedicated Odoo developer to maintain and grow the system."
+                    ar="حين غادرتُ في تشرين الثاني 2025، لم تعد الشركة إلى Excel. بل وظّفت مطوّر Odoo متفرّغاً لصيانة النظام وتنميته."
                   />
                 </Callout>
                 <p>
                   <T
-                    en="The screenshots above are not a demo. They are the live system as it runs today, captured nine months after I handed it off, and the sales report below covers twelve continuous months of activity. The strongest signal that an implementation worked is that there was something solid enough to hand over, and that it keeps running once you are gone."
-                    ar="اللقطات أعلاه ليست عرضاً تجريبياً. هي النظام الحيّ كما يعمل اليوم، التُقطت بعد تسعة أشهر من تسليمه، ويغطّي تقرير المبيعات أدناه اثني عشر شهراً متواصلاً من النشاط. وأقوى إشارة على نجاح أي تطبيق أن يوجد شيء متين بما يكفي ليُسلَّم، وأن يستمرّ في العمل بعد رحيلك."
+                    en="The screenshots above are not a demo. They are the live system, captured while I was still on the project. The strongest signal that an implementation worked is that there was something solid enough to hand over, and that the company chose to keep it."
+                    ar="اللقطات أعلاه ليست عرضاً تجريبياً. هي النظام الحيّ، التُقطت وأنا ما زلتُ على المشروع. وأقوى إشارة على نجاح أي تطبيق أن يوجد شيء متين بما يكفي ليُسلَّم، وأن تختار الشركة الإبقاء عليه."
                   />
                 </p>
                 <Figure
                   src="/work/techno-solution/sales-analysis.webp"
                   label="Sales analysis"
-                  caption={<T en="Sales analysis: twelve months of activity after handoff" ar="تحليل المبيعات: اثنا عشر شهراً من النشاط بعد التسليم" />}
+                  caption={<T en="Sales analysis, captured while I was still on the project" ar="تحليل المبيعات، التُقط وأنا ما زلتُ على المشروع" />}
                 />
               </>
             ),
@@ -228,8 +227,8 @@ export default function TechnoSolutionPage() {
               <>
                 <p>
                   <T
-                    en="The lesson was not a technical one. An ERP succeeds or fails on whether the people using it can do their jobs without thinking about the software. Building it alone, with no local support, is where I picked up the habit of designing systems around the business and then making them simple enough to hand over."
-                    ar="لم يكن الدرس تقنياً. نظام ERP ينجح أو يفشل بناءً على ما إذا كان مستخدموه يستطيعون أداء عملهم دون التفكير في البرمجية. وبناؤه وحدي، دون دعم محلّي، هو حيث اكتسبتُ عادة تصميم الأنظمة حول المشروع ثم جعلها بسيطة بما يكفي لتُسلَّم."
+                    en="The lesson was not a technical one. An ERP succeeds or fails on whether the people using it can do their jobs without thinking about the software. Building it in a team of two, learning the platform as we went, is where I picked up the habit of designing systems around the business and then making them simple enough to hand over."
+                    ar="لم يكن الدرس تقنياً. نظام ERP ينجح أو يفشل بناءً على ما إذا كان مستخدموه يستطيعون أداء عملهم دون التفكير في البرمجية. وبناؤه ضمن فريق من اثنين، ونحن نتعلّم المنصّة في الطريق، هو حيث اكتسبتُ عادة تصميم الأنظمة حول المشروع ثم جعلها بسيطة بما يكفي لتُسلَّم."
                   />
                 </p>
               </>

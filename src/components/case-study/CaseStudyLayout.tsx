@@ -369,7 +369,7 @@ export function Persona({
         <div>
           <h3 className="text-lg font-medium tracking-tight text-[var(--ink)]">{name}</h3>
           <p className="mt-0.5 font-mono text-[0.62rem] uppercase tracking-[0.18em] text-[var(--ink-faint)]">
-            {role}
+            {role} · <T en="Illustrative persona" ar="شخصية توضيحية" />
           </p>
         </div>
       </header>

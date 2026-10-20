@@ -3,7 +3,6 @@ import {
   CaseStudyLayout,
   Callout,
   FactGrid,
-  Figure,
   Lead,
 } from "@/components/case-study/CaseStudyLayout";
 import {
@@ -133,10 +132,6 @@ export default function EdaPage() {
                     { label: <T en="Second admin" ar="مشرف ثانٍ" />, value: <T en="Platform-level oversight" ar="إشراف على مستوى المنصّة" /> },
                     { label: <T en="Shared" ar="مشترك" />, value: <T en="One design language across all three" ar="لغة تصميم واحدة عبر الثلاثة" /> },
                   ]}
-                />
-                <Figure
-                  label="App screens"
-                  caption={<T en="Patient and clinic-admin screens. Export still to add." ar="شاشات المريض وإدارة العيادة. التصدير لم يُضَف بعد." />}
                 />
               </>
             ),

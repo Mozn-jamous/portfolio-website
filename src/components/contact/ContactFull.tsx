@@ -80,7 +80,7 @@ export function ContactFull() {
                 className="inline-flex w-full items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-[var(--c-mauve)] to-[var(--accent)] px-5 py-4 text-sm font-semibold text-white shadow-soft transition hover:opacity-90"
               >
                 <T en={resume.label} ar={resume.labelAr} />
-                <span aria-hidden>↓</span>
+                <span aria-hidden className="rtl:-scale-x-100">→</span>
               </Link>
             </Magnetic>
           </div>

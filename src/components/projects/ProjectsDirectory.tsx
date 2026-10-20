@@ -6,9 +6,9 @@ import { Reveal } from "@/components/site/Reveal";
 import { T } from "@/components/i18n/T";
 
 export const projectsDescription =
-  "Products, systems, and experiences designed and built across healthcare, childcare, commerce, and business operations.";
+  "Products, systems, and client sites across healthcare, childcare, commerce, and business operations. Each card says what my part was.";
 const projectsDescriptionAr =
-  "منتجات وأنظمة وتجارب صُمّمت وبُنيت في الرعاية الصحية ورعاية الأطفال والتجارة وإدارة الأعمال.";
+  "منتجات وأنظمة ومواقع عملاء في الرعاية الصحية ورعاية الأطفال والتجارة وإدارة الأعمال. كل بطاقة تقول ما كان دوري فيها.";
 
 /**
  * Projects directory — the DEVELOPER / product work only (Flutter, AI, design).
@@ -30,6 +30,32 @@ const FEATURED = [
   "/projects/veghnar-tonvair",
   "/projects/pharmacology",
 ];
+
+/** A small labelled divider between the two gallery groups on /projects. */
+function GroupHeading({
+  en,
+  ar,
+  noteEn,
+  noteAr,
+}: {
+  en: string;
+  ar: string;
+  noteEn: string;
+  noteAr: string;
+}) {
+  return (
+    <Reveal>
+      <div className="mt-12 flex flex-wrap items-baseline gap-x-4 gap-y-1 border-t border-[var(--border)] pt-6 sm:mt-16">
+        <h3 className="font-display text-xl font-medium text-[var(--ink)] sm:text-2xl">
+          <T en={en} ar={ar} />
+        </h3>
+        <p className="text-sm text-[var(--ink-muted)]">
+          <T en={noteEn} ar={noteAr} />
+        </p>
+      </div>
+    </Reveal>
+  );
+}
 
 function featuredFirst(projects: typeof projectsIndex) {
   const rank = (p: (typeof projectsIndex)[number]) => {
@@ -55,8 +81,8 @@ export function ProjectsDirectory({
           </span>
           <h2 className="font-display mt-4 max-w-3xl text-[1.55rem] font-medium leading-[1.24] tracking-normal sm:leading-[1.12] sm:tracking-tight text-[var(--ink)] sm:text-[2rem] lg:text-[2.75rem]">
             <T
-              en="Every project, designed and built end-to-end."
-              ar="كل مشروع: مُصمَّم ومبنيّ من الفكرة إلى الإطلاق."
+              en="Work I designed, built, or tested."
+              ar="أعمال صمّمتها أو بنيتها أو اختبرتها."
             />
           </h2>
           {/* Desktop-only: on a phone the heading carries the point and this
@@ -66,14 +92,30 @@ export function ProjectsDirectory({
           </p>
         </Reveal>
 
-        <ProjectsGrid
-          projects={
-            variant === "home"
-              ? featuredFirst(projectsIndex.filter((p) => !p.clientSite)).slice(0, 4)
-              : featuredFirst(projectsIndex)
-          }
-          initialCount={variant === "full" ? 4 : undefined}
-        />
+        {variant === "home" ? (
+          <ProjectsGrid
+            projects={featuredFirst(projectsIndex.filter((p) => !p.clientSite)).slice(0, 4)}
+          />
+        ) : (
+          <>
+            {/* The gallery shows everything at once, in two labelled groups,
+                so the breadth reads without a "See more" click. */}
+            <GroupHeading
+              en="Products"
+              ar="منتجات"
+              noteEn="Apps and systems, with my part named on each card."
+              noteAr="تطبيقات وأنظمة، ودوري مذكور على كل بطاقة."
+            />
+            <ProjectsGrid projects={featuredFirst(projectsIndex.filter((p) => !p.clientSite))} />
+            <GroupHeading
+              en="Client websites"
+              ar="مواقع عملاء"
+              noteEn="Brand and commerce sites designed and built at Santa Media."
+              noteAr="مواقع علامات وتجارة صُمّمت وبُنيت في Santa Media."
+            />
+            <ProjectsGrid projects={featuredFirst(projectsIndex.filter((p) => p.clientSite))} />
+          </>
+        )}
 
         {variant === "home" && (
           <Reveal>

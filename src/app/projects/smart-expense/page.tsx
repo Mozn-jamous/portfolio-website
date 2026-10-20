@@ -4,7 +4,6 @@ import {
   ADR,
   Callout,
   FactGrid,
-  Figure,
   Lead,
   Persona,
   Priorities,
@@ -50,7 +49,7 @@ export default function SmartExpensePage() {
       <CaseStudyLayout
       meta={{
         eyebrow: <T en="Odoo 19 · Python · Open source" ar="Odoo 19 · Python · مفتوح المصدر" />,
-        status: <T en="Live, LGPL-3.0" ar="حيّ، LGPL-3.0" />,
+        status: <T en="Open source, LGPL-3.0" ar="مفتوح المصدر، LGPL-3.0" />,
         title: (
           <T
             en="Smart Expense Manager: an approval that takes one click."
@@ -59,11 +58,11 @@ export default function SmartExpensePage() {
         ),
         lede: (
           <T
-            en="A custom Odoo 19 module that replaces the paper expense loop. Approval emails carry a single-use token and route through the hr.employee hierarchy, so nobody has to log in. Finance sign-off generates the journal entry, and a cron job emails a monthly PDF report."
-            ar="وحدة Odoo 19 مخصّصة تحلّ محلّ حلقة النفقات الورقية. رسائل الموافقة تحمل رمزاً يُستخدَم مرة واحدة وتُوجَّه عبر تسلسل hr.employee، فلا يحتاج أحد إلى تسجيل الدخول. واعتماد المالية يولّد القيد المحاسبي، ومهمّة cron ترسل تقرير PDF شهرياً."
+            en="A personal open-source Odoo 19 module, built to replace the paper expense loop. Approval emails carry a single-use token and route through the hr.employee hierarchy, so nobody has to log in. Finance sign-off generates the journal entry, and a cron job emails a monthly PDF report."
+            ar="وحدة Odoo 19 شخصية مفتوحة المصدر، بُنيت لتحلّ محلّ حلقة النفقات الورقية. رسائل الموافقة تحمل رمزاً يُستخدَم مرة واحدة وتُوجَّه عبر تسلسل hr.employee، فلا يحتاج أحد إلى تسجيل الدخول. واعتماد المالية يولّد القيد المحاسبي، ومهمّة cron ترسل تقرير PDF شهرياً."
           />
         ),
-        year: <T en="2026 to now" ar="2026 حتى الآن" />,
+        year: <T en="May 2026" ar="أيار 2026" />,
         role: <T en="Designed and wrote it on my own" ar="صمّمتها وكتبتها وحدي" />,
         stack: [
           "Python",
@@ -84,10 +83,10 @@ export default function SmartExpensePage() {
         ],
       }}
       metrics={[
-        { value: <T en="Days to seconds" ar="من أيام إلى ثوانٍ" />, label: <T en="Approval time, on a one-click flow with no login" ar="زمن الموافقة، على تدفّق بنقرة واحدة بلا تسجيل دخول" /> },
-        { value: <T en="No login" ar="بلا تسجيل دخول" />, label: <T en="Managers act from email; the system gets used" ar="المديرون يتصرّفون من البريد؛ فيُستخدَم النظام" /> },
+        { value: <T en="One click" ar="نقرة واحدة" />, label: <T en="Approve, reject or request a revision, straight from the email" ar="موافقة أو رفض أو طلب تعديل، مباشرة من البريد" /> },
+        { value: <T en="No login" ar="بلا تسجيل دخول" />, label: <T en="Managers act from the inbox instead of opening Odoo" ar="المديرون يتصرّفون من البريد بدل فتح Odoo" /> },
         { value: <T en="Audit-grade" ar="بمستوى التدقيق" />, label: <T en="Access enforced in record rules rather than hidden menus" ar="الوصول مفروض في قواعد السجلات بدل قوائم مخفية" /> },
-        { value: <T en="Open source" ar="مفتوح المصدر" />, label: <T en="Live on GitHub under LGPL-3.0" ar="حيّ على GitHub تحت LGPL-3.0" /> },
+        { value: <T en="Open source" ar="مفتوح المصدر" />, label: <T en="On GitHub under LGPL-3.0" ar="على GitHub تحت LGPL-3.0" /> },
       ]}
       sections={[
         {
@@ -97,14 +96,14 @@ export default function SmartExpensePage() {
             <>
               <Lead>
                 <T
-                  en="An employee submits a receipt from their phone. A manager approves with one click from email. Finance posts with one click from email. The journal entry is generated automatically, and a cron job mails a monthly department digest. Nobody logs in anywhere along the way."
-                  ar="يقدّم الموظّف إيصالاً من جوّاله. ويوافق المدير بنقرة واحدة من البريد. وتُرحّل المالية بنقرة واحدة من البريد. ويُولَّد القيد المحاسبي تلقائياً، وترسل مهمّة cron ملخّصاً شهرياً للقسم. ولا يسجّل أحد دخوله في أي موضع من الطريق."
+                  en="An employee submits a receipt from their phone. A manager approves, rejects or asks for a revision with one click from email. Finance posts with one click from email. The journal entry is generated automatically, and a cron job mails a monthly department digest. Nobody logs in anywhere along the way."
+                  ar="يقدّم الموظّف إيصالاً من جوّاله. ويوافق المدير أو يرفض أو يطلب تعديلاً بنقرة واحدة من البريد. وتُرحّل المالية بنقرة واحدة من البريد. ويُولَّد القيد المحاسبي تلقائياً، وترسل مهمّة cron ملخّصاً شهرياً للقسم. ولا يسجّل أحد دخوله في أي موضع من الطريق."
                 />
               </Lead>
               <FactGrid
                 items={[
                   { label: <T en="Role" ar="الدور" />, value: <T en="Designed it and wrote all of it" ar="صمّمتها وكتبتها كلها" /> },
-                  { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="2026 to now" ar="2026 حتى الآن" /> },
+                  { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="May 2026, personal project" ar="أيار 2026، مشروع شخصي" /> },
                   { label: <T en="Module type" ar="نوع الوحدة" />, value: <T en="Odoo 19 custom" ar="Odoo 19 مخصّصة" /> },
                   { label: <T en="Users" ar="المستخدمون" />, value: <T en="Employees, managers, finance" ar="موظفون، ومديرون، ومالية" /> },
                   { label: <T en="Auth pattern" ar="نمط المصادقة" />, value: <T en="Token-secured URL" ar="رابطٌ مؤمّن برمز" /> },
@@ -261,8 +260,8 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en={<>The module attaches a unique token to an expense request when it goes out to a manager. The approval email carries two links, <strong>Approve</strong> and <strong>Reject</strong>, each a one-time URL bound to that token, the request ID and the manager&apos;s hr.employee record. Clicking one moves the request to its next state, with no Odoo login anywhere in it.</>}
-                  ar={<>ترفق الوحدة رمزاً فريداً بطلب النفقة عند إرساله إلى المدير. ويحمل بريد الموافقة رابطين، <strong>موافقة</strong> و<strong>رفض</strong>، كل واحد عنوان يُستخدَم مرة واحدة مرتبط بذلك الرمز ومعرّف الطلب وسجلّ hr.employee للمدير. والنقر على أحدهما ينقل الطلب إلى حالته التالية، دون أي تسجيل دخول إلى Odoo فيه.</>}
+                  en={<>The module attaches a unique token to an expense request when it goes out to a manager. The approval email carries three links, <strong>Approve</strong>, <strong>Reject</strong> and <strong>Request revision</strong>, each a one-time URL bound to that token, the request ID and the manager&apos;s hr.employee record. Clicking one moves the request to its next state, with no Odoo login anywhere in it.</>}
+                  ar={<>ترفق الوحدة رمزاً فريداً بطلب النفقة عند إرساله إلى المدير. ويحمل بريد الموافقة ثلاثة روابط، <strong>موافقة</strong> و<strong>رفض</strong> و<strong>طلب تعديل</strong>، كل واحد عنوان يُستخدَم مرة واحدة مرتبط بذلك الرمز ومعرّف الطلب وسجلّ hr.employee للمدير. والنقر على أحدها ينقل الطلب إلى حالته التالية، دون أي تسجيل دخول إلى Odoo فيه.</>}
                 />
               </p>
 
@@ -274,11 +273,6 @@ export default function SmartExpensePage() {
                   ar="الاحتكاك عدوّ الالتزام. وكل تسجيل دخول تطلبه فرصة أخرى للنسيان، فيعيش الإجراء حيث يكون الشخص أصلاً: في بريده."
                 />
               </Callout>
-
-              <Figure
-                label="Approval email"
-                caption={<T en="The one-click approve or reject email. Screenshot still to add." ar="بريد الموافقة أو الرفض بنقرة واحدة. اللقطة لم تُضَف بعد." />}
-              />
             </>
           ),
         },
@@ -304,8 +298,8 @@ export default function SmartExpensePage() {
                 }
                 consequences={
                   <T
-                    en="Approvals drop from days to seconds, and every state transition records the token that was used. The cost is that mail has to go over TLS-encrypted SMTP, because the token itself grants the right to act."
-                    ar="تنزل الموافقات من أيام إلى ثوانٍ، وكل انتقال حالة يسجّل الرمز الذي استُخدم. والكلفة أن البريد يجب أن يمرّ عبر SMTP مشفّر بـTLS، لأن الرمز نفسه يمنح حقّ التصرّف."
+                    en="An approval is one click from the inbox, and every state transition records the token that was used. The cost is that mail has to go over TLS-encrypted SMTP, because the token itself grants the right to act."
+                    ar="تصير الموافقة نقرةً واحدة من البريد، وكل انتقال حالة يسجّل الرمز الذي استُخدم. والكلفة أن البريد يجب أن يمرّ عبر SMTP مشفّر بـTLS، لأن الرمز نفسه يمنح حقّ التصرّف."
                   />
                 }
               />
@@ -385,8 +379,8 @@ export default function SmartExpensePage() {
             <>
               <p>
                 <T
-                  en="Smart Expense is live and open source under LGPL-3.0. The token-secured approval flow turns a multi-day paper loop into a one-click action a manager finishes from their inbox, with access enforced at the ORM layer and a clean ledger downstream."
-                  ar="Smart Expense حيّ ومفتوح المصدر تحت LGPL-3.0. ويحوّل تدفّق الموافقة المؤمّن بالرمز حلقةً ورقية تستغرق أياماً إلى إجراء بنقرة واحدة يُنجزه المدير من بريده، بوصول مفروض في طبقة ORM ودفتر أستاذ نظيف تالياً."
+                  en="Smart Expense is open source on GitHub under LGPL-3.0. It is a personal project, not yet deployed at a client. The token-secured approval flow is designed to turn a multi-day paper loop into a one-click action a manager finishes from their inbox, with access enforced at the ORM layer and a clean ledger downstream."
+                  ar="Smart Expense مفتوح المصدر على GitHub تحت LGPL-3.0. وهو مشروع شخصي، لم يُنشَر بعد لدى أي عميل. وتدفّق الموافقة المؤمّن بالرمز مصمَّم ليحوّل حلقةً ورقية تستغرق أياماً إلى إجراء بنقرة واحدة يُنجزه المدير من بريده، بوصول مفروض في طبقة ORM ودفتر أستاذ نظيف تالياً."
                 />
               </p>
               <ol className="list-decimal space-y-2 ps-5 marker:text-[var(--accent)]">
@@ -429,8 +423,8 @@ export default function SmartExpensePage() {
                     tier: "P0",
                     label: (
                       <T
-                        en="The one-click approve and reject links have to work reliably in the email clients managers actually use. If it breaks once, nobody trusts the link again."
-                        ar="على رابطَي الموافقة والرفض بنقرة واحدة أن يعملا بثبات في عملاء البريد التي يستخدمها المديرون فعلاً. وإن تعطّل مرة، لن يثق أحد بالرابط بعدها."
+                        en="The one-click approve, reject and revision links have to work reliably in the email clients managers actually use. If it breaks once, nobody trusts the link again."
+                        ar="على روابط الموافقة والرفض وطلب التعديل بنقرة واحدة أن تعمل بثبات في عملاء البريد التي يستخدمها المديرون فعلاً. وإن تعطّلت مرة، لن يثق أحد بالرابط بعدها."
                       />
                     ),
                   },

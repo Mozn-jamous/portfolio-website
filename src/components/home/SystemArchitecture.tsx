@@ -52,7 +52,10 @@ export function SystemArchitecture() {
                 rows meant five screens of scroll. So it becomes a swipeable
                 tab strip feeding the one detail panel below — same select-a-
                 layer interaction, phone-shaped. */}
-            <ol
+            {/* Plain divs, not ol/li: a tablist may only own tabs, and an <li>
+                carries its own listitem role, which broke the ARIA tree
+                (Lighthouse: aria-required-children / -parent, listitem). */}
+            <div
               role="tablist"
               aria-label="Stack layers"
               className="no-scrollbar -mx-5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-5 pb-1 lg:mx-0 lg:block lg:overflow-visible lg:px-0 lg:pb-0"
@@ -60,7 +63,7 @@ export function SystemArchitecture() {
               {layers.map((layer, i) => {
                 const selected = layer.id === activeId;
                 return (
-                  <li key={layer.id} className="w-[58vw] max-w-[220px] shrink-0 snap-start lg:w-auto lg:max-w-none">
+                  <div key={layer.id} className="w-[58vw] max-w-[220px] shrink-0 snap-start lg:w-auto lg:max-w-none">
                     <button
                       type="button"
                       role="tab"
@@ -120,10 +123,10 @@ export function SystemArchitecture() {
                         </span>
                       </div>
                     )}
-                  </li>
+                  </div>
                 );
               })}
-            </ol>
+            </div>
 
             {/* Detail panel — below the strip on phones, sticky beside the
                 stack on desktop. One panel either way, so only the selected
@@ -189,7 +192,7 @@ function LayerDetail({
       >
         <span className="flex items-center justify-between">
           <span className="font-mono text-[0.58rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-            <T en="In production" ar="في الإنتاج" />
+            <T en="Built in" ar="بُني في" />
           </span>
           <span aria-hidden className="text-[var(--accent)] transition group-hover:translate-x-0.5 rtl:-scale-x-100">
             →

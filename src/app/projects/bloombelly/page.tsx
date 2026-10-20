@@ -20,7 +20,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "An Arabic maternal health app, designed in Figma and written in Flutter, with three AI models behind one bilingual RTL interface.";
+  "An Arabic maternal health app built in a two-person team. I owned the Python backend and the three AI models behind one bilingual RTL interface, and shared the design.";
 
 export const metadata: Metadata = {
   title: "BloomBelly — Mozn Jamous",
@@ -65,12 +65,12 @@ export default function BloomBellyPage() {
         title: <T en="BloomBelly: three AI models behind one app." ar="BloomBelly: ثلاثة نماذج ذكاء اصطناعي خلف تطبيقٍ واحد." />,
         lede: (
           <T
-            en="An Arabic health companion for pregnant women and new mothers. I drew every screen in Figma before writing any Flutter, in Arabic, with four user roles and full RTL. Behind it sit three specialized AI models that a Flask service routes between."
-            ar="رفيق صحّي عربي للحوامل والأمّهات الجُدد. رسمتُ كل شاشة في Figma قبل أن أكتب أي Flutter، بالعربية، بأربعة أدوار للمستخدمين ودعمٍ كامل لليمين لليسار. وخلفه ثلاثة نماذج ذكاء اصطناعي متخصّصة توجّه بينها خدمة Flask."
+            en="An Arabic health companion for pregnant women and new mothers, built with a classmate as our graduation project. We designed it in Figma, in Arabic, before any Flutter existed, with four user roles and full RTL. She led the Flutter front end; I owned the Flask backend and the three specialized AI models it routes between."
+            ar="رفيق صحّي عربي للحوامل والأمّهات الجُدد، بنيته مع زميلة مشروعَ تخرّجنا. صمّمناه في Figma، بالعربية، قبل وجود أي Flutter، بأربعة أدوار للمستخدمين ودعمٍ كامل لليمين لليسار. قادت هي واجهة Flutter؛ وتولّيتُ أنا خادم Flask ونماذج الذكاء الاصطناعي الثلاثة المتخصّصة التي يوجّه بينها."
           />
         ),
         year: "2025",
-        role: <T en="Engineer + designer" ar="مهندسة + مصمّمة" />,
+        role: <T en="Backend + AI engineer, co-designer" ar="مهندسة خادم وذكاء اصطناعي + مشاركة في التصميم" />,
         stack: [
           "Figma",
           "Flutter",
@@ -106,17 +106,17 @@ export default function BloomBellyPage() {
             <>
               <Lead>
                 <T
-                  en="It carries three capabilities: a chatbot, a medical-image helper and a nutrition guide. This was my graduation project at ASPU, where the requirement was a working product rather than a slide deck."
-                  ar="يحمل ثلاث قدرات: روبوت محادثة، ومساعداً للصور الطبية، ودليل تغذية. وكان مشروع تخرّجي في ASPU، والمطلوب فيه منتجٌ يعمل لا عرض شرائح."
+                  en="It carries three capabilities: a chatbot, a medical-image helper and a nutrition guide. This was our graduation project at ASPU, a team of two, where the requirement was a working product rather than a slide deck."
+                  ar="يحمل ثلاث قدرات: روبوت محادثة، ومساعداً للصور الطبية، ودليل تغذية. وكان مشروع تخرّجنا في ASPU، بفريقٍ من اثنتين، والمطلوب فيه منتجٌ يعمل لا عرض شرائح."
                 />
               </Lead>
               <FactGrid
                 items={[
-                  { label: <T en="Role" ar="الدور" />, value: <T en="Designed and built it on my own" ar="صمّمته وبنيته وحدي" /> },
+                  { label: <T en="Role" ar="الدور" />, value: <T en="Backend, the three AI models, and part of the design" ar="الخادم، ونماذج الذكاء الثلاثة، وجزء من التصميم" /> },
                   { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="Graduation project · 2025" ar="مشروع تخرّج · 2025" /> },
                   { label: <T en="Platform" ar="المنصّة" />, value: "Flutter · iOS + Android" },
                   { label: <T en="Users" ar="المستخدمون" />, value: <T en="Arabic-speaking mothers" ar="أمّهات ناطقات بالعربية" /> },
-                  { label: <T en="Scope" ar="النطاق" />, value: <T en="Research, Figma, Flutter, AI" ar="بحث، وFigma، وFlutter، وذكاء اصطناعي" /> },
+                  { label: <T en="Team" ar="الفريق" />, value: <T en="Two; my classmate led the Flutter front end" ar="اثنتان؛ قادت زميلتي واجهة Flutter" /> },
                   { label: <T en="User roles" ar="أدوار المستخدمين" />, value: <T en="Four, designed separately" ar="أربعة، صُمّمت منفصلة" /> },
                 ]}
               />
@@ -141,8 +141,8 @@ export default function BloomBellyPage() {
               </p>
               <p>
                 <T
-                  en="I picked an ambitious brief on purpose: a real Arabic health app for mothers in Damascus. That made the language problem a design problem first and an engineering problem second."
-                  ar="اخترتُ مطلباً طموحاً عن قصد: تطبيق صحّة عربي حقيقي لأمّهات دمشق. وهذا جعل مشكلة اللغة مشكلةَ تصميمٍ أولاً ومشكلةَ هندسةٍ ثانياً."
+                  en="We picked an ambitious brief on purpose: a real Arabic health app for mothers in Damascus. That made the language problem a design problem first and an engineering problem second."
+                  ar="اخترنا مطلباً طموحاً عن قصد: تطبيق صحّة عربي حقيقي لأمّهات دمشق. وهذا جعل مشكلة اللغة مشكلةَ تصميمٍ أولاً ومشكلةَ هندسةٍ ثانياً."
                 />
               </p>
             </>
@@ -155,8 +155,8 @@ export default function BloomBellyPage() {
             <>
               <p>
                 <T
-                  en="Before any UI I mapped four user journeys in Figma and spent time on where the existing Arabic health tools fall apart. Two findings shaped everything after that."
-                  ar="قبل أي واجهة رسمتُ أربع رحلات مستخدم في Figma، وأمضيتُ وقتاً على المواضع التي تتفكّك فيها أدوات الصحة العربية الموجودة. اكتشافان شكّلا كل ما جاء بعد ذلك."
+                  en="Before any UI we mapped four user journeys in Figma, and I spent time on where the existing Arabic health tools fall apart. Two findings shaped everything after that."
+                  ar="قبل أي واجهة رسمنا أربع رحلات مستخدم في Figma، وأمضيتُ وقتاً على المواضع التي تتفكّك فيها أدوات الصحة العربية الموجودة. اكتشافان شكّلا كل ما جاء بعد ذلك."
                 />
               </p>
               <p>
@@ -183,13 +183,13 @@ export default function BloomBellyPage() {
         },
         {
           kicker: <T en="Users & personas" ar="المستخدمون والـ Personas" />,
-          heading: <T en="Who I designed for." ar="لمن صمّمتُ." />,
+          heading: <T en="Who we designed for." ar="لمن صمّمنا." />,
           body: (
             <>
               <p>
                 <T
-                  en="From those four journeys I worked out who was actually behind them: a short story each, what they wanted, and the thing that was frustrating them."
-                  ar="من تلك الرحلات الأربع استخرجتُ مَن يقف خلفها فعلاً: قصة قصيرة لكل واحدة، وما تريده، والشيء الذي كان يُحبطها."
+                  en="From those four journeys we worked out who was actually behind them: a short story each, what they wanted, and the thing that was frustrating them."
+                  ar="من تلك الرحلات الأربع استخرجنا مَن يقف خلفها فعلاً: قصة قصيرة لكل واحدة، وما تريده، والشيء الذي كان يُحبطها."
                 />
               </p>
 
@@ -314,8 +314,8 @@ export default function BloomBellyPage() {
 
               <Callout kicker={<T en="Design constraint" ar="قيد التصميم" />}>
                 <T
-                  en="Mixed content turned out to be the hardest rendering problem: Arabic sentences with English drug names, dosages and abbreviations inside them. Flutter's BiDi engine needed an explicit direction marker for every mixed string, and I checked each one on real iOS and Android devices."
-                  ar="تبيّن أن المحتوى المختلط أصعب مشكلة عرض: جمل عربية داخلها أسماء أدوية وجرعات واختصارات إنجليزية. احتاج محرّك BiDi في Flutter علامة اتجاه صريحة لكل نصّ مختلط، وتحقّقتُ من كل واحدة على أجهزة iOS وAndroid حقيقية."
+                  en="Mixed content turned out to be the hardest rendering problem: Arabic sentences with English drug names, dosages and abbreviations inside them. Flutter's BiDi engine needed an explicit direction marker for every mixed string, and we checked each one on real iOS and Android devices."
+                  ar="تبيّن أن المحتوى المختلط أصعب مشكلة عرض: جمل عربية داخلها أسماء أدوية وجرعات واختصارات إنجليزية. احتاج محرّك BiDi في Flutter علامة اتجاه صريحة لكل نصّ مختلط، وتحقّقنا من كل واحدة على أجهزة iOS وAndroid حقيقية."
                 />
               </Callout>
 
@@ -348,10 +348,10 @@ export default function BloomBellyPage() {
                   {
                     src: "/work/bloombelly/nutrition.webp",
                     alt: "BloomBelly growth assessment: weight and head-circumference inputs with percentile results",
-                    title: "Growth, checked by a model",
-                    titleAr: "النموّ، يراجعه نموذج",
-                    blurb: "Enter weight and head circumference and a Random Forest model returns percentile guidance. It never returns a diagnosis.",
-                    blurbAr: "أدخلي الوزن ومحيط الرأس فيعيد نموذج Random Forest إرشاداً مئوياً. ولا يعيد تشخيصاً أبداً.",
+                    title: "Growth, against WHO curves",
+                    titleAr: "النموّ، على منحنيات WHO",
+                    blurb: "Enter weight and head circumference and the app returns percentile guidance from WHO growth curves. It never returns a diagnosis.",
+                    blurbAr: "أدخلي الوزن ومحيط الرأس فيعيد التطبيق إرشاداً مئوياً من منحنيات نموّ WHO. ولا يعيد تشخيصاً أبداً.",
                   },
                 ]}
               />
@@ -459,8 +459,8 @@ export default function BloomBellyPage() {
                 }
                 decision={
                   <T
-                    en={<>Under a confidence threshold the chatbot answers{" "}<strong>&ldquo;استشيري طبيبتك / Consult your doctor&rdquo;</strong>{" "}instead of guessing. I drew it in Figma as a{" "}<strong>warm, ordinary state</strong> with the same care as any other screen, so it never looks like a red warning box.</>}
-                    ar={<>تحت عتبة ثقة معيّنة يجيب الروبوت بـ{" "}<strong>«استشيري طبيبتك»</strong>{" "}بدل أن يخمّن. رسمتُها في Figma كـ<strong>حالة دافئة عادية</strong> بالعناية نفسها التي أعطيها لأي شاشة، فلا تبدو أبداً كصندوق تحذير أحمر.</>}
+                    en={<>Under a confidence threshold the chatbot answers{" "}<strong>&ldquo;استشيري طبيبتك / Consult your doctor&rdquo;</strong>{" "}instead of guessing. We drew it in Figma as a{" "}<strong>warm, ordinary state</strong> with the same care as any other screen, so it never looks like a red warning box.</>}
+                    ar={<>تحت عتبة ثقة معيّنة يجيب الروبوت بـ{" "}<strong>«استشيري طبيبتك»</strong>{" "}بدل أن يخمّن. رسمناها في Figma كـ<strong>حالة دافئة عادية</strong> بالعناية نفسها التي أعطيها لأي شاشة، فلا تبدو أبداً كصندوق تحذير أحمر.</>}
                   />
                 }
                 consequences={
@@ -480,14 +480,14 @@ export default function BloomBellyPage() {
             <>
               <p>
                 <T
-                  en="BloomBelly shipped as a working Arabic app and carried my graduation project: three AI capabilities under one bilingual interface, tuned to hand a question to a clinician rather than guess at it. Nothing in it invents medical advice, by design."
-                  ar="أُطلق BloomBelly تطبيقاً عربياً يعمل، وحمل مشروع تخرّجي: ثلاث قدرات ذكاء اصطناعي تحت واجهة واحدة ثنائية اللغة، مضبوطة لتسلّم السؤال إلى طبيبة بدل أن تخمّنه. ولا شيء فيه يخترع نصيحة طبية، بحكم التصميم."
+                  en="BloomBelly came together as a working Arabic app and carried our graduation project: three AI capabilities under one bilingual interface, tuned to hand a question to a clinician rather than guess at it. Nothing in it invents medical advice, by design."
+                  ar="اكتمل BloomBelly تطبيقاً عربياً يعمل، وحمل مشروع تخرّجنا: ثلاث قدرات ذكاء اصطناعي تحت واجهة واحدة ثنائية اللغة، مضبوطة لتسلّم السؤال إلى طبيبة بدل أن تخمّنه. ولا شيء فيه يخترع نصيحة طبية، بحكم التصميم."
                 />
               </p>
               <p>
                 <T
-                  en={<>What stayed with me is the method. The Figma file, Arabic screens first and English after, became the spec; when something looked wrong in Flutter, Figma was the reference I checked against.{" "}<strong>Designing before building saved weeks</strong>, and I&apos;ve worked that way on everything since.</>}
-                  ar={<>ما بقي معي هو المنهج. ملف Figma، شاشاته العربية أولاً والإنجليزية بعدها، صار هو المواصفة؛ وحين بدا شيء خطأً في Flutter كان Figma هو المرجع الذي أراجعه.{" "}<strong>التصميم قبل البناء وفّر أسابيع</strong>، وعملتُ بهذه الطريقة في كل شيء بعده.</>}
+                  en={<>What stayed with me is the method. The Figma file, Arabic screens first and English after, became the spec; when something looked wrong in Flutter, Figma was the reference we checked against.{" "}<strong>Designing before building saved us weeks</strong>, and I&apos;ve worked that way on everything since.</>}
+                  ar={<>ما بقي معي هو المنهج. ملف Figma، شاشاته العربية أولاً والإنجليزية بعدها، صار هو المواصفة؛ وحين بدا شيء خطأً في Flutter كان Figma هو المرجع الذي نراجعه.{" "}<strong>التصميم قبل البناء وفّر علينا أسابيع</strong>، وعملتُ بهذه الطريقة في كل شيء بعده.</>}
                 />
               </p>
             </>

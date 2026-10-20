@@ -170,9 +170,10 @@ export function Credentials({
               </button>
             </div>
 
-            {/* certificate scan or placeholder */}
-            <div className="mt-5 overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface-2)]/40">
-              {active.image ? (
+            {/* certificate scan — only when one exists; no placeholder box
+                for a credential that has no scan yet */}
+            {active.image && (
+              <div className="mt-5 overflow-hidden rounded-xl border border-[var(--border)] bg-[var(--surface-2)]/40">
                 <div className="relative aspect-[4/3] w-full">
                   <Image
                     src={withBase(active.image)}
@@ -182,22 +183,8 @@ export function Credentials({
                     className="object-contain"
                   />
                 </div>
-              ) : (
-                <div className="flex min-h-[200px] items-center justify-center p-8 text-center">
-                  <div>
-                    <p className="font-mono text-[0.65rem] uppercase tracking-[0.22em] text-[var(--ink-faint)]">
-                      <T en="Certificate" ar="الشهادة" />
-                    </p>
-                    <p className="mt-1.5 text-sm text-[var(--ink-muted)]">
-                      <T
-                        en="Image placeholder · add the certificate scan"
-                        ar="صورة مؤقتة · أضف مسح الشهادة"
-                      />
-                    </p>
-                  </div>
-                </div>
-              )}
-            </div>
+              </div>
+            )}
 
             {/* related work */}
             {active.related && active.related.length > 0 && (

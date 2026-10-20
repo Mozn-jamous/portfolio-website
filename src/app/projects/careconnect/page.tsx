@@ -94,13 +94,13 @@ export default function CareConnectPage() {
             <>
               <Lead>
                 <T
-                  en="The three sides are mothers booking care, babysitters offering it, and admins keeping the platform honest. I designed all three apps and led the build, with the babysitter app developed together with a collaborator."
-                  ar="الأطراف الثلاثة هي أمّهات يحجزن الرعاية، وجليسات يعرضنها، ومشرفون يحفظون نزاهة المنصّة. صمّمتُ التطبيقات الثلاثة وقدتُ البناء، وطُوّر تطبيق الجليسة بالتعاون مع زميل."
+                  en="The three sides are mothers booking care, babysitters offering it, and admins keeping the platform honest. I designed all three apps and led the build, with the babysitter app co-developed with @shaha123s."
+                  ar="الأطراف الثلاثة هي أمّهات يحجزن الرعاية، وجليسات يعرضنها، ومشرفون يحفظون نزاهة المنصّة. صمّمتُ التطبيقات الثلاثة وقدتُ البناء، وطُوّر تطبيق الجليسة بالاشتراك مع @shaha123s."
                 />
               </Lead>
               <FactGrid
                 items={[
-                  { label: <T en="Role" ar="الدور" />, value: <T en="Designed all three, led the build" ar="صمّمتُ الثلاثة، وقدتُ البناء" /> },
+                  { label: <T en="Role" ar="الدور" />, value: <T en="Designed all three, led the build; babysitter app with @shaha123s" ar="صمّمتُ الثلاثة، وقدتُ البناء؛ تطبيق الجليسة مع @shaha123s" /> },
                   { label: <T en="Timeline" ar="الإطار الزمني" />, value: "2024" },
                   { label: <T en="Platform" ar="المنصّة" />, value: "3× Flutter · iOS + Android" },
                   { label: <T en="Audiences" ar="الجماهير" />, value: <T en="Mother · Babysitter · Admin" ar="أمّ · جليسة · مشرف" /> },
@@ -305,8 +305,8 @@ export default function CareConnectPage() {
                 }
                 outcome={
                   <T
-                    en="Each app ended up with navigation built for one job and a store listing that describes what it actually does. It cost more up front, and each surface stays honest to the person using it."
-                    ar="انتهى كل تطبيق بتنقّل مبنيّ لمهمّة واحدة وإدراج في المتجر يصف ما يفعله فعلاً. كلّف أكثر في البداية، وتبقى كل واجهة أمينة لمن يستخدمها."
+                    en="Each app ended up with navigation built for one job and a name that says what it does. It cost more up front, and each surface stays honest to the person using it."
+                    ar="انتهى كل تطبيق بتنقّل مبنيّ لمهمّة واحدة واسم يقول ما يفعله. كلّف أكثر في البداية، وتبقى كل واجهة أمينة لمن يستخدمها."
                   />
                 }
               />
@@ -454,8 +454,8 @@ export default function CareConnectPage() {
             <>
               <p>
                 <T
-                  en="CareConnect shipped as three focused apps on one Supabase backend, with access decided in the database rather than trusted to the client. Each side's data boundary can be demonstrated in SQL, and every admin action leaves a record."
-                  ar="أُطلق CareConnect كثلاثة تطبيقات مركّزة على خادم Supabase واحد، والوصول فيه يُقرَّر في قاعدة البيانات بدل أن يُؤتمَن عليه العميل. وحدّ بيانات كل طرف يمكن إظهاره بـSQL، وكل إجراء مشرف يترك سجلاً."
+                  en="CareConnect was built as three focused apps on one Supabase backend, with access decided in the database rather than trusted to the client. Each side's data boundary can be demonstrated in SQL, and every admin action leaves a record."
+                  ar="بُني CareConnect كثلاثة تطبيقات مركّزة على خادم Supabase واحد، والوصول فيه يُقرَّر في قاعدة البيانات بدل أن يُؤتمَن عليه العميل. وحدّ بيانات كل طرف يمكن إظهاره بـSQL، وكل إجراء مشرف يترك سجلاً."
                 />
               </p>
               <p>

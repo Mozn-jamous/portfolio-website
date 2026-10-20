@@ -93,7 +93,7 @@ export default function DivanoPage() {
             label: <T en="Licensed typeface carrying both alphabets" ar="خطٌّ مرخَّصٌ واحد للأبجديتين" />,
           },
           {
-            value: "67/85",
+            value: "129/163",
             label: <T en="Commits mine, over the redesign" ar="كوميت لي في إعادة التصميم" />,
           },
         ]}
@@ -105,8 +105,8 @@ export default function DivanoPage() {
               <>
                 <Lead>
                   <T
-                    en="A real client with a live business in Dubai. The work was to make the site argue for the firm the way its showrooms do. I led the redesign; 67 of the project's 85 commits are mine."
-                    ar="عميل حقيقي وعمل قائم في دبي. كانت المهمة أن يدافع الموقع عن الشركة كما تدافع عنها صالات عرضها. قدتُ إعادة التصميم، و67 من كوميتات المشروع الـ85 لي."
+                    en="A real client with a live business in Dubai. The work was to make the site argue for the firm the way its showrooms do. I led the redesign; 129 of the project's 163 commits are mine."
+                    ar="عميل حقيقي وعمل قائم في دبي. كانت المهمة أن يدافع الموقع عن الشركة كما تدافع عنها صالات عرضها. قدتُ إعادة التصميم، و129 من كوميتات المشروع الـ163 لي."
                   />
                 </Lead>
                 <FactGrid

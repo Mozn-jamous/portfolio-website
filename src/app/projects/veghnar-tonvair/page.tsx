@@ -15,7 +15,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "A fragrance house's Shopify storefront, redesigned from scratch. The client supplied the brand identity and I turned it into a live Arabic storefront: one identity stylesheet the whole shop reads from, a four-face bilingual type system, and product patterns built for perfume.";
+  "A fragrance house's Shopify storefront, redesigned from scratch at Santa Media. The client supplied the brand identity and I turned it into a live Arabic storefront: one identity stylesheet the whole shop reads from, a four-face bilingual type system, and product patterns built for perfume.";
 
 export const metadata: Metadata = {
   title: "Veghnar Tonvair — an Arabic Shopify storefront — Mozn Jamous",
@@ -65,8 +65,8 @@ export default function VeghnarTonvairPage() {
           ),
           lede: (
             <T
-              en="A fragrance house that reached me as a pale, generic Shopify store plus the client's brand identity file. I redesigned the storefront from scratch. The identity became one stylesheet the whole shop reads from, Arabic became the store's primary language instead of a translation of it, and the product pages got patterns that suit perfume. It is live, and it opens in Arabic."
-              ar="بيت عطور وصلني متجراً باهتاً عامّاً على Shopify، ومعه ملف الهوية البصرية الخاص بالعميل. أعدتُ تصميم المتجر من الصفر. صارت الهوية ملف أنماط واحداً يقرأ منه المتجر كله، وصارت العربية لغة المتجر الأساسية بدل أن تكون ترجمة عنه، ونالت صفحات المنتج أنماطاً تناسب العطر. والمتجر منشور الآن، ويُفتح بالعربية."
+              en="A fragrance house that reached us at Santa Media as a pale, generic Shopify store plus the client's brand identity file. I redesigned the storefront from scratch. The identity became one stylesheet the whole shop reads from, Arabic became the store's primary language instead of a translation of it, and the product pages got patterns that suit perfume. It is live, and it opens in Arabic."
+              ar="بيت عطور وصلنا في Santa Media متجراً باهتاً عامّاً على Shopify، ومعه ملف الهوية البصرية الخاص بالعميل. أعدتُ تصميم المتجر من الصفر. صارت الهوية ملف أنماط واحداً يقرأ منه المتجر كله، وصارت العربية لغة المتجر الأساسية بدل أن تكون ترجمة عنه، ونالت صفحات المنتج أنماطاً تناسب العطر. والمتجر منشور الآن، ويُفتح بالعربية."
             />
           ),
           year: "2026",
@@ -129,8 +129,8 @@ export default function VeghnarTonvairPage() {
                 />
                 <Callout kicker={<T en="What was mine, and what wasn't" ar="ما كان لي، وما لم يكن" />}>
                   <T
-                    en="The brand identity came from the client's own file: the marks, the palette direction, the Latin typographic voice. I did not invent the brand. What I did is everything you see working on the store: the redesign, the layout system, the Arabic typography, the product patterns, and the CSS holding it together. Near the end, an assisting engineer fixed a number of logic bugs."
-                    ar="الهوية البصرية جاءت من ملف العميل نفسه: الشعارات، واتجاه الألوان، والصوت الطباعي اللاتيني. فأنا لم أخترع العلامة. وما فعلتُه هو كل ما تراه يعمل على المتجر: إعادة التصميم، ونظام التخطيط، والطباعة العربية، وأنماط المنتج، وملف الأنماط الذي يجمعها. وقُبيل النهاية أصلح مهندس مساعد عدداً من أخطاء المنطق."
+                    en="The brand identity came from the client's own file: the marks, the palette direction, the Latin typographic voice. I did not invent the brand. What I did is everything you see working on the store: the redesign, the layout system, the Arabic typography, the product patterns, and the CSS holding it together. Near the end, an assisting engineer fixed a number of logic bugs, and after my redesign a colleague at Santa Media took over the client's later revisions."
+                    ar="الهوية البصرية جاءت من ملف العميل نفسه: الشعارات، واتجاه الألوان، والصوت الطباعي اللاتيني. فأنا لم أخترع العلامة. وما فعلتُه هو كل ما تراه يعمل على المتجر: إعادة التصميم، ونظام التخطيط، والطباعة العربية، وأنماط المنتج، وملف الأنماط الذي يجمعها. وقُبيل النهاية أصلح مهندس مساعد عدداً من أخطاء المنطق، وبعد إعادة التصميم تولّى زميل في Santa Media تعديلات العميل اللاحقة."
                   />
                 </Callout>
               </>

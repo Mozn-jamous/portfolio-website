@@ -14,7 +14,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "A restaurant running its entire operation on Odoo — a 68-account dual-currency chart of accounts across three partners, a live point of sale (500+ orders), kitchen display, and ingredient-level inventory (10,000+ moves linked to POS). Built solo; still live in daily service.";
+  "A restaurant running its operation on Odoo: a 68-account dual-currency chart of accounts across three partners, a point of sale (500+ orders), and ingredient-level inventory (10,000+ moves linked to POS). I owned the books, the POS and the inventory; in production when I handed it off in November 2025.";
 
 export const metadata: Metadata = {
   title: "Burgasm — a restaurant, fully on Odoo — Mozn Jamous",
@@ -46,20 +46,19 @@ export default function BurgasmPage() {
       <CaseStudyLayout
         meta={{
           eyebrow: <T en="Odoo · Restaurant · POS" ar="Odoo · مطعم · نقاط بيع" />,
-          status: <T en="Live in production" ar="حيّ في الإنتاج" />,
+          status: <T en="In production at handoff" ar="في الإنتاج عند التسليم" />,
           title: <T en="Burgasm: a restaurant running entirely on Odoo." ar="Burgasm: مطعم يعمل بالكامل على Odoo." />,
           lede: (
             <T
-              en="A restaurant running its whole operation on one Odoo system: proper books across three partners, a live point of sale, a kitchen display, and inventory tracked down to the ingredient. I built and configured it on my own, during the same engagement as the Techno Solution rollout, and it is still in daily service."
-              ar="مطعم يدير عمليّته كاملة على نظام Odoo واحد: دفاتر محاسبية سليمة عبر ثلاثة شركاء، ونقطة بيع حيّة، وشاشة مطبخ، ومخزون متتبَّع حتى مستوى المكوّن. بنيتُه وهيّأتُه وحدي، خلال التكليف نفسه الذي شمل تطبيق Techno Solution، وما زال في الخدمة اليومية."
+              en="A restaurant running its whole operation on one Odoo system: proper books across three partners, a live point of sale, and inventory tracked down to the ingredient. I built and configured the books, the point of sale and the inventory during the same engagement as the Techno Solution rollout, with one colleague who owned HR, attendance and payroll. It was in daily service when I handed it off in November 2025."
+              ar="مطعم يدير عمليّته كاملة على نظام Odoo واحد: دفاتر محاسبية سليمة عبر ثلاثة شركاء، ونقطة بيع حيّة، ومخزون متتبَّع حتى مستوى المكوّن. بنيتُ وهيّأتُ الدفاتر ونقطة البيع والمخزون خلال التكليف نفسه الذي شمل تطبيق Techno Solution، مع زميلٍ واحد تولّى الموارد البشرية والحضور والرواتب. وكان في الخدمة اليومية حين سلّمته في تشرين الثاني 2025."
             />
           ),
           year: "2025",
-          role: <T en="Sole Odoo implementer · Systems designer" ar="مُنفّذة Odoo الوحيدة · مصمّمة أنظمة" />,
+          role: <T en="Odoo / ERP developer · Systems designer" ar="مطوّرة Odoo / ERP · مصمّمة أنظمة" />,
           stack: [
-            "Odoo 16/17",
+            "Odoo 17–19",
             "Point of Sale",
-            "Kitchen Display",
             "Accounting",
             "Inventory",
             "PostgreSQL",
@@ -80,8 +79,8 @@ export default function BurgasmPage() {
               <>
                 <Lead>
                   <T
-                    en="Plenty of restaurants run a till and call it software. Here the accounting, the point of sale, the kitchen display and the inventory all read from the same place, across thirty-odd modules configured around how the place actually operates."
-                    ar="كثير من المطاعم تُشغّل صندوقاً وتسمّيه برمجية. هنا تقرأ المحاسبة ونقاط البيع وشاشة المطبخ والمخزون كلها من المكان نفسه، عبر ثلاثين وحدة وأكثر مُهيّأة حول طريقة عمل المكان فعلاً."
+                    en="Plenty of restaurants run a till and call it software. Here the accounting, the point of sale and the inventory all read from the same place, across thirty-odd modules configured around how the place actually operates."
+                    ar="كثير من المطاعم تُشغّل صندوقاً وتسمّيه برمجية. هنا تقرأ المحاسبة ونقاط البيع والمخزون كلها من المكان نفسه، عبر ثلاثين وحدة وأكثر مُهيّأة حول طريقة عمل المكان فعلاً."
                   />
                 </Lead>
                 <Figure
@@ -92,10 +91,10 @@ export default function BurgasmPage() {
                 <FactGrid
                   items={[
                     { label: <T en="Business" ar="المشروع" />, value: <T en="Restaurant (Burgasm)" ar="مطعم (Burgasm)" /> },
-                    { label: <T en="Role" ar="الدور" />, value: <T en="Sole Odoo implementer" ar="مُنفّذة Odoo الوحيدة" /> },
+                    { label: <T en="Role" ar="الدور" />, value: <T en="Books · POS · inventory" ar="الدفاتر · نقاط البيع · المخزون" /> },
                     { label: <T en="Books" ar="الدفاتر" />, value: <T en="68 accounts · 3 partners" ar="68 حساباً · 3 شركاء" /> },
                     { label: <T en="Point of sale" ar="نقاط البيع" />, value: <T en="Live · per-cashier" ar="حيّة · لكل كاشير" /> },
-                    { label: <T en="Kitchen" ar="المطبخ" />, value: <T en="Kitchen Display System" ar="نظام شاشة المطبخ" /> },
+                    { label: <T en="Training" ar="التدريب" />, value: <T en="Cashiers & supervisors" ar="الكاشيرون والمشرفون" /> },
                     { label: <T en="Inventory" ar="المخزون" />, value: <T en="Ingredient-level" ar="على مستوى المكوّن" /> },
                   ]}
                 />
@@ -128,8 +127,8 @@ export default function BurgasmPage() {
               <>
                 <p>
                   <T
-                    en="Cashiers who had never touched an ERP were running the POS from day one. Over 500 orders went through it, with revenue broken down per session and per cashier, so the owners can see what each shift actually brought in."
-                    ar="كاشيرون لم يلمسوا نظام ERP من قبل كانوا يشغّلون نقاط البيع من اليوم الأول. ومرّ أكثر من 500 طلب عبرها، مع تفصيل الإيرادات لكل جلسة ولكل كاشير، فيرى المُلّاك ما جنته كل وردية فعلاً."
+                    en="I trained the cashiers and supervisors and supported them in daily operation. Cashiers who had never touched an ERP were running the POS from day one. Over 500 orders went through it, with revenue broken down per session and per cashier, so the owners can see what each shift actually brought in."
+                    ar="درّبتُ الكاشيرين والمشرفين ودعمتُهم في التشغيل اليومي. وكاشيرون لم يلمسوا نظام ERP من قبل كانوا يشغّلون نقاط البيع من اليوم الأول. ومرّ أكثر من 500 طلب عبرها، مع تفصيل الإيرادات لكل جلسة ولكل كاشير، فيرى المُلّاك ما جنته كل وردية فعلاً."
                   />
                 </p>
                 <Figure
@@ -212,8 +211,8 @@ export default function BurgasmPage() {
               <>
                 <p>
                   <T
-                    en="Burgasm is still live in daily service. What stuck with me was how much of a restaurant's real problem is invisible at the counter, because it sits in the books and the stockroom. Wiring the till all the way through to ingredients is what turned a cash register into an actual operating system for the business."
-                    ar="ما زال Burgasm في الخدمة اليومية. وما علق في ذهني هو كم أن المشكلة الحقيقية للمطعم غير مرئية عند الصندوق، لأنها تقع في الدفاتر والمستودع. ووصلُ الصندوق حتى المكوّنات هو ما حوّل آلة تسجيل النقد إلى نظام تشغيل فعلي للمشروع."
+                    en="Burgasm was in daily service when I handed it off in November 2025. What stuck with me was how much of a restaurant's real problem is invisible at the counter, because it sits in the books and the stockroom. Wiring the till all the way through to ingredients is what turned a cash register into an actual operating system for the business."
+                    ar="كان Burgasm في الخدمة اليومية حين سلّمته في تشرين الثاني 2025. وما علق في ذهني هو كم أن المشكلة الحقيقية للمطعم غير مرئية عند الصندوق، لأنها تقع في الدفاتر والمستودع. ووصلُ الصندوق حتى المكوّنات هو ما حوّل آلة تسجيل النقد إلى نظام تشغيل فعلي للمشروع."
                   />
                 </p>
               </>

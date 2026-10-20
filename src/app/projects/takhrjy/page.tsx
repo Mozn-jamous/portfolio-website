@@ -148,10 +148,6 @@ export default function TakhrjyPage() {
                     { label: <T en="Accountant" ar="المحاسب" />, value: <T en="Read-only books" ar="دفاتر للقراءة فقط" /> },
                   ]}
                 />
-                <Figure
-                  label="Role screens"
-                  caption={<T en="Screens designed and built for the role-based views. Export still to add." ar="شاشات صُمّمت وبُنيت للعروض حسب الدور. التصدير لم يُضَف بعد." />}
-                />
               </>
             ),
           },
@@ -166,10 +162,6 @@ export default function TakhrjyPage() {
                     ar="يمرّ الطلب عبر ستّ مراحل متتبَّعة، فيستطيع أي أحد أن يرى أين يقع صندوق بعينه فعلاً. تلتقط المبيعات التفاصيل المخصّصة والصور وتمرّرها عبر حاسبة تسعّر التكلفة زائد الهامش. ثم يلتقطه الإنتاج. ثم يوجّهه التنفيذ إلى التوصيل المحلّي أو الشحن الدولي. وتتبع الجملة الخطّ نفسه، وفوقه سقف شهري للطلبات."
                   />
                 </p>
-                <Figure
-                  label="Order pipeline"
-                  caption={<T en="The six-stage order tracking. Screen export still to add." ar="تتبّع الطلبات بستّ مراحل. تصدير الشاشة لم يُضَف بعد." />}
-                />
               </>
             ),
           },

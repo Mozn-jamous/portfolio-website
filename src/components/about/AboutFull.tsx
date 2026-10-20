@@ -16,12 +16,12 @@ import { T } from "@/components/i18n/T";
  * standalone /about page. CTAs use "/#anchor" form so they scroll on the home
  * page and navigate-then-scroll from anywhere else.
  *
- * variant="home" is PHONE-TRIMMED: on a phone this block was 4.4 screens of
- * the home page's 13 — the single biggest reason the mobile read dragged. So
- * on phones the home instance shows only the statement + at-a-glance + open-to
- * and links to /about for the credentials / philosophy / tools depth. From
- * `sm:` up, and always on /about (variant="page"), everything renders — the
- * content is CSS-hidden, never dropped, so it stays in the DOM for search and
+ * variant="home" is TRIMMED at every width: the home instance shows only the
+ * statement + at-a-glance + open-to and links to /about for the credentials /
+ * philosophy / tools depth. Those three blocks were ~3 desktop screens (4.4 on
+ * a phone) that /about already renders in full, so the home read dragged and
+ * repeated itself. On /about (variant="page") everything renders. The content
+ * is CSS-hidden on home, never dropped, so it stays in the DOM for search and
  * assistive tech.
  */
 export function AboutFull({
@@ -34,8 +34,8 @@ export function AboutFull({
   const { openTo, openToAr } = aboutContent;
   const { socials, location, locationAr } = heroContent;
   const { education, certifications } = educationChapter;
-  // Phone-only trim on the home instance (see the component note above).
-  const deep = variant === "home" ? "hidden sm:block" : "";
+  // Home instance hides the deep blocks (see the component note above).
+  const deep = variant === "home" ? "hidden" : "";
 
   // Honest at-a-glance facts — no invented data (all from heroContent).
   const glance = [
@@ -199,12 +199,12 @@ export function AboutFull({
           </div>
         </div>
 
-        {/* Phone-only door to the depth trimmed above (home instance only). */}
+        {/* Door to the depth trimmed above (home instance only). */}
         {variant === "home" && (
           <Reveal>
             <Link
               href="/about"
-              className="group mt-8 inline-flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[var(--accent-deep)] sm:hidden"
+              className="group mt-8 inline-flex items-center gap-2 font-mono text-[0.68rem] uppercase tracking-[0.14em] text-[var(--accent-deep)]"
             >
               <T
                 en="Credentials · philosophy · tools"

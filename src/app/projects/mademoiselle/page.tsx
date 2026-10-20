@@ -4,7 +4,6 @@ import {
   Callout,
   DesignDecision,
   FactGrid,
-  Figure,
   Lead,
 } from "@/components/case-study/CaseStudyLayout";
 import { PhoneDemo } from "@/components/case-study/PhoneDemo";
@@ -16,7 +15,7 @@ import { T } from "@/components/i18n/T";
 import { siteUrl } from "@/lib/base-path";
 
 const DESCRIPTION =
-  "A stalled FlutterFlow prototype rewritten as a native Flutter app at Santa Media, on a bilingual design system with three themes, 17 text styles and 9 button variants.";
+  "A live FlutterFlow app being rebuilt as native Flutter at Santa Media by a three-person team. I redesigned it and build the customer app on a shared design system with three themes and nine button variants.";
 
 export const metadata: Metadata = {
   title: "Mademoiselle — Mozn Jamous",
@@ -48,16 +47,16 @@ export default function MademoisellePage() {
       <CaseStudyLayout
       meta={{
         eyebrow: <T en="Mobile · Flutter · Design system" ar="جوال · Flutter · نظام تصميم" />,
-        status: <T en="Active, 2026" ar="نشط، 2026" />,
+        status: <T en="In launch integration, 2026" ar="في مرحلة دمج الإطلاق، 2026" />,
         title: <T en="Mademoiselle: rebuilt from the ground up." ar="Mademoiselle: أُعيد بناؤه من الأساس." />,
         lede: (
           <T
-            en="A dormant FlutterFlow prototype taken back into production as a fully native Flutter app. I redesigned the interface, built a bilingual design system with three themes and full RTL, and integrated the AI module. Design and development were both mine."
-            ar="نموذج FlutterFlow خامل أُعيد إلى الإنتاج تطبيقَ Flutter أصلياً بالكامل. أعدتُ تصميم الواجهة، وبنيتُ نظام تصميم ثنائي اللغة بثلاث سمات ودعم كامل لليمين لليسار، ودمجتُ وحدة الذكاء الاصطناعي. التصميم والتطوير كانا لي."
+            en="A live FlutterFlow app being rebuilt as a fully native Flutter app by a three-person team. I redesigned the interface and build the customer-facing app on a shared design system with three themes and full RTL. Teammates own the shared backend, the AI services and the business side."
+            ar="تطبيق FlutterFlow حيّ يُعاد بناؤه تطبيقَ Flutter أصلياً بالكامل بفريقٍ من ثلاثة. أعدتُ تصميم الواجهة وأبني تطبيق الزبونة على نظام تصميم مشترك بثلاث سمات ودعم كامل لليمين لليسار. ويتولّى زملائي الخادم المشترك وخدمات الذكاء الاصطناعي وجانب الأعمال."
           />
         ),
         year: <T en="2026 to now" ar="2026 حتى الآن" />,
-        role: <T en="Lead engineer + designer" ar="مهندسة رئيسية + مصمّمة" />,
+        role: <T en="Product designer + Flutter developer" ar="مصمّمة منتج + مطوّرة Flutter" />,
         stack: [
           "Figma",
           "Flutter",
@@ -65,14 +64,14 @@ export default function MademoisellePage() {
           "Design Systems",
           "RTL",
           "Multi-theme",
-          "AI Integration",
+          "Supabase",
         ],
       }}
       metrics={[
-        { value: <T en="Stalled to live" ar="من متعثّر إلى حيّ" />, label: <T en="A FlutterFlow prototype now shipping as native Flutter" ar="نموذج FlutterFlow يُطلق الآن بـFlutter أصلي" /> },
-        { value: "26+", label: <T en="Design system components, reused on every screen" ar="مكوّن نظام تصميم، يُعاد استخدامها في كل شاشة" /> },
+        { value: <T en="V1 → V2" ar="V1 ← V2" />, label: <T en="A live FlutterFlow app, rebuilt in native Flutter" ar="تطبيق FlutterFlow حيّ، أُعيد بناؤه بـFlutter أصلي" /> },
+        { value: "AR · EN · FR", label: <T en="Three languages; Arabic is the source layout" ar="ثلاث لغات؛ والعربية هي التخطيط الأصل" /> },
         { value: <T en="RTL-first" ar="العربية أولاً" />, label: <T en="Designed in Arabic, then adapted to English" ar="صُمّم بالعربية ثم كُيّف للإنجليزية" /> },
-        { value: <T en="Multi-theme" ar="متعدّد السمات" />, label: <T en="Light, dark and brand from one set of semantic tokens" ar="فاتح وداكن وعلامة من مجموعة رموز دلالية واحدة" /> },
+        { value: <T en="Multi-theme" ar="متعدّد السمات" />, label: <T en="Light, dark and midnight from one set of semantic tokens" ar="فاتح وداكن وmidnight من مجموعة رموز دلالية واحدة" /> },
       ]}
       sections={[
         {
@@ -82,18 +81,18 @@ export default function MademoisellePage() {
             <>
               <Lead>
                 <T
-                  en="It is a commercial product at Santa Media, and I was brought in to get it to production. I chose to redesign it before rebuilding it."
-                  ar="هو منتج تجاري في Santa Media، واستُقدمتُ لأوصله إلى الإنتاج. واخترتُ أن أعيد تصميمه قبل أن أعيد بناءه."
+                  en="It is a live commercial product at Santa Media, and I was brought in to rebuild it natively. I chose to redesign it before rebuilding it."
+                  ar="هو منتج تجاري حيّ في Santa Media، واستُقدمتُ لأعيد بناءه أصلياً. واخترتُ أن أعيد تصميمه قبل أن أعيد بناءه."
                 />
               </Lead>
               <FactGrid
                 items={[
-                  { label: <T en="Role" ar="الدور" />, value: <T en="Lead engineer, and the designer" ar="مهندسة رئيسية، والمصمّمة" /> },
+                  { label: <T en="Role" ar="الدور" />, value: <T en="Product designer, and the customer app's Flutter developer" ar="مصمّمة المنتج، ومطوّرة Flutter لتطبيق الزبونة" /> },
                   { label: <T en="Timeline" ar="الإطار الزمني" />, value: <T en="2026 to now" ar="2026 حتى الآن" /> },
                   { label: <T en="Platform" ar="المنصّة" />, value: "Flutter · iOS + Android" },
-                  { label: <T en="Audience" ar="الجمهور" />, value: <T en="Arabic-speaking, bilingual" ar="ناطق بالعربية، ثنائي اللغة" /> },
-                  { label: <T en="Team" ar="الفريق" />, value: <T en="Me, plus an engineer on the AI module" ar="أنا، ومهندس على وحدة الذكاء" /> },
-                  { label: <T en="Scope" ar="النطاق" />, value: <T en="Redesign, design system, native rewrite" ar="إعادة تصميم، ونظام تصميم، وإعادة كتابة أصلية" /> },
+                  { label: <T en="Audience" ar="الجمهور" />, value: <T en="Arabic-first; Arabic, English and French" ar="عربي أولاً؛ بالعربية والإنجليزية والفرنسية" /> },
+                  { label: <T en="Team" ar="الفريق" />, value: <T en="Three: I own the customer app; teammates own the shared backend, AI and the business side" ar="ثلاثة: أتولّى تطبيق الزبونة؛ وزملائي الخادم المشترك والذكاء وجانب الأعمال" /> },
+                  { label: <T en="Scope" ar="النطاق" />, value: <T en="Redesign, customer app, shared design system" ar="إعادة تصميم، وتطبيق الزبونة، ونظام تصميم مشترك" /> },
                 ]}
               />
             </>
@@ -103,16 +102,16 @@ export default function MademoisellePage() {
           kicker: <T en="Problem" ar="المشكلة" />,
           heading: (
             <T
-              en="A dormant product, and a prototype that couldn't grow."
-              ar="منتجٌ خامل، ونموذجٌ عاجزٌ عن النمو."
+              en="A live product on a base that couldn't grow."
+              ar="منتجٌ حيّ على قاعدةٍ عاجزةٍ عن النمو."
             />
           ),
           body: (
             <>
               <p>
                 <T
-                  en="Mademoiselle had stalled with no clear path forward. FlutterFlow output is hard to extend and hard to maintain once an app grows, and the original interface had never really been designed for the Arabic-speaking audience actually using it."
-                  ar="كان Mademoiselle متعثّراً دون مسار واضح للأمام. مُخرَجات FlutterFlow صعبة التوسعة وصعبة الصيانة حين يكبر التطبيق، والواجهة الأصلية لم تُصمَّم فعلاً للجمهور العربي الذي يستخدمها."
+                  en="Mademoiselle was live on FlutterFlow, and every new feature was getting harder. FlutterFlow output is hard to extend and hard to maintain once an app grows, and the original interface had never really been designed for the Arabic-speaking audience actually using it."
+                  ar="كان Mademoiselle يعمل على FlutterFlow، وكل ميزة جديدة تزداد صعوبة. مُخرَجات FlutterFlow صعبة التوسعة وصعبة الصيانة حين يكبر التطبيق، والواجهة الأصلية لم تُصمَّم فعلاً للجمهور العربي الذي يستخدمها."
                 />
               </p>
               <p>
@@ -195,8 +194,8 @@ export default function MademoisellePage() {
                 }
                 outcome={
                   <T
-                    en="Light, dark and brand coexist without touching a single component. Adding a theme means writing a token file."
-                    ar="تتعايش سمات الفاتح والداكن والعلامة دون لمس مكوّن واحد. وإضافة سمة تعني كتابة ملف رموز."
+                    en="Light, dark and midnight coexist without touching a single component. Adding a theme means writing a token file."
+                    ar="تتعايش سمات الفاتح والداكن وmidnight دون لمس مكوّن واحد. وإضافة سمة تعني كتابة ملف رموز."
                   />
                 }
               />
@@ -212,8 +211,8 @@ export default function MademoisellePage() {
                 }
                 decision={
                   <T
-                    en={<>I drew the Figma file and every Flutter screen{" "}<strong>in Arabic first</strong>. Reading order, type hierarchy, spacing and icon choices were all decided while looking at Arabic, and English came after.</>}
-                    ar={<>رسمتُ ملف Figma وكل شاشة Flutter{" "}<strong>بالعربية أولاً</strong>. ترتيب القراءة، وتسلسل الخطوط، والتباعد، واختيار الأيقونات كلها قُرّرت وأنا أنظر إلى العربية، والإنجليزية جاءت بعدها.</>}
+                    en={<>I drew the Figma file and every customer-app screen{" "}<strong>in Arabic first</strong>. Reading order, type hierarchy, spacing and icon choices were all decided while looking at Arabic, and English came after.</>}
+                    ar={<>رسمتُ ملف Figma وكل شاشة في تطبيق الزبونة{" "}<strong>بالعربية أولاً</strong>. ترتيب القراءة، وتسلسل الخطوط، والتباعد، واختيار الأيقونات كلها قُرّرت وأنا أنظر إلى العربية، والإنجليزية جاءت بعدها.</>}
                   />
                 }
                 outcome={
@@ -226,8 +225,8 @@ export default function MademoisellePage() {
 
               <Callout kicker={<T en="Typography system" ar="نظام الطباعة" />}>
                 <T
-                  en="17 text styles cover display, headline, title, body, label and caption, each with size, weight, line-height and letter-spacing tokens calibrated for Arabic and Latin separately. Arabic wants tighter leading and Latin wants wider letter-spacing, and one token set carries both."
-                  ar="17 نمط نصّ تغطّي العرض والعنوان الكبير والعنوان والمتن والتسمية والتعليق، لكل واحد رموز للحجم والوزن وارتفاع السطر وتباعد الأحرف، معايَرة للعربية واللاتينية كلٍّ على حدة. العربية تريد تباعد أسطر أضيق واللاتينية تريد تباعد أحرف أوسع، ومجموعة رموز واحدة تحمل الاثنين."
+                  en="The text styles cover display, title, body, label and caption, each with size, weight and line-height tokens, and Arabic gets its own face and metrics. Arabic wants tighter leading and Latin wants wider letter-spacing, and one token set carries both."
+                  ar="أنماط النصّ تغطّي العرض والعنوان والمتن والتسمية والتعليق، لكل واحد رموز للحجم والوزن وارتفاع السطر، وللعربية خطّها ومقاييسها الخاصة. العربية تريد تباعد أسطر أضيق واللاتينية تريد تباعد أحرف أوسع، ومجموعة رموز واحدة تحمل الاثنين."
                 />
               </Callout>
 
@@ -300,14 +299,14 @@ export default function MademoisellePage() {
         },
         {
           kicker: <T en="Design system" ar="نظام التصميم" />,
-          heading: <T en="26+ components. Two scripts. Three themes." ar="26+ مكوّناً. خطّان. ثلاث سمات." />,
+          heading: <T en="A shared system. Two scripts. Three themes." ar="نظامٌ مشترك. خطّان. ثلاث سمات." />,
           body: (
             <>
               <FactGrid
                 items={[
-                  { label: <T en="Text variants" ar="خيارات النصّ" />, value: "17" },
+                  { label: <T en="Components" ar="المكوّنات" />, value: <T en="120+, co-authored with the team" ar="120+، بالاشتراك مع الفريق" /> },
                   { label: <T en="Button variants" ar="خيارات الأزرار" />, value: <T en="9, every state" ar="9، بكل حالة" /> },
-                  { label: <T en="Themes" ar="السمات" />, value: <T en="Light · Dark · Brand" ar="فاتح · داكن · العلامة" /> },
+                  { label: <T en="Themes" ar="السمات" />, value: <T en="Light · Dark · Midnight" ar="فاتح · داكن · Midnight" /> },
                   { label: <T en="Direction" ar="الاتجاه" />, value: "RTL + LTR" },
                   { label: <T en="Scripts" ar="الخطوط" />, value: <T en="Arabic · Latin" ar="عربي · لاتيني" /> },
                   { label: <T en="Tokens" ar="الرموز" />, value: <T en="Semantic, never a raw hex" ar="دلالية، ولا hex خام أبداً" /> },
@@ -315,14 +314,10 @@ export default function MademoisellePage() {
               />
               <p>
                 <T
-                  en="The nine button variants cover the whole interaction matrix: primary, secondary, ghost, destructive and icon, each with default, hover, pressed, disabled and loading states, in Arabic and Latin type, across all three themes. Every state was designed before any state was coded."
-                  ar="تغطّي خيارات الأزرار التسعة مصفوفة التفاعل كاملة: أساسي وثانوي وشبحي وتدميري وأيقونة، لكل واحد حالات افتراضية ومرور وضغط وتعطيل وتحميل، بالخطّين العربي واللاتيني، وعبر السمات الثلاث. وكل حالة صُمّمت قبل أن تُبرمَج أي حالة."
+                  en="The nine button variants (primary, coral, secondary, ghost, outline, soft, inverted, link and destructive) cover the interaction matrix in four sizes, in Arabic and Latin type, across all three themes. The team started the system in April; my commits add and refine components such as the app bar, bottom navigation, text field, toast and sheet."
+                  ar="تغطّي خيارات الأزرار التسعة (أساسي، ومرجاني، وثانوي، وشبحي، ومحدَّد، وناعم، ومعكوس، ورابط، وتدميري) مصفوفة التفاعل بأربعة أحجام، بالخطّين العربي واللاتيني، وعبر السمات الثلاث. بدأ الفريق النظام في نيسان؛ وتضيف commits عملي مكوّناتٍ وتصقلها، مثل شريط التطبيق، والتنقّل السفلي، وحقل النصّ، والتنبيه، والورقة."
                 />
               </p>
-              <Figure
-                label="Component library"
-                caption={<T en="Buttons across states and themes, from the Figma component sheet. Export still to add." ar="الأزرار عبر الحالات والسمات، من ورقة مكوّنات Figma. التصدير لم يُضَف بعد." />}
-              />
             </>
           ),
         },
@@ -338,8 +333,8 @@ export default function MademoisellePage() {
             <>
               <p>
                 <T
-                  en="A second engineer built the AI module in parallel while I drove the redesign and the rewrite. The risk in any parallel workstream is divergence: two people inventing two visual languages that somebody has to reconcile later."
-                  ar="بنى مهندس ثانٍ وحدة الذكاء بالتوازي بينما قدتُ إعادة التصميم وإعادة الكتابة. والخطر في أي مسار عمل موازٍ هو التباعد: شخصان يخترعان لغتين بصريتين على أحدٍ أن يوفّق بينهما لاحقاً."
+                  en="Teammates built the AI services and the business side in parallel while I drove the redesign and the customer app's rewrite. The risk in any parallel workstream is divergence: people inventing separate visual languages that somebody has to reconcile later."
+                  ar="بنى زملائي خدمات الذكاء وجانب الأعمال بالتوازي بينما قدتُ إعادة التصميم وإعادة كتابة تطبيق الزبونة. والخطر في أي مسار عمل موازٍ هو التباعد: أشخاص يخترعون لغاتٍ بصرية منفصلة على أحدٍ أن يوفّق بينها لاحقاً."
                 />
               </p>
               <p>
@@ -358,14 +353,14 @@ export default function MademoisellePage() {
             <>
               <p>
                 <T
-                  en="Mademoiselle is active and shipping as a native Flutter app on a bilingual, three-theme design system. Every screen is an instance of that system rather than a one-off, so an inconsistency shows up in the system before it reaches production."
-                  ar="Mademoiselle نشط ويُطلق تطبيقَ Flutter أصلياً على نظام تصميم ثنائي اللغة بثلاث سمات. وكل شاشة نسخة من ذلك النظام لا حالة فردية، فيظهر أي تناقض في النظام قبل أن يصل الإنتاج."
+                  en="The native Flutter V2 is in launch integration, on a shared three-theme design system in Arabic, English and French. Every screen is an instance of that system rather than a one-off, so an inconsistency shows up in the system before it reaches production."
+                  ar="النسخة الثانية بـFlutter الأصلي في مرحلة دمج الإطلاق، على نظام تصميم مشترك بثلاث سمات بالعربية والإنجليزية والفرنسية. وكل شاشة نسخة من ذلك النظام لا حالة فردية، فيظهر أي تناقض في النظام قبل أن يصل الإنتاج."
                 />
               </p>
               <p>
                 <T
-                  en="Building the system first inverts the usual order, where a design system is documentation someone writes at the end. Here it was the foundation, and that is why a second engineer's parallel work landed without adding design debt."
-                  ar="بناء النظام أولاً يقلب الترتيب المعتاد، حيث يكون نظام التصميم توثيقاً يكتبه أحدهم في النهاية. هنا كان الأساس، ولهذا نزل عمل المهندس الثاني الموازي دون أن يضيف دَيناً تصميمياً."
+                  en="Building the system first inverts the usual order, where a design system is documentation someone writes at the end. Here it was the foundation, and that is why my teammates' parallel work landed without adding design debt."
+                  ar="بناء النظام أولاً يقلب الترتيب المعتاد، حيث يكون نظام التصميم توثيقاً يكتبه أحدهم في النهاية. هنا كان الأساس، ولهذا نزل عمل زملائي الموازي دون أن يضيف دَيناً تصميمياً."
                 />
               </p>
             </>
@@ -378,8 +373,8 @@ export default function MademoisellePage() {
             <>
               <p>
                 <T
-                  en="Inheriting a stalled codebase settled the argument for me. The system is what let one person redesign and rewrite alongside a second engineer without the two halves drifting. I treat it as the first deliverable now."
-                  ar="وراثة قاعدة كود متعثّرة حسمت المسألة عندي. النظام هو ما أتاح لشخص واحد أن يعيد التصميم والكتابة إلى جانب مهندس ثانٍ دون أن ينحرف النصفان. وأنا أعامله الآن كأول مُسلَّم."
+                  en="Inheriting a codebase that had stopped growing settled the argument for me. The system is what let me redesign and rewrite the customer app alongside two teammates without the parts drifting. I treat it as the first deliverable now."
+                  ar="وراثة قاعدة كودٍ توقّفت عن النمو حسمت المسألة عندي. النظام هو ما أتاح لي أن أعيد تصميم تطبيق الزبونة وكتابته إلى جانب زميلين دون أن تنحرف الأجزاء. وأنا أعامله الآن كأول مُسلَّم."
                 />
               </p>
               <p>

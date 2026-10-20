@@ -60,7 +60,6 @@ const socialIcons: Record<string, React.ReactNode> = {
 
 export function Hero() {
   const {
-    location,
     status,
     eyebrow,
     headlineLead,
@@ -70,7 +69,6 @@ export function Hero() {
     stats,
     ctas,
     socials,
-    trustedBy,
   } = heroContent;
 
   const reduced = useReducedMotion();
@@ -142,7 +140,7 @@ export function Hero() {
       {/* the guide orb, floating top-right over the scene */}
       <motion.div
         style={{ x: orbX, y: orbY }}
-        className="pointer-events-none absolute right-[6%] top-[14%] hidden lg:block"
+        className="pointer-events-none absolute end-[6%] top-[14%] hidden lg:block"
       >
         <Orb size={150} alt="Mozn's guide — a glowing orb" />
         <span
@@ -210,40 +208,43 @@ export function Hero() {
                 last stat is a phrase, not a number, so it spans both columns. */}
             <motion.dl
               {...itemProps}
-              className="mt-7 grid grid-cols-1 gap-x-5 gap-y-3 sm:mt-10 sm:flex sm:flex-wrap sm:gap-x-9 sm:gap-y-6"
+              className="mt-7 grid grid-cols-1 gap-x-5 gap-y-3 sm:mt-10 sm:grid-cols-2 sm:gap-x-9 sm:gap-y-6 lg:grid-cols-4 lg:gap-x-6"
             >
+              {/* One wrapper div per stat with dt + dd as its direct children:
+                  a <dl> only allows dt/dd groups or a single div around them,
+                  so the icon lives inside the dt (Lighthouse: definition-list,
+                  dlitem). On sm+ the dd is indented by icon + gap so it sits
+                  under the number, as before. */}
               {stats.map((s, i) => (
                 <div
                   key={s.key}
-                  className={`flex items-center gap-2.5 sm:items-start ${
-                    i === stats.length - 1 ? "hidden sm:flex" : ""
+                  className={`flex min-w-0 items-center gap-2 sm:block ${
+                    i === stats.length - 1 ? "hidden sm:block" : ""
                   }`}
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="var(--accent)"
-                    strokeWidth="1.7"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mt-0.5 shrink-0"
-                    aria-hidden
-                  >
-                    {statIcons[s.key]}
-                  </svg>
-                  <div className="flex min-w-0 items-baseline gap-2 sm:block">
-                    <dt className="font-display shrink-0 text-xl font-semibold leading-none text-[var(--ink)] sm:text-2xl">
-                      <T
-                        en={<CountUp value={s.value} />}
-                        ar={<CountUp value={s.valueAr} />}
-                      />
-                    </dt>
-                    <dd className="text-[0.78rem] leading-tight text-[var(--ink-muted)] sm:mt-1 sm:text-[0.72rem]">
-                      <T en={s.label} ar={s.labelAr} />
-                    </dd>
-                  </div>
+                  <dt className="font-display flex shrink-0 items-center gap-2.5 text-xl font-semibold leading-none text-[var(--ink)] sm:text-2xl">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="var(--accent)"
+                      strokeWidth="1.7"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="shrink-0"
+                      aria-hidden
+                    >
+                      {statIcons[s.key]}
+                    </svg>
+                    <T
+                      en={<CountUp value={s.value} />}
+                      ar={<CountUp value={s.valueAr} />}
+                    />
+                  </dt>
+                  <dd className="text-[0.78rem] leading-tight text-[var(--ink-muted)] sm:mt-1 sm:ps-[30px] sm:text-[0.72rem]">
+                    <T en={s.label} ar={s.labelAr} />
+                  </dd>
                 </div>
               ))}
             </motion.dl>
@@ -264,7 +265,7 @@ export function Hero() {
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--border-strong)] bg-[var(--glass)] px-6 py-3 text-sm font-semibold text-[var(--ink)] backdrop-blur transition hover:border-[var(--accent)] hover:text-[var(--accent-deep)]"
               >
                 <T en={ctas.secondary.label} ar={ctas.secondary.labelAr} />
-                <span aria-hidden>↓</span>
+                <span aria-hidden className="rtl:-scale-x-100">→</span>
               </Link>
             </motion.div>
 
@@ -300,27 +301,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* trusted-by bar */}
-      <div className="mx-auto w-full max-w-6xl px-5 pb-8 lg:px-8 lg:pb-10">
-        <div className="panel flex flex-wrap items-center gap-x-6 gap-y-2 rounded-2xl px-4 py-3 sm:gap-x-8 sm:gap-y-3 sm:px-6 sm:py-4">
-          <span className="font-mono text-[0.55rem] uppercase tracking-[0.18em] text-[var(--ink-faint)] sm:text-[0.6rem] sm:tracking-[0.22em]">
-            <T en={trustedBy.label} ar={trustedBy.labelAr} />
-          </span>
-          <ul className="flex flex-wrap items-center gap-x-4 gap-y-1.5 sm:gap-x-7 sm:gap-y-2">
-            {trustedBy.items.map((item) => (
-              <li
-                key={item}
-                className="text-[0.8rem] font-medium text-[var(--ink-muted)] sm:text-sm"
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
-          <span className="ms-auto font-mono text-[0.58rem] text-[var(--ink-faint)] sm:text-[0.62rem]">
-            <T en={location} ar={heroContent.locationAr} />
-          </span>
-        </div>
-      </div>
     </section>
   );
 }

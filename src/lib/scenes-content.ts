@@ -62,19 +62,19 @@ export const heroContent = {
   subheadingAr:
     "أبني تطبيقات الجوال ومنصّات الويب وميزات الذكاء الاصطناعي وأنظمة الأعمال التي تشتغل عليها الشركات.",
   intro:
-    "My work has covered Flutter apps, Vue and vanilla web front-ends, Python services, AI integration, Shopify storefronts, and Odoo ERP. I'm not tied to one stack. What stays the same is that I design a thing before I build it, and I stay with it until it runs in production.",
+    "My work has covered Flutter apps, Vue and vanilla web front-ends, Python services, AI integration, a Shopify storefront, and Odoo ERP. I'm not tied to one stack. What stays the same is that I design a thing before I build it, and I stay with it through launch and handover.",
   introAr:
-    "شمل عملي تطبيقات Flutter، وواجهات ويب بـVue وبـHTML/CSS/JS، وخدمات Python، ودمج الذكاء الاصطناعي، ومتاجر Shopify، وأنظمة Odoo. لستُ مرتبطة بتقنيةٍ واحدة. الثابت أنني أصمّم الشيء قبل أن أبنيه، وأبقى معه حتى يعمل في الإنتاج.",
+    "شمل عملي تطبيقات Flutter، وواجهات ويب بـVue وبـHTML/CSS/JS، وخدمات Python، ودمج الذكاء الاصطناعي، ومتجر Shopify، وأنظمة Odoo. لستُ مرتبطة بتقنيةٍ واحدة. الثابت أنني أصمّم الشيء قبل أن أبنيه، وأبقى معه حتى الإطلاق والتسليم.",
   /** Credibility row — honest, defensible proof points (no invented metrics). */
   stats: [
-    { key: "projects", value: "3", valueAr: "3", label: "Products designed & built", labelAr: "منتجات صمّمتها وبنيتها" },
-    { key: "fullstack", value: "1", valueAr: "1", label: "Production ERP implementation", labelAr: "نظام ERP يعمل في شركة" },
-    { key: "domains", value: "3", valueAr: "3", label: "AI-powered product experiences", labelAr: "منتجات فيها ذكاء اصطناعي" },
+    { key: "projects", value: "3", valueAr: "3", label: "Flutter products, design to code", labelAr: "منتجات Flutter من التصميم إلى الكود" },
+    { key: "fullstack", value: "2", valueAr: "2", label: "Companies moved onto Odoo", labelAr: "شركتان نُقلتا إلى Odoo" },
+    { key: "domains", value: "3", valueAr: "3", label: "AI models behind one health app", labelAr: "نماذج ذكاء اصطناعي خلف تطبيق صحي واحد" },
     { key: "years", value: "Full stack", valueAr: "المكدّس كاملاً", label: "Interface, services, and data", labelAr: "الواجهة والخدمات والبيانات" },
   ],
   ctas: {
     primary: { label: "View Case Studies", labelAr: "استعرض دراسات الحالة", href: "#work" },
-    secondary: { label: "Download Resume", labelAr: "حمّل السيرة الذاتية", href: "/cv" },
+    secondary: { label: "View Résumé", labelAr: "اعرض السيرة الذاتية", href: "/cv" },
   },
   socials: [
     { label: "GitHub", labelAr: "GitHub", href: "https://github.com/Mozn-jamous", icon: "github" },
@@ -83,11 +83,6 @@ export const heroContent = {
   ],
   /** "Let's Talk" nav CTA target. */
   contactHref: "#contact",
-  trustedBy: {
-    label: "Trusted by · collaborated with",
-    labelAr: "تعاونتُ مع",
-    items: ["Santa Media", "Techno Solution", "ASPU", "Odoo", "Supabase"],
-  },
 };
 
 /* ------------------------------------------------------------ */
@@ -97,13 +92,13 @@ export const heroContent = {
 export const aboutContent = {
   eyebrow: "About",
   paragraphs: [
-    "I'm a software engineer with a degree in Information Technology Engineering. My first real system was my graduation project: a healthcare app I designed in Figma and wrote in Flutter, with three AI models running behind an Arabic interface.",
-    "Since then the work has moved around a lot. A native mobile rebuild on a bilingual design system, an Odoo ERP running inside a company, Shopify storefronts, Vue and plain HTML front-ends, Python services with AI wired into them. Different stacks, same job: understand the problem, choose a structure that holds, then write it.",
+    "I'm a software engineer with a degree in Information Technology Engineering. My first real system was my graduation project, built with a classmate: an Arabic maternal-health app where I owned the Python backend and the three AI models and shared the design.",
+    "Since then the work has moved around a lot. A native mobile rebuild on a shared design system, Odoo running inside two companies, a Shopify storefront, Vue and plain HTML front-ends, Python services with AI wired into them. Different stacks, same job: understand the problem, choose a structure that holds, then write it.",
     "The part I'm best at is being the person who can follow a problem across layers instead of handing it over at the boundary. That tends to matter most on small teams, and on Arabic products, where the language shapes the interface rather than getting translated onto it.",
   ],
   paragraphsAr: [
-    "أنا مهندسة برمجيات، خرّيجة هندسة تقنية المعلومات. أول نظامٍ حقيقي بنيته كان مشروع تخرّجي: تطبيق صحّي صمّمته في Figma وكتبته بـFlutter، وخلف واجهته العربية ثلاثة نماذج ذكاء اصطناعي.",
-    "بعدها تنقّل عملي كثيراً. إعادة بناء تطبيق جوال أصلي على نظام تصميم ثنائي اللغة، ونظام Odoo يعمل داخل شركة، ومتاجر Shopify، وواجهات بـVue وبـHTML صِرف، وخدمات Python موصولة بالذكاء الاصطناعي. تقنيات مختلفة والعمل نفسه: أفهم المشكلة، وأختار بنيةً تصمد، ثم أكتبها.",
+    "أنا مهندسة برمجيات، خرّيجة هندسة تقنية المعلومات. أول نظامٍ حقيقي بنيته كان مشروع تخرّجي مع زميلة: تطبيق صحّة أمومة عربي تولّيتُ فيه خادم Python ونماذج الذكاء الاصطناعي الثلاثة وشاركتُ في التصميم.",
+    "بعدها تنقّل عملي كثيراً. إعادة بناء تطبيق جوال أصلي على نظام تصميم مشترك، وOdoo يعمل داخل شركتين، ومتجر Shopify، وواجهات بـVue وبـHTML صِرف، وخدمات Python موصولة بالذكاء الاصطناعي. تقنيات مختلفة والعمل نفسه: أفهم المشكلة، وأختار بنيةً تصمد، ثم أكتبها.",
     "أفضل ما أُجيده أن أتابع المشكلة عبر الطبقات بدل أن أسلّمها عند الحدّ الفاصل. وهذا ينفع أكثر ما ينفع في الفرق الصغيرة، وفي المنتجات العربية التي تُبنى واجهتها على اللغة بدل أن تُترجَم إليها.",
   ],
   openTo: [
@@ -129,12 +124,12 @@ export const aboutContent = {
 export const processContent = {
   eyebrow: "How I work",
   eyebrowAr: "كيف أعمل",
-  heading: "From a problem to a shipped product.",
-  headingAr: "من مشكلة إلى منتجٍ جاهز للإطلاق.",
+  heading: "From a problem to a working product.",
+  headingAr: "من مشكلة إلى منتجٍ يعمل.",
   intro:
-    "Screens are the last thing I draw. I start with the problem and follow it all the way into production.",
+    "Screens are the last thing I draw. I start with the problem and follow it through build, launch, and handover.",
   introAr:
-    "الشاشات آخر ما أرسمه. أبدأ من المشكلة وأتابعها حتى الإنتاج.",
+    "الشاشات آخر ما أرسمه. أبدأ من المشكلة وأتابعها عبر البناء والإطلاق والتسليم.",
   steps: [
     {
       step: "01",
@@ -164,13 +159,13 @@ export const processContent = {
       step: "03",
       title: "Build",
       titleAr: "بناء",
-      body: "I write what I designed: the front-end, the backend, the data model, the logic.",
-      bodyAr: "أكتب ما صمّمته: الواجهة، والخادم، ونموذج البيانات، والمنطق.",
+      body: "I build what I designed, in whichever layer it lands: UI, backend, data model, or logic.",
+      bodyAr: "أبني ما صمّمته في أي طبقةٍ وقع: الواجهة، أو الخادم، أو نموذج البيانات، أو المنطق.",
       deliverables: ["Flutter app", "Backend & schema", "AI / logic"],
       deliverablesAr: ["تطبيق Flutter", "الخادم والمخطّط", "ذكاء اصطناعي / منطق"],
       tools: ["Flutter", "Python", "Supabase", "Odoo"],
-      outcome: "Mademoiselle: stalled prototype rebuilt on a 26+ component system.",
-      outcomeAr: "Mademoiselle: نموذج متعثّر أُعيد بناؤه على نظام من 26+ مكوّناً.",
+      outcome: "Mademoiselle: the customer app rebuilt in native Flutter on a shared design system.",
+      outcomeAr: "Mademoiselle: تطبيق الزبونة أُعيد بناؤه بـFlutter أصلي على نظام تصميم مشترك.",
     },
     {
       step: "04",
@@ -199,29 +194,29 @@ export const businessSystemsContent = {
   eyebrowAr: "الأنظمة والعمق التقني",
   heading: "The systems a company actually runs on.",
   headingAr: "الأنظمة التي تدير بها الشركة عملها فعلاً.",
-  body: "Behind the apps sit the unglamorous systems: expenses, HR, payroll, attendance, point of sale, approval chains. I've built these in Odoo 19 for real companies, shaped around how each one already works rather than how the software wishes they did. One of them is open source and running today.",
+  body: "Behind the apps sit the unglamorous systems: accounting, purchasing, inventory, point of sale, approval chains. I implemented these in Odoo (17 through 19, self-hosted) for two real companies, shaped around how each one already works rather than how the software wishes they did. The expense-approval module is my own, and open source.",
   bodyAr:
-    "خلف التطبيقات تقف الأنظمة غير البرّاقة: النفقات، والموارد البشرية، والرواتب، والحضور، ونقاط البيع، وسلاسل الموافقات. بنيتُ هذه بـOdoo 19 لشركاتٍ حقيقية، مصوغةً على طريقة عمل كل شركة كما هي لا كما يتمنّاها البرنامج. أحدها مفتوح المصدر ويعمل اليوم.",
+    "خلف التطبيقات تقف الأنظمة غير البرّاقة: المحاسبة، والمشتريات، والمخزون، ونقاط البيع، وسلاسل الموافقات. نفّذتُ هذه بـOdoo (من 17 إلى 19، على خادم خاص) لشركتين حقيقيتين، مصوغةً على طريقة عمل كل شركة كما هي لا كما يتمنّاها البرنامج. أما وحدة الموافقة على النفقات فهي عملي الخاص، ومفتوحة المصدر.",
   systems: [
-    "Expense Management",
-    "HR",
-    "Payroll",
-    "Attendance",
+    "Accounting",
+    "Purchasing",
+    "Inventory",
     "POS",
+    "Expense Management",
     "Approval Workflows",
   ],
   systemsAr: [
-    "إدارة النفقات",
-    "الموارد البشرية",
-    "الرواتب",
-    "الحضور",
+    "المحاسبة",
+    "المشتريات",
+    "المخزون",
     "نقاط البيع",
+    "إدارة النفقات",
     "تدفّقات الموافقات",
   ],
   results: [
-    { value: "Days → Secs", valueAr: "أيام ← ثوانٍ", label: "Expense approval time", labelAr: "زمن الموافقة على النفقات" },
-    { value: "3-division", valueAr: "3 أقسام", label: "Company centralized", labelAr: "شركة موحّدة" },
-    { value: "Open source", valueAr: "مفتوح المصدر", label: "Live on GitHub", labelAr: "حيّ على GitHub" },
+    { value: "2", valueAr: "2", label: "Companies on one Odoo instance", labelAr: "شركتان على نسخة Odoo واحدة" },
+    { value: "3", valueAr: "3", label: "Divisions in one company", labelAr: "أقسام في شركة واحدة" },
+    { value: "Open source", valueAr: "مفتوح المصدر", label: "Expense module on GitHub", labelAr: "وحدة النفقات على GitHub" },
   ],
   cta: { label: "Explore the systems work", labelAr: "استكشف أعمال الأنظمة", href: "/odoo" },
 };
@@ -264,9 +259,9 @@ export const architectureStack: {
   heading: "Every layer, and where I built it.",
   headingAr: "كل طبقة، وأين بنيتُها.",
   intro:
-    "Pick a layer to see what lives in it and which product it came from. Nothing here is theoretical; each one shipped.",
+    "Pick a layer to see what lives in it and which product it came from. Nothing here is theoretical; each one was built and runs.",
   introAr:
-    "اختر طبقةً لترى ما فيها ومن أي منتجٍ جاءت. لا شيء هنا نظري؛ كل واحدةٍ منها أُطلقت فعلاً.",
+    "اختر طبقةً لترى ما فيها ومن أي منتجٍ جاءت. لا شيء هنا نظري؛ كل واحدةٍ منها بُنيت وتعمل.",
   layers: [
     {
       id: "frontend",
@@ -290,8 +285,8 @@ export const architectureStack: {
       example: {
         project: "CareConnect",
         href: "/projects/careconnect",
-        note: "Three Flutter apps (mother, babysitter, admin) off one design system.",
-        noteAr: "ثلاثة تطبيقات Flutter (أمّ، جليسة، مشرف) من نظام تصميم واحد.",
+        note: "Three Flutter apps (mother, babysitter, admin) on one Supabase backend.",
+        noteAr: "ثلاثة تطبيقات Flutter (أمّ، جليسة، مشرف) على خادم Supabase واحد.",
       },
     },
     {
@@ -376,7 +371,7 @@ export const architectureStack: {
       id: "systems",
       label: "Business Systems",
       labelAr: "أنظمة الأعمال",
-      tech: "Odoo 19 · ORM · QWeb · OWL",
+      tech: "Odoo 17–19 · ORM · QWeb · OWL",
       summary: "The ERP and operations a business runs on day to day.",
       summaryAr: "نظام ERP والعمليات التي تدير بها الشركة يومها.",
       items: [
@@ -456,8 +451,8 @@ export const decisionLog: {
       questionAr: "لماذا ثلاثة تطبيقات منفصلة بدل تطبيق واحد بتبديل الأدوار؟",
       easy: "One app with a role switch is cheaper. You get a single codebase, one store listing, one onboarding flow. Most marketplaces ship exactly this way.",
       easyAr: "تطبيق واحد فيه مبدّل أدوار أرخص. قاعدة كودٍ واحدة، وإدراج واحد في المتجر، وتهيئة واحدة. هكذا تُطلق معظم المنصّات.",
-      chose: "Three apps. A mother, a babysitter and an admin each open the app to do a completely different thing, and they don't share a vocabulary. Separating them meant each app could have navigation built for one job and a store listing that says what it does, with nobody reading “you are logged in as: Mother”.",
-      choseAr: "ثلاثة تطبيقات. الأمّ والجليسة والمشرف يفتح كلٌّ منهم التطبيق لغرضٍ مختلف تماماً، ولا يتشاركون المفردات نفسها. فصلُهم سمح لكل تطبيقٍ بتنقّلٍ مبنيّ لمهمّةٍ واحدة وبإدراجٍ في المتجر يقول ما يفعله، دون أن يقرأ أحدٌ «أنتِ مسجَّلة الدخول كـ: أمّ».",
+      chose: "Three apps. A mother, a babysitter and an admin each open the app to do a completely different thing, and they don't share a vocabulary. Separating them meant each app could have navigation built for one job and a name that says what it does, with nobody reading “you are logged in as: Mother”.",
+      choseAr: "ثلاثة تطبيقات. الأمّ والجليسة والمشرف يفتح كلٌّ منهم التطبيق لغرضٍ مختلف تماماً، ولا يتشاركون المفردات نفسها. فصلُهم سمح لكل تطبيقٍ بتنقّلٍ مبنيّ لمهمّةٍ واحدة وباسمٍ يقول ما يفعله، دون أن يقرأ أحدٌ «أنتِ مسجَّلة الدخول كـ: أمّ».",
       tradeoff: "Higher initial build cost, but every surface stays honest to its audience.",
       tradeoffAr: "كلفة بناءٍ أولية أعلى، لكن كلّ واجهة تبقى أمينةً لجمهورها.",
       project: "CareConnect",
@@ -531,10 +526,25 @@ export const decisionLog: {
       questionAr: "لماذا التصميم بالعربية أصلاً بدل عكس تخطيط اليسار لليمين؟",
       easy: "Most teams ship RTL as a mirror of the English layout. You flip the direction, swap a few icons, and call it done. Arabic readers can always tell.",
       easyAr: "معظم الفرق تُطلق العربية كمرآةٍ للتخطيط الإنجليزي. تقلب الاتجاه، وتبدّل بعض الأيقونات، وتعتبر الأمر منتهياً. والقارئ العربي يعرف ذلك دائماً.",
-      chose: "I drew the Figma file and every Flutter screen in Arabic first. Reading order, hierarchy, spacing and icon choices were all decided while looking at Arabic, and English came afterwards.",
-      choseAr: "رسمتُ ملف Figma وكل شاشة Flutter بالعربية أولاً. ترتيب القراءة والتسلسل والتباعد واختيار الأيقونات كلها قُرّرت وأنا أنظر إلى العربية، والإنجليزية جاءت بعدها.",
+      chose: "I drew the Figma file and every customer-app screen in Arabic first. Reading order, hierarchy, spacing and icon choices were all decided while looking at Arabic, and English came afterwards.",
+      choseAr: "رسمتُ ملف Figma وكل شاشة في تطبيق الزبونة بالعربية أولاً. ترتيب القراءة والتسلسل والتباعد واختيار الأيقونات كلها قُرّرت وأنا أنظر إلى العربية، والإنجليزية جاءت بعدها.",
       tradeoff: "Designing in two directions takes longer. The payoff is that the Arabic version reads like the original, because that's what it is.",
       tradeoffAr: "التصميم باتجاهين يستغرق وقتاً أطول. والمقابل أن النسخة العربية تُقرأ كالأصل، لأنها هي الأصل.",
+      project: "Mademoiselle",
+      href: "/projects/mademoiselle",
+    },
+    {
+      id: "rebuild-native",
+      tag: "Product",
+      tagAr: "منتج",
+      question: "Why rewrite Mademoiselle natively instead of patching the FlutterFlow app?",
+      questionAr: "لماذا أعدتُ كتابة Mademoiselle أصلياً بدل ترقيع تطبيق FlutterFlow؟",
+      easy: "The FlutterFlow V1 was live. The cheap path is to keep adding screens to it: no rewrite, no migration, and something visible ships every week.",
+      easyAr: "كانت نسخة FlutterFlow الأولى حيّة. الطريق السهل أن نواصل إضافة الشاشات إليها: لا إعادة كتابة، ولا ترحيل، وكل أسبوع يُطلق شيء مرئي.",
+      chose: "I audited the prototype against where the product had to go (more screens, an AI module, continuous iteration, an Arabic experience that feels native) and it failed on all four. So we rewrote it in native Flutter, and designed the token and component system before touching the codebase, so the rewrite pays the debt down instead of relocating it.",
+      choseAr: "دقّقتُ النموذج مقابل وجهة المنتج (شاشات أكثر، ووحدة ذكاء اصطناعي، وتكرار مستمر، وتجربة عربية أصيلة) ففشل في الأربعة. فأعدنا كتابته بـFlutter أصلي، وصمّمنا نظام الرموز والمكوّنات قبل أن نلمس قاعدة الكود، حتى تسدّد إعادة الكتابة الدَّين بدل أن تنقله.",
+      tradeoff: "A slower start, and months with nothing new for users to see. In return every screen since has inherited the system for free, and V2 is now in launch integration.",
+      tradeoffAr: "بداية أبطأ، وأشهر بلا جديد يراه المستخدمون. في المقابل ورثت كل شاشة منذ ذلك الحين النظام مجاناً، والنسخة الثانية الآن في مرحلة دمج الإطلاق.",
       project: "Mademoiselle",
       href: "/projects/mademoiselle",
     },
@@ -585,8 +595,8 @@ export const educationChapter: {
     school: "Al-Sham Private University (ASPU)",
     schoolAr: "جامعة الشام الخاصة (ASPU)",
     year: "2025",
-    note: "Graduation thesis: BloomBelly, an Arabic maternal-health app with three AI models behind it, designed in Figma and written in Flutter.",
-    noteAr: "مشروع التخرّج: BloomBelly، تطبيق صحّة أمومة عربي خلفه ثلاثة نماذج ذكاء اصطناعي، صُمّم في Figma وكُتب بـFlutter.",
+    note: "Graduation thesis: BloomBelly, an Arabic maternal-health app built with a classmate. I owned the Python backend and its three AI models and shared the design.",
+    noteAr: "مشروع التخرّج: BloomBelly، تطبيق صحّة أمومة عربي بنيته مع زميلة. تولّيتُ خادم Python ونماذج الذكاء الاصطناعي الثلاثة وشاركتُ في التصميم.",
     // image: "/work/certs/degree.webp",
     related: [
       { label: "BloomBelly — graduation thesis", labelAr: "BloomBelly — مشروع التخرّج", href: "/projects/bloombelly" },
@@ -693,48 +703,48 @@ export const projectsIndex: ProjectIndexEntry[] = [
     href: "/projects/mademoiselle",
     cover: "/work/mademoiselle/cover.webp",
     year: "2026",
-    role: "Lead engineer + designer",
-    roleAr: "مهندسة رئيسية + مصمّمة",
+    role: "Product designer + Flutter developer",
+    roleAr: "مصمّمة منتج + مطوّرة Flutter",
     industry: "Commerce · Beauty",
     industryAr: "تجارة · تجميل",
-    impact: "Stalled FlutterFlow prototype → live native app",
-    impactAr: "نموذج FlutterFlow متعثّر ← تطبيق أصلي حيّ",
+    impact: "Live FlutterFlow app → native Flutter rebuild",
+    impactAr: "تطبيق FlutterFlow حيّ ← إعادة بناء بـFlutter أصلي",
     summary:
-      "A dormant FlutterFlow prototype rewritten as a native Flutter app, on a bilingual design system of 26+ components across three themes.",
+      "A live FlutterFlow app being rebuilt as native Flutter by a three-person team. I redesigned it and build the customer-facing app on a shared design system (three themes, Arabic, English and French). V2 is in launch integration.",
     summaryAr:
-      "نموذج FlutterFlow خامل أُعيد كتابته تطبيقَ Flutter أصلياً، على نظام تصميم ثنائي اللغة من أكثر من 26 مكوّناً بثلاث سمات.",
+      "تطبيق FlutterFlow حيّ يُعاد بناؤه بـFlutter أصلي بفريقٍ من ثلاثة. أعدتُ تصميمه وأبني تطبيق الزبونة على نظام تصميم مشترك (ثلاث سمات، بالعربية والإنجليزية والفرنسية). النسخة الثانية في مرحلة دمج الإطلاق.",
   },
   {
     name: "BloomBelly",
     href: "/projects/bloombelly",
     cover: "/work/bloombelly/cover.webp",
     year: "2025",
-    role: "Engineer + designer",
-    roleAr: "مهندسة + مصمّمة",
+    role: "Backend + AI engineer, co-designer",
+    roleAr: "مهندسة خادم وذكاء اصطناعي + مشاركة في التصميم",
     industry: "Healthcare",
     industryAr: "رعاية صحية",
     impact: "Three AI models behind one Arabic app",
     impactAr: "ثلاثة نماذج ذكاء اصطناعي خلف تطبيق عربي",
     summary:
-      "My graduation project: an Arabic maternal-health app I designed in Figma and wrote in Flutter, with a Python service and three AI models behind it.",
+      "My graduation project, built with a classmate: an Arabic-first maternal-health app. I owned the Python backend and the three AI models and shared the design; she led the Flutter front end.",
     summaryAr:
-      "مشروع تخرّجي: تطبيق صحّة أمومة عربي صمّمته في Figma وكتبته بـFlutter، وخلفه خدمة Python وثلاثة نماذج ذكاء اصطناعي.",
+      "مشروع تخرّجي مع زميلة: تطبيق صحّة أمومة عربي أولاً. تولّيتُ خادم Python ونماذج الذكاء الاصطناعي الثلاثة وشاركتُ في التصميم؛ وقادت هي واجهة Flutter.",
   },
   {
     name: "CareConnect",
     href: "/projects/careconnect",
     cover: "/work/careconnect/cover.webp",
     year: "2024",
-    role: "Engineer + designer",
-    roleAr: "مهندسة + مصمّمة",
-    industry: "Childcare marketplace",
-    industryAr: "سوق رعاية أطفال",
+    role: "Lead engineer + designer",
+    roleAr: "مهندسة رئيسية + مصمّمة",
+    industry: "Childcare · Marketplace",
+    industryAr: "رعاية أطفال · سوق",
     impact: "Three apps, one backend, isolation proved in SQL",
     impactAr: "ثلاثة تطبيقات، خادم واحد، والعزل مُثبت بـSQL",
     summary:
-      "A childcare marketplace built as three separate apps over one Supabase backend, where the permission rules live in the database instead of the client.",
+      "A childcare marketplace built as three separate apps over one Supabase backend, where the permission rules live in the database instead of the client. The Babysitter app was co-developed with @shaha123s.",
     summaryAr:
-      "سوق رعاية أطفال بُني كثلاثة تطبيقات منفصلة على خادم Supabase واحد، وقواعد الصلاحيات فيه تعيش في قاعدة البيانات لا في العميل.",
+      "سوق رعاية أطفال بُني كثلاثة تطبيقات منفصلة على خادم Supabase واحد، وقواعد الصلاحيات فيه تعيش في قاعدة البيانات لا في العميل. تطبيق الجليسة طُوّر بالاشتراك مع @shaha123s.",
   },
   {
     name: "Eda",
@@ -764,9 +774,9 @@ export const projectsIndex: ProjectIndexEntry[] = [
     impact: "An AI bot per shop, 15 tools, five languages",
     impactAr: "بوت ذكاء لكل متجر، 15 أداة، بخمس لغات",
     summary:
-      "A multi-tenant SaaS for online shops, built by two of us. The core logic and the AI design belong to a collaborating engineer. I wrote the FastAPI and PostgreSQL backend, the Vue 3 dashboard, and the integration of each shop's Telegram assistant.",
+      "A multi-tenant SaaS for online shops, built by two of us. The core logic and the AI design belong to a collaborating engineer; we shared the full-stack implementation: the FastAPI and PostgreSQL backend, the Vue 3 dashboard, and each shop's Telegram assistant. Built, not deployed.",
     summaryAr:
-      "نظام SaaS متعدّد المستأجرين للمتاجر الإلكترونية، بنيناه اثنين. منطق النظام وتصميم الذكاء لمهندسٍ مشارك. أنا كتبتُ خادم FastAPI وPostgreSQL، ولوحة Vue 3، ودمج مساعد Telegram لكل متجر.",
+      "نظام SaaS متعدّد المستأجرين للمتاجر الإلكترونية، بنيناه اثنين. منطق النظام وتصميم الذكاء لمهندسٍ مشارك، وتقاسمنا التنفيذ كاملاً: خادم FastAPI وPostgreSQL، ولوحة Vue 3، ومساعد Telegram لكل متجر. مبنيّ، وغير منشور.",
   },
   {
     name: "Veghnar Tonvair",
@@ -780,9 +790,9 @@ export const projectsIndex: ProjectIndexEntry[] = [
     impact: "A client brand book turned into a live Arabic store",
     impactAr: "دليل هوية العميل صار متجراً عربياً حيّاً",
     summary:
-      "A fragrance house's Shopify storefront, redesigned from scratch. I turned the client's brand book into a single stylesheet the whole shop reads from, built a four-face Arabic and Latin type system, and wrote product patterns that suit perfume.",
+      "A fragrance house's Shopify storefront, redesigned from scratch at Santa Media. I turned the client's brand book into a single stylesheet the whole shop reads from, built a four-face Arabic and Latin type system, and wrote product patterns that suit perfume.",
     summaryAr:
-      "واجهة متجر Shopify لبيت عطور، أُعيد تصميمها من الصفر. حوّلتُ دليل هوية العميل إلى ملف أنماطٍ واحد يقرأ منه المتجر كله، وبنيتُ نظاماً طباعياً من أربعة خطوط عربية ولاتينية، وكتبتُ أنماط منتجٍ تناسب العطر.",
+      "واجهة متجر Shopify لبيت عطور، أُعيد تصميمها من الصفر في Santa Media. حوّلتُ دليل هوية العميل إلى ملف أنماطٍ واحد يقرأ منه المتجر كله، وبنيتُ نظاماً طباعياً من أربعة خطوط عربية ولاتينية، وكتبتُ أنماط منتجٍ تناسب العطر.",
     clientSite: true,
   },
   {
@@ -794,12 +804,12 @@ export const projectsIndex: ProjectIndexEntry[] = [
     roleAr: "مصمّمة + مهندسة واجهة",
     industry: "Clinical nutrition · Web",
     industryAr: "تغذية سريرية · ويب",
-    impact: "25 bilingual RTL pages on one token system",
-    impactAr: "25 صفحة ثنائية اللغة على نظام رموزٍ واحد",
+    impact: "Home redesign, phone UX, and the Arabic version",
+    impactAr: "إعادة تصميم الرئيسية، وتجربة الهاتف، والنسخة العربية",
     summary:
-      "A clinical-nutrition brand's site, redesigned and rewritten from scratch in plain HTML, CSS and JavaScript. Arabic first, bilingual throughout, with the forms wired to Supabase.",
+      "A clinical-nutrition brand's site, built with the Santa Media team in plain HTML, CSS and JavaScript. My part: the home page's design and section order, the phone experience and sub-pages, and the Arabic RTL version.",
     summaryAr:
-      "موقع علامة تغذية سريرية، أُعيد تصميمه وكتابته من الصفر بـHTML وCSS وJavaScript صِرف. عربي أولاً، ثنائي اللغة في كل صفحة، ونماذجه موصولة بـSupabase.",
+      "موقع علامة تغذية سريرية، بُني مع فريق Santa Media بـHTML وCSS وJavaScript صِرف. حصّتي: تصميم الصفحة الرئيسية وترتيب أقسامها، وتجربة الهاتف والصفحات الفرعية، والنسخة العربية.",
     clientSite: true,
   },
   {
@@ -873,9 +883,9 @@ export const aboutPageContent = {
     { area: "Design", areaAr: "تصميم", items: ["Figma", "Design Systems", "Prototyping", "Arabic UX", "RTL", "Accessibility"], itemsAr: ["Figma", "أنظمة تصميم", "نماذج أولية", "تجربة عربية", "RTL", "إتاحة"] },
     { area: "Mobile", areaAr: "جوال", items: ["Flutter", "Dart", "iOS + Android", "FlutterFlow", "Capacitor", "PWA"], itemsAr: ["Flutter", "Dart", "iOS + Android", "FlutterFlow", "Capacitor", "PWA"] },
     { area: "Web", areaAr: "ويب", items: ["Vue 3", "HTML/CSS/JS", "Tailwind"], itemsAr: ["Vue 3", "HTML/CSS/JS", "Tailwind"] },
-    { area: "Backend", areaAr: "خادم", items: ["Python", "FastAPI", "Flask", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "Redis", "JWT", "REST APIs"], itemsAr: ["Python", "FastAPI", "Flask", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "Redis", "JWT", "واجهات REST"] },
+    { area: "Backend", areaAr: "خادم", items: ["Python", "FastAPI", "Flask", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "MySQL", "Redis", "JWT", "REST APIs", "Linux", "Docker"], itemsAr: ["Python", "FastAPI", "Flask", "SQLAlchemy", "Supabase", "Firebase", "PostgreSQL", "MySQL", "Redis", "JWT", "واجهات REST", "Linux", "Docker"] },
     { area: "AI", areaAr: "ذكاء اصطناعي", items: ["Google Gemini", "LoRA-tuned models", "scikit-learn", "Function-calling LLMs"], itemsAr: ["Google Gemini", "نماذج مضبوطة بـLoRA", "scikit-learn", "استدعاء دوال LLM"] },
-    { area: "Systems", areaAr: "أنظمة", items: ["Odoo 19", "ORM", "QWeb", "OWL", "POS · HR · Payroll"], itemsAr: ["Odoo 19", "ORM", "QWeb", "OWL", "نقاط بيع · موارد بشرية · رواتب"] },
+    { area: "Systems", areaAr: "أنظمة", items: ["Odoo 17–19", "ORM", "QWeb", "OWL", "Accounting · POS · Inventory"], itemsAr: ["Odoo 17–19", "ORM", "QWeb", "OWL", "محاسبة · نقاط بيع · مخزون"] },
   ],
 };
 
@@ -897,7 +907,7 @@ export const contactPageContent = {
   responseTimeAr: "أردّ عادةً خلال يوم",
   /** Reuses the same contact links as the home outro. */
   contacts: outroContent.contacts,
-  resume: { label: "Download résumé", labelAr: "حمّل السيرة الذاتية", href: "/cv" },
+  resume: { label: "View résumé", labelAr: "اعرض السيرة الذاتية", href: "/cv" },
 };
 
 /* ------------------------------------------------------------ */
