@@ -103,13 +103,13 @@ export const aboutContent = {
     "أفضل ما أُجيده أن أتابع المشكلة عبر الطبقات بدل أن أسلّمها عند الحدّ الفاصل. وهذا ينفع أكثر ما ينفع في الفرق الصغيرة، وفي المنتجات العربية التي تُبنى واجهتها على اللغة بدل أن تُترجَم إليها.",
   ],
   openTo: [
-    "Software engineering roles, remote",
+    "Software engineering roles, remote or relocating to Europe",
     "Mobile, web, or backend work",
     "Small teams shipping real products",
     "ERP and internal business systems",
   ],
   openToAr: [
-    "أدوار هندسة برمجيات عن بُعد",
+    "أدوار هندسة برمجيات، عن بُعد أو بالانتقال إلى أوروبا",
     "عمل على الجوال أو الويب أو الخادم",
     "فرق صغيرة تُطلق منتجات حقيقية",
     "أنظمة ERP والأنظمة الداخلية للشركات",
@@ -644,7 +644,7 @@ export const educationChapter: {
 export const outroContent = {
   eyebrow: "Contact",
   title: "Let's talk.",
-  body: "I'm open to software engineering roles, remote ones especially, and to small teams building something real. Email reaches me fastest.",
+  body: "I'm open to software engineering roles, remote or with relocation to Europe, and to small teams building something real. Email reaches me fastest.",
   contacts: [
     {
       label: "Email",
@@ -898,9 +898,9 @@ export const contactPageContent = {
   eyebrowAr: "تواصل",
   title: "Let's build something meaningful.",
   titleAr: "لنصنع شيئاً ذا معنى.",
-  body: "I'm open to software engineering roles, remote ones especially. Mobile, web, backend, or internal systems all interest me, and I'm glad to talk about anything Arabic or bilingual.",
+  body: "I'm open to software engineering roles, remote or with relocation to Europe. Mobile, web, backend, or internal systems all interest me, and I'm glad to talk about anything Arabic or bilingual.",
   bodyAr:
-    "منفتحة على أدوار هندسة البرمجيات، وخصوصاً عن بُعد. يهمّني العمل على الجوال أو الويب أو الخادم أو الأنظمة الداخلية، ويسعدني الحديث عن أي منتجٍ عربي أو ثنائي اللغة.",
+    "منفتحة على أدوار هندسة البرمجيات، عن بُعد أو مع الانتقال إلى أوروبا. يهمّني العمل على الجوال أو الويب أو الخادم أو الأنظمة الداخلية، ويسعدني الحديث عن أي منتجٍ عربي أو ثنائي اللغة.",
   availability: "Open to new roles & freelance",
   availabilityAr: "متاحة لأدوار جديدة وعمل حر",
   responseTime: "Usually replies within a day",
