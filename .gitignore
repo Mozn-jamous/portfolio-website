@@ -50,3 +50,9 @@ next-env.d.ts
 
 # local screenshot output (scripts/shot*.mjs)
 /.shots/
+
+# CV sources carry her phone number; the repo is public (GitHub Pages),
+# so they stay local only. Regenerate PDFs from these files on disk.
+/docs/cv.html
+/docs/cv-bilingual.html
+/docs/work-record.html

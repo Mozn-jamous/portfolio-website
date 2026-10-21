@@ -11,7 +11,8 @@
  *  · New project in the work gallery (/projects + home preview):
  *      → push to `projectsIndex` (name, href, year, role, industry,
  *        impact, summary + Arabic siblings). Set `clientSite: true`
- *        for a brand/client site to keep it off the home preview.
+ *        for a brand/client site (groups it on /projects). The home
+ *        preview shows the `FEATURED` list in ProjectsDirectory.tsx.
  *
  *  · New deep-dive case study:
  *      → create `src/app/projects/<slug>/page.tsx` that uses
@@ -623,9 +624,8 @@ export const educationChapter: {
       issuerAr: "مؤسسة دبي للمستقبل",
       year: "2025",
       // image: "/work/certs/prompters.webp",
-      related: [
-        { label: "BloomBelly — three AI models", labelAr: "BloomBelly — ثلاثة نماذج ذكاء اصطناعي", href: "/projects/bloombelly" },
-      ],
+      // No `related` link: a prompting course is not the evidence for
+      // BloomBelly's model work, and linking the two implied it was.
     },
     {
       title: "AI Fluency: Framework & Foundations",
@@ -691,9 +691,9 @@ export type ProjectIndexEntry = {
   summaryAr?: string;
   /** Optional mockup image path (else a labelled Figure slot renders). */
   cover?: string;
-  /** Client/brand website (vanilla HTML/CSS/JS). Shown in the full /projects
-   *  gallery, but filtered OUT of the home "Selected work" grid so the home
-   *  preview stays focused on the core product apps. */
+  /** Client/brand website. Groups the entry under "Client websites" on
+   *  /projects. Which four reach the home preview is decided by `FEATURED`
+   *  in ProjectsDirectory.tsx, not by this flag. */
   clientSite?: boolean;
 };
 
@@ -726,9 +726,9 @@ export const projectsIndex: ProjectIndexEntry[] = [
     impact: "Three AI models behind one Arabic app",
     impactAr: "ثلاثة نماذج ذكاء اصطناعي خلف تطبيق عربي",
     summary:
-      "My graduation project, built with a classmate: an Arabic-first maternal-health app. I owned the Python backend and the three AI models and shared the design; she led the Flutter front end.",
+      "An Arabic-first maternal-health app that reads medical images, answers baby-care questions with a fine-tuned model, and scores nutrition. I owned the Python backend and the three models and co-designed the app; a classmate led the Flutter front end. Built as our graduation project.",
     summaryAr:
-      "مشروع تخرّجي مع زميلة: تطبيق صحّة أمومة عربي أولاً. تولّيتُ خادم Python ونماذج الذكاء الاصطناعي الثلاثة وشاركتُ في التصميم؛ وقادت هي واجهة Flutter.",
+      "تطبيق صحّة أمومة عربي أولاً يقرأ الصور الطبية، ويجيب عن أسئلة رعاية الطفل بنموذج مضبوط، ويقيّم التغذية. تولّيتُ خادم Python والنماذج الثلاثة وشاركتُ في التصميم؛ وقادت زميلتي واجهة Flutter. بنيناه مشروعَ تخرّج.",
   },
   {
     name: "CareConnect",

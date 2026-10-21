@@ -20,15 +20,16 @@ const projectsDescriptionAr =
  * - variant="full" (default, /projects): the same product grid + the ERP hub CTA.
  */
 /**
- * The four strongest projects lead the grid (deepest ownership + impact);
- * everything else sits behind the "See more" toggle. Order here IS the
- * display order of the featured row.
+ * The home preview is exactly these four, in this order, drawn from products
+ * AND client sites: three are paid work for real clients and one is the
+ * graduation app, because recruiters weigh commercial work first. On
+ * /projects the same order leads each of the two groups.
  */
 const FEATURED = [
   "/projects/mademoiselle",
-  "/projects/bloombelly",
   "/projects/veghnar-tonvair",
-  "/projects/pharmacology",
+  "/projects/bloombelly",
+  "/projects/divano",
 ];
 
 /** A small labelled divider between the two gallery groups on /projects. */
@@ -94,7 +95,7 @@ export function ProjectsDirectory({
 
         {variant === "home" ? (
           <ProjectsGrid
-            projects={featuredFirst(projectsIndex.filter((p) => !p.clientSite)).slice(0, 4)}
+            projects={featuredFirst(projectsIndex).slice(0, FEATURED.length)}
           />
         ) : (
           <>

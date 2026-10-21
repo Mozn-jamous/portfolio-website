@@ -235,8 +235,8 @@ const skills: SkillGroupData[] = [
   {
     label: "AI",
     labelAr: "الذكاء الاصطناعي",
-    items: ["Google Gemini (vision)", "LoRA/PEFT fine-tuning", "scikit-learn", "Function-calling LLM agents", "Prompt engineering"],
-    itemsAr: ["Google Gemini (رؤية)", "ضبط LoRA/PEFT", "scikit-learn", "وكلاء LLM باستدعاء الدوال", "هندسة الأوامر"],
+    items: ["Google Gemini (vision)", "LoRA/PEFT fine-tuning", "scikit-learn", "Function-calling LLM agents"],
+    itemsAr: ["Google Gemini (رؤية)", "ضبط LoRA/PEFT", "scikit-learn", "وكلاء LLM باستدعاء الدوال"],
   },
   {
     label: "ERP — Odoo",
