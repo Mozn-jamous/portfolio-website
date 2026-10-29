@@ -66,6 +66,15 @@ export default function MademoisellePage() {
           "Multi-theme",
           "Supabase",
         ],
+        // The app itself isn't public (V2 is in launch integration), so the
+        // link is the brand's website, labelled with the part of it that's mine.
+        links: [
+          {
+            label: <T en="mademoizelle.co: I did its phone layout + Journal" ar="mademoizelle.co: عملتُ على تخطيط الهاتف وقسم Journal" />,
+            href: "https://mademoizelle.co",
+            external: true,
+          },
+        ],
       }}
       metrics={[
         { value: <T en="V1 → V2" ar="V1 ← V2" />, label: <T en="A live FlutterFlow app, rebuilt in native Flutter" ar="تطبيق FlutterFlow حيّ، أُعيد بناؤه بـFlutter أصلي" /> },

@@ -56,7 +56,7 @@ export default function DivanoPage() {
         }}
         meta={{
           eyebrow: <T en="Web · Client work · Design + Build" ar="ويب · عمل لعميل · تصميم وبناء" />,
-          status: <T en="Client work · Pre-launch" ar="عمل لعميل · قبل الإطلاق" />,
+          status: <T en="Client work · Live" ar="عمل لعميل · منشور" />,
           title: (
             <T
               en="Divano: an interior-design firm's site, retyped and retold."
@@ -77,6 +77,14 @@ export default function DivanoPage() {
             "JavaScript",
             "Typography",
             "Arabic / RTL",
+          ],
+          links: [
+            {
+              label: <T en="Visit the live site" ar="زيارة الموقع" />,
+              href: "https://divano.ae",
+              external: true,
+              primary: true,
+            },
           ],
         }}
         metrics={[
