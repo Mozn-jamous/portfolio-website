@@ -55,8 +55,8 @@ export default function PharmacologyPage() {
           ),
           lede: (
             <T
-              en="Pharmacology is the brand of a clinical-nutrition practice run by the client, Dr. Ahmed Elkhateeb (Pharm.D). I worked on the site with the Santa Media team: 25 pages, fully bilingual and Arabic-first, in plain HTML, CSS and JavaScript so it stays fast. My parts were the home page's design and section order, the phone experience and the sub-pages, and the Arabic/RTL version. The brand identity and the rest of the build were the team's."
-              ar="Pharmacology علامة عيادة تغذية سريرية يديرها العميل د. أحمد الخطيب (دكتور صيدلة). عملتُ على الموقع مع فريق Santa Media: 25 صفحة، ثنائية اللغة بالكامل وعربية أولاً، بـHTML وCSS وJavaScript صِرف ليبقى سريعاً. وكانت أجزائي تصميم الصفحة الرئيسية وترتيب أقسامها، وتجربة الهاتف والصفحات الفرعية، والنسخة العربية باتجاه اليمين. أما الهوية البصرية وبقية البناء فكانت للفريق."
+              en="Pharmacology is the brand of a clinical-nutrition practice. I worked on the site with the Santa Media team: 25 pages, fully bilingual and Arabic-first, in plain HTML, CSS and JavaScript so it stays fast. My parts were the home page's design and section order, the phone experience and the sub-pages, and the Arabic/RTL version. The brand identity and the rest of the build were the team's."
+              ar="Pharmacology علامة عيادة تغذية سريرية. عملتُ على الموقع مع فريق Santa Media: 25 صفحة، ثنائية اللغة بالكامل وعربية أولاً، بـHTML وCSS وJavaScript صِرف ليبقى سريعاً. وكانت أجزائي تصميم الصفحة الرئيسية وترتيب أقسامها، وتجربة الهاتف والصفحات الفرعية، والنسخة العربية باتجاه اليمين. أما الهوية البصرية وبقية البناء فكانت للفريق."
             />
           ),
           year: "2026",
@@ -92,7 +92,6 @@ export default function PharmacologyPage() {
                 <FactGrid
                   items={[
                     { label: <T en="My role" ar="دوري" />, value: <T en="Home page, phone UX, sub-pages, Arabic/RTL" ar="الصفحة الرئيسية، وتجربة الهاتف، والصفحات الفرعية، والعربية" /> },
-                    { label: <T en="Client" ar="العميل" />, value: <T en="Dr. Ahmed Elkhateeb (Pharm.D)" ar="د. أحمد الخطيب (دكتور صيدلة)" /> },
                     { label: <T en="Domain" ar="المجال" />, value: <T en="Clinical-nutrition brand" ar="علامة تغذيةٍ سريرية" /> },
                     { label: <T en="Team" ar="الفريق" />, value: <T en="Santa Media, 27 of 80 commits mine" ar="Santa Media، و27 من 80 كوميت لي" /> },
                     { label: <T en="Languages" ar="اللغات" />, value: <T en="Arabic and English, Arabic first" ar="عربي وإنجليزي، والعربية أولاً" /> },

@@ -545,8 +545,8 @@ export default function BloomBellyPage() {
             <>
               <p>
                 <T
-                  en="BloomBelly taught me that in a regulated domain the interesting work is restraint: deciding what the product should refuse to do. The refusal pattern and the Figma-first habit are the two things I've reused on every project since."
-                  ar="علّمني BloomBelly أن العمل المثير في مجال منظَّم هو الانضباط: أن تقرّر ما ينبغي للمنتج أن يرفض فعله. ونمط الرفض وعادة البدء من Figma هما الشيئان اللذان أعدتُ استخدامهما في كل مشروع بعده."
+                  en="BloomBelly taught me that in a regulated domain the interesting work is restraint: deciding what the product should refuse to do. The refusal pattern is the thing I've reused on every project since."
+                  ar="علّمني BloomBelly أن العمل المثير في مجال منظَّم هو الانضباط: أن تقرّر ما ينبغي للمنتج أن يرفض فعله. ونمط الرفض هو الشيء الذي أعدتُ استخدامه في كل مشروع بعده."
                 />
               </p>
               <p>

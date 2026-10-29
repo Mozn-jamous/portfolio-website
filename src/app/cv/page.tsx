@@ -37,13 +37,13 @@ const experience: Role[] = [
       "Redesigned Mademoiselle, a live beauty-commerce app, and work on its rebuild from FlutterFlow to native Flutter in a three-person team: I own the customer-facing app on Supabase (PostgreSQL functions, row-level security) and co-author the shared design system (three themes, RTL + LTR; Arabic, English and French).",
       "Redesigned and built Veghnar Tonvair, a fragrance brand's Shopify storefront, from the client's brand book: one governing identity stylesheet, a four-typeface Arabic/Latin system, and perfume-specific product UX. Live, Arabic-first.",
       "Led the redesign of Divano, a Dubai interior-design firm's bilingual site (14 EN + 14 AR pages, 13 project galleries): a licensed bilingual typeface replacing 86 external font links, a 4K hero video in three resolution tiers, and an image performance pass.",
-      "Front-end and redesign work on ahmedelkhateeb.com (home page, phone UX, supplements and legal pages, Arabic version) and mademoizelle.co (phone layout and the Journal).",
+      "Front-end and redesign work on a clinical-nutrition brand's site (home page, phone UX, supplements and legal pages, Arabic version) and mademoizelle.co (phone layout and the Journal).",
     ],
     bulletsAr: [
       "أعدتُ تصميم Mademoiselle، تطبيق تجارة تجميل حيّ، وأعمل على إعادة بنائه من FlutterFlow إلى Flutter أصلي ضمن فريقٍ من ثلاثة: أتولّى تطبيق الزبونة على Supabase (دوال PostgreSQL وأمان مستوى الصف) وأشارك في نظام التصميم المشترك (ثلاث سمات، RTL + LTR؛ بالعربية والإنجليزية والفرنسية).",
       "أعدتُ تصميم وبناء متجر Veghnar Tonvair على Shopify لعلامة عطور، انطلاقاً من دليل هوية العميل: ملف أنماط واحد يحكم الهوية، ونظام طباعي من أربعة خطوط عربية ولاتينية، وتجربة منتج تناسب العطر. حيّ، وبالعربية أولاً.",
       "قدتُ إعادة تصميم موقع Divano، شركة تصميم داخلي في دبي، بنسختيه (14 صفحة إنجليزية و14 عربية و13 معرض مشاريع): خطّ ثنائي اللغة مرخَّص حلّ محلّ 86 رابط خطوط خارجياً، وفيديو رئيسي بدقة 4K بثلاث درجات، وتحسين أداء الصور.",
-      "عمل واجهة وإعادة تصميم على ahmedelkhateeb.com (الصفحة الرئيسية، وتجربة الهاتف، وصفحتا المكمّلات والشروط، والنسخة العربية) وعلى mademoizelle.co (تخطيط الهاتف وقسم Journal).",
+      "عمل واجهة وإعادة تصميم على موقع علامة تغذية سريرية (الصفحة الرئيسية، وتجربة الهاتف، وصفحتا المكمّلات والشروط، والنسخة العربية) وعلى mademoizelle.co (تخطيط الهاتف وقسم Journal).",
     ],
   },
   {
@@ -56,10 +56,10 @@ const experience: Role[] = [
     location: "Damascus",
     locationAr: "دمشق",
     bullets: [
-      "Owned UI/UX design (Figma) and QA for a multi-tenant clinics platform (three Flutter apps over a NestJS backend), including testing tenant isolation between clinics.",
+      "Owned UI/UX design and QA for a multi-tenant clinics platform (three Flutter apps over a NestJS backend), including testing tenant isolation between clinics.",
     ],
     bulletsAr: [
-      "تولّيتُ تصميم UI/UX (Figma) والاختبار لمنصّة عيادات متعدّدة المستأجرين (ثلاثة تطبيقات Flutter على خادم NestJS)، ومنه اختبار عزل البيانات بين العيادات.",
+      "تولّيتُ تصميم UI/UX والاختبار لمنصّة عيادات متعدّدة المستأجرين (ثلاثة تطبيقات Flutter على خادم NestJS)، ومنه اختبار عزل البيانات بين العيادات.",
     ],
   },
   {

@@ -58,7 +58,6 @@ export default function MademoisellePage() {
         year: <T en="2026 to now" ar="2026 حتى الآن" />,
         role: <T en="Product designer + Flutter developer" ar="مصمّمة منتج + مطوّرة Flutter" />,
         stack: [
-          "Figma",
           "Flutter",
           "Dart",
           "Design Systems",
@@ -220,8 +219,8 @@ export default function MademoisellePage() {
                 }
                 decision={
                   <T
-                    en={<>I drew the Figma file and every customer-app screen{" "}<strong>in Arabic first</strong>. Reading order, type hierarchy, spacing and icon choices were all decided while looking at Arabic, and English came after.</>}
-                    ar={<>رسمتُ ملف Figma وكل شاشة في تطبيق الزبونة{" "}<strong>بالعربية أولاً</strong>. ترتيب القراءة، وتسلسل الخطوط، والتباعد، واختيار الأيقونات كلها قُرّرت وأنا أنظر إلى العربية، والإنجليزية جاءت بعدها.</>}
+                    en={<>I designed every customer-app screen directly in Flutter,{" "}<strong>in Arabic first</strong>. Reading order, type hierarchy, spacing and icon choices were all decided while looking at Arabic, and English came after.</>}
+                    ar={<>صمّمتُ كل شاشة في تطبيق الزبونة مباشرةً في Flutter،{" "}<strong>بالعربية أولاً</strong>. ترتيب القراءة، وتسلسل الخطوط، والتباعد، واختيار الأيقونات كلها قُرّرت وأنا أنظر إلى العربية، والإنجليزية جاءت بعدها.</>}
                   />
                 }
                 outcome={

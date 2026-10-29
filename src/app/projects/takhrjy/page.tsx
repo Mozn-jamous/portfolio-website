@@ -64,7 +64,6 @@ export default function TakhrjyPage() {
           stack: [
             "Vue",
             "UI design",
-            "Figma",
             "Front-end architecture",
             "Role-based UI",
           ],

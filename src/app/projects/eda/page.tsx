@@ -65,7 +65,6 @@ export default function EdaPage() {
             "NestJS",
             "TypeScript",
             "Multi-tenant",
-            "Figma",
             "Manual QA",
           ],
         }}

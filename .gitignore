@@ -56,3 +56,7 @@ next-env.d.ts
 /docs/cv.html
 /docs/cv-bilingual.html
 /docs/work-record.html
+# June 2026 portfolio PDF + its source: predates the October honesty audit
+# and named a client, so it stays local until it is rebuilt.
+/Mozn-Jamous-Portfolio.pdf
+/docs/portfolio.html
